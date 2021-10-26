@@ -21,6 +21,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~assets/css/base.css',
+    '~assets/css/container.css',
+    '~assets/css/fonts.css',
+    '~assets/css/media.css',
+    '~assets/css/properties.css',
+    '~assets/css/spacing.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -44,14 +50,10 @@ export default {
       'nuxt-mq',
       {
         // Default breakpoint for SSR
-        defaultBreakpoint: 'sm',
+        defaultBreakpoint: 'tablet',
         breakpoints: {
-          mobile: 360,
-          mobileLg: 640,
           tablet: 960,
-          desktop: 1280,
-          desktopLg: 1600,
-          desktopXl: 1900,
+          desktopXl: Infinity,
         }
       }
     ]
@@ -64,5 +66,46 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      plugins: {
+        /* Изменяет url в CSS, чтобы всё корректно собиралось. */
+        'postcss-url': true,
+        /* Нормализация базовых стилей. Особенность этого плагина в зависимости от Browserslist. */
+        'postcss-normalize': true,
+        /* Позволяет использовать вложенные селекторы, как в SCSS. */
+        'postcss-nested': true,
+        /* Автоматически конвертирует px в rem, чтобы была возможность указывать величины в пикселях согласно макету и не париться :) */
+        'postcss-pxtorem': true,
+        /* Позволяет загружать в background svg с возможностью менять его параметры (например, fill) в формате: background-image: svg-load(<путь>, fill: <hex-цвет>); */
+        'postcss-inline-svg': true,
+      },
+      preset: {
+        /* Стейджи отключены, так что нужные возможности указываются напрямую, чтобы не тянуть лишний функционал, о котором никто не знает. */
+        stage: false,
+        /* Современный синтаксис для медиа-запросов. */
+        'custom-media-queries': {
+            importFrom: './assets/css/media.css',
+            '--mobile-lg': '(width <= 639px)',
+            '--tablet': '(width <= 959px)',
+        },
+        /* CSS-переменные. */
+        'custom-properties': {
+            importFrom: '~assets/css/properties.css',
+            preserve: false,
+        },
+        /* Возможность использовать диапазоны в медиазапросах. */
+        'media-query-ranges': true,
+        /* Позволяет использовать множественные селекторы внутри псевдокласса :not() */
+        'not-pseudo-class': true,
+        /* Позволяет использовать overflow-wrap вместо word-wrap, что считается более корректным. */
+        'overflow-wrap-property': true,
+        /* В postcss-preset-env встроен autoprefixer, но его актуальность не гарантируется. Мы хотим использовать последнюю версию, которую подключаем отдельно, так что эту отключаем, чтобы она не перекрывала нашу. */
+        autoprefixer: true,
+      },
+    }
   },
+
+  buildModules: [
+    '@nuxt/postcss8'
+  ]
 }

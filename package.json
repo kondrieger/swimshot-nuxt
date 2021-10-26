@@ -16,8 +16,6 @@
     "nuxt": "^2.15.7",
     "nuxt-mq": "^2.0.2",
     "nuxt-svg-loader": "^1.2.0",
-    "postcss": "^8.3.11",
-    "postcss-import": "^14.0.2",
     "postcss-inline-svg": "^5.0.0",
     "postcss-nested": "^5.0.6",
     "postcss-normalize": "^10.0.1",
@@ -28,5 +26,7 @@
     "vue-fixed-header": "^3.2.15",
     "vue-modaltor": "^1.5.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxt/postcss8": "^1.1.3"
+  }
 }

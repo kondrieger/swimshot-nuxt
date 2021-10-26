@@ -8,8 +8,8 @@
                         :src="require('~/assets/swimshot_header_logo.webp')"
                         alt="Swim shot логотип"
                 /></a>
-                <no-ssr v-else>
-                    <!-- <Slide :closeOnNavigation="true" noOverlay>
+                <client-only v-else>
+                    <Slide :closeOnNavigation="true" noOverlay>
                         <a class="header__links-link" href="/#pools-list"><p>Бассейны</p></a>
                         <a class="header__links-link" href="/#team"><p>Тренеры</p></a>
                         <a class="header__links-link" href="/#comments"><p>Отзывы</p></a>
@@ -40,8 +40,8 @@
                                 />
                             </a>
                         </div>
-                    </Slide> -->
-                </no-ssr>
+                    </Slide>
+                </client-only>
 
                 <div class="header__links" v-if="!isTablet">
                     <a class="header__links-link" href="/#pools-list"><p>Бассейны</p></a>
@@ -103,7 +103,7 @@ export default {
     },
     computed: {
         isTablet() {
-            return this.$mq.tablet;
+            return this.$mq === 'tablet';
         },
     },
     mounted() {
