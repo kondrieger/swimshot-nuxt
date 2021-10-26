@@ -1,0 +1,93 @@
+.pool-start-block {
+    max-width: 1100px;
+    padding-top: calc(var(--gs) * 6);
+    padding-bottom: calc(var(--gs) * 6);
+    font-family: var(--font-geometria) !important;
+
+    @media (--tablet) {
+        padding-top: calc(var(--gs) * 3);
+        padding-bottom: calc(var(--gs) * 3);
+    }
+
+    &__title {
+        font-size: 56px;
+        font-weight: 800;
+
+        @media (--tablet) {
+            font-size: 48px;
+        }
+
+        @media (--mobile-lg) {
+            font-size: 32px;
+        }
+    }
+
+    &__address {
+        font-size: 20px;
+        margin: 20px 0 30px;
+        color: #000;
+
+        @media (--tablet) {
+            font-size: 16px;
+            margin: 10px 0 15px;
+        }
+
+        & img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+
+            @media (--tablet) {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    .swiper {
+        &-container {
+            overflow: visible;
+        }
+
+        &-slide {
+            height: 550px;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+
+            @media (--tablet) {
+                height: 400px;
+                margin: 0 auto;
+                border-radius: 10px;
+            }
+
+            @media (--mobile-lg) {
+                height: 250px;
+            }
+
+            @media (--mobile) {
+                height: 200px;
+            }
+
+            &-active {
+                opacity: 1;
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--cl-lt-blue);
+        }
+
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+            font-weight: bold;
+            font-size: 3rem;
+
+            @media (--mobile-lg) {
+                font-size: 2rem;
+            }
+        }
+    }
+}

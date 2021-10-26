@@ -1,0 +1,169 @@
+<template>
+    <div class="container another-pools">
+        <h2 data-aos="fade-right" data-aos-once="true">Другие наши <span class="blue">бассейны</span></h2>
+        <div class="another-pools__list" data-aos="fade-up" data-aos-once="true">
+            <a
+                v-for="(pool, index) in PoolsArr"
+                :key="index"
+                :href="pool.href"
+                :style="{ 'background-image': 'url(' + pool.pic + ')' }"
+                class="another-pools__list-item"
+            >
+                <div class="another-pools__list-item-text">
+                    <p class="another-pools__list-item-text-title">
+                        {{ pool.title }}
+                        <span class="another-pools__list-item-text-subtitle">, {{ pool.subtitle }}</span>
+                    </p>
+                    <VButton wide text="ПОДРОБНОСТИ" />
+                </div>
+            </a>
+        </div>
+    </div>
+</template>
+
+<script>
+import VButton from '~/components/VButton/VButton.vue';
+
+export default {
+    components: { VButton },
+    props: {
+        PoolsArr: {
+            type: Array,
+            default: () => [],
+        },
+    },
+};
+</script>
+
+<style>
+.another-pools {
+    padding-top: calc(var(--gs) * 3);
+    padding-bottom: calc(var(--gs) * 12);
+
+    @media (--tablet) {
+        padding-top: calc(var(--gs) * 1);
+        padding-bottom: calc(var(--gs) * 4);
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @media (--mobile-lg) {
+            flex-wrap: wrap;
+        }
+
+        &-item {
+            width: 35%;
+            height: 250px;
+            z-index: 1;
+            opacity: 0.8;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+            background-position: 50%;
+
+            @media (--tablet) {
+                width: 50%;
+            }
+
+            @media (--mobile-lg) {
+                width: 100%;
+                height: 200px;
+            }
+
+            & + & {
+                @media (--mobile-lg-min) {
+                    margin-left: 15px;
+                }
+            }
+
+            &,
+            & * {
+                transition: all 0.3s ease;
+            }
+
+            &:hover,
+            &:active {
+                opacity: 1;
+                @media (--tablet-min) {
+                    width: 50%;
+                }
+
+                & .btn {
+                    opacity: 1;
+                }
+
+                & .another-pools__list-item-text {
+                    height: 55%;
+
+                    @media (--mobile-lg) {
+                        height: 60%;
+                    }
+                }
+
+                & .another-pools__list-item-text-title {
+                    @media (--tablet-min) {
+                        font-size: 24px;
+                    }
+                }
+
+                & .another-pools__list-item-text-subtitle {
+                    @media (--tablet-min) {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            &-text {
+                padding: 10px;
+                width: 100%;
+                height: 25%;
+                background-color: #fff;
+                margin-top: auto;
+                margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @media (--mobile-lg) {
+                    height: 25%;
+                }
+
+                &-title {
+                    font-size: 18px;
+                    font-family: var(--font-geometria);
+                    font-weight: 600;
+                    margin-bottom: 15px;
+
+                    @media (--tablet) {
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                &-subtitle {
+                    font-size: 16px;
+                    font-weight: normal;
+
+                    @media (--tablet) {
+                        font-size: 14px;
+                    }
+                }
+
+                & .btn {
+                    max-width: 70%;
+                    opacity: 0;
+                    pointer-events: none;
+                    font-size: 16px;
+
+                    @media (--tablet) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+</style>

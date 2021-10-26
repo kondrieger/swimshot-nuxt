@@ -1,0 +1,123 @@
+.features {
+    padding-top: calc(var(--gs) * 3);
+    padding-bottom: calc(var(--gs) * 12);
+
+    @media (--desktop) {
+        padding-bottom: calc(var(--gs) * 9);
+    }
+
+    @media (--tablet) {
+        padding-bottom: calc(var(--gs) * 6);
+    }
+
+    &__list {
+        display: flex;
+        width: 100%;
+
+        &-item {
+            padding: calc(var(--gs) * 2);
+            border-radius: 20px;
+            border: 4px solid var(--cl-lt-blue);
+            /* box-shadow: 0px 0px 40px 5px rgb(123 162 184 / 30%); */
+            height: 350px;
+
+            &-img {
+                fill: var(--cl-blue);
+                width: 48px;
+                height: 48px;
+                margin-bottom: 30px;
+
+                @media (--tablet) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &-title {
+                font-weight: 800 !important;
+                font-size: 20px !important;
+                letter-spacing: 0.5px;
+                line-height: 1.55;
+                text-transform: uppercase;
+                margin-bottom: calc(var(--gs) * 2);
+
+                @media (--tablet) {
+                    font-size: 16px !important;
+                    margin-bottom: calc(var(--gs) * 1.5);
+                }
+            }
+
+            &-subtitle {
+                @media (--tablet) {
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+
+    .swiper-container {
+        height: 400px;
+    }
+
+    .swiper-slide {
+        width: 31.5%;
+
+        @media (--desktop) {
+            width: 40%;
+        }
+
+        @media (--tablet) {
+            width: 47%;
+        }
+
+        @media (--mobile-lg) {
+            width: 100%;
+        }
+    }
+
+    /* .swiper-pagination-progressbar-fill {
+        background-color: var(--cl-blue);
+    } */
+
+    .swiper-pagination-bullet {
+        background-color: var(--cl-blue);
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        border: 1px solid var(--cl-blue);
+        background-color: #fff;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: var(--cl-md-blue);
+    }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-weight: bold;
+        font-size: 4rem;
+
+        @media (--mobile-lg) {
+            display: none;
+        }
+
+        @media (--tablet) {
+            font-size: 3rem;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+        @media (--tablet) {
+            right: 0;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+        @media (--tablet) {
+            left: 0;
+        }
+    }
+}

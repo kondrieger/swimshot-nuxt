@@ -1,0 +1,99 @@
+.start-block{
+    display: flex;
+    padding-top: calc(var(--gs) * 10);
+    padding-bottom: calc(var(--gs) * 14);
+    position: relative;
+
+    @media (--tablet) {
+        padding-top: calc(var(--gs) * 7);
+        padding-bottom: calc(var(--gs) * 7);
+    }
+
+    &__wrap {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgba(41, 177, 255, .3);
+
+        @media (--desktop) {
+            background-size: auto 110%;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @media (--tablet) {
+            width: 100%;
+        }
+
+        &-img {
+            margin-bottom: calc(var(--gs) * 2.5);
+
+            &--logo {
+                @media (--mobile-lg) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            &--sublogo {
+                @media (--mobile-lg) {
+                    width: 70%;
+                    height: auto;
+                }
+            }
+        }
+
+        &-title {
+            margin-bottom: calc(var(--gs) * 7);
+            font-family: var(--font-geometria);
+            color: var(--cl-black);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            @media (--tablet) {
+                font-size: 16px;
+                margin-bottom: calc(var(--gs) * 4);
+            }
+        }
+
+        &-subtitle {
+            margin-bottom: calc(var(--gs) * 4);
+            font-family: var(--font-geometria);
+            color: var(--cl-black);
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.55;
+
+            @media (--tablet) {
+                font-size: 14px;
+                margin-bottom: calc(var(--gs) * 3);
+            }
+        }
+
+        & .btn {
+            max-width: 500px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 50px;
+        right: 170px;
+
+        @media (--desktop-lg) {
+            right: 0;
+        }
+
+        @media (--desktop) {
+            right: -140px;
+        }
+
+        @media (--tablet) {
+            display: none;
+        }
+    }
+}

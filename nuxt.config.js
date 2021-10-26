@@ -32,7 +32,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~plugins/slide-menu', ssr: false },
-    { src:  '~plugins/main.js', ssr: false },
+    { src:  '~plugins/main', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -72,6 +72,7 @@ export default {
         'postcss-url': true,
         /* Нормализация базовых стилей. Особенность этого плагина в зависимости от Browserslist. */
         'postcss-normalize': true,
+        'postcss-custom-media': { importFrom: './assets/css/media.css'},
         /* Позволяет использовать вложенные селекторы, как в SCSS. */
         'postcss-nested': true,
         /* Автоматически конвертирует px в rem, чтобы была возможность указывать величины в пикселях согласно макету и не париться :) */
@@ -82,17 +83,6 @@ export default {
       preset: {
         /* Стейджи отключены, так что нужные возможности указываются напрямую, чтобы не тянуть лишний функционал, о котором никто не знает. */
         stage: false,
-        /* Современный синтаксис для медиа-запросов. */
-        'custom-media-queries': {
-            importFrom: './assets/css/media.css',
-            '--mobile-lg': '(width <= 639px)',
-            '--tablet': '(width <= 959px)',
-        },
-        /* CSS-переменные. */
-        'custom-properties': {
-            importFrom: '~assets/css/properties.css',
-            preserve: false,
-        },
         /* Возможность использовать диапазоны в медиазапросах. */
         'media-query-ranges': true,
         /* Позволяет использовать множественные селекторы внутри псевдокласса :not() */

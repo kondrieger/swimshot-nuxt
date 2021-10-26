@@ -91,7 +91,7 @@
 import './styles.css';
 import FixedHeader from 'vue-fixed-header';
 import $ from 'jquery';
-// import Login from '../../img/svg/login.svg';
+// import Login from '~/assets/svg/login.svg';
 
 export default {
     name: 'a-header',
