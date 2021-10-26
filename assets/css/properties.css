@@ -1,0 +1,19 @@
+:root {
+    /* Минимальный размер сетки.
+    Все размеры делаем кратными ему (кроме случаев, где сетка неприменима). */
+    --gs: 10px;
+
+    /* Глобальные цвета проекта. */
+    --cl-black: #2b2a29;
+    --cl-blue: #29b1ff;
+    --cl-dk-blue: #418dbc;
+    --cl-md-blue: #24a5f0;
+    --cl-lt-blue: #74cafc;
+    --cl-white: #fff;
+    --cl-red: #f00;
+    --cl-grey: #f2f2f2;
+
+    /* Шрифты проекта. */
+    --font-circe: 'Circe', Arial, sans-serif;
+    --font-geometria: 'Geometria', Arial, sans-serif;
+}

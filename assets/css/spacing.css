@@ -1,0 +1,77 @@
+/* Вспомогательные классы отступов. */
+
+.m {
+    margin: calc(var(--gs) * 2);
+
+    &-0 {
+        margin: 0;
+    }
+
+    &-s {
+        margin: var(--gs);
+    }
+
+    &t {
+        margin-top: calc(var(--gs) * 2);
+
+        &-0 {
+            margin-top: 0;
+        }
+
+        &-s {
+            margin-top: var(--gs);
+        }
+
+        &-m {
+            margin-top: calc(var(--gs) * 2);
+        }
+    }
+
+    &r {
+        margin-right: calc(var(--gs) * 2);
+
+        &-0 {
+            margin-right: 0;
+        }
+
+        &-s {
+            margin-right: var(--gs);
+        }
+
+        &-m {
+            margin-right: calc(var(--gs) * 2);
+        }
+    }
+
+    &b {
+        margin-bottom: calc(var(--gs) * 2);
+
+        &-0 {
+            margin-bottom: 0;
+        }
+
+        &-s {
+            margin-bottom: var(--gs);
+        }
+
+        &-m {
+            margin-bottom: calc(var(--gs) * 2);
+        }
+    }
+
+    &l {
+        margin-left: calc(var(--gs) * 2);
+
+        &-0 {
+            margin-left: 0;
+        }
+
+        &-s {
+            margin-left: var(--gs);
+        }
+
+        &-m {
+            margin-left: calc(var(--gs) * 2);
+        }
+    }
+}

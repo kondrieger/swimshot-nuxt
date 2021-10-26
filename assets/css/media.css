@@ -1,0 +1,12 @@
+@custom-media --mobile (width <= 359px);
+@custom-media --mobile-min (width >= 360px);
+@custom-media --mobile-lg (width <= 639px);
+@custom-media --mobile-lg-min (width >= 640px);
+@custom-media --tablet (width <= 959px);
+@custom-media --tablet-min (width >= 960px);
+@custom-media --desktop (width <= 1279px);
+@custom-media --desktop-min (width >= 1280px);
+@custom-media --desktop-lg (width <= 1599px);
+@custom-media --desktop-lg-min (width >= 1600px);
+@custom-media --desktop-xl (width <= 1899px);
+@custom-media --desktop-xl-min (width >= 1900px);
