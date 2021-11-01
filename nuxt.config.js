@@ -1,4 +1,5 @@
 export default {
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Swim shot | Школа плавания в Зеленограде и Москве',
@@ -9,7 +10,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Научим плавать вас и вашего ребенка. Лучшие тренеры. Групповые и индивидуальные занятия. Пробная тренировка со скидкой 75%' },
-      { hid: 'keywords', name: 'keywords', content: 'плавание, школа, детей, взрослых, тренер, дружинин, давыдов, астапов, касандра, зеленоград, москва, тренировки, плавать, научиться, swimshot, swim, shot, свимшот, свим, шот' },
+      { hid: 'keywords', name: 'keywords', content: 'плавание, школа, детей, взрослых, тренер, дружинин, давыдов, астапов, касандра, зеленоград, москва, тренировки, плавать, научиться, swimshot, swim, shot, свимшот, свим, шот, малино, орбита, солнечногорск' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
