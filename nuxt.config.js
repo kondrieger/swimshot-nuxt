@@ -25,7 +25,6 @@ export default {
     '~assets/css/base.css',
     '~assets/css/container.css',
     '~assets/css/fonts.css',
-    '~assets/css/media.css',
     '~assets/css/properties.css',
     '~assets/css/spacing.css',
   ],
@@ -39,14 +38,11 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/gtm',
     'nuxt-svg-loader',
+    '@nuxt/image',
     [
       'nuxt-mq',
       {
@@ -74,39 +70,18 @@ export default {
   build: {
     postcss: {
       plugins: {
-        /* Изменяет url в CSS, чтобы всё корректно собиралось. */
         'postcss-url': true,
-        /* Нормализация базовых стилей. Особенность этого плагина в зависимости от Browserslist. */
         'postcss-normalize': true,
         'postcss-custom-media': { importFrom: './assets/css/media.css'},
-        /* Позволяет использовать вложенные селекторы, как в SCSS. */
         'postcss-nested': true,
-        /* Автоматически конвертирует px в rem, чтобы была возможность указывать величины в пикселях согласно макету и не париться :) */
         'postcss-pxtorem': true,
-        /* Позволяет загружать в background svg с возможностью менять его параметры (например, fill) в формате: background-image: svg-load(<путь>, fill: <hex-цвет>); */
         'postcss-inline-svg': true,
-      },
-      preset: {
-        /* Стейджи отключены, так что нужные возможности указываются напрямую, чтобы не тянуть лишний функционал, о котором никто не знает. */
-        stage: false,
-        /* Позволяет использовать множественные селекторы внутри псевдокласса :not() */
-        'not-pseudo-class': true,
-        /* Позволяет использовать overflow-wrap вместо word-wrap, что считается более корректным. */
-        'overflow-wrap-property': true,
-        /* В postcss-preset-env встроен autoprefixer, но его актуальность не гарантируется. Мы хотим использовать последнюю версию, которую подключаем отдельно, так что эту отключаем, чтобы она не перекрывала нашу. */
-        autoprefixer: true,
+        'autoprefixer': true,
       },
     }
   },
 
   buildModules: [
     '@nuxt/postcss8',
-    '@aceforth/nuxt-optimized-images',
-    '@nuxt/image',
   ],
-
-  optimizedImages: {
-    optimizeImages: true,
-    optimizeImagesInDev: true
-  }
 }
