@@ -89,8 +89,6 @@ export default {
       preset: {
         /* Стейджи отключены, так что нужные возможности указываются напрямую, чтобы не тянуть лишний функционал, о котором никто не знает. */
         stage: false,
-        /* Возможность использовать диапазоны в медиазапросах. */
-        'media-query-ranges': true,
         /* Позволяет использовать множественные селекторы внутри псевдокласса :not() */
         'not-pseudo-class': true,
         /* Позволяет использовать overflow-wrap вместо word-wrap, что считается более корректным. */
@@ -104,6 +102,7 @@ export default {
   buildModules: [
     '@nuxt/postcss8',
     '@aceforth/nuxt-optimized-images',
+    '@nuxt/image',
   ],
 
   optimizedImages: {

@@ -82,13 +82,14 @@ export default {
         display: flex;
         width: 100%;
         justify-content: center;
+        flex-wrap: nowrap;
 
         @media (--tablet) {
             flex-wrap: wrap;
         }
 
         &-item {
-            width: 35%;
+            width: 33%;
             height: 600px;
             z-index: 1;
             opacity: 0.8;

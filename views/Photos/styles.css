@@ -44,25 +44,25 @@
         }
 
         &.slide-1 {
-            background-image: url('~/assets/webp/photos/photo_1.webp');
+            background-image: url('~/assets/jpg/photos/photo_1.jpg');
         }
         &.slide-2 {
-            background-image: url('~/assets/webp/photos/photo_2.webp');
+            background-image: url('~/assets/jpg/photos/photo_2.jpg');
         }
         &.slide-3 {
-            background-image: url('~/assets/webp/photos/photo_3.webp');
+            background-image: url('~/assets/jpg/photos/photo_3.jpg');
         }
         &.slide-4 {
-            background-image: url('~/assets/webp/photos/photo_4.webp');
+            background-image: url('~/assets/jpg/photos/photo_4.jpg');
         }
         &.slide-5 {
-            background-image: url('~/assets/webp/photos/photo_5.webp');
+            background-image: url('~/assets/jpg/photos/photo_5.jpg');
         }
         &.slide-6 {
-            background-image: url('~/assets/webp/photos/photo_6.webp');
+            background-image: url('~/assets/jpg/photos/photo_6.jpg');
         }
         &.slide-7 {
-            background-image: url('~/assets/webp/photos/photo_7.webp');
+            background-image: url('~/assets/jpg/photos/photo_7.jpg');
         }
     }
 
