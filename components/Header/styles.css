@@ -107,7 +107,7 @@
         }
 
         &-social {
-            display: flex;
+            display: flex !important;
             margin-right: 40px;
 
             @media (--desktop) {
@@ -115,6 +115,7 @@
             }
 
             @media (--tablet) {
+                display: flex !important;
                 margin-right: 0;
             }
 

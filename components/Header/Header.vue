@@ -3,20 +3,20 @@
         <fixed-header :threshold="100">
             <div class="header navbar">
                 <div class="container header__wrap">
-                    <a v-if="!isTablet" href="/">
+                    <nuxt-link v-if="!isTablet" to="/">
                         <img
                             class="header__logo"
                             :src="require('~/assets/swimshot_header_logo.jpg')"
                             alt="Swim shot логотип"
-                    /></a>
+                    /></nuxt-link>
                     <client-only v-else>
                         <Slide :closeOnNavigation="true" noOverlay>
-                            <a class="header__links-link" href="/#pools-list"><p>Бассейны</p></a>
-                            <a class="header__links-link" href="/#team"><p>Тренеры</p></a>
-                            <a class="header__links-link" href="/#comments"><p>Отзывы</p></a>
-                            <a class="header__links-link" href="/#media"><p>Медиа</p></a>
-                            <a class="header__links-link" href="/#contact-form"><p>Контакты</p></a>
-                            <div>
+                            <nuxt-link class="header__links-link" to="/#pools-list"><p>Бассейны</p></nuxt-link>
+                            <nuxt-link class="header__links-link" to="/#team"><p>Тренеры</p></nuxt-link>
+                            <nuxt-link class="header__links-link" to="/#comments"><p>Отзывы</p></nuxt-link>
+                            <nuxt-link class="header__links-link" to="/#media"><p>Медиа</p></nuxt-link>
+                            <nuxt-link class="header__links-link" to="#contact-form"><p>Контакты</p></nuxt-link>
+                            <div class="header__links-social">
                                 <a
                                     href="https://www.instagram.com/swim_shot"
                                     class="header__links-social-item header__links-social-item--modal"
@@ -45,11 +45,11 @@
                     </client-only>
 
                     <div class="header__links" v-if="!isTablet">
-                        <a class="header__links-link" href="/#pools-list"><p>Бассейны</p></a>
-                        <a class="header__links-link" href="/#team"><p>Тренеры</p></a>
-                        <a class="header__links-link" href="/#comments"><p>Отзывы</p></a>
-                        <a class="header__links-link" href="/#media"><p>Медиа</p></a>
-                        <a class="header__links-link" href="#contact-form"><p>Контакты</p></a>
+                        <nuxt-link class="header__links-link" to="/#pools-list"><p>Бассейны</p></nuxt-link>
+                        <nuxt-link class="header__links-link" to="/#team"><p>Тренеры</p></nuxt-link>
+                        <nuxt-link class="header__links-link" to="/#comments"><p>Отзывы</p></nuxt-link>
+                        <nuxt-link class="header__links-link" to="/#media"><p>Медиа</p></nuxt-link>
+                        <nuxt-link class="header__links-link" to="#contact-form"><p>Контакты</p></nuxt-link>
                     </div>
                     <a class="header__logo-wrap" v-if="isTablet" href="/">
                         <img

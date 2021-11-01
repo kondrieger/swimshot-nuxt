@@ -8,8 +8,8 @@
                 Говорим и пишем о плавании и нашей школе <br />Слушай и читай по ссылкам ниже
             </p>
 
-            <ul class="media__list">
-                <li data-aos="fade-up" data-aos-once="true" class="media__list-item">
+            <div class="media__list">
+                <div class="media__list-item">
                     <div class="media__list-item-img">
                         <img :src="kaleki" alt="Swim shot на sports.ru" />
                     </div>
@@ -24,8 +24,8 @@
                             </a>
                         </div>
                     </div>
-                </li>
-                <li data-aos="fade-up" data-aos-offset="100" data-aos-once="true" class="media__list-item">
+                </div>
+                <div class="media__list-item">
                     <div class="media__list-item-img">
                         <img :src="zelenru" alt="Swim shot в сататьях Zelenograd.ru" />
                     </div>
@@ -47,8 +47,8 @@
                             </a>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 </template>

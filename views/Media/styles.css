@@ -39,7 +39,7 @@
         }
 
         &-item {
-            display: flex;
+            display: flex !important;
             background-color: var(--cl-white);
             width: 100%;
 
@@ -58,7 +58,7 @@
             }
 
             &-img {
-                display: flex;
+                display: flex !important;
                 justify-content: center;
                 max-width: 284px;
                 max-height: 284px;
@@ -67,8 +67,8 @@
                 overflow: hidden;
 
                 & img {
-                    min-width: 284px;
-                    min-height: 284px;
+                    min-width: 284px !important;
+                    min-height: 284px !important;
                 }
 
                 @media (--desktop) {
@@ -78,8 +78,8 @@
                     min-width: 240px;
 
                     & img {
-                        min-width: 240px;
-                        min-height: 240px;
+                        min-width: 240px !important;
+                        min-height: 240px !important;
                     }
                 }
             }

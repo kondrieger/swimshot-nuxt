@@ -42,7 +42,6 @@ export default {
   modules: [
     '@nuxtjs/gtm',
     'nuxt-svg-loader',
-    '@nuxt/image',
     [
       'nuxt-mq',
       {
@@ -83,5 +82,10 @@ export default {
 
   buildModules: [
     '@nuxt/postcss8',
+    '@aceforth/nuxt-optimized-images',
   ],
+
+  optimizedImages: {
+    optimizeImages: true
+  }
 }
