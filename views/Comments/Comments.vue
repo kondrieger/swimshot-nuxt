@@ -46,13 +46,13 @@ import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import CommentsModal from './CommentsModal.vue';
 import './styles.css';
 
-import suter from '~/assets/webp/comments/suter.webp';
-import fedorova from '~/assets/webp/comments/fedorova.webp';
-import kuvardina from '~/assets/webp/comments/kuvardina.webp';
-import prokhorova from '~/assets/webp/comments/prokhorova.webp';
-import tarasova from '~/assets/webp/comments/tarasova.webp';
-import astanina from '~/assets/webp/comments/astanina.webp';
-import sakharova from '~/assets/webp/comments/sakharova.webp';
+import suter from '~/assets/jpg/comments/suter.jpg';
+import fedorova from '~/assets/jpg/comments/fedorova.jpg';
+import kuvardina from '~/assets/jpg/comments/kuvardina.jpg';
+import prokhorova from '~/assets/jpg/comments/prokhorova.jpg';
+import tarasova from '~/assets/jpg/comments/tarasova.jpg';
+import astanina from '~/assets/jpg/comments/astanina.jpg';
+import sakharova from '~/assets/jpg/comments/sakharova.jpg';
 
 const commentsArr = [
     {

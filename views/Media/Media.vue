@@ -55,8 +55,8 @@
 
 <script>
 import VButton from '~/components/VButton/VButton.vue';
-import zelenru from '~/assets/webp/zelen_ru.webp';
-import kaleki from '~/assets/webp/kaleki.webp';
+import zelenru from '~/assets/jpg/zelen_ru.jpg';
+import kaleki from '~/assets/jpg/kaleki.jpg';
 import './styles.css';
 
 export default {

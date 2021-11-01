@@ -31,10 +31,10 @@ import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 
 import mapMark from '~/assets/mapMark.png';
-import orbita from '~/assets/webp/pools/pool_orbita.webp';
-import PoolPic1 from '~/assets/webp/pools/pool_malino.webp';
-import PoolPic2 from '~/assets/webp/pools/pool_malino_2.webp';
-import PoolPic3 from '~/assets/webp/pools/pool_malino_3.webp';
+import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
+import PoolPic1 from '~/assets/jpg/pools/pool_malino.jpg';
+import PoolPic2 from '~/assets/jpg/pools/pool_malino_2.jpg';
+import PoolPic3 from '~/assets/jpg/pools/pool_malino_3.jpg';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3];
 

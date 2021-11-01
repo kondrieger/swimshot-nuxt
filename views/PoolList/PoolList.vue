@@ -35,8 +35,8 @@
 <script>
 import VButton from '~/components/VButton/VButton.vue';
 
-import orbita from '~/assets/webp/pools/pool_orbita.webp';
-import malino from '~/assets/webp/pools/pool_malino.webp';
+import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
+import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import Question from '~/assets/svg/question.svg';
 
 const poolsArr = [

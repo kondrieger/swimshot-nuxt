@@ -8,7 +8,7 @@
 
 <script>
 /* eslint-disable*/
-import bgPic from '~/assets/webp/things_bg.webp';
+import bgPic from '~/assets/jpg/things_bg.jpg';
 import $ from 'jquery';
 
 export default {

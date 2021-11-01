@@ -6,7 +6,7 @@
                     <a v-if="!isTablet" href="/">
                         <img
                             class="header__logo"
-                            :src="require('~/assets/swimshot_header_logo.webp')"
+                            :src="require('~/assets/swimshot_header_logo.jpg')"
                             alt="Swim shot логотип"
                     /></a>
                     <client-only v-else>
@@ -54,7 +54,7 @@
                     <a class="header__logo-wrap" v-if="isTablet" href="/">
                         <img
                             class="header__logo"
-                            :src="require('~/assets/swimshot_header_logo.webp')"
+                            :src="require('~/assets/swimshot_header_logo.jpg')"
                             alt="Swim shot логотип"
                     /></a>
                     <div class="header__links header__links--media">

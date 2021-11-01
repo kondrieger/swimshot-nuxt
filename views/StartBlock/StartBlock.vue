@@ -40,10 +40,10 @@
 <script>
 import $ from 'jquery';
 
-import pic from '~/assets/webp/swimshot_man_boy.webp';
-import text from '~/assets/webp/swimshot_text.webp';
-import subtext from '~/assets/webp/swimshot_subtext.webp';
-import bgPic from '~/assets/webp/bg.webp';
+import pic from '~/assets/jpg/swimshot_man_boy.jpg';
+import text from '~/assets/jpg/swimshot_text.jpg';
+import subtext from '~/assets/jpg/swimshot_subtext.jpg';
+import bgPic from '~/assets/jpg/bg.jpg';
 
 import './styles.css';
 

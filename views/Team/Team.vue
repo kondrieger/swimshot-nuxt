@@ -36,15 +36,15 @@ import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 import './styles.css';
 
-import davydov from '~/assets/webp/team/davydov.webp';
-import astapov from '~/assets/webp/team/astapov.webp';
-import kasandra from '~/assets/webp/team/kasandra.webp';
-import druzhinin from '~/assets/webp/team/druzhinin.webp';
-import georgieva from '~/assets/webp/team/georgieva.webp';
-import vanushechkin from '~/assets/webp/team/vanushechkin.webp';
-import timofeeva from '~/assets/webp/team/timofeeva.webp';
-import matveeva from '~/assets/webp/team/matveeva.webp';
-import grishin from '~/assets/webp/team/grishin.webp';
+import davydov from '~/assets/jpg/team/davydov.jpg';
+import astapov from '~/assets/jpg/team/astapov.jpg';
+import kasandra from '~/assets/jpg/team/kasandra.jpg';
+import druzhinin from '~/assets/jpg/team/druzhinin.jpg';
+import georgieva from '~/assets/jpg/team/georgieva.jpg';
+import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
+import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
+import matveeva from '~/assets/jpg/team/matveeva.jpg';
+import grishin from '~/assets/jpg/team/grishin.jpg';
 
 const teamArr = [
     {
