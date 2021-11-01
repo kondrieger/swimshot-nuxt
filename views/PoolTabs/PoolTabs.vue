@@ -28,7 +28,7 @@
 import $ from 'jquery';
 import './styles.css';
 
-import PoolsFeatures from '~/components/pools-features/pools-features.vue';
+import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 
 const littlePool = [
     {

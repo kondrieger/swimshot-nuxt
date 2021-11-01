@@ -3,7 +3,7 @@
         <div class="container pools">
             <h2 data-aos="fade-right" data-aos-once="true">Бассейны</h2>
             <div class="pools__list" data-aos="fade-up" data-aos-once="true">
-                <router-link
+                <nuxt-link
                     v-for="(pool, index) in poolsArr"
                     :key="index"
                     :to="pool.href"
@@ -16,7 +16,7 @@
                         </p>
                         <VButton wide text="ПОДРОБНОСТИ" />
                     </div>
-                </router-link>
+                </nuxt-link>
                 <a
                     href="https://www.instagram.com/swim_shot"
                     target="_blank"

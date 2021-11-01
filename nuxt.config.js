@@ -1,14 +1,15 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Swim shot школа плавания',
+    title: 'Swim shot | Школа плавания в Зеленограде и Москве',
     htmlAttrs: {
       lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Swim shot школа плавания для детей и взрослых в Зеленограде и Москве' },
+      { hid: 'description', name: 'description', content: 'Научим плавать вас и вашего ребенка. Лучшие тренеры. Групповые и индивидуальные занятия. Пробная тренировка со скидкой 75%' },
+      { hid: 'keywords', name: 'keywords', content: 'плавание, школа, детей, взрослых, тренер, дружинин, давыдов, астапов, касандра, зеленоград, москва, тренировки, плавать, научиться, swimshot, swim, shot, свимшот, свим, шот' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -62,6 +63,11 @@ export default {
   // Google Tag Manager
   gtm: {
     id: 'GTM-N5XZZBJ'
+  },
+
+  loading: {
+    color: '#29b1ff',
+    height: '5px !important'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

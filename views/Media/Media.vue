@@ -11,7 +11,7 @@
             <ul class="media__list">
                 <li data-aos="fade-up" data-aos-once="true" class="media__list-item">
                     <div class="media__list-item-img">
-                        <img :src="kaleki" alt="" />
+                        <img :src="kaleki" alt="Swim shot на sports.ru" />
                     </div>
                     <div class="media__list-item-text-wrap">
                         <p class="media__list-item-text-title">Мы в подкасте Sports.ru</p>
@@ -25,9 +25,9 @@
                         </div>
                     </div>
                 </li>
-                <li data-aos="fade-up" data-aos-offset="35" data-aos-once="true" class="media__list-item">
+                <li data-aos="fade-up" data-aos-offset="100" data-aos-once="true" class="media__list-item">
                     <div class="media__list-item-img">
-                        <img :src="zelenru" alt="" />
+                        <img :src="zelenru" alt="Swim shot в сататьях Zelenograd.ru" />
                     </div>
                     <div class="media__list-item-text-wrap">
                         <p class="media__list-item-text-title">Swim Shot в сататьях Zelenograd.ru</p>

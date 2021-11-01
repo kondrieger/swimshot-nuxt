@@ -18,7 +18,7 @@
                             <span>{{ comment.text }}</span>
                         </p>
                         <div class="comments__item-text-wrap">
-                            <img class="comments__item-pic" :src="comment.pic" alt="" />
+                            <img class="comments__item-pic" :src="comment.pic" alt="Отзыв о Swim shot" />
                             <div class="comments__item-text">
                                 <p class="comments__item-name">{{ comment.name }} — {{ comment.relation }}</p>
                                 <a

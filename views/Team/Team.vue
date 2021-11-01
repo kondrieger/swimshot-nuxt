@@ -5,7 +5,7 @@
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">
                     <a :href="`https://instagram.com/${man.inst}`" target="_blank" class="team__list-item-img-wrap">
-                        <img :src="man.photo" class="team__list-item-img" />
+                        <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
                         <div class="team__list-item-social">
                             <img
                                 class="header__links-social-item-img"

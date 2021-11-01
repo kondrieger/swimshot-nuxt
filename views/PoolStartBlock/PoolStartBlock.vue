@@ -2,7 +2,7 @@
     <div class="container pool-start-block">
         <h1 class="pool-start-block__title" data-aos="fade-right" data-aos-once="true">{{ title }}</h1>
         <a class="pool-start-block__address" href="#contact-form" data-aos="fade-right" data-aos-once="true"
-            ><img :src="mapMark" alt="" />{{ address }}</a
+            ><img :src="mapMark" alt="Swim shot адрес" />{{ address }}</a
         >
         <div class="pool-start-block__swiper" data-aos="fade-up" data-aos-once="true">
             <swiper class="swiper" :options="swiperOptions" ref="swiperTop">

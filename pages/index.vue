@@ -22,8 +22,6 @@ import PoolList from '~/views/PoolList/PoolList.vue';
 import Comments from '~/views/Comments/Comments.vue';
 
 export default {
-    titile: 'Swim shot школа плавания',
-
     components: {
         StartBlock,
         Media,

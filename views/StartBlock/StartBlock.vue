@@ -7,6 +7,7 @@
                     height="199px"
                     :src="text"
                     class="start-block__text-img start-block__text-img--logo"
+                    alt="Плыви быстрее пули"
                 />
                 <img
                     data-aos="fade-right"
@@ -15,6 +16,7 @@
                     height="23px"
                     :src="subtext"
                     class="start-block__text-img start-block__text-img--sublogo"
+                    alt="Плыви быстрее пули"
                 />
                 <h1 class="start-block__text-title">Школа плавания для детей и взрослых</h1>
                 <p class="start-block__text-subtitle">Записывайся на пробное занятие со скидкой 75%</p>
@@ -26,6 +28,7 @@
                 v-if="!isTablet"
                 width="587px"
                 height="688px"
+                alt="Записывайся на пробное занятие со скидкой 75%"
                 :src="pic"
                 class="start-block__image"
             />
