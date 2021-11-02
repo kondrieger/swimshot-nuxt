@@ -116,9 +116,11 @@ export default {
     mounted() {
         $('a[href^="/"], a[href^="#"]').on('click', function () {
             let href = $(this).attr('href').replace('/', '');
-            $('html, body').animate({
-                scrollTop: $(href).offset().top,
-            });
+            if (href) {
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top,
+                });
+            }
         });
     },
 };

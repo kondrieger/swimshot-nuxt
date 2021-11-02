@@ -18,9 +18,6 @@ export default {
             bgPic,
         };
     },
-    mounted() {
-        this.initializeMap();
-    },
     head() {
         return {
             script: [
