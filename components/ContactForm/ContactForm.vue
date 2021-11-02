@@ -55,11 +55,10 @@ export default {
                 if (success.css('display') === 'block') {
                     clearInterval(checkSuccess);
 
-                    if (!this.$gtm.find((item) => item.event === 'form')) {
-                        this.$gtm.push({
+                    if (!window.dataLayer.find((item) => item.event === 'form')) {
+                        window.dataLayer.push({
                             event: 'form',
                         });
-                        console.log(this.$gtm);
                         console.log('Заявка отправлена');
                     }
                 }

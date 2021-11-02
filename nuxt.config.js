@@ -41,7 +41,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/gtm',
+    // Google Tag Manager
+    ['@nuxtjs/google-tag-manager',
+      { id: 'GTM-N5XZZBJ', pageTracking: true, dev: true,  }
+    ],
     'nuxt-svg-loader',
     [
       'nuxt-mq',
@@ -55,11 +58,6 @@ export default {
       }
     ]
   ],
-
-  // Google Tag Manager
-  gtm: {
-    id: 'GTM-N5XZZBJ'
-  },
 
   loading: {
     color: '#29b1ff',

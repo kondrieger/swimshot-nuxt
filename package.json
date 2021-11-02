@@ -9,7 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/gtm": "^2.4.0",
+    "@nuxtjs/google-tag-manager": "^2.3.2",
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.0",
     "core-js": "^3.15.1",

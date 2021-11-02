@@ -12,7 +12,6 @@ export default async function ({ app }) {
 	extend(app, {
 		mounted () {
             AOS.init();
-            console.log(this)
 		},
 	});
 }
