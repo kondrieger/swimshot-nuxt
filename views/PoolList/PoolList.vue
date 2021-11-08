@@ -38,6 +38,7 @@
 import VButton from '~/components/VButton/VButton.vue';
 
 import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
+import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
 import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
@@ -48,7 +49,7 @@ const poolsArr = [
     {
         title: 'ФОК Южное Бутово',
         subtitle: 'Москва',
-        pic: malino,
+        pic: butovo,
         href: '/butovo',
         new: true,
     },

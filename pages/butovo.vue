@@ -30,15 +30,14 @@ import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 
 import mapMark from '~/assets/mapMark.png';
-import malino from '~/assets/jpg/pools/pool_malino_3.jpg';
+import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
-import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
-import PoolPic2 from '~/assets/jpg/pools/pool_orbita_2.jpg';
-import PoolPic3 from '~/assets/jpg/pools/pool_orbita_3.jpg';
-import PoolPic4 from '~/assets/jpg/pools/pool_orbita_4.jpg';
-import PoolPic5 from '~/assets/jpg/pools/pool_orbita_5.jpg';
+import PoolPic1 from '~/assets/jpg/pools/pool_butovo.jpg';
+import PoolPic2 from '~/assets/jpg/pools/pool_butovo_2.jpg';
+import PoolPic3 from '~/assets/jpg/pools/pool_butovo_3.jpg';
+import PoolPic4 from '~/assets/jpg/pools/pool_butovo_4.jpg';
 
-const poolsPicArr = [PoolPic3, PoolPic4, PoolPic1, PoolPic2, PoolPic5];
+const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4];
 
 const poolsArr = [
     {
