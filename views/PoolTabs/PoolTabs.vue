@@ -4,7 +4,14 @@
             <div class="tab-wrapper">
                 <ul class="tabs">
                     <li class="tab-link" :class="{ active: littleActive }" data-tab="1">Малый бассейн</li>
-                    <li class="tab-link" :class="{ active: bigActive }" data-tab="2">Большой бассейн</li>
+                    <li
+                        class="tab-link"
+                        :class="{ active: bigActive }"
+                        :style="bigActive ? 'order: -1;' : ''"
+                        data-tab="2"
+                    >
+                        Большой бассейн
+                    </li>
                 </ul>
             </div>
         </div>
