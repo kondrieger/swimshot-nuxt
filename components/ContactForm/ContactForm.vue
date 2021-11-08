@@ -40,7 +40,14 @@ export default {
             return success.css('display') === 'block';
         },
     },
+    methods: {
+        sendLead() {
+            this.$fb.track('Lead');
+            console.log(this.$fb);
+        },
+    },
     mounted() {
+        const self = this;
         $('input[type="submit"]').on('click', function () {
             $('html, body').animate({
                 scrollTop: $('#contact-form').offset().top,
@@ -56,6 +63,7 @@ export default {
                         window.dataLayer.push({
                             event: 'form',
                         });
+                        self.sendLead();
                         console.log('Заявка отправлена');
                     }
                 }
