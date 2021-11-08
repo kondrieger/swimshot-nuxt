@@ -6829,6 +6829,13 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+nuxt-facebook-pixel-module@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/nuxt-facebook-pixel-module/-/nuxt-facebook-pixel-module-1.5.0.tgz#ed9b079fda95d5f41eecc9f79b0fcde322a63698"
+  integrity sha512-TWM7iv1tLD80NMFDqmv4GrdpE4jkPihcztajeJm6B7TklymR0Jgz3NZ14CzeXRS7FJDJeyZaxmpkcPga1uSiRA==
+  dependencies:
+    minimatch "^3.0.4"
+
 nuxt-mq@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/nuxt-mq/-/nuxt-mq-2.0.2.tgz#3a108dc21e287eafa3cc0ae8b3f25885599e0181"

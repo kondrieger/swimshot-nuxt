@@ -55,7 +55,12 @@ export default {
           desktopXl: Infinity,
         }
       }
-    ]
+    ],
+    ['nuxt-facebook-pixel-module', {
+      /* module options */
+      track: 'Lead',
+      pixelId: '732689604791133',
+    }],
   ],
 
   loading: {

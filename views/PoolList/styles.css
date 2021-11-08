@@ -24,7 +24,6 @@
             width: 33%;
             height: 600px;
             z-index: 1;
-            opacity: 0.8;
             background-size: cover;
             display: flex !important;
             align-items: flex-end;
@@ -50,7 +49,6 @@
             }
 
             &--new {
-                opacity: 1;
             }
 
             &,
@@ -60,7 +58,6 @@
 
             &:hover,
             &:active {
-                opacity: 1;
                 @media (--mobile-lg-min) {
                     width: 50%;
                 }
@@ -96,7 +93,6 @@
                 & .pools__list-item-new-badge {
                     animation-play-state: paused;
                     transform: scale(1.3) !important;
-                    transition: all 0.5s ease !important;
                 }
             }
 

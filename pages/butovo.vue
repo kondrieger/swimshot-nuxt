@@ -1,8 +1,8 @@
 <template>
     <div>
         <SignNow />
-        <PoolStartBlock title="СК Орбита" address="Зеленоград, ул. Озерная аллея, 6" :photosArr="poolsPicArr" />
-        <PoolTabs :littlePool="littlePool" :bigPool="bigPool" littleActive />
+        <PoolStartBlock title="ФОК Южное Бутово" address="Москва, ул. Поляны, 35" :photosArr="poolsPicArr" />
+        <PoolTabs :littlePool="littlePool" :bigPool="bigPool" bigActive />
 
         <div class="container" data-aos="fade-right" data-aos-once="true">
             <div class="pools-info">
@@ -31,6 +31,7 @@ import SignNow from '~/components/SignNow/SignNow.vue';
 
 import mapMark from '~/assets/mapMark.png';
 import malino from '~/assets/jpg/pools/pool_malino_3.jpg';
+import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
 import PoolPic2 from '~/assets/jpg/pools/pool_orbita_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/pool_orbita_3.jpg';
@@ -40,6 +41,12 @@ import PoolPic5 from '~/assets/jpg/pools/pool_orbita_5.jpg';
 const poolsPicArr = [PoolPic3, PoolPic4, PoolPic1, PoolPic2, PoolPic5];
 
 const poolsArr = [
+    {
+        title: 'СК Орбита',
+        subtitle: 'Зеленоград',
+        pic: orbita,
+        href: '/orbita',
+    },
     {
         title: 'СК Малино',
         subtitle: 'Зеленоград',
@@ -51,11 +58,11 @@ const poolsArr = [
 const littlePool = [
     {
         title: 'Для кого?',
-        text: 'Дети 3-8 лет',
+        text: 'Дети 3-7 лет',
     },
     {
         title: 'Стоимость групповых',
-        text: 'от 1200 за занятие',
+        text: 'от 1000 за занятие',
     },
     {
         title: 'Стоимость персональных',
@@ -63,19 +70,19 @@ const littlePool = [
     },
     {
         title: 'Глубина',
-        text: '0,7-1,2 метра',
+        text: '0,6-0,9 метра',
     },
     {
         title: 'Длина',
-        text: '16 метров',
+        text: '13,5 метров',
     },
     {
         title: 'Количество дорожек',
-        text: '2',
+        text: '1',
     },
     {
         title: 'Температура воды',
-        text: '30 градусов',
+        text: '31 градусов',
     },
 ];
 
@@ -86,7 +93,7 @@ const bigPool = [
     },
     {
         title: 'Стоимость групповых',
-        text: 'от 1100 за занятие',
+        text: 'от 900 за занятие',
     },
     {
         title: 'Стоимость персональных',
@@ -94,7 +101,7 @@ const bigPool = [
     },
     {
         title: 'Глубина',
-        text: '2,5 метра',
+        text: '1,9 метра',
     },
     {
         title: 'Длина',
@@ -102,26 +109,26 @@ const bigPool = [
     },
     {
         title: 'Количество дорожек',
-        text: '6',
+        text: '5',
     },
     {
         title: 'Температура воды',
-        text: '27 градусов',
+        text: '28 градусов',
     },
 ];
 
 export default {
-    name: 'Orbita',
+    name: 'Butovo',
     components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow },
     head() {
         return {
-            title: 'Swim shot | Бассейн СК Орбита',
+            title: 'Swim shot | Бассейн ФОК Южное Бутово',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Бассейн в Зеленограде. Спортивный комплекс Орбита. Школа плавания для детей и взрослых Swim shot. Лучшие тренеры. Групповые и индивидуальные занятия. Пробная тренировка со скидкой 75%',
+                        'Бассейн в Москве. Физкультурно-оздоровительный комплекс Южное Бутово. Школа плавания для детей и взрослых Swim shot. Лучшие тренеры. Групповые и индивидуальные занятия. Пробная тренировка со скидкой 75%',
                 },
             ],
         };

@@ -9,7 +9,9 @@
                     :to="pool.href"
                     :style="{ 'background-image': 'url(' + pool.pic + ')' }"
                     class="pools__list-item"
+                    :class="{ 'pools__list-item--new': pool.new }"
                 >
+                    <NewBadge v-if="pool.new" class="pools__list-item-new-badge" />
                     <div class="pools__list-item-text">
                         <p class="pools__list-item-text-title">
                             {{ pool.title }}<span class="pools__list-item-text-subtitle">, {{ pool.subtitle }}</span>
@@ -38,10 +40,18 @@ import VButton from '~/components/VButton/VButton.vue';
 import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import Question from '~/assets/svg/question.svg';
+import NewBadge from '~/assets/svg/new-badge.svg';
 
 import './styles.css';
 
 const poolsArr = [
+    {
+        title: 'ФОК Южное Бутово',
+        subtitle: 'Москва',
+        pic: malino,
+        href: '/butovo',
+        new: true,
+    },
     {
         title: 'СК Орбита',
         subtitle: 'Зеленоград',
@@ -58,7 +68,7 @@ const poolsArr = [
 
 export default {
     name: 'PoolList',
-    components: { VButton, Question },
+    components: { VButton, Question, NewBadge },
     data() {
         return {
             poolsArr,
