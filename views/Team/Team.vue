@@ -7,11 +7,7 @@
                     <a :href="`https://instagram.com/${man.inst}`" target="_blank" class="team__list-item-img-wrap">
                         <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
                         <div class="team__list-item-social">
-                            <img
-                                class="header__links-social-item-img"
-                                :src="require('~/assets/inst_logo.png')"
-                                alt="Instagram логотип"
-                            />
+                            <Instagram class="header__links-social-item-img" />
                         </div>
                     </a>
                     <div class="team__list-item-text">
@@ -35,6 +31,8 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 import './styles.css';
+
+import Instagram from '~/assets/svg/instagram.svg';
 
 import davydov from '~/assets/jpg/team/davydov.jpg';
 import astapov from '~/assets/jpg/team/astapov.jpg';
@@ -156,6 +154,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        Instagram,
     },
     directives: {
         swiper: directive,

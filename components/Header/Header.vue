@@ -22,11 +22,7 @@
                                     class="header__links-social-item header__links-social-item--modal"
                                     target="_blank"
                                 >
-                                    <img
-                                        class="header__links-social-item-img"
-                                        :src="require('~/assets/inst_logo.png')"
-                                        alt="Instagram логотип"
-                                    />
+                                    <Instagram class="header__links-social-item-img" />
                                 </a>
 
                                 <a
@@ -34,11 +30,20 @@
                                     class="header__links-social-item header__links-social-item--modal"
                                     target="_blank"
                                 >
-                                    <img
-                                        class="header__links-social-item-img"
-                                        :src="require('~/assets/vk_logo.png')"
-                                        alt="Vk логотип"
-                                    />
+                                    <Vk class="header__links-social-item-img" />
+                                </a>
+
+                                <a
+                                    href="https://vm.tiktok.com/ZSektyPHj"
+                                    class="
+                                        header__links-social-item
+                                        header__links-social-item--modal
+                                        header__links-social-item--new
+                                    "
+                                    target="_blank"
+                                >
+                                    <TikTok class="header__links-social-item-img" />
+                                    <NewBadge class="header__links-social-item-badge" />
                                 </a>
                             </div>
                         </Slide>
@@ -64,19 +69,20 @@
                                 target="_blank"
                                 class="header__links-social-item"
                             >
-                                <img
-                                    class="header__links-social-item-img"
-                                    :src="require('~/assets/inst_logo.png')"
-                                    alt="Instagram логотип"
-                                />
+                                <Instagram class="header__links-social-item-img" />
                             </a>
 
                             <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
-                                <img
-                                    class="header__links-social-item-img"
-                                    :src="require('~/assets/vk_logo.png')"
-                                    alt="Vk логотип"
-                                />
+                                <Vk class="header__links-social-item-img" />
+                            </a>
+
+                            <a
+                                href="https://vm.tiktok.com/ZSektyPHj"
+                                target="_blank"
+                                class="header__links-social-item header__links-social-item--new"
+                            >
+                                <TikTok class="header__links-social-item-img" />
+                                <NewBadge class="header__links-social-item-badge" />
                             </a>
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
@@ -98,11 +104,15 @@
 import './styles.css';
 import FixedHeader from 'vue-fixed-header';
 import $ from 'jquery';
+import Vk from '~/assets/svg/vk.svg';
+import TikTok from '~/assets/svg/tiktok.svg';
+import Instagram from '~/assets/svg/instagram.svg';
+import NewBadge from '~/assets/svg/new-badge.svg';
 // import Login from '~/assets/svg/login.svg';
 
 export default {
     name: 'a-header',
-    components: { FixedHeader },
+    components: { FixedHeader, Vk, TikTok, Instagram, NewBadge },
     data() {
         return {
             isBurgerOpen: false,
