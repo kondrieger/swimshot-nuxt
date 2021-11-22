@@ -1,6 +1,10 @@
 <template>
     <div class="container features">
-        <h2>Наслаждайся плаванием в <span class="blue">Swim Shot</span></h2>
+        <h2 class="media__title">Наслаждайся плаванием в <span class="blue">Swim Shot</span></h2>
+        <h3 class="media__text">
+            Научим <span class="blue">кайфовать</span> от воды и <span class="blue">получать удовольствие</span> во
+            время плавания
+        </h3>
         <swiper ref="mySwiper" class="" :options="swiperOptions">
             <swiper-slide v-for="(feature, index) in featuresArr" :key="index">
                 <div

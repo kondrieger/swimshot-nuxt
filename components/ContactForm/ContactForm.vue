@@ -48,6 +48,10 @@ export default {
     },
     mounted() {
         const self = this;
+        const select = $('#school');
+        // setTimeout(() => {
+        //     $('#school option[value="16356"]').attr('selected', 'selected');
+        // }, 2000);
         $('input[type="submit"]').on('click', function () {
             $('html, body').animate({
                 scrollTop: $('#contact-form').offset().top,
