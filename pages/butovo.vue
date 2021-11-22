@@ -141,5 +141,11 @@ export default {
             bigPool,
         };
     },
+    mounted() {
+        setTimeout(() => {
+            $('#school').val('16356');
+            $('#school').change();
+        }, 2000);
+    },
 };
 </script>

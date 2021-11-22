@@ -109,5 +109,11 @@ export default {
             poolFeatures,
         };
     },
+    mounted() {
+        setTimeout(() => {
+            $('#school').val('16340');
+            $('#school').change();
+        }, 2000);
+    },
 };
 </script>
