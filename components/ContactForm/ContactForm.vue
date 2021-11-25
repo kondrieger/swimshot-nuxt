@@ -1,5 +1,35 @@
 <template>
     <div :style="{ 'background-image': 'url(' + bgPic + ')' }" class="contact-form__bg" id="contact-form">
+        <div id="contacts" class="contact-form__contacts">
+            <div class="contact-form__contacts-item">
+                <p class="contact-form__contacts-item-title">Звони нам</p>
+                <a class="contact-form__contacts-item-content" href="tel:+79771885559">+7 (977) 188-55-59</a>
+            </div>
+            <div class="contact-form__contacts-item">
+                <p class="contact-form__contacts-item-title">Пиши на почту</p>
+                <a class="contact-form__contacts-item-content" href="mailto:swim_shot@mail.ru">swim_shot@mail.ru</a>
+            </div>
+            <div class="contact-form__contacts-item contact-form__contacts-item--wide">
+                <p class="contact-form__contacts-item-title">Пиши в соц. сетях</p>
+                <div class="contact-form__contacts-item-content">
+                    <a href="https://www.instagram.com/swim_shot" target="_blank" class="header__links-social-item">
+                        <Instagram class="header__links-social-item-img" />
+                    </a>
+
+                    <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
+                        <Vk class="header__links-social-item-img" />
+                    </a>
+
+                    <a href="https://vm.tiktok.com/ZSektyPHj" target="_blank" class="header__links-social-item">
+                        <TikTok class="header__links-social-item-img" />
+                    </a>
+                </div>
+            </div>
+            <p class="contact-form__contacts-item contact-form__contacts-item--wide contact-form__contacts-item--text">
+                Оставляй заявку прямо на сайте и мы сами тебе позвоним
+            </p>
+        </div>
+
         <div class="container contact-form">
             <div id="schoolRequestFormElement"></div>
         </div>
@@ -10,9 +40,14 @@
 /* eslint-disable*/
 import bgPic from '~/assets/jpg/things_bg.jpg';
 import $ from 'jquery';
+import Vk from '~/assets/svg/vk.svg';
+import TikTok from '~/assets/svg/tiktok.svg';
+import Instagram from '~/assets/svg/instagram.svg';
+import './styles.css';
 
 export default {
     name: 'ContactForm',
+    components: { Vk, TikTok, Instagram },
     data() {
         return {
             bgPic,
@@ -36,7 +71,6 @@ export default {
     computed: {
         checkSuccess() {
             const success = $('.success-message');
-            console.log(success.css('display'));
             return success.css('display') === 'block';
         },
     },
@@ -48,6 +82,9 @@ export default {
     },
     mounted() {
         const self = this;
+        setTimeout(() => {
+            $('#contacts').prependTo($('#schoolRequestformDiv'));
+        }, 0);
 
         $('input[type="submit"]').on('click', function () {
             $('html, body').animate({
@@ -73,110 +110,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.contact-form {
-    padding-top: calc(var(--gs) * 12);
-    padding-bottom: calc(var(--gs) * 12);
-
-    @media (--desktop) {
-        padding-top: calc(var(--gs) * 9);
-        padding-bottom: calc(var(--gs) * 9);
-    }
-
-    @media (--tablet) {
-        padding-top: calc(var(--gs) * 6);
-        padding-bottom: calc(var(--gs) * 4);
-    }
-
-    &__bg {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: rgba(41, 177, 255, 0.3);
-
-        @media (--desktop) {
-            background-size: auto 110%;
-        }
-    }
-
-    & input[type='text'],
-    & input[type='email'],
-    & select {
-        width: 100%;
-        height: 60px;
-        padding: 0 calc(var(--gs) * 2);
-        color: #2b2a29 !important;
-        border: 2px solid #c9c9c9 !important;
-        font-size: 16px;
-        line-height: 1.33;
-        overflow: hidden;
-        border-radius: 20px !important;
-    }
-
-    & input[type='submit'] {
-        display: block !important;
-        align-items: center;
-        justify-content: center;
-        border-radius: 25px !important;
-        cursor: pointer;
-        box-shadow: 0 13px 30px 1px rgb(49 145 204 / 80%);
-        font-size: 18px !important;
-        font-weight: 700 !important;
-        color: var(--cl-white);
-        background-color: var(--cl-blue) !important;
-        border: 4px solid var(--cl-lt-blue) !important;
-        font-family: var(--font-geometria) !important;
-        text-transform: uppercase;
-
-        &:hover {
-            background-color: var(--cl-md-blue) !important;
-            border-color: var(--cl-md-blue) !important;
-        }
-
-        &:active {
-            background-color: var(--cl-dk-blue) !important;
-            border-color: var(--cl-dk-blue) !important;
-            transform: translateY(2px) !important;
-        }
-    }
-
-    #schoolRequestformDiv,
-    #schoolRequestMapDiv {
-        @media (--tablet) {
-            width: 100% !important;
-        }
-    }
-
-    #schoolRequestMapDiv {
-        @media (--tablet) {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-        }
-    }
-
-    #schoolRequestformDiv {
-        background-color: #fff;
-        border-radius: 30px !important;
-        margin-top: 20px;
-
-        @media (--tablet) {
-            margin-top: 0;
-        }
-
-        &,
-        & * {
-            font-family: var(--font-circe) !important;
-        }
-    }
-
-    #schoolRequestAgreementDiv {
-        @media (--tablet) {
-            font-size: 14px;
-        }
-
-        & div + div {
-            margin-left: 10px;
-        }
-    }
-}
-</style>
