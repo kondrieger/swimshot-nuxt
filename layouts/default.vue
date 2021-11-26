@@ -13,6 +13,8 @@
 import Header from '~/components/Header/Header.vue';
 import ContactForm from '~/components/ContactForm/ContactForm.vue';
 import Phone from '~/assets/svg/phone.svg';
+import $ from 'jquery';
+
 export default {
     components: {
         Header,
@@ -29,6 +31,14 @@ export default {
             this.$nuxt.$loading.start();
             setTimeout(() => this.$nuxt.$loading.finish(), 1000);
         });
+        const url = document.URL;
+        const anchor = url.substr(url.indexOf('#'));
+
+        if (anchor.length > 1) {
+            $('html, body').animate({
+                scrollTop: $(anchor).offset().top,
+            });
+        }
     },
 };
 </script>
