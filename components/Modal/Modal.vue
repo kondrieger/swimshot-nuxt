@@ -33,10 +33,14 @@
                         :placeholderText="'Ваш Email'"
                     ></text-input>
                 </div>
-                <VButton @click="submit" text="Отправить" />
+                <VButton wide text="Отправить" />
             </form>
             <p class="modal__form-text">
-                Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                Нажимая на кнопку, вы принимаете
+                <a target="_blank" href="https://education-erp.com/agreement?type=Confidentiality"
+                    >условия соглашения</a
+                >
+                об обработке персональных данных
             </p>
         </template>
     </vue-modaltor>
@@ -44,7 +48,7 @@
 
 <script>
 import validationMixin, { required, email, tel, nameAll } from '../../plugins/validation';
-import TextInput from '../text-input/text-input.vue';
+import TextInput from '~/components/TextInput/TextInput.vue';
 import VButton from '~/components/VButton/VButton.vue';
 
 export default {
@@ -75,7 +79,6 @@ export default {
                 nameAll,
             },
             email: {
-                required,
                 email,
             },
             tel: {
@@ -91,7 +94,20 @@ export default {
         },
         submit() {
             this.$v.$touch();
+            if (this.$v.invalid) return;
             console.log(this.$v);
+            let formData = new FormData(document.forms.person);
+
+            formData.append('Name', this.form.name);
+            formData.append('Phone', this.form.tel);
+            formData.append('Type', 0);
+            formData.append('SchoolType', 'Swimshot');
+            formData.append('Agreement', 'on');
+
+            // отослать
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://education-erp.com/api/LandingService/v1/SingleRequest');
+            xhr.send(formData);
         },
     },
     computed: {
@@ -123,7 +139,7 @@ export default {
 <style>
 .modaltor__panel {
     background-color: #fff !important;
-    padding: calc(var(--gs) * 4) calc(var(--gs) * 4.5);
+    padding: calc(var(--gs) * 4) calc(var(--gs) * 3);
     text-align: center;
     @media (--tablet) {
         max-height: 100% !important;
@@ -217,7 +233,7 @@ export default {
             }
         }
         & .btn {
-            margin-top: calc(var(--gs) * 2.5);
+            margin: calc(var(--gs) * 2.5) 0;
         }
     }
 }

@@ -9,7 +9,7 @@ import {
     sameAs as sa,
 } from 'vuelidate/lib/validators';
 
-import { password as passwordRegx, tel as telRegx, email as emailRegx, nameAll as nameAllRegx } from '../scripts/regex';
+import { password as passwordRegx, tel as telRegx, email as emailRegx, nameAll as nameAllRegx } from './regex';
 
 export const nameAll = helpers.regex('nameAll', nameAllRegx);
 export const password = helpers.regex('password', passwordRegx);

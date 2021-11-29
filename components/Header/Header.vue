@@ -113,7 +113,7 @@ import Instagram from '~/assets/svg/instagram.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
 // import Login from '~/assets/svg/login.svg';
 
-import Modal from '~components/Modal/Modal.vue';
+import Modal from '~/components/Modal/Modal.vue';
 
 export default {
     name: 'a-header',
