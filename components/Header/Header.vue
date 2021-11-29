@@ -87,7 +87,9 @@
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
                             <a class="header__links-phone" href="tel:+79771885559">+7 (977) 188-55-59</a>
-                            <a class="header__links-phone-text" href="#contact-form">Заказать обратный звонок</a>
+                            <a class="header__links-phone-text" href="javascript:;" @click="showModal"
+                                >Заказать обратный звонок</a
+                            >
                         </div>
                         <!-- <a class="header__links-login" href="https://my.swimshot.ru" title="Войти в личный кабинет"
                         ><Login class="header__links-login-icon"
@@ -97,6 +99,7 @@
             </div>
         </fixed-header>
         <div class="sticky"></div>
+        <Modal @closeModal="onModalClose" :open="modalOpen"></Modal>
     </div>
 </template>
 
@@ -110,17 +113,28 @@ import Instagram from '~/assets/svg/instagram.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
 // import Login from '~/assets/svg/login.svg';
 
+import Modal from '~components/Modal/Modal.vue';
+
 export default {
     name: 'a-header',
-    components: { FixedHeader, Vk, TikTok, Instagram, NewBadge },
+    components: { FixedHeader, Vk, TikTok, Instagram, NewBadge, Modal },
     data() {
         return {
             isBurgerOpen: false,
+            modalOpen: false,
         };
     },
     computed: {
         isTablet() {
             return this.$mq === 'tablet';
+        },
+    },
+    methods: {
+        onModalClose(data) {
+            this.modalOpen = data;
+        },
+        showModal() {
+            this.modalOpen = true;
         },
     },
     mounted() {
