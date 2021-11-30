@@ -18,7 +18,7 @@
                             <nuxt-link class="header__links-link" to="#contact-form"><p>Контакты</p></nuxt-link>
                             <div class="header__links-social">
                                 <a
-                                    href="https://www.instagram.com/swim_shot"
+                                    href="https://www.instagram.com/swim_shot/"
                                     class="header__links-social-item header__links-social-item--modal"
                                     target="_blank"
                                 >
@@ -65,7 +65,7 @@
                     <div class="header__links header__links--media">
                         <div class="header__links-social">
                             <a
-                                href="https://www.instagram.com/swim_shot"
+                                href="https://www.instagram.com/swim_shot/"
                                 target="_blank"
                                 class="header__links-social-item"
                             >

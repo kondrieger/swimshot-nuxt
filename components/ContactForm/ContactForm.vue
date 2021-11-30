@@ -12,7 +12,7 @@
             <div class="contact-form__contacts-item contact-form__contacts-item--wide">
                 <p class="contact-form__contacts-item-title">Пиши в соц. сетях</p>
                 <div class="contact-form__contacts-item-content">
-                    <a href="https://www.instagram.com/swim_shot" target="_blank" class="header__links-social-item">
+                    <a href="https://www.instagram.com/swim_shot/" target="_blank" class="header__links-social-item">
                         <Instagram class="header__links-social-item-img" />
                     </a>
 

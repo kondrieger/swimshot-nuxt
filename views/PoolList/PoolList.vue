@@ -20,7 +20,7 @@
                     </div>
                 </nuxt-link>
                 <a
-                    href="https://www.instagram.com/swim_shot"
+                    href="https://www.instagram.com/swim_shot/"
                     target="_blank"
                     class="pools__list-item pools__list-item--empty"
                 >

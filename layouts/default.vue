@@ -27,18 +27,29 @@ export default {
         },
     },
     mounted() {
+        this.checkScroll();
         this.$nextTick(() => {
             this.$nuxt.$loading.start();
             setTimeout(() => this.$nuxt.$loading.finish(), 1000);
         });
-        const url = document.URL;
-        const anchor = url.substr(url.indexOf('#'));
 
-        if (anchor.length > 1) {
-            $('html, body').animate({
-                scrollTop: $(anchor).offset().top,
-            });
-        }
+        window.document.body.onclick = () => {
+            this.checkScroll();
+        };
+    },
+
+    methods: {
+        checkScroll() {
+            const url = document.URL;
+            const address = url.substr(0, url.indexOf('#'));
+            const anchor = url.substr(url.indexOf('#') + 1);
+            const elem = document.getElementById(anchor);
+
+            if (anchor.length > 1 && !!elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, null, address);
+            }
+        },
     },
 };
 </script>
