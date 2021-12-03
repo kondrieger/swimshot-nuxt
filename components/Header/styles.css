@@ -1,7 +1,7 @@
 .header {
     background: white;
     position: relative;
-    z-index: 10000;
+    z-index: 2014;
 
     &__wrap {
         padding-top: calc(var(--gs) * 0.5);

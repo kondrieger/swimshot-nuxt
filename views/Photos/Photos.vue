@@ -42,10 +42,11 @@ import photo_4 from '~/assets/jpg/photos/photo_4.jpg';
 import photo_5 from '~/assets/jpg/photos/photo_5.jpg';
 import photo_6 from '~/assets/jpg/photos/photo_6.jpg';
 import photo_7 from '~/assets/jpg/photos/photo_7.jpg';
+import photo_8 from '~/assets/jpg/photos/photo_8.jpg';
 
-const photosArr = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6, photo_7];
+const photosArr = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6, photo_7, photo_8];
 
-const viewerOptions = { movable: false, button: true, navbar: true, title: false, keyboard: true };
+const viewerOptions = { movable: false, button: true, navbar: true, title: false, keyboard: true, scalable: false };
 
 export default {
     name: 'Photos',
