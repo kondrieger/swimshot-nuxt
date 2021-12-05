@@ -30,7 +30,6 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 
-import mapMark from '~/assets/mapMark.png';
 import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_butovo.jpg';
@@ -135,7 +134,6 @@ export default {
     },
     data() {
         return {
-            mapMark,
             poolsArr,
             poolsPicArr,
             littlePool,
