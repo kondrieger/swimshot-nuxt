@@ -1,7 +1,7 @@
 <template>
     <div>
         <SignNow />
-        <PoolStartBlock title="СК Малино" address="Зеленоград, корпус 860" :photosArr="poolsPicArr" />
+        <PoolStartBlock title="Бассейн Swim Shot" address="Зеленоград, корпус 1801" :photosArr="poolsPicArr" />
         <div class="bg-grey">
             <PoolsFeatures :PoolsFeatures="poolFeatures" alone />
         </div>
@@ -9,7 +9,11 @@
         <div class="container" data-aos="fade-right" data-aos-once="true">
             <div class="pools-info">
                 <p class="pools-info__text">
-                    В бассейне СК Малино проводятся только групповые занятия для <b>детей</b>.
+                    В бассейне Swim Shot 1801 проходят как групповые, так и персональные тренировки для <b>детей</b> от
+                    семи лет и <b>взрослых</b>.
+                </p>
+                <p class="pools-info__text">
+                    Можной прийти на <b>свободное посещение</b> и поплавать без тренера, самостоятельно.
                 </p>
                 <p class="pools-info__text">У здания есть <b>парковка</b>.</p>
                 <p class="pools-info__text">
@@ -62,32 +66,36 @@ const poolsArr = [
 
 const poolFeatures = [
     {
-        title: 'Для кого?',
-        text: 'дети 5-10 лет',
-    },
-    {
         title: 'Стоимость групповых',
-        text: 'от 900 за занятие',
+        text: 'от 700 за занятие',
     },
     {
         title: 'Стоимость персональных',
-        text: '—',
+        text: '1800 за занятие',
+    },
+    {
+        title: 'Стоимость без тренера',
+        text: '400 за 45 минут',
+    },
+    {
+        title: 'Для кого?',
+        text: 'дети от 7 лет и взрослые',
     },
     {
         title: 'Глубина',
-        text: '1,6 метров',
+        text: '1,25 метров',
     },
     {
         title: 'Длина',
-        text: '16 метров',
+        text: '25 метров',
     },
     {
         title: 'Количество дорожек',
-        text: '3',
+        text: '4',
     },
     {
         title: 'Температура воды',
-        text: '29 градусов',
+        text: '28 градусов',
     },
 ];
 

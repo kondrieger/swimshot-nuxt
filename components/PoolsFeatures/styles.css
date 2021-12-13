@@ -35,15 +35,17 @@
                 width: 100%;
             }
 
-            &:last-child {
-                margin-bottom: 0;
-            }
-
             &:nth-child(2),
             &:nth-child(5),
-            &:nth-child(7) {
+            &:nth-child(7){
                 @media (--tablet-min) {
                     border-left: 2px solid var(--cl-lt-blue);
+                    border-right: 2px solid var(--cl-lt-blue);
+                }
+            }
+
+            &:nth-child(8) {
+                @media (--tablet-min) {
                     border-right: 2px solid var(--cl-lt-blue);
                 }
             }
