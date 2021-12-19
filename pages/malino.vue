@@ -32,6 +32,7 @@ import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 
 import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
+import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_malino.jpg';
 import PoolPic2 from '~/assets/jpg/pools/pool_malino_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/pool_malino_3.jpg';
@@ -39,6 +40,12 @@ import PoolPic3 from '~/assets/jpg/pools/pool_malino_3.jpg';
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3];
 
 const poolsArr = [
+    {
+        title: 'Бассейн Swim Shot',
+        subtitle: 'Зеленоград',
+        pic: ph1801,
+        href: '/1801',
+    },
     {
         title: 'ФОК Южное Бутово',
         subtitle: 'Москва',
