@@ -32,6 +32,8 @@ import SignNow from '~/components/SignNow/SignNow.vue';
 
 import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
+import ph1801 from '~/assets/jpg/pools/1801.jpg';
+
 import PoolPic1 from '~/assets/jpg/pools/pool_butovo.jpg';
 import PoolPic2 from '~/assets/jpg/pools/pool_butovo_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/pool_butovo_3.jpg';
@@ -40,6 +42,12 @@ import PoolPic4 from '~/assets/jpg/pools/pool_butovo_4.jpg';
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4];
 
 const poolsArr = [
+    {
+        title: 'Бассейн Swim Shot',
+        subtitle: 'Зеленоград',
+        pic: ph1801,
+        href: '/1801',
+    },
     {
         title: 'СК Орбита',
         subtitle: 'Зеленоград',
