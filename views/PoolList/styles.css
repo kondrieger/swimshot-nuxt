@@ -46,6 +46,10 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+
+                @media (--tablet) {
+                    margin-top: 10px;
+                }
             }
 
             &,

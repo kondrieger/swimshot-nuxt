@@ -34,9 +34,7 @@ import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 
-import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
-import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/1801_3.jpg';
@@ -49,18 +47,6 @@ const poolsArr = [
         subtitle: 'Москва',
         pic: butovo,
         href: '/butovo',
-    },
-    {
-        title: 'СК Орбита',
-        subtitle: 'Зеленоград',
-        pic: orbita,
-        href: '/orbita',
-    },
-    {
-        title: 'СК Малино',
-        subtitle: 'Зеленоград',
-        pic: malino,
-        href: '/malino',
     },
 ];
 
@@ -124,9 +110,9 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            $('#school').val('16340');
+            $('#school').val('16371');
             $('#school').change();
-        }, 2000);
+        }, 1000);
     },
 };
 </script>

@@ -30,8 +30,6 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 
-import malino from '~/assets/jpg/pools/pool_malino.jpg';
-import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 
 import PoolPic1 from '~/assets/jpg/pools/pool_butovo.jpg';
@@ -47,18 +45,6 @@ const poolsArr = [
         subtitle: 'Зеленоград',
         pic: ph1801,
         href: '/1801',
-    },
-    {
-        title: 'СК Орбита',
-        subtitle: 'Зеленоград',
-        pic: orbita,
-        href: '/orbita',
-    },
-    {
-        title: 'СК Малино',
-        subtitle: 'Зеленоград',
-        pic: malino,
-        href: '/malino',
     },
 ];
 
@@ -152,7 +138,7 @@ export default {
         setTimeout(() => {
             $('#school').val('16356');
             $('#school').change();
-        }, 2000);
+        }, 1000);
     },
 };
 </script>

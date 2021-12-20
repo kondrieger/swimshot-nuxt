@@ -21,7 +21,6 @@
                     </div>
                 </nuxt-link>
                 <a
-                    v-if="false"
                     href="https://www.instagram.com/swim_shot/"
                     target="_blank"
                     class="pools__list-item pools__list-item--empty"
@@ -39,9 +38,7 @@
 <script>
 import VButton from '~/components/VButton/VButton.vue';
 
-import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
-import malino from '~/assets/jpg/pools/pool_malino.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
@@ -62,19 +59,6 @@ const poolsArr = [
         subtitle: 'Москва',
         pic: butovo,
         href: '/butovo',
-        new: true,
-    },
-    {
-        title: 'СК Орбита',
-        subtitle: 'Зеленоград',
-        pic: orbita,
-        href: '/orbita',
-    },
-    {
-        title: 'СК Малино',
-        subtitle: 'Зеленоград',
-        pic: malino,
-        href: '/malino',
     },
 ];
 
