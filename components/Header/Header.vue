@@ -43,7 +43,7 @@
                                     target="_blank"
                                 >
                                     <TikTok class="header__links-social-item-img" />
-                                    <NewBadge class="header__links-social-item-badge" />
+                                    <!-- <NewBadge class="header__links-social-item-badge" /> -->
                                 </a>
                             </div>
                         </Slide>
@@ -82,7 +82,7 @@
                                 class="header__links-social-item header__links-social-item--new"
                             >
                                 <TikTok class="header__links-social-item-img" />
-                                <NewBadge class="header__links-social-item-badge" />
+                                <!-- <NewBadge class="header__links-social-item-badge" /> -->
                             </a>
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
