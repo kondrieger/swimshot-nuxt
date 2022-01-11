@@ -3,7 +3,7 @@
         <div id="contacts" class="contact-form__contacts">
             <div class="contact-form__contacts-item">
                 <p class="contact-form__contacts-item-title">Звони нам</p>
-                <a class="contact-form__contacts-item-content" href="tel:+79771885559">+7 (977) 188-55-59</a>
+                <a class="contact-form__contacts-item-content" href="tel:+74994305595">+7 (499) 430-55-95</a>
             </div>
             <div class="contact-form__contacts-item">
                 <p class="contact-form__contacts-item-title">Пиши на почту</p>

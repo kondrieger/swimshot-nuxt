@@ -4,7 +4,7 @@
         <main>
             <Nuxt />
         </main>
-        <a class="phone-wrap" href="tel:+79771885559" v-if="isTablet"><Phone class="phone" /></a>
+        <a class="phone-wrap" href="tel:+74994305595" v-if="isTablet"><Phone class="phone" /></a>
         <ContactForm />
     </div>
 </template>

@@ -86,7 +86,7 @@
                             </a>
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
-                            <a class="header__links-phone" href="tel:+79771885559">+7 (977) 188-55-59</a>
+                            <a class="header__links-phone" href="tel:+74994305595">+7 (499) 430-55-95</a>
                             <a class="header__links-phone-text" href="javascript:;" @click="showModal"
                                 >Заказать обратный звонок</a
                             >
