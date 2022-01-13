@@ -38,8 +38,12 @@ import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/1801_3.jpg';
+import PoolPic4 from '~/assets/jpg/pools/1801_4.jpg';
+import PoolPic5 from '~/assets/jpg/pools/1801_5.jpg';
+import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
+import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
 
-const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3];
+const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
 
 const poolsArr = [
     {
