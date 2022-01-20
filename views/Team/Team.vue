@@ -39,6 +39,7 @@ import astapov from '~/assets/jpg/team/astapov.jpg';
 import kasandra from '~/assets/jpg/team/kasandra.jpg';
 import druzhinin from '~/assets/jpg/team/druzhinin.jpg';
 import georgieva from '~/assets/jpg/team/georgieva.jpg';
+import nikolskaya from '~/assets/jpg/team/nikolskaya.jpg';
 import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
 import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
 import matveeva from '~/assets/jpg/team/matveeva.jpg';
@@ -104,6 +105,17 @@ const teamArr = [
         ],
         inst: '_alexandrina__',
     },
+    {
+        photo: nikolskaya,
+        name: 'Анастасия Никольская',
+        desc: [
+            'Победитель Кубка Зеленограда по плаванию',
+            'Сертифицированный тренер по раннему плаванию детей с трех лет',
+            'Студентка университета РГУФКСМиТ. Профиль — спортивная подготовка в плавании',
+            'Опыт работы тренером четыре года',
+        ],
+        inst: 'nasty9887',
+    },
     // {
     //     photo: vanushechkin,
     //     name: 'Сергей Ванюшечкин',
@@ -142,7 +154,7 @@ const teamArr = [
         name: 'Егор Гришин',
         desc: [
             'Кандидат в мастера спорта по плаванию',
-            'Многократный победитель и призер чемпионатов и кубков калужской области',
+            'Многократный победитель и призер чемпионатов и кубков Калужской области',
             'Тренерский стаж один год',
         ],
         inst: 'e.grishin_',
