@@ -44,6 +44,7 @@ import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
 import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
 import matveeva from '~/assets/jpg/team/matveeva.jpg';
 import grishin from '~/assets/jpg/team/grishin.jpg';
+import beskrovnaya from '~/assets/jpg/team/beskrovnaya.jpg';
 
 const teamArr = [
     {
@@ -158,6 +159,16 @@ const teamArr = [
             'Тренерский стаж один год',
         ],
         inst: 'e.grishin_',
+    },
+    {
+        photo: beskrovnaya,
+        name: 'Любовь Бескровная',
+        desc: [
+            'Высшее педагогическое образование',
+            'Сертифицированный тренер по направлению «Здоровая спина»',
+            'Тренерский стаж три года',
+        ],
+        inst: 'liubov.beskrovnaia',
     },
 ];
 

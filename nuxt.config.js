@@ -17,7 +17,7 @@ export default {
     script: [
       {src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'},
       {src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=InitMap'},
-      {src: 'https://cdn.callibri.ru/callibri.js'},
+      {src: 'js/mango.js'},
     ]
   },
 
