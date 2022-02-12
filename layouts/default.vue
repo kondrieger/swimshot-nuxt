@@ -35,6 +35,7 @@ export default {
         $('body').on('click', '.js-header-link', function () {
             //по href ищем элемент с нужным id и определяем его позицию
             const pos = $($(this).attr('href')?.replace('/', '')).offset();
+            $('.bm-menu').width(0);
 
             if (pos) {
                 //скролим на эту позицию
