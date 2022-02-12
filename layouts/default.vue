@@ -27,29 +27,25 @@ export default {
         },
     },
     mounted() {
-        this.checkScroll();
         this.$nextTick(() => {
             this.$nuxt.$loading.start();
             setTimeout(() => this.$nuxt.$loading.finish(), 1000);
         });
 
-        window.document.body.onclick = () => {
-            this.checkScroll();
-        };
-    },
+        $('body').on('click', '.js-header-link', function () {
+            //по href ищем элемент с нужным id и определяем его позицию
+            const pos = $($(this).attr('href')?.replace('/', '')).offset();
 
-    methods: {
-        checkScroll() {
-            const url = document.URL;
-            const address = url.substr(0, url.indexOf('#'));
-            const anchor = url.substr(url.indexOf('#') + 1);
-            const elem = document.getElementById(anchor);
+            if (pos) {
+                //скролим на эту позицию
+                $('html, body').animate({ scrollTop: pos.top }, 300);
 
-            if (anchor.length > 1 && !!elem) {
-                elem.scrollIntoView({ behavior: 'smooth' });
-                history.pushState(null, null, address);
+                //отключаем стандартный переход по ссылке
+                location.hash && history.pushState({}, '', location.pathname);
+
+                return false;
             }
-        },
+        });
     },
 };
 </script>

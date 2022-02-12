@@ -10,12 +10,26 @@
                             alt="Swim shot логотип"
                     /></nuxt-link>
                     <client-only v-else>
-                        <Slide :closeOnNavigation="true" noOverlay>
-                            <nuxt-link class="header__links-link" to="/#pools-list"><p>Бассейны</p></nuxt-link>
-                            <nuxt-link class="header__links-link" to="/#team"><p>Тренеры</p></nuxt-link>
-                            <nuxt-link class="header__links-link" to="/#comments"><p>Отзывы</p></nuxt-link>
-                            <nuxt-link class="header__links-link" to="/#media"><p>Медиа</p></nuxt-link>
-                            <nuxt-link class="header__links-link" to="#contact-form"><p>Контакты</p></nuxt-link>
+                        <Slide closeOnNavigation noOverlay>
+                            <nuxt-link
+                                class="header__links-link js-header-link"
+                                :to="{ path: '/', hash: '#pools-list' }"
+                                ><p>Бассейны</p></nuxt-link
+                            >
+                            <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#team' }"
+                                ><p>Тренеры</p></nuxt-link
+                            >
+                            <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#comments' }"
+                                ><p>Отзывы</p></nuxt-link
+                            >
+                            <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#media' }"
+                                ><p>Медиа</p></nuxt-link
+                            >
+                            <nuxt-link
+                                class="header__links-link js-header-link"
+                                :to="{ path: '/', hash: '#contact-form' }"
+                                ><p>Контакты</p></nuxt-link
+                            >
                             <div class="header__links-social">
                                 <a
                                     href="https://www.instagram.com/swim_shot/"
@@ -50,11 +64,21 @@
                     </client-only>
 
                     <div class="header__links" v-if="!isTablet">
-                        <nuxt-link class="header__links-link" to="/#pools-list"><p>Бассейны</p></nuxt-link>
-                        <nuxt-link class="header__links-link" to="/#team"><p>Тренеры</p></nuxt-link>
-                        <nuxt-link class="header__links-link" to="/#comments"><p>Отзывы</p></nuxt-link>
-                        <nuxt-link class="header__links-link" to="/#media"><p>Медиа</p></nuxt-link>
-                        <nuxt-link class="header__links-link" to="#contact-form"><p>Контакты</p></nuxt-link>
+                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#pools-list' }"
+                            ><p>Бассейны</p></nuxt-link
+                        >
+                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#team' }"
+                            ><p>Тренеры</p></nuxt-link
+                        >
+                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#comments' }"
+                            ><p>Отзывы</p></nuxt-link
+                        >
+                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#media' }"
+                            ><p>Медиа</p></nuxt-link
+                        >
+                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#contact-form' }"
+                            ><p>Контакты</p></nuxt-link
+                        >
                     </div>
                     <a class="header__logo-wrap" v-if="isTablet" href="/">
                         <img
@@ -106,7 +130,6 @@
 <script>
 import './styles.css';
 import FixedHeader from 'vue-fixed-header';
-import $ from 'jquery';
 import Vk from '~/assets/svg/vk.svg';
 import TikTok from '~/assets/svg/tiktok.svg';
 import Instagram from '~/assets/svg/instagram.svg';
@@ -136,16 +159,6 @@ export default {
         showModal() {
             this.modalOpen = true;
         },
-    },
-    mounted() {
-        $('a[href^="/"], a[href^="#"]').on('click', function () {
-            let href = $(this).attr('href').replace('/', '');
-            if (href) {
-                $('html, body').animate({
-                    scrollTop: $(href).offset().top,
-                });
-            }
-        });
     },
 };
 </script>

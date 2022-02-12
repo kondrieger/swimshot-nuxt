@@ -1,7 +1,11 @@
 <template>
     <div>
         <SignNow />
-        <PoolStartBlock title="Бассейн Swim Shot" address="Зеленоград, корпус 1801" :photosArr="poolsPicArr" />
+        <PoolStartBlock
+            title="Бассейн Swim Shot в Зеленограде"
+            address="Зеленоград, корпус 1801"
+            :photosArr="poolsPicArr"
+        />
         <div class="bg-grey">
             <PoolsFeatures :PoolsFeatures="poolFeatures" alone />
         </div>

@@ -50,7 +50,7 @@ const poolsArr = [
         title: 'Бассейн Swim Shot',
         subtitle: 'Зеленоград',
         pic: ph1801,
-        href: '/1801',
+        href: '/zelenograd',
         free: true,
         new: true,
     },

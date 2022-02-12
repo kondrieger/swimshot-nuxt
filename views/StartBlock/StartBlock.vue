@@ -18,7 +18,10 @@
                     class="start-block__text-img start-block__text-img--sublogo"
                     alt="Плыви быстрее пули"
                 />
-                <h1 class="start-block__text-title">Школа плавания для детей и взрослых</h1>
+                <h1 class="start-block__text-title">
+                    Школа плавания для детей и взрослых<br />
+                    Зеленоград и Южное Бутово
+                </h1>
                 <p class="start-block__text-subtitle">Записывайся на пробное занятие со скидкой 75%</p>
                 <a class="btn btn--wide btn--animated" href="#contact-form">ЗАПИСАТЬСЯ</a>
             </div>
@@ -83,18 +86,6 @@ export default {
 
         bg.addEventListener('mouseleave', () => {
             entered = false;
-        });
-
-        $('a[href^="#"]').on('click', function (event) {
-            event.preventDefault();
-
-            let href = $(this).attr('href');
-
-            $('html, body').animate({
-                scrollTop: $(href).offset().top,
-            });
-
-            return false;
         });
 
         window.document.body.onscroll = () => {

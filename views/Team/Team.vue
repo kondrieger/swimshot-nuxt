@@ -44,7 +44,7 @@ import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
 import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
 import matveeva from '~/assets/jpg/team/matveeva.jpg';
 import grishin from '~/assets/jpg/team/grishin.jpg';
-import beskrovnaya from '~/assets/jpg/team/beskrovnaya.jpg';
+import beskrovnaya from '~/assets/jpg/team/beskrovnaya_2.jpg';
 
 const teamArr = [
     {
@@ -164,7 +164,7 @@ const teamArr = [
         photo: beskrovnaya,
         name: 'Любовь Бескровная',
         desc: [
-            'Высшее педагогическое образование',
+            'Высшее физкультурное образование (МГАФК)',
             'Сертифицированный тренер по направлению «Здоровая спина»',
             'Тренерский стаж три года',
         ],
