@@ -10,7 +10,7 @@
                             alt="Swim shot логотип"
                     /></nuxt-link>
                     <client-only v-else>
-                        <Slide closeOnNavigation noOverlay>
+                        <Slide :closeOnNavigation="true" noOverlay>
                             <nuxt-link
                                 class="header__links-link js-header-link"
                                 :to="{ path: '/', hash: '#pools-list' }"
