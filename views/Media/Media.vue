@@ -37,10 +37,10 @@
                         </p>
                         <div class="media__list-item-text-btns">
                             <a
-                                href="https://www.zelenograd.ru/story/uchitsya-plavat-i-kayfovat-ot-etogo/"
+                                href="https://www.zelenograd.ru/story/novyy-basseyn-dlya-svobodnogo-plavaniya-i-zanyatiy-poyavilsya-v-zelenograde/"
                                 target="_blank"
                             >
-                                <VButton sm text="О школе" />
+                                <VButton sm text="О бассейне" />
                             </a>
                             <a href="https://www.zelenograd.ru/story/trenery/ " target="_blank">
                                 <VButton sm text="О тренировках" />

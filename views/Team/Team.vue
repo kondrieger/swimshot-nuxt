@@ -42,6 +42,7 @@ import georgieva from '~/assets/jpg/team/georgieva.jpg';
 import nikolskaya from '~/assets/jpg/team/nikolskaya.jpg';
 import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
 import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
+import bykov from '~/assets/jpg/team/bykov.jpg';
 import matveeva from '~/assets/jpg/team/matveeva.jpg';
 import grishin from '~/assets/jpg/team/grishin.jpg';
 import beskrovnaya from '~/assets/jpg/team/beskrovnaya_2.jpg';
@@ -65,7 +66,7 @@ const teamArr = [
         desc: [
             'Призер первенства Европы, чемпионатов и первенств России по плаванию на открытой воде',
             'Мастер спорта России по плаванию',
-            'Сооснователь и старший тренер школы плавания Swim Shot',
+            'Сооснователь школы плавания Swim Shot',
             'Автор методики обучения школы плавания Swim Shot',
             'Опыт работы с детьми и взрослыми четыре года',
         ],
@@ -87,7 +88,7 @@ const teamArr = [
         photo: druzhinin,
         name: 'Илья Дружинин',
         desc: [
-            'Участник двух олимпийских игр Рио-2016 и Токио-2020',
+            'Участник двух олимпийских игр Рио-2016 и Токио-2021',
             'Многократный чемпион России на 800 и 1500 вольным стилем',
             'Мастер спорта международного класса',
             'Управляющий московского филиала школы плавания Swim Shot',
@@ -100,6 +101,7 @@ const teamArr = [
         name: 'Александра Георгиева',
         desc: [
             'Кандидат в мастера спорта РФ',
+            'Старший тренер школы плавания Swim Shot',
             'Призер первенства России',
             'Победитель и призер Кубка СНГ',
             'Опыт тренерской деятельности два года',
@@ -139,6 +141,17 @@ const teamArr = [
             'Тренерский стаж один год',
         ],
         inst: '_daxaaa',
+    },
+    {
+        photo: bykov,
+        name: 'Владимир Быков',
+        desc: [
+            'Кандидат в мастера спорта по плаванию',
+            'Неоднократный призер первенств Москвы и межвузовских соревнований',
+            'Участница всероссийских соревнований',
+            'Опыт работы тренером два года',
+        ],
+        inst: '_bykov_off',
     },
     // {
     //     photo: matveeva,

@@ -33,19 +33,21 @@ export default {
         });
 
         $('body').on('click', '.js-header-link', function () {
-            //по href ищем элемент с нужным id и определяем его позицию
-            const pos = $($(this).attr('href')?.replace('/', '')).offset();
-            $('.bm-menu').width(0);
+            setTimeout(() => {
+                //по href ищем элемент с нужным id и определяем его позицию
+                const pos = $($(this).attr('href')?.replace('/', '')).offset();
+                $('.bm-menu').width(0);
 
-            if (pos) {
-                //скролим на эту позицию
-                $('html, body').animate({ scrollTop: pos.top }, 300);
+                if (pos) {
+                    //скролим на эту позицию
+                    $('html, body').animate({ scrollTop: pos.top }, 300);
 
-                //отключаем стандартный переход по ссылке
-                location.hash && history.pushState({}, '', location.pathname);
+                    //отключаем стандартный переход по ссылке
+                    location.hash && history.pushState({}, '', location.pathname);
 
-                return false;
-            }
+                    return false;
+                }
+            }, 200);
         });
     },
 };
