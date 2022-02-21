@@ -97,7 +97,7 @@ export default {
     components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures },
     head() {
         return {
-            title: 'Swim Shot — бассейн в Зеленограде',
+            title: 'Swim Shot — Бассейн в Зеленограде',
             meta: [
                 {
                     hid: 'description',

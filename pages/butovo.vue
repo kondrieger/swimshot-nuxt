@@ -120,7 +120,7 @@ export default {
     components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow },
     head() {
         return {
-            title: 'Swim Shot — бассейн в Южном Бутово',
+            title: 'Swim Shot — Бассейн в Южном Бутово',
             meta: [
                 {
                     hid: 'description',
