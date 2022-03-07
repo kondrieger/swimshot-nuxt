@@ -1,6 +1,10 @@
 <template>
     <div class="container team" id="team">
-        <h2 data-aos="fade-right" data-aos-once="true">Наши <span class="blue">тренеры</span></h2>
+        <h2 class="media__title" data-aos="fade-right" data-aos-once="true">Наши <span class="blue">тренеры</span></h2>
+        <h3 class="media__text">
+            Научим уверенно держаться на воде и поставим технику. Занимайся в группах или индивидуально. Приходи на
+            тренировки по начальной подготовке, совершенствованию техники или для продвинутых пловцов!
+        </h3>
         <swiper data-aos="fade-up" data-aos-once="true" ref="mySwiper" class="" :options="swiperOptions">
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">

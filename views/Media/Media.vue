@@ -30,7 +30,7 @@
                         <img :src="zelenru" alt="Swim shot в сататьях Zelenograd.ru" />
                     </div>
                     <div class="media__list-item-text-wrap">
-                        <p class="media__list-item-text-title">Swim Shot в сататьях Zelenograd.ru</p>
+                        <p class="media__list-item-text-title">Swim Shot в статьях Zelenograd.ru</p>
                         <p class="media__list-item-text">
                             Рассказываем про личности, структуру школы и ценности в обучение плаванию крупному изданию
                             Зеленорада

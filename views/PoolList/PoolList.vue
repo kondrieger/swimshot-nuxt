@@ -1,7 +1,11 @@
 <template>
     <div class="bg-grey" id="pools-list">
         <div class="container pools">
-            <h2 data-aos="fade-right" data-aos-once="true">Бассейны</h2>
+            <h2 class="media__title" data-aos="fade-right" data-aos-once="true">Бассейны</h2>
+            <h3 class="media__text">
+                Занятия по обучению плаванию проходят 1-3 раза в неделю по 45 мин. на выделенных дорожках. <br />
+                Приглашаем тебя в комфортные бассейны с чистой водой и температурой 28ºС
+            </h3>
             <div class="pools__list" data-aos="fade-up" data-aos-once="true">
                 <nuxt-link
                     v-for="(pool, index) in poolsArr"

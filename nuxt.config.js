@@ -20,8 +20,12 @@ export default {
                 content:
                     'Школа плавания Зеленоград, Абонемент плавание Зеленоград, Обучение плаванию Зеленоград, Детская школа плавания, Школа плавания для детей, Школа плавания для взрослых, Свободное плавание Зеленоград, Тренер плавание Зеленоград, Отзывы школа плавания, Занятия плаванием Зеленоград, Цена обучение плаванию, Стоимость обучение плаванию',
             },
+            {
+                property: 'og:image',
+                content: '/soc.png',
+            },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [{ rel: 'icon', href: '/favicon.svg' }],
         link: [{ rel: 'image_src', href: '/soc.png' }],
         script: [
             { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
@@ -78,7 +82,7 @@ export default {
 
     robots: {
         Host: 'https://swimshot.ru',
-        Sitemap: 'https://swimshot.ru//sitemap.xml',
+        Sitemap: 'https://swimshot.ru/sitemap.xml',
     },
 
     loading: {

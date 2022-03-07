@@ -1,7 +1,11 @@
 <template>
     <div>
         <div class="container photos">
-            <h2 data-aos="fade-right" data-aos-once="true">Галерея</h2>
+            <h2 class="media__title" data-aos="fade-right" data-aos-once="true">Галерея</h2>
+            <h3 class="media__text">
+                Для учеников особенно важен настрой во время занятий.<br />Наши тренеры всегда готовы поддержать и
+                вдохновить на новые успехи пловцов любого уровня.
+            </h3>
             <div class="photos__wrap" data-aos="fade-up" data-aos-once="true">
                 <div class="photos__swiper">
                     <div id="images" style="display: none" v-viewer="viewerOptions">
