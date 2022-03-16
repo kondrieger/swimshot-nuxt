@@ -31,6 +31,7 @@ export default {
             { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
             { src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=InitMap' },
             { src: 'js/mango.js' },
+            { src: 'js/vk.js' },
         ],
     },
 
