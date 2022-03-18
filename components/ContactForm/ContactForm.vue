@@ -77,7 +77,6 @@ export default {
     methods: {
         sendLead() {
             this.$fb.track('Lead');
-            console.log(this.$fb);
         },
     },
     mounted() {

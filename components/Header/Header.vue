@@ -32,6 +32,22 @@
                             >
                             <div class="header__links-social">
                                 <a
+                                    href="https://vk.com/swim_shot"
+                                    class="header__links-social-item header__links-social-item--modal"
+                                    target="_blank"
+                                >
+                                    <Vk class="header__links-social-item-img" />
+                                </a>
+
+                                <a
+                                    href="https://t.me/swimshot/"
+                                    class="header__links-social-item header__links-social-item--modal"
+                                    target="_blank"
+                                >
+                                    <Telegram class="header__links-social-item-img" />
+                                </a>
+
+                                <a
                                     href="https://www.instagram.com/swim_shot/"
                                     class="header__links-social-item header__links-social-item--modal"
                                     target="_blank"
@@ -40,11 +56,11 @@
                                 </a>
 
                                 <a
-                                    href="https://vk.com/swim_shot"
+                                    href="https://zen.yandex.ru/id/61f02212765d8f1266d725a4/"
                                     class="header__links-social-item header__links-social-item--modal"
                                     target="_blank"
                                 >
-                                    <Vk class="header__links-social-item-img" />
+                                    <Zen class="header__links-social-item-img" />
                                 </a>
 
                                 <a
@@ -88,6 +104,14 @@
                     /></a>
                     <div class="header__links header__links--media">
                         <div class="header__links-social">
+                            <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
+                                <Vk class="header__links-social-item-img" />
+                            </a>
+
+                            <a href="https://t.me/swimshot/" target="_blank" class="header__links-social-item">
+                                <Telegram class="header__links-social-item-img" />
+                            </a>
+
                             <a
                                 href="https://www.instagram.com/swim_shot/"
                                 target="_blank"
@@ -95,9 +119,12 @@
                             >
                                 <Instagram class="header__links-social-item-img" />
                             </a>
-
-                            <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
-                                <Vk class="header__links-social-item-img" />
+                            <a
+                                href="https://zen.yandex.ru/id/61f02212765d8f1266d725a4/"
+                                target="_blank"
+                                class="header__links-social-item"
+                            >
+                                <Zen class="header__links-social-item-img" />
                             </a>
 
                             <a
@@ -106,7 +133,6 @@
                                 class="header__links-social-item header__links-social-item--new"
                             >
                                 <TikTok class="header__links-social-item-img" />
-                                <!-- <NewBadge class="header__links-social-item-badge" /> -->
                             </a>
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
@@ -133,6 +159,8 @@ import FixedHeader from 'vue-fixed-header';
 import Vk from '~/assets/svg/vk.svg';
 import TikTok from '~/assets/svg/tiktok.svg';
 import Instagram from '~/assets/svg/instagram.svg';
+import Zen from '~/assets/svg/zen.svg';
+import Telegram from '~/assets/svg/telegram.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
 // import Login from '~/assets/svg/login.svg';
 
@@ -140,7 +168,7 @@ import Modal from '~/components/Modal/Modal.vue';
 
 export default {
     name: 'a-header',
-    components: { FixedHeader, Vk, TikTok, Instagram, NewBadge, Modal },
+    components: { FixedHeader, Vk, TikTok, Instagram, Telegram, Zen, NewBadge, Modal },
     data() {
         return {
             isBurgerOpen: false,

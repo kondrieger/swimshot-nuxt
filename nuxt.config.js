@@ -12,7 +12,7 @@ export default {
                 hid: 'description',
                 name: 'description',
                 content:
-                    'Научим плавать вас и вашего ребенка. Лучшие тренеры. Школа плавания Swim Shot, занятия с тренерами, обучение плаванию детей и взрослых в Зеленограде и Южном Бутове. Пробное занятие по плаванию со скидкой 75%. Свободное плавание и групповые занятия по обучению плаванию.',
+                    'Научим плавать вас и вашего ребенка. Школа плавания Swim Shot: обучение плаванию детей и взрослых в Зеленограде и Южном Бутове. Пробное занятие по плаванию всего 300 рублей. Свободное плавание в Зеленограде, бассейн Swim Shot.',
             },
             {
                 hid: 'keywords',
@@ -25,13 +25,12 @@ export default {
                 content: '/soc.png',
             },
         ],
-        link: [{ rel: 'icon', href: '/favicon.svg' }],
+        link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
         link: [{ rel: 'image_src', href: '/soc.png' }],
         script: [
             { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
             { src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=InitMap' },
             { src: 'js/mango.js' },
-            { src: 'js/vk.js' },
         ],
     },
 
