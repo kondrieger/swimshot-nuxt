@@ -20,7 +20,7 @@
                 />
                 <h1 class="start-block__text-title">
                     Школа плавания для детей и взрослых<br />
-                    Зеленоград и Южное Бутово
+                    Зеленоград
                 </h1>
                 <p class="start-block__text-subtitle">Записывайся на пробное занятие всего за 300 рублей</p>
                 <a class="btn btn--wide btn--animated" href="#contact-form">ЗАПИСАТЬСЯ</a>

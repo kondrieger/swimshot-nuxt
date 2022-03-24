@@ -30,9 +30,6 @@
                 </p>
             </div>
         </div>
-        <div class="bg-grey">
-            <AnotherPools :PoolsArr="poolsArr" />
-        </div>
     </div>
 </template>
 
@@ -43,7 +40,6 @@ import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 
-import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/1801_3.jpg';
@@ -53,15 +49,6 @@ import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
 import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
-
-const poolsArr = [
-    {
-        title: 'ФОК Южное Бутово',
-        subtitle: 'Москва',
-        pic: butovo,
-        href: '/butovo',
-    },
-];
 
 const poolFeatures = [
     {
@@ -122,7 +109,6 @@ export default {
 
     data() {
         return {
-            poolsArr,
             poolsPicArr,
             poolFeatures,
         };
