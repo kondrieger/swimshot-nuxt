@@ -43,12 +43,8 @@ import astapov from '~/assets/jpg/team/astapov.jpg';
 import kasandra from '~/assets/jpg/team/kasandra.jpg';
 import druzhinin from '~/assets/jpg/team/druzhinin.jpg';
 import georgieva from '~/assets/jpg/team/georgieva.jpg';
-import nikolskaya from '~/assets/jpg/team/nikolskaya.jpg';
-import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
 import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
 import bykov from '~/assets/jpg/team/bykov.jpg';
-import matveeva from '~/assets/jpg/team/matveeva.jpg';
-import grishin from '~/assets/jpg/team/grishin.jpg';
 import beskrovnaya from '~/assets/jpg/team/beskrovnaya_2.jpg';
 
 const teamArr = [
@@ -113,29 +109,6 @@ const teamArr = [
         inst: '_alexandrina__',
     },
     {
-        photo: nikolskaya,
-        name: 'Анастасия Никольская',
-        desc: [
-            'Победитель Кубка Зеленограда по плаванию',
-            'Сертифицированный тренер по раннему плаванию детей с трех лет',
-            'Студентка университета РГУФКСМиТ. Профиль — спортивная подготовка в плавании',
-            'Опыт работы тренером четыре года',
-        ],
-        inst: 'nasty9887',
-    },
-    // {
-    //     photo: vanushechkin,
-    //     name: 'Сергей Ванюшечкин',
-    //     desc: [
-    //         'Образование инструктора по плаванию детей',
-    //         'Победитель чемпионата Москвы по акватлону',
-    //         'Первый взрослый разряд по плаванию и подводному плаванию',
-    //         'Сертифицированный специалист на курсах, связанных с тренерской деятельностью',
-    //         'Опыт работы тренером более шести лет',
-    //     ],
-    //     inst: 'sergey_vanyushechkin',
-    // },
-    {
         photo: timofeeva,
         name: 'Дарья Тимофеева',
         desc: [
@@ -156,26 +129,6 @@ const teamArr = [
             'Опыт работы тренером два года',
         ],
         inst: '_bykov_off',
-    },
-    // {
-    //     photo: matveeva,
-    //     name: 'Екатерина Матвеева',
-    //     desc: [
-    //         'Высшее образование по профилю физическая культура',
-    //         'Экс-учительница физкультуры',
-    //         'Опыт тренерской деятельности один год',
-    //     ],
-    //     inst: 'katunia_matveeva',
-    // },
-    {
-        photo: grishin,
-        name: 'Егор Гришин',
-        desc: [
-            'Кандидат в мастера спорта по плаванию',
-            'Многократный победитель и призер чемпионатов и кубков Калужской области',
-            'Тренерский стаж один год',
-        ],
-        inst: 'e.grishin_',
     },
     {
         photo: beskrovnaya,

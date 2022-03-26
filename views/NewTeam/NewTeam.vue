@@ -46,7 +46,6 @@ import georgieva from '~/assets/jpg/new-team/georgieva.jpg';
 import vanushechkin from '~/assets/jpg/team/vanushechkin.jpg';
 import timofeeva from '~/assets/jpg/new-team/timofeeva.jpg';
 import matveeva from '~/assets/jpg/new-team/matveeva.jpg';
-import grishin from '~/assets/jpg/new-team/grishin.jpg';
 
 const teamArr = [
     {
@@ -140,16 +139,6 @@ const teamArr = [
             'Опыт тренерской деятельности один год',
         ],
         inst: 'katunia_matveeva',
-    },
-    {
-        photo: grishin,
-        name: 'Егор Гришин',
-        desc: [
-            'Кандидат в мастера спорта по плаванию',
-            'Многократный победитель и призер чемпионатов и кубков калужской области',
-            'Тренерский стаж один год',
-        ],
-        inst: 'e.grishin_',
     },
 ];
 
