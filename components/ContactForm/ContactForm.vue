@@ -83,6 +83,8 @@ export default {
         const self = this;
         setTimeout(() => {
             $('#contacts').prependTo($('#schoolRequestformDiv'));
+
+            $('#schoolRequestAgreementDiv a').attr('href', '/policy').attr('target', '_blank');
         }, 0);
 
         $('input[type="submit"]').on('click', function () {
