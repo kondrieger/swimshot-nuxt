@@ -81,7 +81,7 @@
                 display: block;
                 margin-right: 5px;
                 margin-top: -5px;
-                fill: var(--cl-blue)
+                fill: var(--cl-blue);
             }
 
             &-name {
@@ -103,7 +103,11 @@
             }
 
             &-social {
-                max-height: 30px;
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: absolute;
                 top: 10px;
                 right: 10px;
@@ -117,7 +121,7 @@
 
                 &:hover {
                     & {
-                        transform: scale(1.1)
+                        transform: scale(1.1);
                     }
                 }
             }
@@ -145,7 +149,7 @@
                         max-height: 7px;
                         min-width: 7px;
                         max-width: 7px;
-                        border-radius:50%;
+                        border-radius: 50%;
                         background: var(--cl-blue);
                         margin-right: 8px;
                         margin-top: 7px;
@@ -182,7 +186,6 @@
         @media (--mobile-lg) {
             height: 580px;
         }
-
     }
 
     .swiper-pagination-bullet {
