@@ -17,8 +17,9 @@ import p3 from '~/assets/jpg/policy/3.jpg';
 import p4 from '~/assets/jpg/policy/4.jpg';
 import p5 from '~/assets/jpg/policy/5.jpg';
 import p6 from '~/assets/jpg/policy/6.jpg';
+import p7 from '~/assets/jpg/policy/7.jpg';
 
-const policyArr = [p1, p2, p3, p4, p5, p6];
+const policyArr = [p1, p2, p3, p4, p5, p6, p7];
 
 export default {
     layout: 'policy',
