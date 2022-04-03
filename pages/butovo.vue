@@ -28,9 +28,7 @@
             </div>
         </div>
 
-        <div class="bg-grey">
-            <Shedule :shedule="shedule" class="bg-grey" />
-        </div>
+        <Shedule :shedule="shedule" class="bg-grey" />
 
         <AnotherPools :PoolsArr="poolsArr" />
     </div>

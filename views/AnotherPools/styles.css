@@ -26,6 +26,7 @@
             align-items: flex-end;
             background-position: 50%;
             margin-bottom: 20px;
+            box-shadow: 0px 0px 15px 5px rgb(123 162 184 / 30%);
 
             @media (--tablet) {
                 width: 50%;
