@@ -28,27 +28,28 @@
 
         &-wrap {
             margin: 0 auto calc(var(--gs) * 4) auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
         }
     }
 
     &__title {
-        margin-bottom: calc(var(--gs) * 3);
-        font-weight: bold;
+        margin-bottom: calc(var(--gs) * 3) !important;
+        font-weight: bold !important;
 
         @media (--mobile-lg) {
-            margin-bottom: calc(var(--gs) * 1.5);
+            margin-bottom: calc(var(--gs) * 1.5) !important;
         }
     }
 
     &__list {
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
 
         &-item {
-            display: flex;
+            display: flex !important;
+            flex-direction: row !important;
             padding: var(--gs) 0;
             border-bottom: 2px solid var(--cl-lt-blue);
 
@@ -65,27 +66,31 @@
             }
 
             &-time {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                max-height: 120px;
+                display: flex !important;
+                flex-direction: column !important;
+                flex-wrap: wrap !important;
+                max-height: 120px !important;
 
                 @media (--tablet) {
-                    max-height: 170px;
+                    max-height: 170px !important;
                 }
 
                 @media (--mobile-lg) {
-                    max-height: 200px;
+                    max-height: 200px !important;
                 }
 
                 &-time {
                     margin-right: calc(var(--gs) * 3);
                 }
 
+                &-wrap {
+                    padding-right: 5px;
+                }
+
                 &-list {
                     width: 40%;
-                    display: flex;
-                    justify-content: space-between;
+                    display: flex !important;
+                    justify-content: space-between !important;
 
                     @media (--tablet) {
                         width: 50%;

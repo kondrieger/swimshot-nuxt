@@ -4,11 +4,11 @@
             Расписание <span class="blue">занятий</span>
         </h2>
 
-        <h3 class="media__text">
+        <p class="media__text">
             Выбирай свободное плавание или группу и количество занятий в неделю. Занятие длится
             <span class="blue">45 минут</span>. <br />Для уточнения расписания индивидуальных тренировок свяжитесь по
             телефону или оставьте заявку на сайте.
-        </h3>
+        </p>
 
         <div class="shedule__select-wrap shedule__container">
             <Treeselect
@@ -41,12 +41,17 @@
                     v-for="(sheduleItem, sheduleIndex) in computedShedule.shedule"
                     :key="sheduleIndex"
                     class="shedule__list-item"
+                    style="display: flex"
                 >
                     <h4 class="shedule__list-item-title">{{ sheduleItem.days }}</h4>
-                    <div class="shedule__list-item-time-list">
-                        <div v-for="(item, index) in sheduleItem.items" :key="index">
+                    <div class="shedule__list-item-time-list" style="display: flex">
+                        <div
+                            class="shedule__list-item-time-wrap"
+                            v-for="(item, index) in sheduleItem.items"
+                            :key="index"
+                        >
                             <p v-if="item.price" class="shedule__list-item-time-price">{{ item.price }}</p>
-                            <div class="shedule__list-item-time">
+                            <div class="shedule__list-item-time" style="display: flex; flex-wrap: wrap">
                                 <p
                                     v-for="(timeItem, timeIndex) in item.time"
                                     :key="timeIndex"
