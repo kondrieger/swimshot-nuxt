@@ -30,9 +30,9 @@
                 </p>
             </div>
         </div>
-        <div class="bg-grey">
-            <AnotherPools :PoolsArr="poolsArr" />
-        </div>
+        <Shedule :shedule="shedule" class="bg-grey" />
+
+        <AnotherPools :PoolsArr="poolsArr" />
     </div>
 </template>
 
@@ -51,6 +51,9 @@ import PoolPic4 from '~/assets/jpg/pools/1801_4.jpg';
 import PoolPic5 from '~/assets/jpg/pools/1801_5.jpg';
 import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
 import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
+
+import Shedule from '~/views/Shedule/Shedule.vue';
+import { shedule } from '~/static/js/sheduleZelenograd.js';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
 
@@ -99,7 +102,7 @@ const poolFeatures = [
 ];
 
 export default {
-    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures },
+    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Shedule },
     head() {
         return {
             title: 'Swim Shot — Бассейн в Зеленограде',
@@ -125,6 +128,7 @@ export default {
             poolsArr,
             poolsPicArr,
             poolFeatures,
+            shedule,
         };
     },
     mounted() {

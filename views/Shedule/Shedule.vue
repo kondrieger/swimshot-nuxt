@@ -3,37 +3,72 @@
         <h2 class="media__title" data-aos="fade-right" data-aos-once="true">
             Расписание <span class="blue">занятий</span>
         </h2>
-        <h3 class="media__text">Расписание групповых занятий. Выбирай свою группу и количество занятий.</h3>
-        <div class="shedule__select-wrap">
-            <VSelect
+
+        <h3 class="media__text">
+            Выбирай свободное плавание или группу и количество занятий в неделю. Занятие длится
+            <span class="blue">45 минут</span>. <br />Для уточнения расписания индивидуальных тренировок свяжитесь по
+            телефону или оставьте заявку на сайте.
+        </h3>
+
+        <div class="shedule__select-wrap shedule__container">
+            <Treeselect
                 class="shedule__select"
                 :options="groups"
                 v-model="group"
+                :default-expand-level="1"
+                placeholder="Вид занятий"
+                @select="clearTimes"
+                :disable-branch-nodes="true"
                 :searchable="false"
-                @input="
-                    () => {
-                        this.times = null;
-                    }
-                "
-                >Группа</VSelect
-            >
-            <VSelect
+                :is-default-expanded="true"
+            />
+
+            <Treeselect
                 v-if="computedTimes"
                 class="shedule__select"
                 :options="computedTimes"
+                placeholder="Количество занятий"
                 v-model="times"
                 :searchable="false"
-                >Количество занятий</VSelect
-            >
+            />
         </div>
-        <div class="shedule__select-wrap">фывфвыфыв</div>
+
+        <template v-if="computedShedule">
+            <h3 class="media__text shedule__title">{{ computedShedule.title }}</h3>
+
+            <div class="shedule__list shedule__container">
+                <div
+                    v-for="(sheduleItem, sheduleIndex) in computedShedule.shedule"
+                    :key="sheduleIndex"
+                    class="shedule__list-item"
+                >
+                    <h4 class="shedule__list-item-title">{{ sheduleItem.days }}</h4>
+                    <div class="shedule__list-item-time-list">
+                        <div v-for="(item, index) in sheduleItem.items" :key="index">
+                            <p v-if="item.price" class="shedule__list-item-time-price">{{ item.price }}</p>
+                            <div class="shedule__list-item-time">
+                                <p
+                                    v-for="(timeItem, timeIndex) in item.time"
+                                    :key="timeIndex"
+                                    class="shedule__list-item-time-time"
+                                >
+                                    {{ timeItem }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <h3 v-else class="media__text shedule__title">Выбери группу, чтобы увидеть расписание</h3>
     </div>
 </template>
 
 <script>
-import { groups, times, shedules } from '~/static/js/sheduleZelenograd.js';
-import VSelect from 'vue-select';
-import 'vue-select/dist/vue-select.css';
+import Treeselect from '@riophae/vue-treeselect';
+// import the styles
+import '@riophae/vue-treeselect/dist/vue-treeselect.css';
 import './styles.css';
 
 export default {
@@ -44,21 +79,45 @@ export default {
         },
     },
     components: {
-        VSelect,
+        Treeselect,
     },
     data() {
         return {
-            groups,
-            timez: times,
+            groups: this.shedule.groups,
+            shedules: this.shedule.shedules,
+            timez: this.shedule.times,
             group: null,
             times: null,
         };
     },
+    methods: {
+        clearTimes() {
+            setTimeout(() => {
+                if (this.group === 5) {
+                    this.times = false;
+                } else {
+                    this.times = null;
+                }
+            }, 0);
+        },
+    },
     computed: {
         computedTimes() {
             if (this.group) {
-                const times = this.timez.find((time) => time.id === this.group.id);
+                const times = this.timez.find((time) => time.id === this.group);
                 return times && times.times;
+            }
+
+            return false;
+        },
+        computedShedule() {
+            if (
+                (this.group && this.times && typeof this.group === 'number' && typeof this.times === 'number') ||
+                this.group === 5
+            ) {
+                return this.shedules.find((shedule) => {
+                    return shedule.id === this.group && (shedule.times === this.times || shedule.times === this.times);
+                });
             }
 
             return false;

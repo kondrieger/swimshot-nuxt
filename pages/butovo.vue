@@ -27,9 +27,12 @@
                 </p>
             </div>
         </div>
+
         <div class="bg-grey">
-            <AnotherPools :PoolsArr="poolsArr" />
+            <Shedule :shedule="shedule" class="bg-grey" />
         </div>
+
+        <AnotherPools :PoolsArr="poolsArr" />
     </div>
 </template>
 
@@ -47,6 +50,9 @@ import PoolPic2 from '~/assets/jpg/pools/pool_butovo_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/pool_butovo_3.jpg';
 import PoolPic4 from '~/assets/jpg/pools/pool_butovo_4.jpg';
 import PoolPic5 from '~/assets/jpg/pools/pool_butovo_5.jpg';
+
+import Shedule from '~/views/Shedule/Shedule.vue';
+import { shedule } from '~/static/js/sheduleButovo.js';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5];
 
@@ -123,7 +129,7 @@ const bigPool = [
 
 export default {
     name: 'Butovo',
-    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow },
+    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, Shedule },
     head() {
         return {
             title: 'Swim Shot — Бассейн в Южном Бутово',
@@ -149,6 +155,7 @@ export default {
             poolsPicArr,
             littlePool,
             bigPool,
+            shedule,
         };
     },
     mounted() {

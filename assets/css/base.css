@@ -164,7 +164,7 @@ fieldset {
         position: fixed;
         top: 100px;
         left: 75%;
-        z-index: 100;
+        z-index: 10000;
 
         &-text {
             font-size: 28px !important;
