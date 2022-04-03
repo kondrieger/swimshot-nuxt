@@ -42,6 +42,7 @@
 <script>
 import VButton from '~/components/VButton/VButton.vue';
 
+import butovo from '~/assets/jpg/pools/pool_butovo.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
@@ -55,6 +56,13 @@ const poolsArr = [
         pic: ph1801,
         href: '/zelenograd',
         free: true,
+        new: true,
+    },
+    {
+        title: 'ФОК Южное Бутово',
+        subtitle: 'Москва',
+        pic: butovo,
+        href: '/butovo',
     },
 ];
 
