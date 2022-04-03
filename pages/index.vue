@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Shedule />
         <StartBlock />
         <Features />
         <PoolList />
@@ -20,6 +21,7 @@ import Photos from '~/views/Photos/Photos.vue';
 import FAQ from '~/views/FAQ/FAQ.vue';
 import PoolList from '~/views/PoolList/PoolList.vue';
 import Comments from '~/views/Comments/Comments.vue';
+import Shedule from '~/views/Shedule/Shedule.vue';
 
 export default {
     components: {
@@ -31,6 +33,7 @@ export default {
         FAQ,
         PoolList,
         Comments,
+        Shedule,
     },
 };
 </script>

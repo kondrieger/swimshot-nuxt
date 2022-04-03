@@ -1,0 +1,10 @@
+.shedule {
+    &__select {
+        width: 300px;
+        margin-right: 25px;
+        &-wrap {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
