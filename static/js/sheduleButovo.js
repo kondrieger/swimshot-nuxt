@@ -4,7 +4,7 @@ export const shedule = {
             id: 'with-trainer',
             label: 'Занятия с тренером',
             children: [
-                { id: 1, label: 'Мальчики 3-6 лет' },
+                { id: 1, label: 'Дети 3-6 лет' },
                 { id: 2, label: 'Дети 7-9 лет' },
                 { id: 3, label: 'Дети 10-16 лет' },
             ],
@@ -32,7 +32,7 @@ export const shedule = {
     ],
     shedules: [
         {
-            title: 'Мальчики 3-6 лет, 1 раз в неделю',
+            title: 'Дети 3-6 лет, 1 раз в неделю',
             id: 1,
             times: 1,
             shedule: [
@@ -47,7 +47,7 @@ export const shedule = {
             ],
         },
         {
-            title: 'Мальчики 3-6 лет, 2 раза в неделю',
+            title: 'Дети 3-6 лет, 2 раза в неделю',
             id: 1,
             times: 2,
             shedule: [
