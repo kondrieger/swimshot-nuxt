@@ -85,7 +85,9 @@ export default {
             $('#contacts').prependTo($('#schoolRequestformDiv'));
 
             $('#schoolRequestAgreementDiv a').attr('href', '/policy').attr('target', '_blank');
-        }, 0);
+
+            $('#school option[value="16356"]').remove();
+        }, 1000);
 
         $('input[type="submit"]').on('click', function () {
             $('html, body').animate({

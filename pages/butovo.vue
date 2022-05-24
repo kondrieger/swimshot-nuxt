@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <Shedule :shedule="shedule" class="bg-grey" />
+        <!-- <Shedule :shedule="shedule" class="bg-grey" /> -->
 
         <AnotherPools :PoolsArr="poolsArr" />
     </div>
@@ -157,10 +157,10 @@ export default {
         };
     },
     mounted() {
-        setTimeout(() => {
-            $('#school').val('16356');
-            $('#school').change();
-        }, 1000);
+        // setTimeout(() => {
+        //     $('#school').val('16356');
+        //     $('#school').change();
+        // }, 1000);
     },
 };
 </script>
