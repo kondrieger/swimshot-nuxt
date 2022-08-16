@@ -19,10 +19,6 @@
                     <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
                         <Vk class="header__links-social-item-img" />
                     </a>
-
-                    <a href="https://vm.tiktok.com/ZSektyPHj" target="_blank" class="header__links-social-item">
-                        <TikTok class="header__links-social-item-img" />
-                    </a>
                 </div>
             </div>
             <p class="contact-form__contacts-item contact-form__contacts-item--wide contact-form__contacts-item--text">
@@ -41,13 +37,12 @@
 import bgPic from '~/assets/jpg/things_bg.jpg';
 import $ from 'jquery';
 import Vk from '~/assets/svg/vk.svg';
-import TikTok from '~/assets/svg/tiktok.svg';
 import Instagram from '~/assets/svg/instagram.svg';
 import './styles.css';
 
 export default {
     name: 'ContactForm',
-    components: { Vk, TikTok, Instagram },
+    components: { Vk, Instagram },
     data() {
         return {
             bgPic,

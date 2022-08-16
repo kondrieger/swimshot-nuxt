@@ -62,19 +62,6 @@
                                 >
                                     <Zen class="header__links-social-item-img" />
                                 </a>
-
-                                <a
-                                    href="https://vm.tiktok.com/ZSektyPHj"
-                                    class="
-                                        header__links-social-item
-                                        header__links-social-item--modal
-                                        header__links-social-item--new
-                                    "
-                                    target="_blank"
-                                >
-                                    <TikTok class="header__links-social-item-img" />
-                                    <!-- <NewBadge class="header__links-social-item-badge" /> -->
-                                </a>
                             </div>
                         </Slide>
                     </client-only>
@@ -126,14 +113,6 @@
                             >
                                 <Zen class="header__links-social-item-img" />
                             </a>
-
-                            <a
-                                href="https://vm.tiktok.com/ZSektyPHj"
-                                target="_blank"
-                                class="header__links-social-item header__links-social-item--new"
-                            >
-                                <TikTok class="header__links-social-item-img" />
-                            </a>
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
                             <a class="header__links-phone" href="tel:+74994305595">+7 (499) 430-55-95</a>
@@ -157,7 +136,6 @@
 import './styles.css';
 import FixedHeader from 'vue-fixed-header';
 import Vk from '~/assets/svg/vk.svg';
-import TikTok from '~/assets/svg/tiktok.svg';
 import Instagram from '~/assets/svg/instagram.svg';
 import Zen from '~/assets/svg/zen.svg';
 import Telegram from '~/assets/svg/telegram.svg';
@@ -168,7 +146,7 @@ import Modal from '~/components/Modal/Modal.vue';
 
 export default {
     name: 'a-header',
-    components: { FixedHeader, Vk, TikTok, Instagram, Telegram, Zen, NewBadge, Modal },
+    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Modal },
     data() {
         return {
             isBurgerOpen: false,

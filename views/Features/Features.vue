@@ -2,7 +2,7 @@
     <div class="container features">
         <h2 class="media__title">Наслаждайся плаванием в <span class="blue">Swim Shot</span></h2>
         <h3 class="media__text">
-            Присоединяйтесь к группам в мае 2022!<br />
+            Присоединяйся к группам в новом учебном году 2022/2023!<br />
             Научим <span class="blue">кайфовать</span> от воды и <span class="blue">получать удовольствие</span> во
             время плавания
         </h3>
