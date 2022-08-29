@@ -22,7 +22,7 @@
                     Школа плавания для детей и взрослых<br />
                     Зеленоград
                 </h1>
-                <p class="start-block__text-subtitle">Записывайся на пробную тренировку всего за 300 рублей</p>
+                <p class="start-block__text-subtitle">Записывайся на пробную тренировку всего за 500 рублей</p>
                 <a class="btn btn--wide btn--animated" href="#contact-form">ЗАПИСАТЬСЯ</a>
             </div>
             <img
@@ -31,7 +31,7 @@
                 v-if="!isTablet"
                 width="587px"
                 height="688px"
-                alt="Записывайся на пробную тренировку всего за 300 рублей"
+                alt="Записывайся на пробную тренировку всего за 500 рублей"
                 :src="pic"
                 class="start-block__image"
             />
