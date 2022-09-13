@@ -57,15 +57,15 @@ const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6,
 const poolFeatures = [
     {
         title: 'Стоимость групповых',
-        text: 'от 700 за занятие',
+        text: 'от 760 за занятие',
     },
     {
         title: 'Стоимость персональных',
-        text: 'от 2200 за занятие',
+        text: 'от 2400 за занятие',
     },
     {
         title: 'Стоимость без тренера',
-        text: 'от 200 за 45 минут',
+        text: 'от 310 за 45 минут',
     },
     {
         title: 'Для кого?',
