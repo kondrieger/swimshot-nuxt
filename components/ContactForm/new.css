@@ -1,0 +1,143 @@
+.contact-form {
+    padding: calc(var(--gs) * 3) calc(var(--gs) * 2);
+    margin-right: calc(var(--gs) * 2);
+    width: 50%;
+    background-color: #fff;
+    border-radius: 30px !important;
+
+    @media (--tablet) {
+        width: 100% !important;
+        margin-top: 0;
+    }
+
+    &__wrap {
+        display: flex;
+        padding-top: calc(var(--gs) * 12);
+        padding-bottom: calc(var(--gs) * 12);
+
+        @media (--desktop) {
+            padding-top: calc(var(--gs) * 9);
+            padding-bottom: calc(var(--gs) * 9);
+        }
+
+        @media (--tablet) {
+            padding-top: calc(var(--gs) * 6);
+            padding-bottom: calc(var(--gs) * 4);
+        }
+    }
+
+    &__contacts {
+        background-color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: calc(var(--gs) * 2);
+
+        &-item {
+            width: 50%;
+            margin-bottom: calc(var(--gs) * 1);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @media (--mobile-lg) {
+                width: 100%;
+            }
+
+            &--wide {
+                width: 100%;
+            }
+
+            &--text {
+                font-size: 20px;
+                color: var(--cl-md-blue);
+
+                @media (--tablet) {
+                    font-size: 16px;
+                }
+            }
+
+            &-title {
+                font-weight: bold;
+            }
+
+            &-content {
+                display: flex;
+                font-size: 24px;
+                color: var(--cl-blue);
+
+                @media (--tablet) {
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+
+    &__bg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgba(41, 177, 255, 0.3);
+
+        @media (--desktop) {
+            background-size: auto 110%;
+        }
+    }
+
+    & input[type='text'],
+    & input[type='email'],
+    & select {
+        width: 100%;
+        height: 60px;
+        padding: 0 calc(var(--gs) * 2);
+        color: #2b2a29 !important;
+        border: 2px solid #c9c9c9 !important;
+        font-size: 16px;
+        line-height: 1.33;
+        overflow: hidden;
+        border-radius: 20px !important;
+    }
+
+    & input[type='submit'] {
+        display: block !important;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px !important;
+        cursor: pointer;
+        box-shadow: 0 13px 30px 1px rgb(49 145 204 / 80%);
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: var(--cl-white);
+        background-color: var(--cl-blue) !important;
+        border: 4px solid var(--cl-lt-blue) !important;
+        font-family: var(--font-geometria) !important;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: var(--cl-md-blue) !important;
+            border-color: var(--cl-md-blue) !important;
+        }
+
+        &:active {
+            background-color: var(--cl-dk-blue) !important;
+            border-color: var(--cl-dk-blue) !important;
+            transform: translateY(2px) !important;
+        }
+    }
+
+    #schoolRequestMapDiv {
+        @media (--tablet) {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    #schoolRequestAgreementDiv {
+        @media (--tablet) {
+            font-size: 14px;
+        }
+
+        & div + div {
+            margin-left: 10px;
+        }
+    }
+}

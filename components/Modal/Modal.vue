@@ -108,6 +108,7 @@ export default {
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'https://education-erp.com/api/LandingService/v1/SingleRequest');
             xhr.send(formData);
+            this.isOpen = false;
         },
     },
     computed: {

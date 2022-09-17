@@ -28,6 +28,12 @@
 
         <div class="container contact-form">
             <div id="schoolRequestFormElement"></div>
+            <iframe
+                id="iframe"
+                class="we-fit-iframe iframe"
+                src="https://cloud.1c.fitness/api/hs/api/lead/?apikey=07914eda-27af-11ed-bb82-00505683b2c0&amp;formid=0a8c30b8-1cd4-11ed-4681-00505683b2c0"
+                >Ваш браузер не поддерживает плавающие фреймы!</iframe
+            >
         </div>
     </div>
 </template>
@@ -63,48 +69,11 @@ export default {
             ],
         };
     },
-    computed: {
-        checkSuccess() {
-            const success = $('.success-message');
-            return success.css('display') === 'block';
-        },
-    },
-    methods: {
-        sendLead() {
-            this.$fb.track('Lead');
-        },
-    },
     mounted() {
-        const self = this;
         setTimeout(() => {
-            $('#contacts').prependTo($('#schoolRequestformDiv'));
-
-            $('#schoolRequestAgreementDiv a').attr('href', '/policy').attr('target', '_blank');
-
-            $('#school option[value="16356"]').remove();
-        }, 1000);
-
-        $('input[type="submit"]').on('click', function () {
-            $('html, body').animate({
-                scrollTop: $('#contact-form').offset().top,
-            });
-
-            let checkSuccess = setInterval(() => {
-                const success = $('.success-message');
-
-                if (success.css('display') === 'block') {
-                    clearInterval(checkSuccess);
-
-                    if (!window.dataLayer.find((item) => item.event === 'form')) {
-                        window.dataLayer.push({
-                            event: 'form',
-                        });
-                        self.sendLead();
-                        console.log('Заявка отправлена');
-                    }
-                }
-            }, 1000);
-        });
+            $('#contacts, #iframe').prependTo($('#schoolRequestformDiv'));
+            $('.form').hide();
+        }, 0);
     },
 };
 </script>
