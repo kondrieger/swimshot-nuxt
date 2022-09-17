@@ -116,9 +116,7 @@
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
                             <a class="header__links-phone" href="tel:+74994305595">+7 (499) 430-55-95</a>
-                            <a class="header__links-phone-text" href="javascript:;" @click="showModal"
-                                >Заказать обратный звонок</a
-                            >
+                            <a class="header__links-phone-text" href="#contact-form">Заказать обратный звонок</a>
                         </div>
                         <!-- <a class="header__links-login" href="https://my.swimshot.ru" title="Войти в личный кабинет"
                         ><Login class="header__links-login-icon"
