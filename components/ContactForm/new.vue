@@ -83,7 +83,6 @@ import './styles.css';
 import validationMixin, { required, email, tel, nameAll } from '../../plugins/validation';
 import TextInput from '~/components/TextInput/TextInput.vue';
 import VButton from '~/components/VButton/VButton.vue';
-import axios from 'axios';
 
 export default {
     name: 'ContactForm',
@@ -186,23 +185,6 @@ export default {
             //     data: JSON.stringify(this.form),
             //     catche: false,
             // }).then((resp) => console.log(resp));
-
-            axios
-                .post(
-                    'https://cloud.1c.fitness/api/hs/api/lead/',
-                    {
-                        data: JSON.stringify(this.form),
-                    },
-                    {
-                        headers: {
-                            'Content-Type': ['application/json'],
-                            Apikey: '07914eda-27af-11ed-bb82-00505683b2c0',
-                        },
-                    }
-                )
-                .then((response) => {
-                    console.log(response);
-                });
 
             // if (!window.dataLayer.find((item) => item.event === 'form')) {
             //     window.dataLayer.push({
