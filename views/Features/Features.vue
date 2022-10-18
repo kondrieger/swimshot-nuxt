@@ -16,8 +16,7 @@
                 >
                     <Discount v-if="index === 0" class="features__list-item-img" />
                     <Medal v-if="index === 1" class="features__list-item-img" />
-                    <Gift v-if="index === 2" class="features__list-item-img" />
-                    <Clock v-if="index === 3" class="features__list-item-img" />
+                    <Clock v-if="index === 2" class="features__list-item-img" />
                     <span :v-html="feature.pic"></span>
                     <p class="features__list-item-title">
                         {{ feature.title }}
@@ -65,10 +64,6 @@ export default {
                 {
                     title: 'Тебя обучают кандидаты и мастера спорта',
                     text: 'Раз в три месяца каждый тренер школы плавания сдает экзамены по нескольким направлениям, по итогам которых формируется план обучения для всей команды Swim Shot',
-                },
-                {
-                    title: 'Приятный\nбонус',
-                    text: 'После каждой тренировки ученик получает вкусную и гипоаллергенную награду за выполненную работу',
                 },
                 {
                     title: 'Удобное место и время',
