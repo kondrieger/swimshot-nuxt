@@ -32,18 +32,15 @@
                     <div class="media__list-item-text-wrap">
                         <p class="media__list-item-text-title">Swim Shot в статьях Zelenograd.ru</p>
                         <p class="media__list-item-text">
-                            Рассказываем про личности, структуру школы и ценности в обучение плаванию крупному изданию
+                            Рассказываем про личности, структуру школы и ценности в обучении плаванию крупному изданию
                             Зеленорада
                         </p>
                         <div class="media__list-item-text-btns">
                             <a
-                                href="https://www.zelenograd.ru/story/novyy-basseyn-dlya-svobodnogo-plavaniya-i-zanyatiy-poyavilsya-v-zelenograde/"
+                                href="https://www.zelenograd.ru/reklama/novyy-basseyn-dlya-svobodnogo-plavaniya-i-zanyatiy-poyavilsya-v-zelenograde/"
                                 target="_blank"
                             >
-                                <VButton sm text="О бассейне" />
-                            </a>
-                            <a href="https://www.zelenograd.ru/story/trenery/ " target="_blank">
-                                <VButton sm text="О тренировках" />
+                                <VButton sm text="Читать" />
                             </a>
                         </div>
                     </div>
