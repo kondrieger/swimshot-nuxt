@@ -44,8 +44,7 @@ import kasandra from '~/assets/jpg/team/kasandra.jpg';
 import druzhinin from '~/assets/jpg/team/druzhinin.jpg';
 import georgieva from '~/assets/jpg/team/georgieva.jpg';
 import timofeeva from '~/assets/jpg/team/timofeeva.jpg';
-import bykov from '~/assets/jpg/team/bykov.jpg';
-import beskrovnaya from '~/assets/jpg/team/beskrovnaya_2.jpg';
+import beskrovnaya from '~/assets/jpg/team/beskrovnaya.jpg';
 
 const teamArr = [
     {
@@ -118,17 +117,6 @@ const teamArr = [
             'Тренерский стаж один год',
         ],
         inst: '_daxaaa',
-    },
-    {
-        photo: bykov,
-        name: 'Владимир Быков',
-        desc: [
-            'Кандидат в мастера спорта по плаванию',
-            'Неоднократный призер первенств Москвы и межвузовских соревнований',
-            'Участник всероссийских соревнований',
-            'Опыт работы тренером два года',
-        ],
-        inst: '_bykov_off',
     },
     {
         photo: beskrovnaya,

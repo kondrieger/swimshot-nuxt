@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="container new-team" id="team">
         <h2 data-aos="fade-right" data-aos-once="true">Наши <span class="blue">тренеры</span></h2>
         <div class="new-team__wrap">
@@ -175,4 +175,4 @@ export default {
         });
     },
 };
-</script>
+</script> -->
