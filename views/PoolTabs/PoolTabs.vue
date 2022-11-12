@@ -5,6 +5,7 @@
                 <ul class="tabs">
                     <li class="tab-link" :class="{ active: littleActive }" data-tab="1">Малый бассейн</li>
                     <li
+                        v-if="bigPool.length"
                         class="tab-link"
                         :class="{ active: bigActive }"
                         :style="bigActive ? 'order: -1;' : ''"
@@ -22,7 +23,7 @@
                         <PoolsFeatures :PoolsFeatures="littlePool" />
                     </div>
 
-                    <div id="tab-2" class="tab-content" :class="{ active: bigActive }">
+                    <div id="tab-2" v-if="bigPool.length" class="tab-content" :class="{ active: bigActive }">
                         <PoolsFeatures :PoolsFeatures="bigPool" />
                     </div>
                 </div>

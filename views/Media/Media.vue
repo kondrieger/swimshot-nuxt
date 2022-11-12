@@ -2,10 +2,14 @@
     <div class="bg-grey" id="media">
         <div class="container media">
             <h2 class="media__title" data-aos="fade-right" data-aos-once="true">
-                Swim shot в <span class="blue">медиа</span>
+                Swim shot в <span class="blue">СМИ</span>
             </h2>
             <p class="media__text" data-aos="fade-right" data-aos-once="true">
                 Говорим и пишем о плавании и нашей школе <br />Слушай и читай по ссылкам ниже
+            </p>
+            <p class="media__text media__text--note" data-aos="fade-right" data-aos-once="true">
+                * расписание, цены и пр информация об услугах может отличаться от указанных по ссылкам ниже из-за
+                прошествия времени
             </p>
 
             <div class="media__list">

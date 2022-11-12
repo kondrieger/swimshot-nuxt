@@ -23,11 +23,22 @@
         text-align: center;
         font-size: 24px;
         font-weight: 300;
-        margin-bottom: calc(var(--gs) * 8);
+        margin-bottom: calc(var(--gs) * 2);
 
         @media (--tablet) {
             font-size: 18px;
             margin-bottom: calc(var(--gs) * 2);
+        }
+
+        &--note {
+            margin-bottom: calc(var(--gs) * 8);
+            font-size: 14px;
+            color: grey;
+
+            @media (--tablet) {
+                margin-bottom: calc(var(--gs) * 2);
+                font-size: 12px;
+            }
         }
     }
 

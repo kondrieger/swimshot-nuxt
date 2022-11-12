@@ -20,7 +20,7 @@
                 />
                 <h1 class="start-block__text-title">
                     Школа плавания для детей и взрослых<br />
-                    Зеленоград
+                    с собственным бассейном в Зеленограде
                 </h1>
                 <p class="start-block__text-subtitle">Записывайся на пробную тренировку всего за 500 рублей</p>
                 <a class="btn btn--wide btn--animated" href="#contact-form">ЗАПИСАТЬСЯ</a>

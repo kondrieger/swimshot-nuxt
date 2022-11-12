@@ -31,6 +31,9 @@
             </div>
         </div>
         <Shedule :shedule="shedule" class="bg-grey" />
+        <div class="bg-grey">
+            <AnotherPools :PoolsArr="poolsArr" />
+        </div>
     </div>
 </template>
 
@@ -48,6 +51,7 @@ import PoolPic4 from '~/assets/jpg/pools/1801_4.jpg';
 import PoolPic5 from '~/assets/jpg/pools/1801_5.jpg';
 import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
 import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
+import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 
 import Shedule from '~/views/Shedule/Shedule.vue';
 import { shedule } from '~/static/js/sheduleZelenograd.js';
@@ -89,6 +93,15 @@ const poolFeatures = [
     },
 ];
 
+const poolsArr = [
+    {
+        title: 'СК Орбита',
+        subtitle: 'Зеленоград',
+        pic: orbita,
+        href: '/orbita',
+    },
+];
+
 export default {
     components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Shedule },
     head() {
@@ -115,6 +128,7 @@ export default {
         return {
             poolsPicArr,
             poolFeatures,
+            poolsArr,
             shedule,
         };
     },

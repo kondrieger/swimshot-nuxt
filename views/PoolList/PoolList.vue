@@ -42,7 +42,9 @@
 <script>
 import VButton from '~/components/VButton/VButton.vue';
 
+import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
+
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
 
@@ -56,6 +58,14 @@ const poolsArr = [
         href: '/zelenograd',
         free: true,
         new: true,
+    },
+    {
+        title: 'СК Орбита',
+        subtitle: 'Зеленоград',
+        pic: orbita,
+        href: '/orbita',
+        free: false,
+        new: false,
     },
 ];
 
