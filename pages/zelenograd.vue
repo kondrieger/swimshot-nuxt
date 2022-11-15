@@ -30,10 +30,10 @@
                 </p>
             </div>
         </div>
-        <Shedule :shedule="shedule" class="bg-grey" />
         <div class="bg-grey">
-            <AnotherPools :PoolsArr="poolsArr" />
+            <Shedule :shedule="shedule" class="bg-grey" />
         </div>
+        <AnotherPools :PoolsArr="poolsArr" />
     </div>
 </template>
 
