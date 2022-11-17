@@ -122,7 +122,7 @@ export default {
         left: 70px;
         bottom: 70px;
         background-color: var(--cl-blue);
-        z-index: 100;
+        z-index: 98;
         border: none;
         cursor: pointer;
 

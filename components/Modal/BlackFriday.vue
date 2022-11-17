@@ -1,6 +1,7 @@
 <template>
     <vue-modaltor
         :visible="open || isOpen"
+        :closeScroll="false"
         @hideModal="hideModal"
         defaultWidth="600px"
         :resize-width="{ 960: '100%' }"
@@ -12,7 +13,7 @@
                 <FridayIcon class="modal-friday__icon modal-friday__icon--friday" />
                 <Gift class="modal-friday__icon modal-friday__icon--gift" />
                 <div @click="hideModal" class="modal__close-btn"></div>
-                <h4 class="modal__header-text modal-friday__header-title">Скидки до 50%</h4>
+                <h4 class="modal-friday__header-title">Скидки до 50%</h4>
                 <h3 class="modal-friday__header-subtitle">
                     Черная пятница <span class="text-danger text-bold">25-27 ноября</span>
                 </h3>
@@ -70,22 +71,29 @@ export default {
 .modal-friday {
     &__header {
         &-title {
-            color: var(--cl-red);
+            font-size: 38px !important;
+            text-transform: uppercase !important;
+            text-align: center !important;
+            color: var(--cl-red) !important;
         }
 
         &-subtitle {
-            font-size: 20px;
-            margin-bottom: calc(var(--gs) * 1.1);
+            text-align: center !important;
+            font-size: 20px !important;
+            margin-bottom: calc(var(--gs) * 2) !important;
         }
 
         &-text {
-            font-size: 18px;
+            text-align: center !important;
+            font-size: 18px !important;
+            margin-bottom: calc(var(--gs) * 1) !important;
         }
     }
 
     &__body {
         &-text {
             margin-bottom: calc(var(--gs) * 3);
+            text-align: center !important;
 
             & a {
                 display: inline;

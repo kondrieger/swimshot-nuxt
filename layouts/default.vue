@@ -70,7 +70,7 @@ export default {
         right: 50px;
         bottom: 45px;
         background-color: var(--cl-blue);
-        z-index: 100;
+        z-index: 98;
         border: none;
         cursor: pointer;
 

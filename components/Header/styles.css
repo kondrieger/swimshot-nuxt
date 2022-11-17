@@ -1,7 +1,7 @@
 .header {
     background: white;
     position: relative;
-    z-index: 2014;
+    z-index: 97;
 
     &__wrap {
         padding-top: calc(var(--gs) * 0.5);
@@ -261,7 +261,7 @@
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1000; /* Stay on top */
+    z-index: 95; /* Stay on top */
     top: 0;
     left: 0;
     background-color: var(--cl-dk-blue) !important;
