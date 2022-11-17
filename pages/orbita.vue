@@ -45,7 +45,7 @@ const poolsArr = [
         title: 'Бассейн Swim Shot',
         subtitle: 'Зеленоград',
         pic: ph1801,
-        href: '/1801',
+        href: '/zelenograd',
     },
 ];
 const littlePool = [
@@ -142,7 +142,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.isFridayModalOpen = true;
-        }, 1000);
+        }, 7000);
     },
 };
 </script>

@@ -53,7 +53,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.isFridayModalOpen = true;
-        }, 1000);
+        }, 7000);
     },
 };
 </script>
