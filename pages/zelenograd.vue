@@ -34,6 +34,7 @@
             <Shedule :shedule="shedule" class="bg-grey" />
         </div>
         <AnotherPools :PoolsArr="poolsArr" />
+        <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>
 </template>
 
@@ -43,6 +44,7 @@ import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
+import ModalBlackFriday from '~/components/Modal/BlackFriday.vue';
 
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
@@ -103,7 +105,7 @@ const poolsArr = [
 ];
 
 export default {
-    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Shedule },
+    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Shedule, ModalBlackFriday },
     head() {
         return {
             title: 'Swim Shot — Бассейн в Зеленограде',
@@ -129,14 +131,19 @@ export default {
             poolsPicArr,
             poolFeatures,
             poolsArr,
+            isFridayModalOpen: false,
             shedule,
         };
     },
+    methods: {
+        onCloseModal() {
+            this.isFridayModalOpen = false;
+        },
+    },
     mounted() {
         setTimeout(() => {
-            $('#school').val('16371');
-            $('#school').change();
-        }, 1000);
+            this.isFridayModalOpen = true;
+        }, 1500);
     },
 };
 </script>

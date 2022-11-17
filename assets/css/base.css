@@ -207,6 +207,14 @@ fieldset {
     }
 }
 
+.text-danger {
+    color: var(--cl-red);
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
 @keyframes scale {
     0% {
         transform: scale(1);

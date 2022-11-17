@@ -19,6 +19,7 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsArr" />
         </div>
+        <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>
 </template>
 
@@ -28,6 +29,8 @@ import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
+import ModalBlackFriday from '~/components/Modal/BlackFriday.vue';
+
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
 import PoolPic2 from '~/assets/jpg/pools/pool_orbita_2.jpg';
@@ -105,9 +108,10 @@ const bigPool = [
         text: '27 градусов',
     },
 ];
+
 export default {
     name: 'Orbita',
-    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow },
+    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ModalBlackFriday },
     head() {
         return {
             title: 'Swim shot | Бассейн СК Орбита',
@@ -126,9 +130,19 @@ export default {
             poolsArr,
             poolsPicArr,
             littlePool,
+            isFridayModalOpen: false,
             bigPool,
         };
     },
-    mounted() {},
+    methods: {
+        onCloseModal() {
+            this.isFridayModalOpen = false;
+        },
+    },
+    mounted() {
+        setTimeout(() => {
+            this.isFridayModalOpen = true;
+        }, 1000);
+    },
 };
 </script>

@@ -40,10 +40,13 @@
 
 <script>
 /* eslint-disable*/
-import bgPic from '~/assets/jpg/things_bg.jpg';
 import $ from 'jquery';
+
+import bgPic from '~/assets/jpg/things_bg.jpg';
+
 import Vk from '~/assets/svg/vk.svg';
 import Instagram from '~/assets/svg/instagram.svg';
+
 import './styles.css';
 
 export default {
@@ -69,6 +72,7 @@ export default {
             ],
         };
     },
+
     mounted() {
         setTimeout(() => {
             $('#contacts, #iframe').prependTo($('#schoolRequestformDiv'));
