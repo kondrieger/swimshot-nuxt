@@ -106,6 +106,8 @@ const poolsArr = [
 ];
 
 export default {
+    name: '1801',
+    layout: 'default',
     components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Shedule, ModalBlackFriday },
     head() {
         return {

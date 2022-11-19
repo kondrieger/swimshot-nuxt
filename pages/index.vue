@@ -26,6 +26,8 @@ import Comments from '~/views/Comments/Comments.vue';
 import ModalBlackFriday from '~/components/Modal/BlackFriday.vue';
 
 export default {
+    layout: 'default',
+
     components: {
         StartBlock,
         Media,

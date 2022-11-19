@@ -49,6 +49,7 @@ const poolsArr = [
         href: '/zelenograd',
     },
 ];
+
 const littlePool = [
     {
         title: 'Для кого?',
@@ -79,6 +80,7 @@ const littlePool = [
         text: '30 градусов',
     },
 ];
+
 const bigPool = [
     {
         title: 'Для кого?',
@@ -112,7 +114,11 @@ const bigPool = [
 
 export default {
     name: 'Orbita',
+
+    layout: 'default',
+
     components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ModalBlackFriday },
+
     head() {
         return {
             title: 'Swim shot | Бассейн СК Орбита',
@@ -126,6 +132,7 @@ export default {
             ],
         };
     },
+
     data() {
         return {
             poolsArr,
@@ -135,11 +142,13 @@ export default {
             bigPool,
         };
     },
+
     methods: {
         onCloseModal() {
             this.isFridayModalOpen = false;
         },
     },
+
     mounted() {
         setTimeout(() => {
             this.isFridayModalOpen = true;
