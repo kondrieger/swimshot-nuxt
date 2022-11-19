@@ -48,11 +48,9 @@
                     </p>
                 </div>
 
-                <text-input v-model="form.surname" :error="surnameError" placeholderText="Фамилия" />
+                <TextInput v-model="form.name" :error="nameError" placeholderText="Имя" />
 
-                <text-input v-model="form.name" :error="nameError" placeholderText="Имя" />
-
-                <text-input
+                <TextInput
                     v-model="form.phone"
                     :error="telError"
                     :tag="'input-masked'"
@@ -61,10 +59,27 @@
                     :placeholderText="'Телефон'"
                 />
 
-                <text-input v-model="form.email" :error="emailError" :placeholderText="'Email'" />
+                <TextInput v-model="form.email" :error="emailError" :placeholderText="'Email'" />
 
                 <VButton wide text="Отправить" />
             </form>
+
+            <yandex-map
+                class="contact-form__map"
+                :settings="{
+                    apiKey: '24493451-0d78-48ba-a1b8-259797024b9a',
+                    lang: 'ru_RU',
+                    zoom: '1',
+                }"
+                :coords="coords"
+                :zoom="10"
+            >
+                <ymap-marker :icon="markerIcon" :coords="coords" marker-id="123" hint-content="some hint">
+                    <div class="another-pools__list-item-text" slot="balloon">
+                        <VButton text="ПОДРОБНОСТИ" />
+                    </div>
+                </ymap-marker>
+            </yandex-map>
         </div>
     </div>
 </template>
@@ -82,20 +97,32 @@ import Instagram from '~/assets/svg/instagram.svg';
 import Telegram from '~/assets/svg/telegram.svg';
 import Whatsapp from '~/assets/svg/whatsapp.svg';
 
+import House from '~/assets/svg/house.svg';
+
 export default {
     name: 'ContactForm',
-    components: { Vk, Instagram, TextInput, VButton, Telegram, Whatsapp },
+    components: { Vk, Instagram, TextInput, VButton, Telegram, Whatsapp, House },
     mixins: [validationMixin],
     data() {
         return {
             bgPic,
             form: {
                 name: 'Тест',
-                surname: 'Тест',
                 phone: '+79999872096',
                 email: 'kondrieger@gmail.com',
-                FormID: '0a8c30b8-1cd4-11ed-4681-00505683b2c0',
-                clubid: '628ecba8-d1d5-11ec-7e89-00505683b2c0',
+                comment: 'Новая заявка с сайта',
+            },
+            coords: [55.97779002199537, 37.162751976922856],
+
+            markerIcon: {
+                layout: 'default#imageWithContent',
+                imageHref: 'svg/house.svg',
+                imageSize: [30, 30],
+                imageOffset: [0, -18],
+                content: '',
+                contentOffset: [0],
+                contentLayout:
+                    '<div style="background: white; width: 30px; height: 30px; z-index: -10000;">$[properties.iconContent]</div>',
             },
         };
     },
@@ -105,16 +132,11 @@ export default {
                 required,
                 nameAll,
             },
-            surname: {
-                required,
-                nameAll,
-            },
             phone: {
                 required,
                 tel,
             },
             email: {
-                required,
                 email,
             },
         },
@@ -124,14 +146,6 @@ export default {
             if (this.$v.form.name.$dirty) {
                 if (!this.$v.form.name.required) return 'Укажите свое имя';
                 if (!this.$v.form.name.nameAll) return 'Укажите корректное имя';
-            }
-            return '';
-        },
-
-        surnameError() {
-            if (this.$v.form.surname.$dirty) {
-                if (!this.$v.form.surname.required) return 'Укажите свою фамилию';
-                if (!this.$v.form.surname.nameAll) return 'Укажите корректную фамилию';
             }
             return '';
         },
@@ -146,7 +160,6 @@ export default {
 
         emailError() {
             if (this.$v.form.email.$dirty) {
-                if (!this.$v.form.email.required) return 'Укажите Email';
                 if (!this.$v.form.email.email) return 'Неверный формат Email';
             }
             return '';
@@ -161,24 +174,23 @@ export default {
             this.$v.$touch();
             if (this.$v.invalid) return;
 
-            // $.ajax({
-            //     method: 'POST',
-            //     url: 'https://cloud.1c.fitness/api/hs/api/lead/',
-            //     headers: {
-            //         'Content-Type': ['application/json'],
-            //         Apikey: '07914eda-27af-11ed-bb82-00505683b2c0',
-            //     },
-            //     data: JSON.stringify(this.form),
-            //     catche: false,
-            // }).then((resp) => console.log(resp));
-
-            // if (!window.dataLayer.find((item) => item.event === 'form')) {
-            //     window.dataLayer.push({
-            //         event: 'form',
-            //     });
-            //     this.sendLead();
-            //     console.log('Заявка отправлена');
-            // }
+            fetch().then((resp) => {
+                //     'https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0/', {
+                //     method: 'POST',
+                //     mode: 'no-cors',
+                //     headers: {
+                //         Accept: 'application/json',
+                //         'Content-Type': 'application/json',
+                //     },
+                //     body: JSON.stringify(this.form),
+                // }
+                // if (!window.dataLayer.find((item) => item.event === 'form')) {
+                //     window.dataLayer.push({
+                //         event: 'form',
+                //     });
+                //     this.sendLead();
+                // }
+            });
         },
     },
 };
