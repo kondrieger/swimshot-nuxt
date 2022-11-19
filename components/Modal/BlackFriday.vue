@@ -31,7 +31,8 @@
                     <a class="contact-form__contacts-item-content" href="tel:+74994305595" @click="hideModal">
                         +7 (499) 430-55-95
                     </a>
-                    или оставляй заявку в <a href="#contact-form" @click="hideModal">форме</a> для уточнения информации
+                    или оставляй заявку в <a class="js-link" href="#contact-form" @click="hideModal">форме</a> для
+                    уточнения информации
                 </p>
 
                 <div class="" @click="hideModal">

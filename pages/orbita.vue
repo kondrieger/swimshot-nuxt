@@ -12,7 +12,8 @@
                 </p>
                 <p class="pools-info__text">У здания есть <b>парковка</b>.</p>
                 <p class="pools-info__text">
-                    Подобрать время именно под твои нужды можно в <a href="#contact-form">форме</a> ниже.
+                    Подобрать время именно под твои нужды можно в
+                    <a class="js-link" href="#contact-form">форме</a> ниже.
                 </p>
             </div>
         </div>

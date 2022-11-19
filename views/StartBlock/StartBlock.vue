@@ -23,7 +23,7 @@
                     с собственным бассейном в Зеленограде
                 </h1>
                 <p class="start-block__text-subtitle">Записывайся на пробную тренировку всего за 500 рублей</p>
-                <a class="btn btn--wide btn--animated" href="#contact-form">ЗАПИСАТЬСЯ</a>
+                <a class="btn btn--wide btn--animated js-link" href="#contact-form">ЗАПИСАТЬСЯ</a>
             </div>
             <img
                 data-aos="fade-up"
@@ -41,8 +41,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
-
 import pic from '~/assets/jpg/swimshot_man_boy.jpg';
 import text from '~/assets/jpg/swimshot_text.jpg';
 import subtext from '~/assets/jpg/swimshot_subtext.jpg';
@@ -67,36 +65,38 @@ export default {
         },
     },
     mounted() {
-        const bg = document.getElementById('start-bg');
-
-        let entered = false;
-        let y = 0;
-
-        bg.addEventListener('mouseenter', (e) => {
-            y = e.pageY;
-            entered = true;
-        });
-
-        bg.addEventListener('mousemove', (e) => {
-            if (entered === true) {
-                y = -e.pageY / 60;
-                bg.style.backgroundPositionY = `${y}px`;
-            }
-        });
-
-        bg.addEventListener('mouseleave', () => {
-            entered = false;
-        });
-
-        window.document.body.onscroll = () => {
-            this.isVisibleBtn = +window.scrollY > 800;
-        };
+        this.animateBg();
     },
     methods: {
         scrollTop() {
-            $('html, body').animate({
-                scrollTop: 0,
+            window.scrollTo(0, 0);
+        },
+
+        animateBg() {
+            const bg = document.getElementById('start-bg');
+
+            let entered = false;
+            let y = 0;
+
+            bg.addEventListener('mouseenter', (e) => {
+                y = e.pageY;
+                entered = true;
             });
+
+            bg.addEventListener('mousemove', (e) => {
+                if (entered === true) {
+                    y = -e.pageY / 60;
+                    bg.style.backgroundPositionY = `${y}px`;
+                }
+            });
+
+            bg.addEventListener('mouseleave', () => {
+                entered = false;
+            });
+
+            window.document.body.onscroll = () => {
+                this.isVisibleBtn = +window.scrollY > 800;
+            };
         },
     },
 };

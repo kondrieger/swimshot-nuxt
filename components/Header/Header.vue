@@ -11,23 +11,19 @@
                     /></nuxt-link>
                     <client-only v-else>
                         <Slide :closeOnNavigation="true" noOverlay>
-                            <nuxt-link
-                                class="header__links-link js-header-link"
-                                :to="{ path: '/', hash: '#pools-list' }"
+                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#pools-list' }"
                                 ><p>Бассейны</p></nuxt-link
                             >
-                            <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#team' }"
+                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#team' }"
                                 ><p>Тренеры</p></nuxt-link
                             >
-                            <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#comments' }"
+                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#comments' }"
                                 ><p>Отзывы</p></nuxt-link
                             >
-                            <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#media' }"
+                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#media' }"
                                 ><p>Медиа</p></nuxt-link
                             >
-                            <nuxt-link
-                                class="header__links-link js-header-link"
-                                :to="{ path: '/', hash: '#contact-form' }"
+                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#contact-form' }"
                                 ><p>Контакты</p></nuxt-link
                             >
                             <div class="header__links-social">
@@ -67,19 +63,19 @@
                     </client-only>
 
                     <div class="header__links" v-if="!isTablet">
-                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#pools-list' }"
+                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#pools-list' }"
                             ><p>Бассейны</p></nuxt-link
                         >
-                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#team' }"
+                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#team' }"
                             ><p>Тренеры</p></nuxt-link
                         >
-                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#comments' }"
+                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#comments' }"
                             ><p>Отзывы</p></nuxt-link
                         >
-                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#media' }"
+                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#media' }"
                             ><p>Медиа</p></nuxt-link
                         >
-                        <nuxt-link class="header__links-link js-header-link" :to="{ path: '/', hash: '#contact-form' }"
+                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#contact-form' }"
                             ><p>Контакты</p></nuxt-link
                         >
                     </div>
@@ -113,7 +109,9 @@
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
                             <a class="header__links-phone" href="tel:+74994305595">+7 (499) 430-55-95</a>
-                            <a class="header__links-phone-text" href="#contact-form">Заказать обратный звонок</a>
+                            <a class="header__links-phone-text js-link" href="#contact-form"
+                                >Заказать обратный звонок</a
+                            >
                         </div>
                         <!-- <a class="header__links-login" href="https://my.swimshot.ru" title="Войти в личный кабинет"
                         ><Login class="header__links-login-icon"

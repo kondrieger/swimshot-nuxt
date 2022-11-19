@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
-
 export default {
     data() {
         return {
@@ -20,17 +18,12 @@ export default {
         },
     },
     mounted() {
-        $('a[href^="#"]').on('click', function (event) {
-            event.preventDefault();
-            let href = $(this).attr('href');
-
-            $('html, body').animate({
-                scrollTop: $(href).offset().top,
-            });
-            return false;
-        });
         window.onscroll = () => {
-            this.isVisibleBtn = window.scrollY < $('#contact-form').offset().top - 400;
+            //по href ищем элемент с нужным id и определяем его позицию
+            const linkingElement = document.querySelector('#contact-form')?.getBoundingClientRect();
+            const elementTop = linkingElement?.top && window.scrollY + linkingElement?.top;
+
+            this.isVisibleBtn = window.scrollY < elementTop - 400;
         };
     },
 };

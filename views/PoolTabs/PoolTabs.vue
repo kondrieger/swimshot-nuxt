@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
 import './styles.css';
 
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
@@ -59,16 +58,18 @@ export default {
         },
     },
     mounted() {
-        $('.tab-link').click(function () {
-            var tabID = $(this).attr('data-tab');
-
-            $(this).addClass('active').siblings().removeClass('active');
-
-            $('#tab-' + tabID)
-                .addClass('active')
-                .siblings()
-                .removeClass('active');
-        });
+        /**
+         * @todo
+         * Если появятся табы, переписать переключение
+         */
+        // $('.tab-link').click(function () {
+        //     var tabID = $(this).attr('data-tab');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        //     $('#tab-' + tabID)
+        //         .addClass('active')
+        //         .siblings()
+        //         .removeClass('active');
+        // });
     },
 };
 </script>

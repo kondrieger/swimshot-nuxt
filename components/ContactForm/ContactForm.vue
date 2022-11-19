@@ -47,9 +47,6 @@
 </template>
 
 <script>
-/* eslint-disable*/
-import $ from 'jquery';
-
 import bgPic from '~/assets/jpg/things_bg.jpg';
 
 import Vk from '~/assets/svg/vk.svg';
@@ -66,28 +63,6 @@ export default {
         return {
             bgPic,
         };
-    },
-    head() {
-        return {
-            script: [
-                {
-                    hid: 'form',
-                    src: 'https://static.education-erp.com/all.js?schoolTypeId=139&showMap=true',
-                    defer: true,
-                    id: 'schoolRequestScript',
-                    callback: () => {
-                        console.log('Форма загружена');
-                    },
-                },
-            ],
-        };
-    },
-
-    mounted() {
-        setTimeout(() => {
-            $('#contacts, #iframe').prependTo($('#schoolRequestformDiv'));
-            $('.form').hide();
-        }, 0);
     },
 };
 </script>

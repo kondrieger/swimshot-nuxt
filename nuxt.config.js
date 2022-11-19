@@ -27,11 +27,7 @@ export default {
         ],
         link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
         link: [{ rel: 'image_src', href: '/soc.png' }],
-        script: [
-            { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' },
-            { src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=InitMap' },
-            { src: 'js/mango.js' },
-        ],
+        script: [{ src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=InitMap' }, { src: 'js/mango.js' }],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
