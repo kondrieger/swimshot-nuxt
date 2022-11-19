@@ -27,7 +27,7 @@ export default {
         ],
         link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
         link: [{ rel: 'image_src', href: '/soc.png' }],
-        script: [{ src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=InitMap' }, { src: 'js/mango.js' }],
+        script: [{ src: 'js/mango.js' }],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
@@ -43,6 +43,7 @@ export default {
     plugins: [
         { src: '~plugins/slide-menu', ssr: false },
         { src: '~plugins/main', ssr: false },
+        { src: '~/plugins/ymapPlugin.js', mode: 'client' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
