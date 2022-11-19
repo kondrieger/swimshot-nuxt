@@ -23,7 +23,7 @@
         text-align: center;
         font-size: 24px;
         font-weight: 300;
-        margin-bottom: calc(var(--gs) * 2);
+        margin-bottom: calc(var(--gs) * 8);
 
         @media (--tablet) {
             font-size: 18px;
@@ -31,12 +31,13 @@
         }
 
         &--note {
-            margin-bottom: calc(var(--gs) * 8);
+            margin-top: calc(var(--gs) * (-5));
             font-size: 14px;
             color: grey;
 
             @media (--tablet) {
                 margin-bottom: calc(var(--gs) * 2);
+                margin-top: 0;
                 font-size: 12px;
             }
         }

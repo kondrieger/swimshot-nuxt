@@ -40,6 +40,14 @@
                                 </a>
 
                                 <a
+                                    href="https://wa.me/+79771885559"
+                                    class="header__links-social-item header__links-social-item--modal"
+                                    target="_blank"
+                                >
+                                    <Whatsapp class="header__links-social-item-img" />
+                                </a>
+
+                                <a
                                     href="https://t.me/swimshot/"
                                     class="header__links-social-item header__links-social-item--modal"
                                     target="_blank"
@@ -53,14 +61,6 @@
                                     target="_blank"
                                 >
                                     <Instagram class="header__links-social-item-img" />
-                                </a>
-
-                                <a
-                                    href="https://zen.yandex.ru/id/61f02212765d8f1266d725a4/"
-                                    class="header__links-social-item header__links-social-item--modal"
-                                    target="_blank"
-                                >
-                                    <Zen class="header__links-social-item-img" />
                                 </a>
                             </div>
                         </Slide>
@@ -95,6 +95,10 @@
                                 <Vk class="header__links-social-item-img" />
                             </a>
 
+                            <a href="https://wa.me/+79771885559" target="_blank" class="header__links-social-item">
+                                <Whatsapp class="header__links-social-item-img" />
+                            </a>
+
                             <a href="https://t.me/swimshot/" target="_blank" class="header__links-social-item">
                                 <Telegram class="header__links-social-item-img" />
                             </a>
@@ -105,13 +109,6 @@
                                 class="header__links-social-item"
                             >
                                 <Instagram class="header__links-social-item-img" />
-                            </a>
-                            <a
-                                href="https://zen.yandex.ru/id/61f02212765d8f1266d725a4/"
-                                target="_blank"
-                                class="header__links-social-item"
-                            >
-                                <Zen class="header__links-social-item-img" />
                             </a>
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
@@ -138,13 +135,14 @@ import Instagram from '~/assets/svg/instagram.svg';
 import Zen from '~/assets/svg/zen.svg';
 import Telegram from '~/assets/svg/telegram.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
+import Whatsapp from '~/assets/svg/whatsapp.svg';
 // import Login from '~/assets/svg/login.svg';
 
 import Modal from '~/components/Modal/Modal.vue';
 
 export default {
     name: 'a-header',
-    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Modal },
+    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Modal, Whatsapp },
     data() {
         return {
             isBurgerOpen: false,

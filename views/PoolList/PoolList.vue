@@ -3,8 +3,9 @@
         <div class="container pools">
             <h2 class="media__title" data-aos="fade-right" data-aos-once="true">Бассейны</h2>
             <h3 class="media__text">
-                Занятия по обучению плаванию проходят 1-3 раза в неделю по 45 мин. на выделенных дорожках. <br />
-                Приглашаем тебя в комфортные бассейны с чистой водой и температурой 28ºС
+                Занятия проходят от одного до четырех раз в неделю по 45-90 минут в двух бассейнах Зеленограда.
+                Температура и качество воды комфортные для плавания в любом возрасте. Переходи на страницу бассейна
+                ниже, и ознакомься с услугами, ценами и прочими условиями каждого из них
             </h3>
             <div class="pools__list" data-aos="fade-up" data-aos-once="true">
                 <nuxt-link
@@ -15,8 +16,9 @@
                     class="pools__list-item"
                     :class="{ 'pools__list-item--new': pool.new }"
                 >
-                    <span v-if="pool.free" class="pools__list-item-free-badge">свободное плавание</span>
+                    <span v-if="pool.badge" class="pools__list-item-free-badge">{{ pool.badge }}</span>
                     <NewBadge v-if="pool.new" class="pools__list-item-new-badge" />
+                    <House v-if="pool.home" class="pools__list-item-home-badge" />
                     <div class="pools__list-item-text">
                         <p class="pools__list-item-text-title">
                             {{ pool.title }}<span class="pools__list-item-text-subtitle">, {{ pool.subtitle }}</span>
@@ -47,6 +49,7 @@ import ph1801 from '~/assets/jpg/pools/1801.jpg';
 
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
+import House from '~/assets/svg/house.svg';
 
 import './styles.css';
 
@@ -56,22 +59,22 @@ const poolsArr = [
         subtitle: 'Зеленоград',
         pic: ph1801,
         href: '/zelenograd',
-        free: true,
-        new: true,
+        badge: 'свободное плавание',
+        home: true,
     },
     {
         title: 'СК Орбита',
         subtitle: 'Зеленоград',
         pic: orbita,
         href: '/orbita',
-        free: false,
-        new: false,
+        badge: 'для самых маленьких',
+        new: true,
     },
 ];
 
 export default {
     name: 'PoolList',
-    components: { VButton, Question, NewBadge },
+    components: { VButton, Question, NewBadge, House },
     data() {
         return {
             poolsArr,

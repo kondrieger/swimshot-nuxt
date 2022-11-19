@@ -3,6 +3,7 @@
         :visible="open || isOpen"
         :closeScroll="false"
         @hideModal="hideModal"
+        class="modal-friday"
         defaultWidth="600px"
         :resize-width="{ 960: '100%' }"
         :animation-panel="'modal-slide-bottom'"
@@ -13,9 +14,9 @@
                 <FridayIcon class="modal-friday__icon modal-friday__icon--friday" />
                 <Gift class="modal-friday__icon modal-friday__icon--gift" />
                 <div @click="hideModal" class="modal__close-btn"></div>
-                <h4 class="modal-friday__header-title">Скидки до 50%</h4>
+                <h4 class="modal-friday__header-title">Скидки до 80%</h4>
                 <h3 class="modal-friday__header-subtitle">
-                    Черная пятница <span class="text-danger text-bold">25-27 ноября</span>
+                    ЧЕРНАЯ ПЯТНИЦА <span class="text-danger text-bold">25-28 НОЯБРЯ</span>
                 </h3>
                 <p class="modal-friday__header-text">
                     Самая масштабная акция Swim Shot с момента основания <br />
@@ -69,6 +70,18 @@ export default {
 
 <style>
 .modal-friday {
+    .modaltor__panel {
+        background-color: #1b1b1b !important;
+        color: white;
+    }
+
+    .modal__close-btn {
+        &::before,
+        &::after {
+            background-color: #fff;
+        }
+    }
+
     &__header {
         &-title {
             font-size: 38px !important;
@@ -80,12 +93,14 @@ export default {
         &-subtitle {
             text-align: center !important;
             font-size: 20px !important;
+            color: white !important;
             margin-bottom: calc(var(--gs) * 2) !important;
         }
 
         &-text {
             text-align: center !important;
             font-size: 18px !important;
+            color: white !important;
             margin-bottom: calc(var(--gs) * 1) !important;
         }
     }
@@ -94,6 +109,7 @@ export default {
         &-text {
             margin-bottom: calc(var(--gs) * 3);
             text-align: center !important;
+            color: white !important;
 
             & a {
                 display: inline;

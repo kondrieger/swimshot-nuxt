@@ -12,17 +12,25 @@
             <div class="contact-form__contacts-item contact-form__contacts-item--wide">
                 <p class="contact-form__contacts-item-title">Пиши в соц. сетях</p>
                 <div class="contact-form__contacts-item-content">
-                    <a href="https://www.instagram.com/swim_shot/" target="_blank" class="header__links-social-item">
-                        <Instagram class="header__links-social-item-img" />
-                    </a>
-
                     <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
                         <Vk class="header__links-social-item-img" />
+                    </a>
+
+                    <a href="https://wa.me/+79771885559" target="_blank" class="header__links-social-item">
+                        <Whatsapp class="header__links-social-item-img" />
+                    </a>
+
+                    <a href="https://t.me/swim_shot" target="_blank" class="header__links-social-item">
+                        <Telegram class="header__links-social-item-img" />
+                    </a>
+
+                    <a href="https://www.instagram.com/swim_shot/" target="_blank" class="header__links-social-item">
+                        <Instagram class="header__links-social-item-img" />
                     </a>
                 </div>
             </div>
             <p class="contact-form__contacts-item contact-form__contacts-item--wide contact-form__contacts-item--text">
-                Оставляй заявку прямо на сайте и мы сами тебе позвоним
+                Оставляй заявку на сайте, и мы сами тебе позвоним
             </p>
         </div>
 
@@ -46,12 +54,14 @@ import bgPic from '~/assets/jpg/things_bg.jpg';
 
 import Vk from '~/assets/svg/vk.svg';
 import Instagram from '~/assets/svg/instagram.svg';
+import Telegram from '~/assets/svg/telegram.svg';
+import Whatsapp from '~/assets/svg/whatsapp.svg';
 
 import './styles.css';
 
 export default {
     name: 'ContactForm',
-    components: { Vk, Instagram },
+    components: { Vk, Instagram, Telegram, Whatsapp },
     data() {
         return {
             bgPic,
