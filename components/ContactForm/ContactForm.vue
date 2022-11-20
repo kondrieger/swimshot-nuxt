@@ -48,7 +48,7 @@
                     </p>
                 </div>
 
-                <TextInput v-model="form.name" :error="nameError" placeholderText="Имя" />
+                <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
 
                 <TextInput
                     v-model="form.phone"
@@ -56,7 +56,7 @@
                     :tag="'input-masked'"
                     mask="+7 (###) ###-##-##"
                     type="phone"
-                    :placeholderText="'Телефон'"
+                    placeholderText="Телефон *"
                 />
 
                 <TextInput v-model="form.email" :error="emailError" :placeholderText="'Email'" />
