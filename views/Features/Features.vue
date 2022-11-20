@@ -1,7 +1,9 @@
 <template>
     <div class="container features">
-        <h2 class="text-header">Наслаждайся плаванием в <span class="blue">Swim Shot</span></h2>
-        <h3 class="text-subheader">
+        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
+            Наслаждайся плаванием в <span class="blue">Swim Shot</span>
+        </h2>
+        <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
             Присоединяйся к группам в сезоне 2022/2023!<br />
             Научим <span class="blue">кайфовать</span> от воды и <span class="blue">получать удовольствие</span> во
             время плавания<br />

@@ -4,7 +4,7 @@
             Расписание <span class="blue">занятий</span>
         </h2>
 
-        <p class="text-subheader">
+        <p class="text-subheader" data-aos="fade-right" data-aos-once="true">
             Выбирай свободное плавание или группу и количество занятий в неделю. Занятие длится
             <span class="blue">45 минут</span>. <br />Для уточнения расписания индивидуальных тренировок свяжись по
             телефону или оставь заявку на сайте.

@@ -4,15 +4,17 @@
             <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
                 Swim shot в <span class="blue">СМИ</span>
             </h2>
-            <p class="text-subheader" data-aos="fade-right" data-aos-once="true">
+
+            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
                 Говорим и пишем о плавании и нашей школе <br />Слушай и читай по ссылкам ниже
-            </p>
+            </h3>
+
             <p class="text-subheader text-subheader--note" data-aos="fade-right" data-aos-once="true">
                 * расписание, цены и пр информация об услугах может отличаться от указанных по ссылкам ниже из-за
                 прошествия времени
             </p>
 
-            <div class="media__list">
+            <div class="media__list" data-aos="fade-up" data-aos-once="true">
                 <div class="media__list-item">
                     <div class="media__list-item-img">
                         <img :src="kaleki" alt="Swim shot на sports.ru" />

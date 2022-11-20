@@ -2,7 +2,7 @@
     <div class="bg-grey" id="pools-list">
         <div class="container pools">
             <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Бассейны</h2>
-            <h3 class="text-subheader">
+            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
                 Занятия проходят от одного до четырех раз в неделю по 45-90 минут в двух бассейнах Зеленограда.
                 Температура и качество воды комфортные для плавания в любом возрасте. Переходи на страницу бассейна
                 ниже, и ознакомься с услугами, ценами и прочими условиями каждого из них

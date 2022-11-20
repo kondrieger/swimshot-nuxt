@@ -3,7 +3,7 @@
         <div class="container photos">
             <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Галерея</h2>
 
-            <h3 class="text-subheader">
+            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
                 Для учеников особенно важен настрой во время занятий.<br />Наши тренеры всегда готовы поддержать и
                 вдохновить на новые успехи пловцов любого уровня.
             </h3>

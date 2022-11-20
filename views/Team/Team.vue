@@ -2,7 +2,7 @@
     <div class="container team" id="team">
         <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Наши <span class="blue">тренеры</span></h2>
 
-        <h3 class="text-subheader">
+        <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
             Каждый сотрудник Swim Shot делает все, чтобы ты получал максимальное наслаждение от плавания с пользой для
             здоровья и прогрессом. Тренеры регулярно обучаются как организованно, так и самостоятельно, а некоторые даже
             продолжают плавать, чтобы сначала опробовать на себе новые методы и упражнения, а потом внедрять их в
