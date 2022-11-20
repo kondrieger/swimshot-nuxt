@@ -1,13 +1,13 @@
 <template>
     <div class="bg-grey" id="pools-list">
         <div class="container pools">
-            <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Бассейны</h2>
-            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
+            <h2 class="text-header" data-aos="fade-right">Бассейны</h2>
+            <h3 class="text-subheader" data-aos="fade-right">
                 Занятия проходят от одного до четырех раз в неделю по 45-90 минут в двух бассейнах Зеленограда.
                 Температура и качество воды комфортные для плавания в любом возрасте. Переходи на страницу бассейна
                 ниже, и ознакомься с услугами, ценами и прочими условиями каждого из них
             </h3>
-            <div class="pools__list" data-aos="fade-up" data-aos-once="true">
+            <div class="pools__list" data-aos="fade-up">
                 <nuxt-link
                     v-for="(pool, index) in poolsArr"
                     :key="index"

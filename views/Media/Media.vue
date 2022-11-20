@@ -1,20 +1,18 @@
 <template>
     <div class="bg-grey" id="media">
         <div class="container media">
-            <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
-                Swim shot в <span class="blue">СМИ</span>
-            </h2>
+            <h2 class="text-header" data-aos="fade-right">Swim shot в <span class="blue">СМИ</span></h2>
 
-            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
+            <h3 class="text-subheader" data-aos="fade-right">
                 Говорим и пишем о плавании и нашей школе <br />Слушай и читай по ссылкам ниже
             </h3>
 
-            <p class="text-subheader text-subheader--note" data-aos="fade-right" data-aos-once="true">
+            <p class="text-subheader text-subheader--note" data-aos="fade-right">
                 * расписание, цены и пр информация об услугах может отличаться от указанных по ссылкам ниже из-за
                 прошествия времени
             </p>
 
-            <div class="media__list" data-aos="fade-up" data-aos-once="true">
+            <div class="media__list" data-aos="fade-up">
                 <div class="media__list-item">
                     <div class="media__list-item-img">
                         <img :src="kaleki" alt="Swim shot на sports.ru" />

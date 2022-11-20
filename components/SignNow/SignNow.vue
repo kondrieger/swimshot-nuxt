@@ -1,5 +1,5 @@
 <template>
-    <div data-aos="fade-up" data-aos-once="true" v-if="!isTablet && isVisibleBtn" class="pools-info__sign">
+    <div data-aos="fade-up" v-if="!isTablet && isVisibleBtn" class="pools-info__sign">
         <p class="pools-info__sign-text">Запишись <span class="blue">сейчас</span></p>
         <a class="btn btn--wide btn--animated" href="#contact-form">ЗАПИСАТЬСЯ</a>
     </div>

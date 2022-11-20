@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="wrapper" data-aos="fade-up" data-aos-once="true">
+        <div class="wrapper" data-aos="fade-up">
             <div class="tab-wrapper">
                 <ul class="tabs">
                     <li class="tab-link" :class="{ active: littleActive }" data-tab="1">Малый бассейн</li>
@@ -16,7 +16,7 @@
                 </ul>
             </div>
         </div>
-        <div class="bg-grey" data-aos="fade-up" data-aos-once="true">
+        <div class="bg-grey" data-aos="fade-up">
             <div class="wrapper">
                 <div class="content-wrapper">
                     <div id="tab-1" class="tab-content" :class="{ active: littleActive }">

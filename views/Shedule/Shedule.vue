@@ -1,10 +1,8 @@
 <template>
     <div class="container shedule">
-        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
-            Расписание <span class="blue">занятий</span>
-        </h2>
+        <h2 class="text-header" data-aos="fade-right">Расписание <span class="blue">занятий</span></h2>
 
-        <p class="text-subheader" data-aos="fade-right" data-aos-once="true">
+        <p class="text-subheader" data-aos="fade-right">
             Выбирай свободное плавание или группу и количество занятий в неделю. Занятие длится
             <span class="blue">45 минут</span>. <br />Для уточнения расписания индивидуальных тренировок свяжись по
             телефону или оставь заявку на сайте.

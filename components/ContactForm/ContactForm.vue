@@ -1,6 +1,6 @@
 <template>
     <div :style="{ 'background-image': 'url(' + bgPic + ')' }" class="contact-form__bg" id="contact-form">
-        <div class="container contact-form__wrap" data-aos="fade-up" data-aos-once="true">
+        <div class="container contact-form__wrap" data-aos="fade-up">
             <div id="contacts" class="contact-form__contacts contact-form-border">
                 <div class="contact-form__contacts-item">
                     <p class="contact-form__contacts-item-title">Звони нам</p>
@@ -94,7 +94,7 @@
             </form>
         </div>
 
-        <div class="container contact-form__wrap" data-aos="fade-up" data-aos-once="true">
+        <div class="container contact-form__wrap" data-aos="fade-up">
             <yandex-map
                 class="contact-form-border contact-form__map"
                 :settings="{

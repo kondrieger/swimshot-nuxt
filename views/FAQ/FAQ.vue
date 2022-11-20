@@ -1,10 +1,8 @@
 <template>
     <div class="container faq">
-        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
-            Часто задаваемые <span class="blue">вопросы</span>
-        </h2>
+        <h2 class="text-header" data-aos="fade-right">Часто задаваемые <span class="blue">вопросы</span></h2>
         <client-only>
-            <VueFaqAccordion data-aos="fade-up" data-aos-once="true" :items="questions" />
+            <VueFaqAccordion data-aos="fade-up" :items="questions" />
         </client-only>
     </div>
 </template>

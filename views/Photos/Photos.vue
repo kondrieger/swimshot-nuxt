@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="container photos">
-            <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Галерея</h2>
+            <h2 class="text-header" data-aos="fade-right">Галерея</h2>
 
-            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
+            <h3 class="text-subheader" data-aos="fade-right">
                 Для учеников особенно важен настрой во время занятий.<br />Наши тренеры всегда готовы поддержать и
                 вдохновить на новые успехи пловцов любого уровня.
             </h3>
 
-            <p class="text-subheader text-subheader--note" data-aos="fade-right" data-aos-once="true">
+            <p class="text-subheader text-subheader--note" data-aos="fade-right">
                 * моменты с самого рождения Swim Shot до сегодняшнего дня
             </p>
 
-            <div class="photos__wrap" data-aos="fade-up" data-aos-once="true">
+            <div class="photos__wrap" data-aos="fade-up">
                 <div class="photos__swiper">
                     <div id="images" style="display: none" v-viewer="viewerOptions">
                         <img v-for="(photo, index) in photosArr" :src="photo" :key="index" alt="" />

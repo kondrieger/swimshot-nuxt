@@ -7,10 +7,10 @@
             :photosArr="poolsPicArr"
         />
         <div class="bg-grey">
-            <PoolsFeatures :PoolsFeatures="poolFeatures" alone />
+            <PoolsFeatures data-aos="fade-up" :PoolsFeatures="poolFeatures" alone />
         </div>
 
-        <div class="container" data-aos="fade-right" data-aos-once="true">
+        <div class="container" data-aos="fade-right">
             <div class="pools-info">
                 <p class="pools-info__text">
                     Бассейн находится на цокольном этаже корпуса 1801 на пересечении улицы <b>Каменка</b> и
@@ -32,9 +32,9 @@
             </div>
         </div>
         <div class="bg-grey">
-            <Shedule :shedule="shedule" class="bg-grey" />
+            <Shedule data-aos="fade-up" :shedule="shedule" class="bg-grey" />
         </div>
-        <AnotherPools :PoolsArr="poolsArr" />
+        <AnotherPools data-aos="fade-up" :PoolsArr="poolsArr" />
         <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>
 </template>

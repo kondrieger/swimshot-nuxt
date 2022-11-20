@@ -11,7 +11,6 @@
                 />
                 <img
                     data-aos="fade-right"
-                    data-aos-once="true"
                     width="466px"
                     height="23px"
                     :src="subtext"
@@ -27,7 +26,6 @@
             </div>
             <img
                 data-aos="fade-up"
-                data-aos-once="true"
                 v-if="!isTablet"
                 width="587px"
                 height="688px"

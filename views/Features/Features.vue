@@ -1,9 +1,7 @@
 <template>
     <div class="container features">
-        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
-            Наслаждайся плаванием в <span class="blue">Swim Shot</span>
-        </h2>
-        <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
+        <h2 class="text-header" data-aos="fade-right">Наслаждайся плаванием в <span class="blue">Swim Shot</span></h2>
+        <h3 class="text-subheader" data-aos="fade-right">
             Присоединяйся к группам в сезоне 2022/2023!<br />
             Научим <span class="blue">кайфовать</span> от воды и <span class="blue">получать удовольствие</span> во
             время плавания<br />
@@ -11,12 +9,7 @@
         </h3>
         <swiper ref="mySwiper" class="" :options="swiperOptions">
             <swiper-slide v-for="(feature, index) in featuresArr" :key="index">
-                <div
-                    data-aos="zoom-in"
-                    :data-aos-offset="25 + index * 25"
-                    data-aos-once="true"
-                    class="features__list-item"
-                >
+                <div data-aos="zoom-in" :data-aos-offset="25 + index * 25" class="features__list-item">
                     <Discount v-if="index === 0" class="features__list-item-img" />
                     <House v-if="index === 1" class="features__list-item-img" />
                     <Medal v-if="index === 2" class="features__list-item-img" />

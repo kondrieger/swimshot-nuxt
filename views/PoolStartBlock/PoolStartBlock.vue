@@ -1,11 +1,11 @@
 <template>
     <div class="container pool-start-block">
-        <h1 class="pool-start-block__title" data-aos="fade-right" data-aos-once="true">{{ title }}</h1>
-        <a class="pool-start-block__address js-link" href="#contact-form" data-aos="fade-right" data-aos-once="true">
+        <h1 class="pool-start-block__title" data-aos="fade-right">{{ title }}</h1>
+        <a class="pool-start-block__address js-link" href="#contact-form" data-aos="fade-right">
             <img :src="mapMark" alt="Swim shot адрес" />{{ address }}
         </a>
 
-        <div class="pool-start-block__swiper" data-aos="fade-up" data-aos-once="true">
+        <div class="pool-start-block__swiper" data-aos="fade-up">
             <swiper class="swiper" :options="swiperOptions" ref="swiperTop">
                 <swiper-slide
                     v-for="(photo, index) in photosArr"

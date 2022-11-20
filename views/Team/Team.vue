@@ -1,15 +1,15 @@
 <template>
     <div class="container team" id="team">
-        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Наши <span class="blue">тренеры</span></h2>
+        <h2 class="text-header" data-aos="fade-right">Наши <span class="blue">тренеры</span></h2>
 
-        <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
+        <h3 class="text-subheader" data-aos="fade-right">
             Каждый сотрудник Swim Shot делает все, чтобы ты получал максимальное наслаждение от плавания с пользой для
             здоровья и прогрессом. Тренеры регулярно обучаются как организованно, так и самостоятельно, а некоторые даже
             продолжают плавать, чтобы сначала опробовать на себе новые методы и упражнения, а потом внедрять их в
             тренировочный процесс
         </h3>
 
-        <swiper data-aos="fade-up" data-aos-once="true" ref="mySwiper" class="" :options="swiperOptions">
+        <swiper data-aos="fade-up" ref="mySwiper" class="" :options="swiperOptions">
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">
                     <div class="">

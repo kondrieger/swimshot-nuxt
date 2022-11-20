@@ -2,9 +2,9 @@
     <div>
         <SignNow />
         <PoolStartBlock title="СК Орбита" address="Зеленоград, ул. Озерная аллея, 6" :photosArr="poolsPicArr" />
-        <PoolTabs :littlePool="littlePool" :bigPool="[]" littleActive />
+        <PoolTabs :littlePool="littlePool" :bigPool="[]" littleActive data-aos="fade-up" />
 
-        <div class="container" data-aos="fade-right" data-aos-once="true">
+        <div class="container" data-aos="fade-right">
             <div class="pools-info">
                 <p class="pools-info__text">
                     В каждом из этих бассейнов можно проводить как персональные, так и групповые тренировки с
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="bg-grey">
-            <AnotherPools :PoolsArr="poolsArr" />
+            <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
         </div>
         <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>

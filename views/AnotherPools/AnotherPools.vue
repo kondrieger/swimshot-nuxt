@@ -1,9 +1,7 @@
 <template>
     <div class="container another-pools">
-        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
-            Другие наши <span class="blue">бассейны</span>
-        </h2>
-        <div class="another-pools__list" data-aos="fade-up" data-aos-once="true">
+        <h2 class="text-header" data-aos="fade-right">Другие наши <span class="blue">бассейны</span></h2>
+        <div class="another-pools__list" data-aos="fade-up">
             <nuxt-link
                 v-for="(pool, index) in PoolsArr"
                 :key="index"

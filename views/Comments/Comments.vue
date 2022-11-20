@@ -1,17 +1,15 @@
 <template>
     <div class="bg-grey" id="comments">
         <div class="container comments">
-            <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
-                Отзывы о <span class="blue">Swim Shot</span>
-            </h2>
+            <h2 class="text-header" data-aos="fade-right">Отзывы о <span class="blue">Swim Shot</span></h2>
 
-            <h3 class="text-subheader" data-aos="fade-right" data-aos-once="true">
+            <h3 class="text-subheader" data-aos="fade-right">
                 Читайте отзывы реальных учеников нашей школы. Под каждым из них есть ссылка на
                 <span class="blue">Instagram</span>, чтобы ты мог спросить лично о всех тонкостях плавания со
                 <span class="blue">Swim Shot</span>, если хочешь. Они не против :)
             </h3>
 
-            <swiper ref="mySwiper" class="" :options="swiperOptions" data-aos="fade-up" data-aos-once="true">
+            <swiper ref="mySwiper" class="" :options="swiperOptions" data-aos="fade-up">
                 <swiper-slide v-for="(comment, index) in commentsArr" :key="index">
                     <div class="comments__item">
                         <p
