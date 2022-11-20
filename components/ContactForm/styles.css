@@ -109,12 +109,12 @@
                 & .header__links-social-item {
                     width: 33%;
                     padding: calc(var(--gs) * 1) calc(var(--gs) * 2.5);
-                    display: flex;
+                    display: flex !important;
                     justify-content: center;
                     margin: 0 !important;
 
                     @media (--desktop) {
-                        width: 50%;
+                        width: 50% !important;
                         padding: calc(var(--gs) * 1) calc(var(--gs) * 1);
                     }
 

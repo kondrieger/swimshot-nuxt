@@ -86,7 +86,7 @@
                     lang: 'ru_RU',
                 }"
                 :coords="coordsCenter"
-                :zoom="isTablet ? 13 : 14"
+                :zoom="isTablet ? 12 : 14"
             >
                 <ymap-marker :icon="markerIcon1801" :coords="coords1801" marker-id="1" hint-content="Бассейн Swim Shot">
                     <div class="another-pools__list-item-text" slot="balloon">
