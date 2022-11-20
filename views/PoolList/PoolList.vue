@@ -16,7 +16,7 @@
                     class="pools__list-item"
                     :class="{ 'pools__list-item--new': pool.new }"
                 >
-                    <span v-if="pool.badge" class="pools__list-item-free-badge">{{ pool.badge }}</span>
+                    <span v-if="pool.badge" class="card-badge">{{ pool.badge }}</span>
                     <NewBadge v-if="pool.new" class="pools__list-item-new-badge" />
                     <House v-if="pool.home" class="pools__list-item-home-badge" />
                     <div class="pools__list-item-text">

@@ -1,0 +1,61 @@
+.modal-contact {
+    & .modaltor__panel {
+        padding: 50px 40px !important;
+
+        @media (--tablet) {
+            padding: 40px 20px !important;
+        }
+    }
+
+    &__header {
+        text-transform: uppercase;
+
+        &-title {
+            font-size: 32px !important;
+            text-transform: uppercase !important;
+            text-align: center !important;
+            color: var(--cl-blue) !important;
+
+            @media (--tablet) {
+                font-size: 26px !important;
+            }
+        }
+
+        &-subtitle {
+            text-transform: uppercase !important;
+            text-align: center !important;
+            font-size: 20px !important;
+            margin-bottom: calc(var(--gs) * 2) !important;
+
+            @media (--tablet) {
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    &__body {
+        &-text {
+            display: flex !important;
+            padding: 0 20px !important;
+            justify-content: center;
+            font-size: 18px !important;
+            margin: calc(var(--gs) * 2) 0 calc(var(--gs) * 1) 0 !important;
+
+            @media (--tablet) {
+                padding: 0 !important;
+            }
+
+            &-name {
+                font-size: 21px;
+                color: var(--cl-blue) !important;
+            }
+
+            &-icon {
+                width: 25px;
+                height: 25px;
+                fill: var(--cl-blue);
+                margin-right: 15px;
+            }
+        }
+    }
+}

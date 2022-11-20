@@ -5,16 +5,21 @@
                 <div id="contacts" class="contact-form__contacts">
                     <div class="contact-form__contacts-item">
                         <p class="contact-form__contacts-item-title">Звони нам</p>
+
                         <a class="contact-form__contacts-item-content" href="tel:+74994305595">+7 (499) 430-55-95</a>
                     </div>
+
                     <div class="contact-form__contacts-item">
                         <p class="contact-form__contacts-item-title">Пиши на почту</p>
+
                         <a class="contact-form__contacts-item-content" href="mailto:swim_shot@mail.ru"
                             >swim_shot@mail.ru</a
                         >
                     </div>
+
                     <div class="contact-form__contacts-item contact-form__contacts-item--wide">
                         <p class="contact-form__contacts-item-title">Пиши в соц. сетях</p>
+
                         <div class="contact-form__contacts-item-content">
                             <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
                                 <Vk class="header__links-social-item-img" />
@@ -193,11 +198,11 @@ export default {
             this.$fb.track('Lead');
         },
 
-        submit() {
+        async submit() {
             this.$v.$touch();
-            if (this.$v.invalid) return;
+            if (this.$v.$invalid) return;
 
-            fetch('https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0/', {
+            await fetch('https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
@@ -205,14 +210,16 @@ export default {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(this.form),
-            }).then((resp) => {
-                if (!window.dataLayer.find((item) => item.event === 'form')) {
-                    window.dataLayer.push({
-                        event: 'form',
-                    });
-                    this.sendLead();
-                }
             });
+
+            if (!window.dataLayer.find((item) => item.event === 'form')) {
+                window.dataLayer.push({
+                    event: 'form',
+                });
+                this.sendLead();
+            }
+
+            this.$emit('formSubmit');
         },
     },
 };

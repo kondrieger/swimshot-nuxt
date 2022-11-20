@@ -3,7 +3,7 @@
         <StartBlock />
         <Features />
         <PoolList />
-        <Team />
+        <Team @modalOpen="onModalContactOpen" />
         <Comments />
         <FAQ />
         <Media />
@@ -49,6 +49,10 @@ export default {
     methods: {
         onCloseModal() {
             this.isFridayModalOpen = false;
+        },
+
+        onModalContactOpen(name) {
+            this.$parent.$emit('modalOpen', name);
         },
     },
 

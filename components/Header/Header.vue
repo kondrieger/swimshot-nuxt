@@ -109,19 +109,15 @@
                         </div>
                         <div v-if="!isTablet" class="header__links-phone-wrap">
                             <a class="header__links-phone" href="tel:+74994305595">+7 (499) 430-55-95</a>
-                            <a class="header__links-phone-text js-link" href="#contact-form"
+                            <a class="header__links-phone-text" href="javascript:;" @click="onModalOpen"
                                 >Заказать обратный звонок</a
                             >
                         </div>
-                        <!-- <a class="header__links-login" href="https://my.swimshot.ru" title="Войти в личный кабинет"
-                        ><Login class="header__links-login-icon"
-                    /></a> -->
                     </div>
                 </div>
             </div>
         </fixed-header>
         <div class="sticky"></div>
-        <Modal @closeModal="onModalClose" :open="modalOpen"></Modal>
     </div>
 </template>
 
@@ -136,11 +132,9 @@ import NewBadge from '~/assets/svg/new-badge.svg';
 import Whatsapp from '~/assets/svg/whatsapp.svg';
 // import Login from '~/assets/svg/login.svg';
 
-import Modal from '~/components/Modal/Modal.vue';
-
 export default {
     name: 'a-header',
-    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Modal, Whatsapp },
+    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Whatsapp },
     data() {
         return {
             isBurgerOpen: false,
@@ -153,11 +147,8 @@ export default {
         },
     },
     methods: {
-        onModalClose(data) {
-            this.modalOpen = data;
-        },
-        showModal() {
-            this.modalOpen = true;
+        onModalOpen() {
+            this.$emit('modalOpen');
         },
     },
 };

@@ -1,0 +1,27 @@
+.alert {
+    z-index: 1000;
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    padding: 20px;
+    color: white;
+    font-family: var(--font-circe);
+    font-size: 18px;
+    border-radius: 20px;
+
+    transition: all 1s ease;
+
+    @media (--tablet) {
+        right: 20px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    &--success {
+        background-color: var(--cl-green);
+    }
+
+    &--danger {
+        background-color: var(--cl-red);
+    }
+}

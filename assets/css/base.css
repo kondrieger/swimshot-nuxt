@@ -215,6 +215,23 @@ fieldset {
     font-weight: bold;
 }
 
+.card-badge {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background-color: var(--cl-green);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+
+    @media (--tablet) {
+        top: 15px;
+        left: 10px;
+    }
+}
+
 @keyframes scale {
     0% {
         transform: scale(1);

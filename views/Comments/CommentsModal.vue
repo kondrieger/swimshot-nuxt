@@ -1,7 +1,7 @@
 <template>
     <vue-modaltor
-        :visible="open"
-        @hideModal="hideModal"
+        :visible="open || isOpen"
+        @closeModal="closeModal"
         :closeScroll="false"
         defaultWidth="660px"
         :resize-width="{ 768: '100%' }"
@@ -10,7 +10,7 @@
     >
         <template #header>
             <div class="modal__header">
-                <div @click="hideModal" class="modal__close-btn"></div>
+                <div @click="closeModal" class="modal__close-btn"></div>
             </div>
         </template>
         <template #body>
@@ -51,7 +51,7 @@ export default {
         };
     },
     methods: {
-        hideModal() {
+        closeModal() {
             this.isOpen = false;
             this.$emit('closeModal', this.isOpen);
         },

@@ -2,7 +2,7 @@
     <vue-modaltor
         :visible="open || isOpen"
         :closeScroll="false"
-        @hideModal="hideModal"
+        @closeModal="closeModal"
         class="modal-friday"
         defaultWidth="600px"
         :resize-width="{ 960: '100%' }"
@@ -11,9 +11,8 @@
     >
         <template #header>
             <div class="modal__header">
-                <FridayIcon class="modal-friday__icon modal-friday__icon--friday" />
                 <Gift class="modal-friday__icon modal-friday__icon--gift" />
-                <div @click="hideModal" class="modal__close-btn"></div>
+                <div @click="closeModal" class="modal__close-btn"></div>
                 <h4 class="modal-friday__header-title">Скидки до 80%</h4>
                 <h3 class="modal-friday__header-subtitle">
                     ЧЕРНАЯ ПЯТНИЦА <span class="text-danger text-bold">25-28 НОЯБРЯ</span>
@@ -28,14 +27,14 @@
             <div class="modal__body">
                 <p class="modal-friday__body-text">
                     Звони
-                    <a class="contact-form__contacts-item-content" href="tel:+74994305595" @click="hideModal">
+                    <a class="contact-form__contacts-item-content" href="tel:+74994305595" @click="closeModal">
                         +7 (499) 430-55-95
                     </a>
-                    или оставляй заявку в <a class="js-link" href="#contact-form" @click="hideModal">форме</a> для
+                    или оставляй заявку в <a class="js-link" href="#contact-form" @click="closeModal">форме</a> для
                     уточнения информации
                 </p>
 
-                <div class="" @click="hideModal">
+                <div class="" @click="closeModal">
                     <VButton class="modal-friday__body-btn" wide text="УЖЕ БЕГУ" />
                 </div>
             </div>
@@ -45,12 +44,11 @@
 
 <script>
 import VButton from '~/components/VButton/VButton.vue';
-import FridayIcon from '~/assets/svg/friday.svg';
 import Gift from '~/assets/svg/gift-hand.svg';
 
 export default {
     name: 'black-friday-modal',
-    components: { VButton, FridayIcon, Gift },
+    components: { VButton, Gift },
     props: {
         open: Boolean,
     },
@@ -61,7 +59,7 @@ export default {
     },
 
     methods: {
-        hideModal() {
+        closeModal() {
             this.isOpen = false;
             this.$emit('closeModal', this.isOpen);
         },
@@ -113,7 +111,7 @@ export default {
             color: white !important;
 
             & a {
-                display: inline;
+                display: inline !important;
                 font-size: 20px;
                 font-weight: bold;
                 color: var(--cl-red);

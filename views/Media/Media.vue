@@ -22,11 +22,9 @@
                         <p class="media__list-item-text">
                             Провели тренировку и поделились секретами плавания на главной спортивной площадке страны
                         </p>
-                        <div class="media__list-item-text-btns">
-                            <a href="https://www.sports.ru/tribuna/blogs/podcasts/2865303.html" target="_blank">
-                                <VButton sm text="Слушать" />
-                            </a>
-                        </div>
+                        <a href="https://www.sports.ru/tribuna/blogs/podcasts/2865303.html" target="_blank">
+                            <VButton sm text="Слушать" />
+                        </a>
                     </div>
                 </div>
                 <div class="media__list-item">
@@ -39,14 +37,12 @@
                             Рассказываем про личности, структуру школы и ценности в обучении плаванию крупному изданию
                             Зеленорада
                         </p>
-                        <div class="media__list-item-text-btns">
-                            <a
-                                href="https://www.zelenograd.ru/reklama/novyy-basseyn-dlya-svobodnogo-plavaniya-i-zanyatiy-poyavilsya-v-zelenograde/"
-                                target="_blank"
-                            >
-                                <VButton sm text="Читать" />
-                            </a>
-                        </div>
+                        <a
+                            href="https://www.zelenograd.ru/reklama/novyy-basseyn-dlya-svobodnogo-plavaniya-i-zanyatiy-poyavilsya-v-zelenograde/"
+                            target="_blank"
+                        >
+                            <VButton sm text="Читать" />
+                        </a>
                     </div>
                 </div>
             </div>

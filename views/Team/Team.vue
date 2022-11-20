@@ -1,31 +1,47 @@
 <template>
     <div class="container team" id="team">
         <h2 class="media__title" data-aos="fade-right" data-aos-once="true">Наши <span class="blue">тренеры</span></h2>
+
         <h3 class="media__text">
-            Научим уверенно держаться на воде и поставим технику. Занимайся в группах или индивидуально. Приходи на
-            тренировки по начальной подготовке, совершенствованию техники или для продвинутых пловцов!
+            Каждый сотрудник Swim Shot делает все, чтобы ты получал максимальное наслаждение от плавания с пользой для
+            здоровья и прогрессом. Тренеры регулярно обучаются как организованно, так и самостоятельно, а некоторые даже
+            продолжают плавать, чтобы сначала опробовать на себе новые методы и упражнения, а потом внедрять их в
+            тренировочный процесс
         </h3>
+
         <swiper data-aos="fade-up" data-aos-once="true" ref="mySwiper" class="" :options="swiperOptions">
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">
-                    <a :href="`https://instagram.com/${man.inst}`" target="_blank" class="team__list-item-img-wrap">
-                        <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
-                        <div class="team__list-item-social">
-                            <Instagram class="header__links-social-item-img" />
+                    <div class="">
+                        <a :href="`https://instagram.com/${man.inst}`" target="_blank" class="team__list-item-img-wrap">
+                            <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
+
+                            <div class="team__list-item-social">
+                                <Instagram class="header__links-social-item-img" />
+                            </div>
+
+                            <span v-if="man.founder" class="card-badge">основатель</span>
+                        </a>
+
+                        <div class="team__list-item-text">
+                            <p class="team__list-item-name">
+                                {{ man.name }}
+                            </p>
+
+                            <ul class="team__list-item-desc">
+                                <li v-for="(item, index) in man.desc" :key="index">
+                                    {{ item }}
+                                </li>
+                            </ul>
                         </div>
-                    </a>
-                    <div class="team__list-item-text">
-                        <p class="team__list-item-name">
-                            {{ man.name }}
-                        </p>
-                        <ul class="team__list-item-desc">
-                            <li v-for="(item, index) in man.desc" :key="index">
-                                {{ item }}
-                            </li>
-                        </ul>
+                    </div>
+
+                    <div v-if="!man.unavailable" class="" @click="onModalOpen(man.name)" style="width: 100%">
+                        <VButton text="Записаться" wide />
                     </div>
                 </div>
             </swiper-slide>
+
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
     </div>
@@ -33,6 +49,9 @@
 
 <script>
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+
+import VButton from '~/components/VButton/VButton.vue';
+
 import 'swiper/css/swiper.css';
 import './styles.css';
 
@@ -51,36 +70,43 @@ const teamArr = [
         photo: davydov,
         name: 'Александр Давыдов',
         desc: [
+            'Сооснователь школы плавания Swim Shot',
             'Мастер спорта РФ по плаванию',
             'Призер первенства России по плаванию на открытой воде',
             'Пятикратный рекордсмен Зеленограда',
-            'Сооснователь школы плавания Swim Shot',
-            'Опыт тренерской деятельности четыре года',
+            'Комментатор всероссийских соревнований',
+            'Опыт тренерской деятельности пять лет',
         ],
+        founder: true,
+        unavailable: true,
         inst: 'davydov_alex98',
     },
     {
         photo: astapov,
         name: 'Александр Астапов',
         desc: [
+            'Сооснователь школы плавания Swim Shot',
             'Призер первенства Европы, чемпионатов и первенств России по плаванию на открытой воде',
             'Мастер спорта России по плаванию',
-            'Сооснователь школы плавания Swim Shot',
-            'Автор методики обучения школы плавания Swim Shot',
-            'Опыт работы с детьми и взрослыми четыре года',
+            'Соавтор методики обучения школы плавания Swim Shot',
+            'Опыт работы с детьми и взрослыми пять лет',
         ],
+        founder: true,
+        unavailable: true,
         inst: 'a_astapov',
     },
     {
         photo: kasandra,
         name: 'Сергей Касандра',
         desc: [
-            'Кандидат в мастера спорта России по плаванию',
-            'Призер и победитель чемпионатов Зеленограда',
-            'Сертифицированный тренер по плаванию',
             'Сооснователь школы плавания Swim Shot',
+            'Старший тренер школы плавания Swim Shot',
+            'Кандидат в мастера спорта России по плаванию',
+            'Тренер спортгрупп',
+            'Победитель и призер чемпионатов Зеленограда',
             'Опыт работы тренером семь лет',
         ],
+        founder: true,
         inst: 'bacford',
     },
     {
@@ -90,7 +116,7 @@ const teamArr = [
             'Участник двух олимпийских игр Рио-2016 и Токио-2021',
             'Многократный чемпион России на 800 и 1500 вольным стилем',
             'Мастер спорта международного класса',
-            'Управляющий московского филиала школы плавания Swim Shot',
+            'Сертифицированный тренер по плаванию',
             'Высшее образование по направлению физическая культура',
         ],
         inst: 'druzhban_',
@@ -100,10 +126,10 @@ const teamArr = [
         name: 'Александра Георгиева',
         desc: [
             'Кандидат в мастера спорта РФ',
-            'Старший тренер школы плавания Swim Shot',
+            'Сертифицированный тренер по плаванию',
             'Призер первенства России',
             'Победитель и призер Кубка СНГ',
-            'Опыт тренерской деятельности два года',
+            'Опыт тренерской деятельности три года',
         ],
         inst: '_alexandrina__',
     },
@@ -112,9 +138,11 @@ const teamArr = [
         name: 'Дарья Тимофеева',
         desc: [
             'Мастер спорта России по плаванию',
+            'Тренер основных спортгрупп Swim Shot',
+            'Сертифицированный тренер по плаванию',
             'Многократный призер чемпионатов и первенств Московской области',
             'Участница всероссийских соревнований',
-            'Тренерский стаж один год',
+            'Тренерский стаж два года',
         ],
         inst: '_daxaaa',
     },
@@ -123,8 +151,10 @@ const teamArr = [
         name: 'Любовь Бескровная',
         desc: [
             'Высшее физкультурное образование (МГАФК)',
+            'Сертифицированный тренер по плаванию',
             'Сертифицированный тренер по направлению «Здоровая спина»',
-            'Тренерский стаж три года',
+            'Тренер Swim Shot по аквааэробике',
+            'Тренерский стаж четыре года',
         ],
         inst: 'liubov.beskrovnaia',
     },
@@ -136,6 +166,7 @@ export default {
         Swiper,
         SwiperSlide,
         Instagram,
+        VButton,
     },
     directives: {
         swiper: directive,
@@ -168,6 +199,12 @@ export default {
                 },
             },
         };
+    },
+
+    methods: {
+        onModalOpen(name) {
+            this.$emit('modalOpen', name);
+        },
     },
 };
 </script>
