@@ -1,9 +1,15 @@
 .contact-form {
-    padding: calc(var(--gs) * 3) calc(var(--gs) * 2);
+    padding: calc(var(--gs) * 3.25);
     margin-right: calc(var(--gs) * 2);
     width: 50%;
     background-color: #fff;
     border-radius: 30px !important;
+    display: flex;
+    flex-direction: column;
+
+    @media (--desktop) {
+        padding: calc(var(--gs) * 2.25);
+    }
 
     @media (--tablet) {
         width: 100% !important;
@@ -65,14 +71,34 @@
 
             &-content {
                 display: flex;
-                font-size: 24px;
+                font-size: 22px;
                 color: var(--cl-blue);
+
+                @media (--desktop) {
+                    font-size: 20px;
+                }
 
                 @media (--tablet) {
                     font-size: 19px;
                 }
+
+                & .header__links-social-item {
+                    width: 30px;
+                    height: 30px;
+
+                    @media (--tablet) {
+                        display: flex;
+                    }
+                }
             }
         }
+    }
+
+    &__policy-text {
+        font-size: 14px;
+        color: #1b1b1b;
+        padding: 0 20px 20px 20px;
+        line-height: 1.2;
     }
 
     &__map {
@@ -81,7 +107,7 @@
         background-color: #fff;
         border-radius: 30px !important;
         display: block;
-        min-heigth: 100%;
+        min-height: 100%;
 
         @media (--tablet) {
             width: 100%;

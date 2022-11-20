@@ -113,7 +113,7 @@ const bigPool = [
 ];
 
 export default {
-    name: 'Orbita',
+    name: 'orbita-page',
 
     layout: 'default',
 

@@ -79,12 +79,12 @@
                             ><p>Контакты</p></nuxt-link
                         >
                     </div>
-                    <a class="header__logo-wrap" v-if="isTablet" href="/">
+                    <nuxt-link class="header__logo-wrap" v-if="isTablet" to="/">
                         <img
                             class="header__logo"
                             :src="require('~/assets/swimshot_header_logo.jpg')"
                             alt="Swim shot логотип"
-                    /></a>
+                    /></nuxt-link>
                     <div class="header__links header__links--media">
                         <div class="header__links-social">
                             <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">

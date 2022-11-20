@@ -106,7 +106,7 @@ const poolsArr = [
 ];
 
 export default {
-    name: '1801',
+    name: 'zelenograd-page',
     layout: 'default',
     components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Shedule, ModalBlackFriday },
     head() {

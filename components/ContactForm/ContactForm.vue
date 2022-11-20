@@ -60,7 +60,10 @@
                 />
 
                 <TextInput v-model="form.email" :error="emailError" :placeholderText="'Email'" />
-
+                <p class="contact-form__policy-text">
+                    Нажимая на кнопку "Отправить", Вы даете согласие на обработку персональных данных и соглашаетесь с
+                    <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
+                </p>
                 <VButton wide text="Отправить" />
             </form>
 
@@ -69,14 +72,23 @@
                 :settings="{
                     apiKey: '24493451-0d78-48ba-a1b8-259797024b9a',
                     lang: 'ru_RU',
-                    zoom: '1',
                 }"
-                :coords="coords"
-                :zoom="10"
+                :coords="coordsCenter"
+                :zoom="isTablet ? 12 : 13"
             >
-                <ymap-marker :icon="markerIcon" :coords="coords" marker-id="123" hint-content="some hint">
+                <ymap-marker :icon="markerIcon1801" :coords="coords1801" marker-id="1" hint-content="Бассейн Swim Shot">
                     <div class="another-pools__list-item-text" slot="balloon">
-                        <VButton text="ПОДРОБНОСТИ" />
+                        <nuxt-link to="/zelenograd" target="_blank">
+                            <b>Бассейн Swim Shot</b>, Зеленоград, к1801
+                        </nuxt-link>
+                    </div>
+                </ymap-marker>
+
+                <ymap-marker :coords="coordsOrbita" marker-id="2" hint-content="СК Орбита">
+                    <div class="another-pools__list-item-text" slot="balloon">
+                        <nuxt-link to="/orbita" target="_blank">
+                            <b>СК Орбита</b>, Зеленоград, ул. Озерная аллея, 6
+                        </nuxt-link>
                     </div>
                 </ymap-marker>
             </yandex-map>
@@ -107,22 +119,27 @@ export default {
         return {
             bgPic,
             form: {
-                name: 'Тест',
-                phone: '+79999872096',
-                email: 'kondrieger@gmail.com',
-                comment: 'Новая заявка с сайта',
+                name: null,
+                phone: null,
+                email: null,
             },
-            coords: [55.97779002199537, 37.162751976922856],
 
-            markerIcon: {
-                layout: 'default#imageWithContent',
+            coordsCenter: [55.98220773463946, 37.199245310702274],
+            coords1801: [55.97779002199537, 37.162751976922856],
+            coordsOrbita: [55.987888828917455, 37.22616932479378],
+
+            markerIcon1801: {
+                layout: 'default#image',
                 imageHref: 'svg/house.svg',
                 imageSize: [30, 30],
                 imageOffset: [0, -18],
-                content: '',
-                contentOffset: [0],
-                contentLayout:
-                    '<div style="background: white; width: 30px; height: 30px; z-index: -10000;">$[properties.iconContent]</div>',
+            },
+
+            markerIconOrbita: {
+                layout: 'default#image',
+                imageHref: 'svg/house.svg',
+                imageSize: [30, 30],
+                imageOffset: [0, 0],
             },
         };
     },
@@ -142,6 +159,10 @@ export default {
         },
     },
     computed: {
+        isTablet() {
+            return this.$mq === 'tablet';
+        },
+
         nameError() {
             if (this.$v.form.name.$dirty) {
                 if (!this.$v.form.name.required) return 'Укажите свое имя';
@@ -174,22 +195,21 @@ export default {
             this.$v.$touch();
             if (this.$v.invalid) return;
 
-            fetch().then((resp) => {
-                //     'https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0/', {
-                //     method: 'POST',
-                //     mode: 'no-cors',
-                //     headers: {
-                //         Accept: 'application/json',
-                //         'Content-Type': 'application/json',
-                //     },
-                //     body: JSON.stringify(this.form),
-                // }
-                // if (!window.dataLayer.find((item) => item.event === 'form')) {
-                //     window.dataLayer.push({
-                //         event: 'form',
-                //     });
-                //     this.sendLead();
-                // }
+            fetch('https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0/', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.form),
+            }).then((resp) => {
+                if (!window.dataLayer.find((item) => item.event === 'form')) {
+                    window.dataLayer.push({
+                        event: 'form',
+                    });
+                    this.sendLead();
+                }
             });
         },
     },

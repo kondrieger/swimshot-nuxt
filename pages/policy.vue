@@ -22,6 +22,7 @@ import p7 from '~/assets/jpg/policy/7.jpg';
 const policyArr = [p1, p2, p3, p4, p5, p6, p7];
 
 export default {
+    name: 'policy-page',
     layout: 'policy',
     data() {
         return {
