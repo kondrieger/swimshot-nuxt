@@ -1,4 +1,4 @@
-.start-block{
+.start-block {
     display: flex;
     padding-top: calc(var(--gs) * 10);
     padding-bottom: calc(var(--gs) * 14);
@@ -12,7 +12,7 @@
     &__wrap {
         background-size: cover;
         background-repeat: no-repeat;
-        background-color: rgba(41, 177, 255, .3);
+        background-color: rgba(41, 177, 255, 0.3);
 
         @media (--desktop) {
             background-size: auto 110%;
@@ -48,9 +48,9 @@
 
         &-title {
             margin-bottom: calc(var(--gs) * 7);
-            font-family: var(--font-geometria);
+            font-family: var(--font-circe);
             color: var(--cl-black);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
 
@@ -62,7 +62,7 @@
 
         &-subtitle {
             margin-bottom: calc(var(--gs) * 4);
-            font-family: var(--font-geometria);
+            font-family: var(--font-circe);
             color: var(--cl-black);
             font-size: 20px;
             font-weight: 400;

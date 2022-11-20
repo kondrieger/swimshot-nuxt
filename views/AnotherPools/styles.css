@@ -98,8 +98,8 @@
 
                 &-title {
                     font-size: 18px;
-                    font-family: var(--font-geometria);
-                    font-weight: 600;
+                    font-family: var(--font-circe);
+                    font-weight: 700;
                     margin-bottom: 15px;
 
                     @media (--desktop) {

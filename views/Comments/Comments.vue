@@ -1,8 +1,8 @@
 <template>
     <div class="bg-grey" id="comments">
         <div class="container comments">
-            <h2 class="media__title">Отзывы о <span class="blue">Swim Shot</span></h2>
-            <h3 class="media__text">
+            <h2 class="text-header">Отзывы о <span class="blue">Swim Shot</span></h2>
+            <h3 class="text-subheader">
                 Читайте отзывы реальных учеников нашей школы. Под каждым из них есть ссылка на
                 <span class="blue">Instagram</span>, чтобы ты мог спросить лично о всех тонкостях плавания со
                 <span class="blue">Swim Shot</span>, если хочешь. Они не против :)

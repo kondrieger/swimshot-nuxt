@@ -3,7 +3,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        font-family: var(--font-geometria) !important;
+        font-family: var(--font-circe) !important;
 
         &--alone {
             max-width: 1100px;
@@ -37,7 +37,7 @@
 
             &:nth-child(2),
             &:nth-child(5),
-            &:nth-child(7){
+            &:nth-child(7) {
                 @media (--tablet-min) {
                     border-left: 2px solid var(--cl-lt-blue);
                     border-right: 2px solid var(--cl-lt-blue);

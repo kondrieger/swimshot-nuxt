@@ -1,11 +1,17 @@
 <template>
     <div>
         <div class="container photos">
-            <h2 class="media__title" data-aos="fade-right" data-aos-once="true">Галерея</h2>
-            <h3 class="media__text">
+            <h2 class="text-header" data-aos="fade-right" data-aos-once="true">Галерея</h2>
+
+            <h3 class="text-subheader">
                 Для учеников особенно важен настрой во время занятий.<br />Наши тренеры всегда готовы поддержать и
                 вдохновить на новые успехи пловцов любого уровня.
             </h3>
+
+            <p class="text-subheader text-subheader--note" data-aos="fade-right" data-aos-once="true">
+                * моменты с самого рождения Swim Shot до сегодняшнего дня
+            </p>
+
             <div class="photos__wrap" data-aos="fade-up" data-aos-once="true">
                 <div class="photos__swiper">
                     <div id="images" style="display: none" v-viewer="viewerOptions">
@@ -47,8 +53,10 @@ import photo_5 from '~/assets/jpg/photos/photo_5.jpg';
 import photo_6 from '~/assets/jpg/photos/photo_6.jpg';
 import photo_7 from '~/assets/jpg/photos/photo_7.jpg';
 import photo_8 from '~/assets/jpg/photos/photo_8.jpg';
+import photo_9 from '~/assets/jpg/photos/photo_9.jpg';
+import photo_10 from '~/assets/jpg/photos/photo_10.jpg';
 
-const photosArr = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6, photo_7, photo_8];
+const photosArr = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6, photo_7, photo_8, photo_9, photo_10];
 
 const viewerOptions = { movable: false, button: true, navbar: true, title: false, keyboard: true, scalable: false };
 
@@ -65,13 +73,13 @@ export default {
         return {
             swiperOptionTop: {
                 loop: true,
-                loopedSlides: 7, // looped slides should be the same
+                loopedSlides: 9, // looped slides should be the same
                 slideToClickedSlide: true,
                 spaceBetween: 30,
             },
             swiperOptionThumbs: {
                 loop: true,
-                loopedSlides: 7, // looped slides should be the same
+                loopedSlides: 9, // looped slides should be the same
                 spaceBetween: 30,
                 centeredSlides: true,
                 slidesPerView: 'auto',

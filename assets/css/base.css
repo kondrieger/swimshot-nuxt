@@ -147,7 +147,7 @@ fieldset {
     margin: 0 auto;
     padding-top: calc(var(--gs) * 8);
     padding-bottom: calc(var(--gs) * 8);
-    font-family: var(--font-geometria) !important;
+    font-family: var(--font-circe) !important;
 
     @media (--tablet) {
         padding-top: calc(var(--gs) * 4);
@@ -160,7 +160,7 @@ fieldset {
         background-color: rgba(242, 242, 242, 0.8);
         max-width: 250px;
         border-radius: 30px;
-        font-family: var(--font-geometria) !important;
+        font-family: var(--font-circe) !important;
         position: fixed;
         top: 100px;
         left: 75%;
@@ -189,7 +189,7 @@ fieldset {
 
         & a {
             font-size: 20px !important;
-            font-family: var(--font-geometria) !important;
+            font-family: var(--font-circe) !important;
             font-weight: bold;
 
             @media (--tablet) {
@@ -211,8 +211,47 @@ fieldset {
     color: var(--cl-red);
 }
 
+.text-white {
+    color: white;
+}
+
 .text-bold {
     font-weight: bold;
+}
+
+.text {
+    &-header {
+        text-align: center;
+        margin-bottom: calc(var(--gs) * 4);
+
+        @media (--tablet) {
+            margin-bottom: calc(var(--gs) * 2);
+        }
+    }
+
+    &-subheader {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: calc(var(--gs) * 8);
+
+        @media (--tablet) {
+            font-size: 18px;
+            margin-bottom: calc(var(--gs) * 2);
+        }
+
+        &--note {
+            margin-top: calc(var(--gs) * (-5));
+            font-size: 14px;
+            color: grey;
+
+            @media (--tablet) {
+                margin-bottom: calc(var(--gs) * 2);
+                margin-top: 0;
+                font-size: 12px;
+            }
+        }
+    }
 }
 
 .card-badge {

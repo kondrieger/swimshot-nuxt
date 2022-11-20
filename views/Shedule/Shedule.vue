@@ -1,10 +1,10 @@
 <template>
     <div class="container shedule">
-        <h2 class="media__title" data-aos="fade-right" data-aos-once="true">
+        <h2 class="text-header" data-aos="fade-right" data-aos-once="true">
             Расписание <span class="blue">занятий</span>
         </h2>
 
-        <p class="media__text">
+        <p class="text-subheader">
             Выбирай свободное плавание или группу и количество занятий в неделю. Занятие длится
             <span class="blue">45 минут</span>. <br />Для уточнения расписания индивидуальных тренировок свяжись по
             телефону или оставь заявку на сайте.
@@ -34,7 +34,7 @@
         </div>
 
         <template v-if="computedShedule">
-            <h3 class="media__text shedule__title">{{ computedShedule.title }}</h3>
+            <h3 class="text-subheader shedule__title">{{ computedShedule.title }}</h3>
 
             <div class="shedule__list shedule__container">
                 <div
@@ -66,7 +66,7 @@
             </div>
         </template>
 
-        <h3 v-else class="media__text shedule__title">Выбери группу, чтобы увидеть расписание</h3>
+        <h3 v-else class="text-subheader shedule__title">Выбери группу, чтобы увидеть расписание</h3>
     </div>
 </template>
 
