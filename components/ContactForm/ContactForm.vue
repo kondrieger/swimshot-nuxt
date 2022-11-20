@@ -60,10 +60,12 @@
                 />
 
                 <TextInput v-model="form.email" :error="emailError" :placeholderText="'Email'" />
+
                 <p class="contact-form__policy-text">
                     Нажимая на кнопку "Отправить", Вы даете согласие на обработку персональных данных и соглашаетесь с
                     <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
                 </p>
+
                 <VButton wide text="Отправить" />
             </form>
 
