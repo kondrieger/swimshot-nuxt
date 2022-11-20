@@ -85,17 +85,13 @@
             >
                 <ymap-marker :icon="markerIcon1801" :coords="coords1801" marker-id="1" hint-content="Бассейн Swim Shot">
                     <div class="another-pools__list-item-text" slot="balloon">
-                        <nuxt-link to="/zelenograd" target="_blank">
-                            <b>Бассейн Swim Shot</b>, Зеленоград, к1801
-                        </nuxt-link>
+                        <nuxt-link to="/zelenograd"> <b>Бассейн Swim Shot</b>, Зеленоград, к1801 </nuxt-link>
                     </div>
                 </ymap-marker>
 
                 <ymap-marker :coords="coordsOrbita" marker-id="2" hint-content="СК Орбита">
                     <div class="another-pools__list-item-text" slot="balloon">
-                        <nuxt-link to="/orbita" target="_blank">
-                            <b>СК Орбита</b>, Зеленоград, ул. Озерная аллея, 6
-                        </nuxt-link>
+                        <nuxt-link to="/orbita"> <b>СК Орбита</b>, Зеленоград, ул. Озерная аллея, 6 </nuxt-link>
                     </div>
                 </ymap-marker>
             </yandex-map>
