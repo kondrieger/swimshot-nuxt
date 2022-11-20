@@ -18,38 +18,54 @@
                     <p class="contact-form__contacts-item-title">Пиши в соц. сетях</p>
 
                     <div class="contact-form__contacts-item-content">
-                        <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
-                            <Vk class="header__links-social-item-img" />
+                        <a
+                            href="https://vk.com/swim_shot"
+                            target="_blank"
+                            class="header__links-social-item contact-form__contacts-item-social"
+                        >
+                            <Vk class="header__links-social-item-img contact-form__contacts-item-social-img" />
 
-                            <span class="header__links-social-item-text">Вконтакте</span>
+                            <span class="contact-form__contacts-item-social-text">Вконтакте</span>
                         </a>
 
-                        <a href="https://wa.me/+79771885559" target="_blank" class="header__links-social-item">
-                            <Whatsapp class="header__links-social-item-img" />
+                        <a
+                            href="https://wa.me/+79771885559"
+                            target="_blank"
+                            class="header__links-social-item contact-form__contacts-item-social"
+                        >
+                            <Whatsapp class="header__links-social-item-img contact-form__contacts-item-social-img" />
 
-                            <span class="header__links-social-item-text">WhatsApp</span>
+                            <span class="contact-form__contacts-item-social-text">WhatsApp</span>
                         </a>
 
-                        <a href="https://t.me/swim_shot" target="_blank" class="header__links-social-item">
-                            <Telegram class="header__links-social-item-img" />
+                        <a
+                            href="https://t.me/swim_shot"
+                            target="_blank"
+                            class="header__links-social-item contact-form__contacts-item-social"
+                        >
+                            <Telegram class="header__links-social-item-img contact-form__contacts-item-social-img" />
 
-                            <span class="header__links-social-item-text">Telegram</span>
+                            <span class="contact-form__contacts-item-social-text">Telegram</span>
                         </a>
 
                         <a
                             href="https://www.instagram.com/swim_shot/"
                             target="_blank"
-                            class="header__links-social-item"
+                            class="header__links-social-item contact-form__contacts-item-social"
                         >
-                            <Instagram class="header__links-social-item-img" />
+                            <Instagram class="header__links-social-item-img contact-form__contacts-item-social-img" />
 
-                            <span class="header__links-social-item-text">Instagram</span>
+                            <span class="contact-form__contacts-item-social-text">Instagram</span>
                         </a>
 
-                        <a href="https://dzen.ru/swimshot/" target="_blank" class="header__links-social-item">
-                            <Zen class="header__links-social-item-img" />
+                        <a
+                            href="https://dzen.ru/swimshot/"
+                            target="_blank"
+                            class="header__links-social-item contact-form__contacts-item-social"
+                        >
+                            <Zen class="header__links-social-item-img contact-form__contacts-item-social-img" />
 
-                            <span class="header__links-social-item-text">Дзен</span>
+                            <span class="contact-form__contacts-item-social-text">Дзен</span>
                         </a>
                     </div>
                 </div>

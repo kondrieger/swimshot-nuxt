@@ -78,7 +78,6 @@ h2 {
 }
 
 p {
-    font-size: 16px;
     line-height: 1.55;
     font-weight: 400;
     color: var(--cl-black);
@@ -143,6 +142,7 @@ fieldset {
 }
 
 .pools-info {
+    font-size: 20px !important;
     max-width: 900px !important;
     margin: 0 auto;
     padding-top: calc(var(--gs) * 8);
@@ -152,6 +152,7 @@ fieldset {
     @media (--tablet) {
         padding-top: calc(var(--gs) * 4);
         padding-bottom: calc(var(--gs) * 4);
+        font-size: 16px !important;
     }
 
     &__sign {

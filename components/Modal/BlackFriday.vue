@@ -109,12 +109,21 @@ export default {
             margin-bottom: calc(var(--gs) * 3);
             text-align: center !important;
             color: white !important;
+            font-size: 20px !important;
+
+            @media (--tablet) {
+                font-size: 16px !important;
+            }
 
             & a {
                 display: inline !important;
                 font-size: 20px;
                 font-weight: bold;
                 color: var(--cl-red);
+
+                @media (--tablet) {
+                    font-size: 16px !important;
+                }
             }
         }
 
@@ -142,6 +151,11 @@ export default {
             height: 80px;
             top: 0;
             left: 0;
+
+            @media (--tablet) {
+                width: 50px;
+                height: 50px;
+            }
         }
     }
 }
