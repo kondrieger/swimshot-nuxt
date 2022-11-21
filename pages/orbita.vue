@@ -4,7 +4,7 @@
         <PoolStartBlock title="СК Орбита" address="Зеленоград, ул. Озерная аллея, 6" :photosArr="poolsPicArr" />
         <PoolTabs :littlePool="littlePool" :bigPool="[]" littleActive data-aos="fade-up" />
 
-        <div class="container" data-aos="fade-right">
+        <div class="container" data-aos="fade-up">
             <div class="pools-info">
                 <p class="pools-info__text">
                     В каждом из этих бассейнов можно проводить как персональные, так и групповые тренировки с
@@ -57,11 +57,11 @@ const littlePool = [
     },
     {
         title: 'Стоимость групповых',
-        text: 'от 1200 за занятие',
+        text: 'от 1100 за занятие',
     },
     {
         title: 'Стоимость персональных',
-        text: 'от 1500 за занятие',
+        text: 'от 2400 за занятие',
     },
     {
         title: 'Глубина',
@@ -78,37 +78,6 @@ const littlePool = [
     {
         title: 'Температура воды',
         text: '30 градусов',
-    },
-];
-
-const bigPool = [
-    {
-        title: 'Для кого?',
-        text: 'дети с 7 лет и взрослые',
-    },
-    {
-        title: 'Стоимость групповых',
-        text: 'от 1100 за занятие',
-    },
-    {
-        title: 'Стоимость персональных',
-        text: 'от 1500 за занятие',
-    },
-    {
-        title: 'Глубина',
-        text: '2,5 метра',
-    },
-    {
-        title: 'Длина',
-        text: '25 метров',
-    },
-    {
-        title: 'Количество дорожек',
-        text: '6',
-    },
-    {
-        title: 'Температура воды',
-        text: '27 градусов',
     },
 ];
 

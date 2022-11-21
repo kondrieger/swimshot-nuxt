@@ -1,7 +1,7 @@
 <template>
     <div :style="{ 'background-image': 'url(' + bgPic + ')' }" class="contact-form__bg" id="contact-form">
-        <div class="container contact-form__wrap" data-aos="fade-up">
-            <div id="contacts" class="contact-form__contacts contact-form-border">
+        <div class="container contact-form__wrap">
+            <div id="contacts" class="contact-form__contacts contact-form-border" data-aos="fade-right">
                 <div class="contact-form__contacts-item">
                     <p class="contact-form__contacts-item-title">Звони нам</p>
 
@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <form @submit.prevent="submit" class="contact-form__form contact-form-border">
+            <form @submit.prevent="submit" class="contact-form__form contact-form-border" data-aos="fade-left">
                 <p class="contact-form__contacts-item-title">Оставляй заявку на сайте, и мы сами тебе позвоним</p>
 
                 <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
@@ -94,7 +94,7 @@
             </form>
         </div>
 
-        <div class="container contact-form__wrap" data-aos="fade-up">
+        <div class="container contact-form__wrap">
             <yandex-map
                 class="contact-form-border contact-form__map"
                 :settings="{

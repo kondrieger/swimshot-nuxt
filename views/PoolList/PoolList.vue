@@ -26,11 +26,7 @@
                         <VButton wide text="ПОДРОБНОСТИ" />
                     </div>
                 </nuxt-link>
-                <a
-                    href="https://www.instagram.com/swim_shot/"
-                    target="_blank"
-                    class="pools__list-item pools__list-item--empty"
-                >
+                <a href="https://vk.com/swim_shot/" target="_blank" class="pools__list-item pools__list-item--empty">
                     <Question class="pools__list-item-icon" />
                     <div class="pools__list-item-text">
                         <VButton wide text="СЛЕДИ ЗА НОВОСТЯМИ" />

@@ -32,9 +32,9 @@
             </div>
         </div>
         <div class="bg-grey">
-            <Shedule data-aos="fade-up" :shedule="shedule" class="bg-grey" />
+            <AnotherPools data-aos="fade-right" :PoolsArr="poolsArr" />
         </div>
-        <AnotherPools data-aos="fade-up" :PoolsArr="poolsArr" />
+        <!-- <Shedule   data-aos="fade-right" :shedule="shedule" class="bg-grey" /> -->
         <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>
 </template>

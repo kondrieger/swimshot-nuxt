@@ -25,7 +25,7 @@
                 <a class="btn btn--wide btn--animated js-link" href="#contact-form">ЗАПИСАТЬСЯ</a>
             </div>
             <img
-                data-aos="fade-up"
+                data-aos="fade-right"
                 v-if="!isTablet"
                 width="587px"
                 height="688px"

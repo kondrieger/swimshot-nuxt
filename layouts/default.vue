@@ -12,8 +12,6 @@
 
         <ContactForm @formSubmit="onCloseModal" />
 
-        <Alert v-if="alert.visible" :theme="alert.theme">{{ alert.text }}</Alert>
-
         <ModalContact :open="isContactModalOpen" @closeModal="onCloseModal" :modalComment="modalComment" />
     </div>
 </template>
@@ -22,7 +20,6 @@
 import Header from '~/components/Header/Header.vue';
 import ContactForm from '~/components/ContactForm/ContactForm.vue';
 import ModalContact from '~/components/Modal/ModalContact/ModalContact.vue';
-import Alert from '~/components/Alert/Alert.vue';
 
 import Phone from '~/assets/svg/phone.svg';
 
@@ -32,18 +29,11 @@ export default {
         ContactForm,
         Phone,
         ModalContact,
-        Alert,
     },
     data() {
         return {
             isContactModalOpen: false,
             modalComment: null,
-
-            alert: {
-                visible: false,
-                text: null,
-                theme: null,
-            },
         };
     },
     computed: {
@@ -80,14 +70,6 @@ export default {
             });
         },
 
-        showAlert() {
-            this.alert.visible = true;
-
-            setTimeout(() => {
-                if (this.alert.visible) this.alert.visible = false;
-            }, 4000);
-        },
-
         onOpenModal(comment = null) {
             if (comment) {
                 this.modalComment = comment;
@@ -96,13 +78,7 @@ export default {
             this.isContactModalOpen = true;
         },
 
-        onCloseModal(isSubmitOk = true) {
-            this.alert.text = isSubmitOk ? 'Заявка успешно отправлена' : 'Произошла ошибка';
-            this.alert.theme = isSubmitOk ? 'success' : 'danger';
-
-            // Временно показываю только при успехе
-            if (isSubmitOk) this.showAlert();
-
+        onCloseModal() {
             this.isContactModalOpen = false;
         },
     },
