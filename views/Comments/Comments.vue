@@ -9,6 +9,13 @@
                 <span class="blue">Swim Shot</span>, если хочешь. Они не против :)
             </h3>
 
+            <p class="text-subheader text-subheader--note" data-aos="fade-right">
+                * также не стесняйся делиться опытом плавания в <b>Swim Shot</b> на
+                <a href="https://yandex.ru/maps/org/shkola_plavaniya_swim_shot/39769031923/" target="_blank">
+                    Яндекс Картах
+                </a>
+            </p>
+
             <swiper ref="mySwiper" class="" :options="swiperOptions" data-aos="fade-up">
                 <swiper-slide v-for="(comment, index) in commentsArr" :key="index">
                     <div class="comments__item">
@@ -35,9 +42,27 @@
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
+
             <client-only>
                 <comments-modal :comment="commentToShow" @closeModal="onModalClose" :open="modalOpen"></comments-modal>
             </client-only>
+
+            <div class="comments__yandex-wrap">
+                <div class="comments__yandex">
+                    <iframe
+                        class="comments__yandex-iframe"
+                        src="https://yandex.ru/maps-reviews-widget/39769031923?comments"
+                    />
+
+                    <a
+                        class="comments__yandex-link"
+                        href="https://yandex.ru/maps/org/shkola_plavaniya_swim_shot/39769031923/"
+                        target="_blank"
+                    >
+                        Школа плавания Swim Shot на карте Зеленограда — Яндекс Карты
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </template>

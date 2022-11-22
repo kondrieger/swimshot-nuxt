@@ -9,6 +9,7 @@
                     class="start-block__text-img start-block__text-img--logo"
                     alt="Плыви быстрее пули"
                 />
+
                 <img
                     data-aos="fade-right"
                     width="466px"
@@ -17,13 +18,17 @@
                     class="start-block__text-img start-block__text-img--sublogo"
                     alt="Плыви быстрее пули"
                 />
+
                 <h1 class="start-block__text-title">
                     Школа плавания для детей и взрослых<br />
                     с собственным бассейном в Зеленограде
                 </h1>
+
                 <p class="start-block__text-subtitle">Записывайся на пробную тренировку всего за 500 рублей</p>
-                <a class="btn btn--wide btn--animated js-link" href="#contact-form">ЗАПИСАТЬСЯ</a>
+
+                <a class="btn btn--wide btn--animated" href="javascript:;" @click="onModalOpen">ЗАПИСАТЬСЯ</a>
             </div>
+
             <img
                 data-aos="fade-right"
                 v-if="!isTablet"
@@ -34,6 +39,7 @@
                 class="start-block__image"
             />
         </div>
+
         <button v-if="isVisibleBtn" @click="scrollTop" class="arrow-wrap"><i class="arrow"></i></button>
     </div>
 </template>
@@ -95,6 +101,10 @@ export default {
             window.document.body.onscroll = () => {
                 this.isVisibleBtn = +window.scrollY > 800;
             };
+        },
+
+        onModalOpen() {
+            this.$emit('modalOpen');
         },
     },
 };

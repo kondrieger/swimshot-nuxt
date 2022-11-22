@@ -1,6 +1,6 @@
 <template>
     <div>
-        <StartBlock />
+        <StartBlock @modalOpen="onModalContactOpen" />
         <Features />
         <PoolList />
         <Team @modalOpen="onModalContactOpen" />
@@ -51,7 +51,7 @@ export default {
             this.isFridayModalOpen = false;
         },
 
-        onModalContactOpen(name) {
+        onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
         },
     },
