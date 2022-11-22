@@ -108,7 +108,6 @@ export default {
             poolsPicArr,
             littlePool,
             isFridayModalOpen: false,
-            bigPool,
         };
     },
 
