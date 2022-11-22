@@ -1,7 +1,7 @@
 <template>
     <div class="container pool-start-block">
         <h1 class="pool-start-block__title" data-aos="fade-right">{{ title }}</h1>
-        <a class="pool-start-block__address js-link" href="#contact-form" data-aos="fade-right">
+        <a class="pool-start-block__address js-link" href="#contact-form-map" data-aos="fade-right">
             <img :src="mapMark" alt="Swim shot адрес" />{{ address }}
         </a>
 

@@ -43,13 +43,14 @@
                 <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
             </p>
 
-            <div class="" @click="submit"><VButton wide text="Отправить" /></div>
+            <div class="" @click="submitForm"><VButton wide text="Отправить" /></div>
         </template>
     </vue-modaltor>
 </template>
 
 <script>
 import validationMixin, { required, tel, nameAll } from '../../../plugins/validation';
+import submitMixin from '~/static/js/submitMixin.js';
 
 import VButton from '~/components/VButton/VButton.vue';
 import TextInput from '~/components/TextInput/TextInput.vue';
@@ -61,7 +62,7 @@ import './styles.css';
 export default {
     name: 'modal',
     components: { TextInput, VButton, Check },
-    mixins: [validationMixin],
+    mixins: [validationMixin, submitMixin],
     props: {
         open: {
             type: Boolean,
@@ -119,36 +120,6 @@ export default {
         closeModal() {
             this.isOpen = false;
             this.$emit('closeModal', this.isOpen);
-        },
-
-        sendLead() {
-            this.$fb.track('Lead');
-        },
-
-        async submit() {
-            this.$v.$touch();
-            if (this.$v.$invalid) return;
-
-            if (this.modalComment) this.form.comment = `Хочу к тренеру: ${this.modalComment}`;
-
-            await fetch('https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(this.form),
-            });
-
-            if (!window.dataLayer.find((item) => item.event === 'form')) {
-                window.dataLayer.push({
-                    event: 'form',
-                });
-                this.sendLead();
-            }
-
-            this.closeModal(true);
         },
     },
 };

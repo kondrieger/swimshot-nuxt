@@ -86,6 +86,7 @@
 
                 @media (--tablet) {
                     font-size: 20px;
+                    margin-bottom: calc(var(--gs) * 1);
                 }
             }
 
@@ -135,12 +136,22 @@
                     min-width: 30px !important;
                     min-height: 30px !important;
                     margin-right: 25px;
+
+                    @media (--mobile-lg) {
+                        min-width: 20px !important;
+                        min-height: 20px !important;
+                        margin-right: 10px;
+                    }
                 }
 
                 &-text {
                     display: block;
                     font-size: 20px;
                     color: var(--cl-blue);
+
+                    @media (--mobile-lg) {
+                        font-size: 14px !important;
+                    }
                 }
             }
         }

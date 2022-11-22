@@ -1,7 +1,7 @@
 <template>
     <div :style="{ 'background-image': 'url(' + bgPic + ')' }" class="contact-form__bg" id="contact-form">
         <div class="container contact-form__wrap">
-            <div class="contact-form__contacts contact-form-border" data-aos="fade-right">
+            <div class="contact-form__contacts contact-form-border">
                 <div class="contact-form__contacts-item">
                     <p class="contact-form__contacts-item-title">Звони нам</p>
 
@@ -19,64 +19,44 @@
 
                     <div class="contact-form__contacts-item-content">
                         <a
-                            href="https://vk.com/swim_shot"
+                            v-for="link in socialLinks"
+                            :key="link.id"
+                            :href="link.href"
+                            class="social-item contact-form__contacts-item-social"
                             target="_blank"
-                            class="header__links-social-item contact-form__contacts-item-social"
                         >
-                            <Vk class="header__links-social-item-img contact-form__contacts-item-social-img" />
+                            <Vk
+                                v-if="link.id === 'vk'"
+                                class="social-item-img contact-form__contacts-item-social-img"
+                            />
 
-                            <span class="contact-form__contacts-item-social-text">Вконтакте</span>
-                        </a>
+                            <Whatsapp
+                                v-if="link.id === 'whatsapp'"
+                                class="social-item-img contact-form__contacts-item-social-img"
+                            />
 
-                        <a
-                            href="https://wa.me/+79771885559"
-                            target="_blank"
-                            class="header__links-social-item contact-form__contacts-item-social"
-                        >
-                            <Whatsapp class="header__links-social-item-img contact-form__contacts-item-social-img" />
+                            <Telegram
+                                v-if="link.id === 'telegram'"
+                                class="social-item-img contact-form__contacts-item-social-img"
+                            />
 
-                            <span class="contact-form__contacts-item-social-text">WhatsApp</span>
-                        </a>
+                            <Instagram
+                                v-if="link.id === 'instagram'"
+                                class="social-item-img contact-form__contacts-item-social-img"
+                            />
 
-                        <a
-                            href="https://t.me/swim_shot"
-                            target="_blank"
-                            class="header__links-social-item contact-form__contacts-item-social"
-                        >
-                            <Telegram class="header__links-social-item-img contact-form__contacts-item-social-img" />
+                            <Zen
+                                v-if="link.id === 'zen'"
+                                class="social-item-img contact-form__contacts-item-social-img"
+                            />
 
-                            <span class="contact-form__contacts-item-social-text">Telegram</span>
-                        </a>
-
-                        <a
-                            href="https://www.instagram.com/swim_shot/"
-                            target="_blank"
-                            class="header__links-social-item contact-form__contacts-item-social"
-                        >
-                            <Instagram class="header__links-social-item-img contact-form__contacts-item-social-img" />
-
-                            <span class="contact-form__contacts-item-social-text">Instagram</span>
-                        </a>
-
-                        <a
-                            href="https://dzen.ru/swimshot/"
-                            target="_blank"
-                            class="header__links-social-item contact-form__contacts-item-social"
-                        >
-                            <Zen class="header__links-social-item-img contact-form__contacts-item-social-img" />
-
-                            <span class="contact-form__contacts-item-social-text">Дзен</span>
+                            <span class="contact-form__contacts-item-social-text">{{ link.text }}</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <form
-                id="contacts"
-                @submit.prevent="submit"
-                class="contact-form__form contact-form-border"
-                data-aos="fade-left"
-            >
+            <form id="contact-form" @submit.prevent="submitForm" class="contact-form__form contact-form-border">
                 <p class="contact-form__contacts-item-title">Оставляй заявку на сайте, и мы сами тебе позвоним</p>
 
                 <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
@@ -99,7 +79,7 @@
             </form>
         </div>
 
-        <div class="container contact-form__wrap">
+        <div class="container contact-form__wrap" id="contact-form-map">
             <yandex-map
                 class="contact-form-border contact-form__map"
                 :settings="{
@@ -127,9 +107,11 @@
 
 <script>
 /* eslint-disable*/
-import bgPic from '~/assets/jpg/things_bg.jpg';
 import './styles.css';
+import { socialLinksContactForm } from '~/static/js/links.js';
+import submitMixin from '~/static/js/submitMixin.js';
 import validationMixin, { required, tel, nameAll } from '../../plugins/validation';
+
 import TextInput from '~/components/TextInput/TextInput.vue';
 import VButton from '~/components/VButton/VButton.vue';
 
@@ -138,13 +120,15 @@ import Instagram from '~/assets/svg/instagram.svg';
 import Telegram from '~/assets/svg/telegram.svg';
 import Whatsapp from '~/assets/svg/whatsapp.svg';
 import Zen from '~/assets/svg/zen.svg';
-
 import House from '~/assets/svg/house.svg';
+
+import bgPic from '~/assets/jpg/things_bg.jpg';
 
 export default {
     name: 'ContactForm',
     components: { Vk, Instagram, TextInput, VButton, Telegram, Whatsapp, Zen, House },
-    mixins: [validationMixin],
+    mixins: [validationMixin, submitMixin],
+
     data() {
         return {
             bgPic,
@@ -170,6 +154,8 @@ export default {
                 imageSize: [30, 30],
                 imageOffset: [0, 0],
             },
+
+            socialLinks: socialLinksContactForm,
         };
     },
     validations: {
@@ -184,6 +170,7 @@ export default {
             },
         },
     },
+
     computed: {
         isTablet() {
             return this.$mq === 'tablet';
@@ -203,35 +190,6 @@ export default {
                 if (!this.$v.form.phone.tel) return 'Неверный формат телефона';
             }
             return '';
-        },
-    },
-    methods: {
-        sendLead() {
-            this.$fb.track('Lead');
-        },
-
-        async submit() {
-            this.$v.$touch();
-            if (this.$v.$invalid) return;
-
-            await fetch('https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(this.form),
-            });
-
-            if (!window.dataLayer.find((item) => item.event === 'form')) {
-                window.dataLayer.push({
-                    event: 'form',
-                });
-                this.sendLead();
-            }
-
-            this.$emit('formSubmit');
         },
     },
 };

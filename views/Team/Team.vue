@@ -17,7 +17,7 @@
                             <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
 
                             <div class="team__list-item-social">
-                                <Instagram class="header__links-social-item-img" />
+                                <Instagram class="social-item-img" />
                             </div>
 
                             <span v-if="man.founder" class="card-badge">основатель</span>

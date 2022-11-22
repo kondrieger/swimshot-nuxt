@@ -13,81 +13,40 @@
 
                     <client-only v-else>
                         <Slide :closeOnNavigation="true" noOverlay>
-                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#pools-list' }">
-                                <p>Бассейны</p>
-                            </nuxt-link>
-
-                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#team' }">
-                                <p>Тренеры</p>
-                            </nuxt-link>
-
-                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#comments' }">
-                                <p>Отзывы</p>
-                            </nuxt-link>
-
-                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#media' }">
-                                <p>Медиа</p>
-                            </nuxt-link>
-
-                            <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#contact-form' }">
-                                <p>Контакты</p>
+                            <nuxt-link
+                                v-for="item in headerMenu"
+                                :key="item.text"
+                                class="header__links-link js-link"
+                                :to="{ path: '/', hash: `${item.hash}` }"
+                            >
+                                <p>{{ item.text }}</p>
                             </nuxt-link>
 
                             <div class="header__links-social">
                                 <a
-                                    href="https://vk.com/swim_shot"
-                                    class="header__links-social-item header__links-social-item--modal"
+                                    v-for="link in socialLinks"
+                                    :key="link.id"
+                                    :href="link.href"
+                                    class="social-item social-item--modal"
                                     target="_blank"
                                 >
-                                    <Vk class="header__links-social-item-img" />
-                                </a>
-
-                                <a
-                                    href="https://wa.me/+79771885559"
-                                    class="header__links-social-item header__links-social-item--modal"
-                                    target="_blank"
-                                >
-                                    <Whatsapp class="header__links-social-item-img" />
-                                </a>
-
-                                <a
-                                    href="https://t.me/swimshot/"
-                                    class="header__links-social-item header__links-social-item--modal"
-                                    target="_blank"
-                                >
-                                    <Telegram class="header__links-social-item-img" />
-                                </a>
-
-                                <a
-                                    href="https://www.instagram.com/swim_shot/"
-                                    class="header__links-social-item header__links-social-item--modal"
-                                    target="_blank"
-                                >
-                                    <Instagram class="header__links-social-item-img" />
+                                    <Vk v-if="link.id === 'vk'" class="social-item-img" />
+                                    <Whatsapp v-if="link.id === 'whatsapp'" class="social-item-img" />
+                                    <Telegram v-if="link.id === 'telegram'" class="social-item-img" />
+                                    <Instagram v-if="link.id === 'instagram'" class="social-item-img" />
                                 </a>
                             </div>
                         </Slide>
                     </client-only>
 
                     <div class="header__links" v-if="!isTablet">
-                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#pools-list' }">
-                            <p>Бассейны</p>
-                        </nuxt-link>
-
-                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#team' }">
-                            <p>Тренеры</p>
-                        </nuxt-link>
-
-                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#comments' }">
-                            <p>Отзывы</p>
-                        </nuxt-link>
-
-                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#media' }">
-                            <p>Медиа</p>
-                        </nuxt-link>
-
-                        <nuxt-link class="header__links-link js-link" :to="{ path: '/', hash: '#contact-form' }">
-                            <p>Контакты</p>
+                        <nuxt-link
+                            v-for="item in headerMenu"
+                            :key="item.text"
+                            class="header__links-link js-link"
+                            :to="{ path: '/', hash: `${item.hash}` }"
+                        >
+                            <p>{{ item.text }}</p>
                         </nuxt-link>
                     </div>
 
@@ -101,24 +60,17 @@
 
                     <div class="header__links header__links--media">
                         <div class="header__links-social">
-                            <a href="https://vk.com/swim_shot" target="_blank" class="header__links-social-item">
-                                <Vk class="header__links-social-item-img" />
-                            </a>
-
-                            <a href="https://wa.me/+79771885559" target="_blank" class="header__links-social-item">
-                                <Whatsapp class="header__links-social-item-img" />
-                            </a>
-
-                            <a href="https://t.me/swimshot/" target="_blank" class="header__links-social-item">
-                                <Telegram class="header__links-social-item-img" />
-                            </a>
-
                             <a
-                                href="https://www.instagram.com/swim_shot/"
+                                v-for="link in socialLinks"
+                                :key="link.id"
+                                :href="link.href"
+                                class="social-item"
                                 target="_blank"
-                                class="header__links-social-item"
                             >
-                                <Instagram class="header__links-social-item-img" />
+                                <Vk v-if="link.id === 'vk'" class="social-item-img" />
+                                <Whatsapp v-if="link.id === 'whatsapp'" class="social-item-img" />
+                                <Telegram v-if="link.id === 'telegram'" class="social-item-img" />
+                                <Instagram v-if="link.id === 'instagram'" class="social-item-img" />
                             </a>
                         </div>
 
@@ -140,6 +92,7 @@
 
 <script>
 import './styles.css';
+import { headerMenu, socialLinksHeader } from '~/static/js/links.js';
 
 import FixedHeader from 'vue-fixed-header';
 
@@ -157,6 +110,9 @@ export default {
 
     data() {
         return {
+            headerMenu,
+            socialLinks: socialLinksHeader,
+
             isBurgerOpen: false,
             modalOpen: false,
         };
