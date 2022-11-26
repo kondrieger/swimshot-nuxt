@@ -45,6 +45,14 @@
         border: 2px solid var(--cl-black);
     }
 
+    &--success {
+        background-color: var(--cl-green);
+    }
+
+    &--danger {
+        background-color: var(--cl-red);
+    }
+
     &--wide {
         width: 100%;
     }

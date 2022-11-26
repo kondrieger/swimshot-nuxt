@@ -56,27 +56,37 @@
                 </div>
             </div>
 
-            <form id="contact-form" @submit.prevent="submitForm" class="contact-form__form contact-form-border">
-                <p class="contact-form__contacts-item-title">Оставляй заявку на сайте, и мы сами тебе позвоним</p>
-
-                <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
-
-                <TextInput
-                    v-model="form.phone"
-                    :error="telError"
-                    :tag="'input-masked'"
-                    mask="+7 (###) ###-##-##"
-                    type="phone"
-                    placeholderText="Телефон *"
+            <div id="contact-form" class="contact-form__form contact-form-border">
+                <FormLoad
+                    v-if="formState.isLoading || formState.loaded || formState.errored"
+                    :state="formState"
+                    @closeFormLoad="onCloseFormLoad"
                 />
+                <template v-else>
+                    <p class="contact-form__contacts-item-title">Оставляй заявку на сайте, и мы сами тебе позвоним</p>
 
-                <p class="contact-form__policy-text">
-                    Нажимая на кнопку "Отправить", Вы даете согласие на обработку персональных данных и соглашаетесь с
-                    <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
-                </p>
+                    <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
 
-                <VButton wide text="Отправить" />
-            </form>
+                    <TextInput
+                        v-model="form.phone"
+                        :error="telError"
+                        :tag="'input-masked'"
+                        mask="+7 (###) ###-##-##"
+                        type="phone"
+                        placeholderText="Телефон *"
+                    />
+
+                    <p class="contact-form__policy-text">
+                        Нажимая на кнопку "Отправить", Вы даете согласие на обработку персональных данных и соглашаетесь
+                        с
+                        <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
+                    </p>
+
+                    <div @click="submitForm">
+                        <VButton wide text="Отправить" />
+                    </div>
+                </template>
+            </div>
         </div>
 
         <div class="container contact-form__wrap" id="contact-form-map">
@@ -114,6 +124,7 @@ import validationMixin, { required, tel, nameAll } from '../../plugins/validatio
 
 import TextInput from '~/components/TextInput/TextInput.vue';
 import VButton from '~/components/VButton/VButton.vue';
+import FormLoad from '~/components/FormLoad/FormLoad.vue';
 
 import Vk from '~/assets/svg/vk.svg';
 import Instagram from '~/assets/svg/instagram.svg';
@@ -126,7 +137,7 @@ import bgPic from '~/assets/jpg/things_bg.jpg';
 
 export default {
     name: 'ContactForm',
-    components: { Vk, Instagram, TextInput, VButton, Telegram, Whatsapp, Zen, House },
+    components: { FormLoad, Vk, Instagram, TextInput, VButton, Telegram, Whatsapp, Zen, House },
     mixins: [validationMixin, submitMixin],
 
     data() {

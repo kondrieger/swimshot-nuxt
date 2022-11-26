@@ -1,11 +1,23 @@
 export default {
     data() {
+        const defaultForm = {
+            name: null,
+            phone: null,
+            comment: null,
+        };
+
+        const defaultFormState = {
+            isLoading: false,
+            errored: false,
+            loaded: false,
+        };
+
         return {
-            form: {
-                name: null,
-                phone: null,
-                comment: null,
-            },
+            defaultForm,
+            form: { ...defaultForm },
+
+            defaultFormState,
+            formState: { ...defaultFormState },
         };
     },
 
@@ -20,6 +32,8 @@ export default {
 
             if (this.modalComment) this.form.comment = `Хочу к тренеру: ${this.modalComment}`;
 
+            this.formState.isLoading = true;
+
             await fetch('https://cloud.1c.fitness/api/hs/lead/Webhook/6cdcce9e-6824-11ed-da8f-00505683b2c0', {
                 method: 'POST',
                 mode: 'no-cors',
@@ -28,16 +42,34 @@ export default {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(this.form),
-            });
+            })
+                .then(() => {
+                    this.formState.loaded = true;
 
-            if (!window.dataLayer.find((item) => item.event === 'form')) {
-                window.dataLayer.push({
-                    event: 'form',
+                    if (!window.dataLayer.find((item) => item.event === 'form')) {
+                        window.dataLayer.push({
+                            event: 'form',
+                        });
+                        this.sendLead();
+                    }
+                })
+                .catch(() => {
+                    this.formState.errored = true;
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        this.formState.isLoading = false;
+                    }, 1000);
                 });
-                this.sendLead();
-            }
+        },
 
+        onCloseFormLoad() {
+            this.form = { ...this.defaultForm };
+            this.formState = { ...this.defaultFormState };
+            this.$v.$reset();
             this.$emit('formSubmit');
+
+            if (this.open) this.closeModal();
         },
     },
 };

@@ -212,6 +212,10 @@ fieldset {
     color: var(--cl-red);
 }
 
+.text-success {
+    color: var(--cl-green);
+}
+
 .text-white {
     color: white;
 }

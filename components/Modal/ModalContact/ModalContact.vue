@@ -12,38 +12,47 @@
         <template #header>
             <div class="modal__header">
                 <div @click="closeModal" class="modal__close-btn"></div>
-                <h4 class="modal-contact__header-title">НУЖЕН ОБРАТНЫЙ ЗВОНОК?</h4>
+                <template v-if="!(formState.isLoading || formState.loaded || formState.errored)">
+                    <h4 class="modal-contact__header-title">НУЖЕН ОБРАТНЫЙ ЗВОНОК?</h4>
 
-                <h3 class="modal-contact__header-subtitle">Оставь свой номер и мы перезвоним</h3>
+                    <h3 class="modal-contact__header-subtitle">Оставь свой номер и мы перезвоним</h3>
+                </template>
             </div>
         </template>
         <template #body>
-            <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
-
-            <TextInput
-                v-model="form.phone"
-                :error="telError"
-                :tag="'input-masked'"
-                mask="+7 (###) ###-##-##"
-                type="phone"
-                placeholderText="Телефон *"
+            <FormLoad
+                v-if="formState.isLoading || formState.loaded || formState.errored"
+                :state="formState"
+                @closeFormLoad="onCloseFormLoad"
             />
+            <template v-else>
+                <TextInput v-model="form.name" :error="nameError" placeholderText="Имя *" />
 
-            <div v-if="modalComment" class="modal-contact__body-text">
-                <Check class="modal-contact__body-text-icon" />
+                <TextInput
+                    v-model="form.phone"
+                    :error="telError"
+                    :tag="'input-masked'"
+                    mask="+7 (###) ###-##-##"
+                    type="phone"
+                    placeholderText="Телефон *"
+                />
 
-                <p>
-                    <span class="modal-contact__body-text-name">{{ modalComment }}</span
-                    >, хочу к тебе!
+                <div v-if="modalComment" class="modal-contact__body-text">
+                    <Check class="modal-contact__body-text-icon" />
+
+                    <p>
+                        <span class="modal-contact__body-text-name">{{ modalComment }}</span
+                        >, хочу к тебе!
+                    </p>
+                </div>
+
+                <p class="contact-form__policy-text">
+                    Нажимая на кнопку "Отправить", Вы даете согласие на обработку персональных данных и соглашаетесь с
+                    <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
                 </p>
-            </div>
 
-            <p class="contact-form__policy-text">
-                Нажимая на кнопку "Отправить", Вы даете согласие на обработку персональных данных и соглашаетесь с
-                <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
-            </p>
-
-            <div class="" @click="submitForm"><VButton wide text="Отправить" /></div>
+                <div class="" @click="submitForm"><VButton wide text="Отправить" /></div>
+            </template>
         </template>
     </vue-modaltor>
 </template>
@@ -54,6 +63,7 @@ import submitMixin from '~/static/js/submitMixin.js';
 
 import VButton from '~/components/VButton/VButton.vue';
 import TextInput from '~/components/TextInput/TextInput.vue';
+import FormLoad from '~/components/FormLoad/FormLoad.vue';
 
 import Check from '~/assets/svg/check.svg';
 
@@ -61,7 +71,7 @@ import './styles.css';
 
 export default {
     name: 'modal',
-    components: { TextInput, VButton, Check },
+    components: { FormLoad, TextInput, VButton, Check },
     mixins: [validationMixin, submitMixin],
     props: {
         open: {

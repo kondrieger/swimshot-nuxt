@@ -1,8 +1,8 @@
 <template>
     <button
-        :class="`btn ${black ? `btn--black` : ''} ${wide ? 'btn--wide' : ''} ${sm ? 'btn--sm' : ''} ${
+        :class="`btn ${black ? `btn--black` : ''} ${wide ? 'btn--wide' : ''} ${sm ? 'btn--sm' : ''}  ${
             animated ? 'btn--animated' : ''
-        }`"
+        } ${danger ? 'btn--danger' : ''} ${success ? 'btn--success' : ''}`"
     >
         {{ text }}
     </button>
@@ -21,6 +21,16 @@ export default {
         },
 
         black: {
+            type: Boolean,
+            default: false,
+        },
+
+        success: {
+            type: Boolean,
+            default: false,
+        },
+
+        danger: {
             type: Boolean,
             default: false,
         },
