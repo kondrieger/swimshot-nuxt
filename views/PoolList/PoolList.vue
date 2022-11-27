@@ -40,7 +40,7 @@
 <script>
 import VButton from '~/components/VButton/VButton.vue';
 
-import orbita from '~/assets/jpg/pools/pool_orbita.jpg';
+import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 
 import Question from '~/assets/svg/question.svg';

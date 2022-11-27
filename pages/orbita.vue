@@ -39,7 +39,7 @@ import PoolPic3 from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import PoolPic4 from '~/assets/jpg/pools/pool_orbita_4.jpg';
 import PoolPic5 from '~/assets/jpg/pools/pool_orbita_5.jpg';
 
-const poolsPicArr = [PoolPic3, PoolPic4, PoolPic1, PoolPic2, PoolPic5];
+const poolsPicArr = [PoolPic3, PoolPic4, PoolPic5];
 
 const poolsArr = [
     {

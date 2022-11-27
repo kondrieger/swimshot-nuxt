@@ -1,4 +1,4 @@
-export const shedule = {
+export const schedule = {
     groups: [
         {
             id: 'with-trainer',
@@ -30,12 +30,12 @@ export const shedule = {
             ],
         },
     ],
-    shedules: [
+    schedules: [
         {
             title: 'Дети 3-6 лет, 1 раз в неделю',
             id: 1,
             times: 1,
-            shedule: [
+            schedule: [
                 {
                     days: 'Суббота',
                     items: [{ price: '1000 руб/занятие', time: ['13:15'] }],
@@ -50,7 +50,7 @@ export const shedule = {
             title: 'Дети 3-6 лет, 2 раза в неделю',
             id: 1,
             times: 2,
-            shedule: [
+            schedule: [
                 {
                     days: 'Суббота — Воскресенье',
                     items: [{ price: '1000 руб/занятие', time: ['13:15'] }],
@@ -61,7 +61,7 @@ export const shedule = {
             title: 'Дети 7-9 лет, 1 раз в неделю',
             id: 2,
             times: 1,
-            shedule: [
+            schedule: [
                 {
                     days: 'Воскресенье',
                     items: [{ price: '1000 руб/занятие', time: ['15:30'] }],
@@ -72,7 +72,7 @@ export const shedule = {
             title: 'Дети 10-16 лет, 1 раз в неделю',
             id: 3,
             times: 1,
-            shedule: [
+            schedule: [
                 {
                     days: 'Понедельник',
                     items: [{ price: '1000 руб/занятие', time: ['20:00'] }],
@@ -87,7 +87,7 @@ export const shedule = {
             title: 'Дети 10-16 лет, 2 раза в неделю',
             id: 3,
             times: 2,
-            shedule: [
+            schedule: [
                 {
                     days: 'Понедельник — Четверг',
                     items: [{ price: '900 руб/занятие', time: ['20:00'] }],
