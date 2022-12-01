@@ -8,8 +8,6 @@
         <FAQ />
         <Media />
         <Photos />
-
-        <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>
 </template>
 
@@ -23,8 +21,6 @@ import FAQ from '~/views/FAQ/FAQ.vue';
 import PoolList from '~/views/PoolList/PoolList.vue';
 import Comments from '~/views/Comments/Comments.vue';
 
-import ModalBlackFriday from '~/components/Modal/BlackFriday.vue';
-
 export default {
     layout: 'default',
 
@@ -37,29 +33,12 @@ export default {
         FAQ,
         PoolList,
         Comments,
-        ModalBlackFriday,
-    },
-
-    data() {
-        return {
-            isFridayModalOpen: false,
-        };
     },
 
     methods: {
-        onCloseModal() {
-            this.isFridayModalOpen = false;
-        },
-
         onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
         },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.isFridayModalOpen = true;
-        }, 7000);
     },
 };
 </script>

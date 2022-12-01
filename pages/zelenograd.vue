@@ -34,7 +34,6 @@
         <div class="bg-grey">
             <AnotherPools data-aos="fade-right" :PoolsArr="poolsArr" />
         </div>
-        <ModalBlackFriday :open="isFridayModalOpen" @closeModal="onCloseModal" />
     </div>
 </template>
 
@@ -44,7 +43,6 @@ import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
-import ModalBlackFriday from '~/components/Modal/BlackFriday.vue';
 
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
@@ -106,7 +104,7 @@ const poolsArr = [
 export default {
     name: 'zelenograd-page',
     layout: 'default',
-    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Schedule, ModalBlackFriday },
+    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Schedule },
     head() {
         return {
             title: 'Swim Shot — Бассейн в Зеленограде',
@@ -132,18 +130,7 @@ export default {
             poolsPicArr,
             poolFeatures,
             poolsArr,
-            isFridayModalOpen: false,
         };
-    },
-    methods: {
-        onCloseModal() {
-            this.isFridayModalOpen = false;
-        },
-    },
-    mounted() {
-        setTimeout(() => {
-            this.isFridayModalOpen = true;
-        }, 7000);
     },
 };
 </script>
