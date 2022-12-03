@@ -91,7 +91,7 @@
             </div>
         </div>
 
-        <div class="schedule__select-wrap schedule__container" v-if="activeGroupOptions && activeGroupOptions.length">
+        <div class="schedule__select-wrap" v-if="activeGroupOptions && activeGroupOptions.length">
             <Treeselect
                 class="schedule__select"
                 :options="activeGroupOptions"
@@ -469,7 +469,7 @@
             </div>
         </div>
 
-        <h3 v-else class="text-subheader schedule__title bg-grey schedule__content schedule__select">
+        <h3 v-else class="text-subheader schedule__title bg-grey schedule__content schedule__end-text">
             Выбери <b>{{ computedWord }}</b
             >, чтобы увидеть расписание
         </h3>

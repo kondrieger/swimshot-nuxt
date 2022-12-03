@@ -8,6 +8,11 @@
     min-width: 160px;
     background-color: #fff;
 
+    @media (--tablet) {
+        padding: calc(var(--gs) * 0.5);
+        margin: calc(var(--gs) * 0.5);
+    }
+
     &--multiple {
         padding: calc(var(--gs) * 1);
     }
