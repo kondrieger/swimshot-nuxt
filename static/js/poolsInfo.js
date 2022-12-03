@@ -611,6 +611,104 @@ export const schedule = {
                         },
                     ],
                 },
+                {
+                    id: 'child-1317',
+                    type: ['group', 'personal', 'sport'],
+                    label: 'Ребенок 13-17 лет',
+                    combine: true,
+
+                    types: [
+                        {
+                            id: 1,
+                            groupDays: [
+                                {
+                                    id: 1,
+                                    time: ['19:45'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 3,
+                                    time: ['19:45'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 5,
+                                    time: ['19:45'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 7,
+                                    time: ['17:30', '18:15', '19:00'],
+                                    trainer: 'Александра',
+                                },
+                            ],
+
+                            price: [
+                                {
+                                    id: 1,
+                                    amount: 4500,
+                                },
+                                {
+                                    id: 2,
+                                    amount: 7500,
+                                },
+                                {
+                                    id: 3,
+                                    amount: 9900,
+                                },
+                            ],
+                        },
+                        {
+                            id: 2,
+                            groupDays: [
+                                {
+                                    id: 1,
+                                    time: ['18:15'],
+                                    trainer: 'Илья',
+                                },
+                                {
+                                    id: 2,
+                                    time: ['18:15'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 3,
+                                    time: ['18:15'],
+                                    trainer: 'Сергей',
+                                },
+                                {
+                                    id: 4,
+                                    time: ['18:15'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 5,
+                                    time: ['18:15'],
+                                    trainer: 'Илья',
+                                },
+                                {
+                                    id: 6,
+                                    time: ['17:30', '18:15'],
+                                    trainer: 'Александра',
+                                },
+                            ],
+                            price: [
+                                {
+                                    id: 1,
+                                    amount: 4900,
+                                },
+                                {
+                                    id: 2,
+                                    amount: 8500,
+                                },
+                                {
+                                    id: 3,
+                                    amount: 10900,
+                                },
+                            ],
+                        },
+                    ],
+                },
             ],
         },
     ],
