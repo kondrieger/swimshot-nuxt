@@ -29,7 +29,6 @@
 
     &__select {
         width: 47%;
-        z-index: 2222 !important;
 
         &-wrap {
             margin: 0 auto calc(var(--gs) * 4) auto;

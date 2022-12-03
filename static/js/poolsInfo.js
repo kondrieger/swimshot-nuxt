@@ -187,6 +187,8 @@ export const schedule = {
                     id: 'child-68',
                     type: ['group', 'personal'],
                     label: 'Ребенок 6-8 лет',
+                    combine: true,
+
                     types: [
                         {
                             id: 1,
@@ -299,11 +301,311 @@ export const schedule = {
                             price: [
                                 {
                                     id: 1,
-                                    amount: 3500,
+                                    amount: 4500,
                                 },
                                 {
                                     id: 2,
-                                    amount: 5900,
+                                    amount: 7500,
+                                },
+                                {
+                                    id: 3,
+                                    amount: 9900,
+                                },
+                            ],
+                        },
+                        {
+                            id: 2,
+                            groupDays: [
+                                {
+                                    id: 1,
+                                    time: ['16:45'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 2,
+                                    diffs: [
+                                        {
+                                            time: ['16:00', '16:45'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 3,
+                                    time: ['16:45'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 4,
+                                    diffs: [
+                                        {
+                                            time: ['16:00', '16:45'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 5,
+                                    time: ['16:45'],
+                                    trainer: 'Любовь',
+                                },
+                                {
+                                    id: 6,
+                                    diffs: [
+                                        {
+                                            time: ['16:00'],
+                                            trainer: 'Илья',
+                                        },
+                                        {
+                                            time: ['16:45'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                            ],
+
+                            price: [
+                                {
+                                    id: 1,
+                                    amount: 4900,
+                                },
+                                {
+                                    id: 2,
+                                    amount: 8500,
+                                },
+                                {
+                                    id: 3,
+                                    amount: 10900,
+                                },
+                            ],
+                        },
+                    ],
+                },
+                {
+                    id: 'child-912',
+                    type: ['group', 'personal', 'sport'],
+                    label: 'Ребенок 9-12 лет',
+                    combine: true,
+
+                    types: [
+                        {
+                            id: 1,
+                            groupDays: [
+                                {
+                                    id: 1,
+                                    diffs: [
+                                        {
+                                            time: ['14:30', '15:15'],
+                                            trainer: 'Илья',
+                                        },
+                                        {
+                                            time: ['19:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 2,
+                                    diffs: [
+                                        {
+                                            time: ['15:15'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['19:00'],
+                                            trainer: 'Александра',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 3,
+                                    diffs: [
+                                        {
+                                            time: ['14:30', '15:15'],
+                                            trainer: 'Сергей',
+                                        },
+                                        {
+                                            time: ['19:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 4,
+                                    diffs: [
+                                        {
+                                            time: ['15:15'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['19:00'],
+                                            trainer: 'Александра',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 5,
+                                    diffs: [
+                                        {
+                                            time: ['14:30', '15:15'],
+                                            trainer: 'Илья',
+                                        },
+                                        {
+                                            time: ['19:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 6,
+                                    diffs: [
+                                        {
+                                            time: ['11:30', '14:30', '15:15'],
+                                            trainer: 'Сергей',
+                                        },
+                                        {
+                                            time: ['12:15'],
+                                            trainer: 'Илья',
+                                        },
+                                        {
+                                            time: ['13:00', '13:45', '19:00'],
+                                            trainer: 'Александра',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 7,
+                                    diffs: [
+                                        {
+                                            time: ['11:30'],
+                                            trainer: 'Сергей',
+                                        },
+                                        {
+                                            time: ['12:15', '14:30', '15:15', '17:30', '18:15'],
+                                            trainer: 'Илья',
+                                        },
+                                        {
+                                            time: ['13:00', '13:45', '16:00'],
+                                            trainer: 'Александра',
+                                        },
+                                    ],
+                                },
+                            ],
+
+                            price: [
+                                {
+                                    id: 1,
+                                    amount: 4500,
+                                },
+                                {
+                                    id: 2,
+                                    amount: 7500,
+                                },
+                                {
+                                    id: 3,
+                                    amount: 9900,
+                                },
+                            ],
+                        },
+                        {
+                            id: 2,
+                            groupDays: [
+                                {
+                                    id: 1,
+                                    diffs: [
+                                        {
+                                            time: ['16:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Илья',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 2,
+                                    diffs: [
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['18:15'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 3,
+                                    diffs: [
+                                        {
+                                            time: ['16:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 4,
+                                    diffs: [
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['18:15'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 5,
+                                    diffs: [
+                                        {
+                                            time: ['16:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['17:30'],
+                                            trainer: 'Илья',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 6,
+                                    time: ['18:15'],
+                                    trainer: 'Сергей',
+                                },
+                            ],
+
+                            price: [
+                                {
+                                    id: 1,
+                                    amount: 4900,
+                                },
+                                {
+                                    id: 2,
+                                    amount: 8500,
+                                },
+                                {
+                                    id: 3,
+                                    amount: 10900,
                                 },
                             ],
                         },
@@ -331,6 +633,12 @@ export const price = {
         {
             id: 10,
             amount: 23900,
+        },
+    ],
+    sport: [
+        {
+            id: 3,
+            amount: 10000,
         },
     ],
 };
