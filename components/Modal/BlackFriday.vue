@@ -34,7 +34,7 @@
                     уточнения информации
                 </p>
 
-                <div class="" @click="closeModal">
+                <div @click="closeModal">
                     <VButton class="modal-friday__body-btn" wide text="УЖЕ БЕГУ" />
                 </div>
             </div>

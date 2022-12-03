@@ -97,7 +97,7 @@
                 :options="activeGroupOptions"
                 v-model="active.group"
                 :default-expand-level="1"
-                placeholder="Вид занятий"
+                placeholder="Группа"
                 @select="() => {}"
                 :disable-branch-nodes="true"
                 :searchable="false"
@@ -161,8 +161,7 @@
                             <ul class="tabs">
                                 <li
                                     class="tab-link"
-                                    :class="{ active: activeTab === groupType.id }"
-                                    :data-tab="groupType.id"
+                                    :class="{ active: active.tab === groupType.id }"
                                     v-for="groupType in activeGroup.types"
                                     :key="groupType.id"
                                     @click="onTabChange(groupType.id)"
@@ -178,7 +177,7 @@
                         class="tab-content bg-grey schedule__content"
                         v-for="groupType in activeGroup.types"
                         :key="groupType.id"
-                        :class="{ active: activeTab === groupType.id }"
+                        :class="{ active: active.tab === groupType.id }"
                     >
                         <div class="schedule__table-list">
                             <ScheduleItem
@@ -253,6 +252,137 @@
             </div>
         </div>
 
+        <div v-else-if="active.type === 'free'">
+            <h3 class="text-subheader schedule__table-title">Свободное плавание</h3>
+
+            <p class="text-subheader schedule__table-subtitle" v-if="active.age === 'children'">
+                Дети до 14 лет могут проходить на свободное плавание только в сопровождении представителей и по
+                письменному заявлению об их ответственности за ребенка. Дети с 14 до 17 лет включительно уже могут
+                плавать без личного присутствия представителя, <b>но с его письменного заявления</b>.
+
+                <br />
+                <br />
+                Абонементы на свободное плавание также можно приобрести на детей
+                <b>с письменным заявлением от представителя</b>
+            </p>
+
+            <div class="wrapper">
+                <div class="tab-wrapper">
+                    <ul class="tabs">
+                        <li class="tab-link" :class="{ active: active.tab === 1 }" @click="onTabChange(1)">
+                            По времени
+                        </li>
+                        <li class="tab-link" :class="{ active: active.tab === 2 }" @click="onTabChange(2)">
+                            В любое время
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content bg-grey schedule__content" :class="{ active: active.tab === 1 }">
+                <p class="text-subheader schedule__table-subtitle">
+                    Свободное плавание в будние дни <b>до 13:00</b> и <b>после 21:15</b>, а также
+                    <b>в выходные после 20:30</b> *
+                </p>
+
+                <p class="text-subheader text-subheader--note schedule__table-note">
+                    <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
+                    <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>. В
+                    это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
+                </p>
+
+                <div class="schedule__table-price-wrap">
+                    <div class="schedule__table-price">
+                        <p class="text-subheader schedule__table-price-title">
+                            <span class="text-bold">Свободное посещение.</span><br />
+                            Стоимость в это время
+                        </p>
+
+                        <div class="schedule__table-price-list">
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Разовое посещение</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">350</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">2800</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">3900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">7900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">10900</span> р</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
+                <p class="text-subheader schedule__table-subtitle">Свободное плавание в любое время *</p>
+                <p class="text-subheader text-subheader--note schedule__table-note">
+                    <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
+                    <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>. В
+                    это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
+                </p>
+
+                <div class="schedule__table-price-wrap">
+                    <div class="schedule__table-price">
+                        <p class="text-subheader schedule__table-price-title">
+                            <span class="text-bold">Свободное посещение.</span><br />
+                        </p>
+
+                        <div class="schedule__table-price-list">
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Разовое посещение</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">500</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">3900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">4900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — безлимит</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">5900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">10500</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">13900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — безлимит</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">14900</span> р</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h3 v-else class="text-subheader schedule__title bg-grey schedule__content schedule__select">
             Выбери <b>{{ computedWord }}</b
             >, чтобы увидеть расписание
@@ -309,6 +439,7 @@ const defaultActive = {
     age: null,
     type: null,
     group: null,
+    tab: 1,
 };
 
 const weekDays = {
@@ -352,13 +483,12 @@ export default {
             weekDays,
 
             active: { ...defaultActive },
-            activeTab: 1,
         };
     },
 
     methods: {
         onTabChange(tab) {
-            this.activeTab = tab;
+            this.active.tab = tab;
         },
 
         onActivePoolChange(pool) {
@@ -396,6 +526,7 @@ export default {
 
         onActiveTypeChange(type) {
             this.active.group = null;
+            this.active.tab = 1;
 
             if (this.active.type === type) {
                 this.active.type = null;

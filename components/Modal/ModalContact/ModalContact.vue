@@ -51,7 +51,7 @@
                     <nuxt-link to="/policy" target="_blank"> политикой конфиденциальности</nuxt-link>
                 </p>
 
-                <div class="" @click="submitForm"><VButton wide text="Отправить" /></div>
+                <div @click="submitForm"><VButton wide text="Отправить" /></div>
             </template>
         </template>
     </vue-modaltor>

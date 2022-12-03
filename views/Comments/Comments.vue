@@ -16,7 +16,7 @@
                 </a>
             </p>
 
-            <swiper ref="mySwiper" class="" :options="swiperOptions" data-aos="fade-up">
+            <swiper ref="mySwiper" :options="swiperOptions" data-aos="fade-up">
                 <swiper-slide v-for="(comment, index) in commentsArr" :key="index">
                     <div class="comments__item">
                         <p

@@ -153,7 +153,7 @@ export const schedule = {
                 {
                     id: 'child-68',
                     type: ['group', 'personal'],
-                    label: 'Ребенок 6-8 лет',
+                    label: 'Дети 6-8 лет',
                     combine: true,
 
                     types: [
@@ -363,7 +363,7 @@ export const schedule = {
                 {
                     id: 'child-912',
                     type: ['group', 'personal', 'sport'],
-                    label: 'Ребенок 9-12 лет',
+                    label: 'Дети 9-12 лет',
                     combine: true,
 
                     types: [
@@ -581,7 +581,7 @@ export const schedule = {
                 {
                     id: 'child-1317',
                     type: ['group', 'personal', 'sport'],
-                    label: 'Ребенок 13-17 лет',
+                    label: 'Дети 13-17 лет',
                     combine: true,
 
                     types: [

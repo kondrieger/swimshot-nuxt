@@ -7,7 +7,7 @@
             время плавания<br />
             с пользой для здоровья и прогрессом
         </h3>
-        <swiper ref="mySwiper" class="" :options="swiperOptions">
+        <swiper ref="mySwiper" :options="swiperOptions">
             <swiper-slide v-for="(feature, index) in featuresArr" :key="index">
                 <div data-aos="zoom-in" :data-aos-offset="25 + index * 25" class="features__list-item">
                     <Discount v-if="index === 0" class="features__list-item-img" />

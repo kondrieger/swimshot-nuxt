@@ -1,18 +1,18 @@
 <template>
-    <div class="container team" id="team">
+    <div class="container team">
         <h2 class="text-header" data-aos="fade-right">Наши <span class="blue">тренеры</span></h2>
 
         <h3 class="text-subheader" data-aos="fade-right">
             Каждый сотрудник <span class="blue">Swim Shot</span> делает все, чтобы ты получал максимальное наслаждение
             от плавания с пользой для здоровья и прогрессом. Тренеры регулярно обучаются как организованно, так и
             самостоятельно, а некоторые даже продолжают плавать, чтобы сначала опробовать на себе новые методы и
-            упражнения, а потом внедрять их в тренировочный процесс
+            упражнения, а потом внедрять их в тренировочный процесс <span id="team"></span>
         </h3>
 
-        <swiper data-aos="fade-up" ref="mySwiper" class="" :options="swiperOptions">
+        <swiper data-aos="fade-up" ref="mySwiper" :options="swiperOptions">
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">
-                    <div class="">
+                    <div>
                         <a :href="`https://instagram.com/${man.inst}`" target="_blank" class="team__list-item-img-wrap">
                             <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
 
@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <div v-if="!man.unavailable" class="" @click="onModalOpen(man.name)" style="width: 100%">
+                    <div v-if="!man.unavailable" @click="onModalOpen(man.name)" style="width: 100%">
                         <VButton text="Записаться" wide />
                     </div>
                 </div>
