@@ -22,37 +22,16 @@ export const schedule = {
                         },
                     ],
 
-                    price: {
-                        group: [
-                            {
-                                id: 1,
-                                amount: 3500,
-                            },
-                            {
-                                id: 2,
-                                amount: 5900,
-                            },
-                        ],
-
-                        personal: [
-                            {
-                                id: 1,
-                                amount: 2700,
-                            },
-                            {
-                                id: 3,
-                                amount: 7800,
-                            },
-                            {
-                                id: 5,
-                                amount: 12500,
-                            },
-                            {
-                                id: 10,
-                                amount: 23900,
-                            },
-                        ],
-                    },
+                    price: [
+                        {
+                            id: 1,
+                            amount: 3500,
+                        },
+                        {
+                            id: 2,
+                            amount: 5900,
+                        },
+                    ],
                 },
                 {
                     id: 'adult-health-back',
@@ -78,41 +57,20 @@ export const schedule = {
                         },
                     ],
 
-                    price: {
-                        group: [
-                            {
-                                id: 1,
-                                amount: 4500,
-                            },
-                            {
-                                id: 2,
-                                amount: 7900,
-                            },
-                            {
-                                id: 3,
-                                amount: 9900,
-                            },
-                        ],
-
-                        personal: [
-                            {
-                                id: 1,
-                                amount: 2700,
-                            },
-                            {
-                                id: 3,
-                                amount: 7800,
-                            },
-                            {
-                                id: 5,
-                                amount: 12500,
-                            },
-                            {
-                                id: 10,
-                                amount: 23900,
-                            },
-                        ],
-                    },
+                    price: [
+                        {
+                            id: 1,
+                            amount: 4500,
+                        },
+                        {
+                            id: 2,
+                            amount: 7900,
+                        },
+                        {
+                            id: 3,
+                            amount: 9900,
+                        },
+                    ],
                 },
                 {
                     id: 'adult-trainer',
@@ -175,41 +133,20 @@ export const schedule = {
                         },
                     ],
 
-                    price: {
-                        group: [
-                            {
-                                id: 1,
-                                amount: 4500,
-                            },
-                            {
-                                id: 2,
-                                amount: 7900,
-                            },
-                            {
-                                id: 3,
-                                amount: 9900,
-                            },
-                        ],
-
-                        personal: [
-                            {
-                                id: 1,
-                                amount: 2700,
-                            },
-                            {
-                                id: 3,
-                                amount: 7800,
-                            },
-                            {
-                                id: 5,
-                                amount: 12500,
-                            },
-                            {
-                                id: 10,
-                                amount: 23900,
-                            },
-                        ],
-                    },
+                    price: [
+                        {
+                            id: 1,
+                            amount: 4500,
+                        },
+                        {
+                            id: 2,
+                            amount: 7900,
+                        },
+                        {
+                            id: 3,
+                            amount: 9900,
+                        },
+                    ],
                 },
             ],
             children: [],
@@ -235,39 +172,165 @@ export const schedule = {
                         },
                     ],
 
-                    price: {
-                        group: [
-                            {
-                                id: 1,
-                                amount: 5500,
-                            },
-                            {
-                                id: 2,
-                                amount: 9900,
-                            },
-                        ],
+                    price: [
+                        {
+                            id: 1,
+                            amount: 5500,
+                        },
+                        {
+                            id: 2,
+                            amount: 9900,
+                        },
+                    ],
+                },
+                {
+                    id: 'child-68',
+                    type: ['group', 'personal'],
+                    label: 'Ребенок 6-8 лет',
+                    types: [
+                        {
+                            id: 1,
+                            groupDays: [
+                                {
+                                    id: 1,
+                                    diffs: [
+                                        {
+                                            time: ['13:45'],
+                                            trainer: 'Дарья',
+                                        },
+                                        {
+                                            time: ['14:30', '15:15'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['19:00', '19:45'],
+                                            trainer: 'Илья',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 2,
+                                    diffs: [
+                                        {
+                                            time: ['13:45', '14:30', '15:15', '19:45'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['14:30', '19:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 3,
+                                    diffs: [
+                                        {
+                                            time: ['13:45'],
+                                            trainer: 'Дарья',
+                                        },
+                                        {
+                                            time: ['14:30', '15:15'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['19:00'],
+                                            trainer: 'Сергей',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 4,
+                                    diffs: [
+                                        {
+                                            time: ['13:45', '14:30', '15:15', '19:45'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['14:30', '19:00'],
+                                            trainer: 'Любовь',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 5,
+                                    diffs: [
+                                        {
+                                            time: ['13:45'],
+                                            trainer: 'Дарья',
+                                        },
+                                        {
+                                            time: ['14:30', '15:15'],
+                                            trainer: 'Любовь',
+                                        },
+                                        {
+                                            time: ['19:00', '19:45'],
+                                            trainer: 'Илья',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 6,
+                                    diffs: [
+                                        {
+                                            time: ['10:45', '11:30', '12:15', '14:30'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['13:00', '13:45'],
+                                            trainer: 'Илья',
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 7,
+                                    diffs: [
+                                        {
+                                            time: ['10:45', '11:30', '12:15', '14:30', '16:45'],
+                                            trainer: 'Александра',
+                                        },
+                                        {
+                                            time: ['13:00', '13:45', '16:00'],
+                                            trainer: 'Илья',
+                                        },
+                                    ],
+                                },
+                            ],
 
-                        personal: [
-                            {
-                                id: 1,
-                                amount: 2700,
-                            },
-                            {
-                                id: 3,
-                                amount: 7800,
-                            },
-                            {
-                                id: 5,
-                                amount: 12500,
-                            },
-                            {
-                                id: 10,
-                                amount: 23900,
-                            },
-                        ],
-                    },
+                            price: [
+                                {
+                                    id: 1,
+                                    amount: 3500,
+                                },
+                                {
+                                    id: 2,
+                                    amount: 5900,
+                                },
+                            ],
+                        },
+                    ],
                 },
             ],
+        },
+    ],
+};
+
+export const price = {
+    personal: [
+        {
+            id: 1,
+            amount: 2700,
+        },
+        {
+            id: 3,
+            amount: 7800,
+        },
+        {
+            id: 5,
+            amount: 12500,
+        },
+        {
+            id: 10,
+            amount: 23900,
         },
     ],
 };

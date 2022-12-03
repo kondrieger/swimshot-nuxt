@@ -170,7 +170,7 @@
             <div class="schedule__table-price-wrap">
                 <div
                     class="schedule__table-price"
-                    v-if="active.type === 'group' && activeGroup.price.group"
+                    v-if="active.type === 'group' && activeGroup.price"
                     data-aos="fade-up"
                 >
                     <p class="text-subheader schedule__table-price-title">
@@ -179,11 +179,7 @@
                     </p>
 
                     <div class="schedule__table-price-list">
-                        <div
-                            class="schedule__table-price-list-item"
-                            v-for="price in activeGroup.price.group"
-                            :key="price.id"
-                        >
+                        <div class="schedule__table-price-list-item" v-for="price in activeGroup.price" :key="price.id">
                             <p class="schedule__table-price-list-item-times">
                                 <span v-if="price.id === 1">Один раз</span>
                                 <span v-if="price.id === 2">Два раза</span>
@@ -196,22 +192,14 @@
                     </div>
                 </div>
 
-                <div
-                    class="schedule__table-price"
-                    v-if="active.type === 'personal' && activeGroup.price.personal"
-                    data-aos="fade-up"
-                >
+                <div class="schedule__table-price" v-if="active.type === 'personal'" data-aos="fade-up">
                     <p class="text-subheader schedule__table-price-title">
                         <span class="text-bold">Персональные тренировки.</span><br />
                         Покупаются блоком
                     </p>
 
                     <div class="schedule__table-price-list">
-                        <div
-                            class="schedule__table-price-list-item"
-                            v-for="price in activeGroup.price.personal"
-                            :key="price.id"
-                        >
+                        <div class="schedule__table-price-list-item" v-for="price in price.personal" :key="price.id">
                             <p class="schedule__table-price-list-item-times">
                                 <span v-if="price.id === 1">Одна тренировка</span>
                                 <span v-if="price.id === 3">Три тренировки</span>
@@ -249,7 +237,7 @@ import CrowdIcon from '~/assets/svg/crowd.svg';
 import PersonHandsIcon from '~/assets/svg/person-hands.svg';
 import BoyTrainerIcon from '~/assets/svg/boy-trainer.svg';
 
-import { schedule } from '~/static/js/poolsInfo.js';
+import { schedule, price } from '~/static/js/poolsInfo.js';
 
 const poolsArr = [
     {
@@ -316,6 +304,7 @@ export default {
     data() {
         return {
             schedule,
+            price,
             poolsArr,
             weekDays,
 
