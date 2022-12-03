@@ -1,8 +1,12 @@
 <template>
     <div>
-        <Schedule />
+        <div class="bg-grey">
+            <Schedule />
+        </div>
         <PoolList />
-        <Team @modalOpen="onModalContactOpen" />
+        <div class="bg-grey">
+            <Team @modalOpen="onModalContactOpen" />
+        </div>
     </div>
 </template>
 

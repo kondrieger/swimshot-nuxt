@@ -1,7 +1,5 @@
 <template>
     <div class="container schedule">
-        <h1>Расписание</h1>
-
         <h2 class="text-header" data-aos="fade-right">Расписание <span class="blue">занятий</span></h2>
 
         <p class="text-subheader" data-aos="fade-right">
@@ -89,7 +87,7 @@
             </div>
         </div>
 
-        <div class="schedule__select-wrap schedule__container" v-if="activeGroupOptions" data-aos="fade-up">
+        <div class="schedule__select-wrap schedule__container" v-if="activeGroupOptions">
             <Treeselect
                 class="schedule__select"
                 :options="activeGroupOptions"
@@ -101,39 +99,73 @@
                 :searchable="false"
                 :is-default-expanded="true"
             />
-            <!--
-            <Treeselect
-                v-if="computedTimes"
-                class="schedule__select"
-                :options="computedTimes"
-                placeholder="Количество занятий"
-                v-model="times"
-                :searchable="false"
-            /> -->
         </div>
 
         <div class="schedule__table" v-if="activeGroup">
             <h3 class="text-subheader schedule__table-title" data-aos="fade-up">{{ activeGroup.label }}</h3>
-            <p class="text-subheader schedule__table-subtitle" data-aos="fade-up">{{ activeGroup.info }}</p>
+            <p class="text-subheader schedule__table-subtitle" data-aos="fade-up">
+                {{ activeGroup.info }}
 
-            <div class="schedule__table-list" v-if="activeGroup.groupDays">
+                <template v-if="activeGroup.combine && active.type === 'group'">
+                    <br />Можно комбинировать любые дни и любых тренеров из списка ниже
+                </template>
+            </p>
+
+            <div class="schedule__table-list" v-if="activeGroup.groupDays && active.type === 'group'">
                 <div
                     class="schedule__table-list-item"
-                    v-for="item in activeGroup.groupDays"
-                    :key="item.id"
+                    :class="{ 'schedule__table-list-item--multiple': groupDay.diffs }"
+                    v-for="groupDay in activeGroup.groupDays"
+                    :key="groupDay.id"
                     data-aos="fade-up"
                 >
-                    <div class="schedule__table-list-item-wrap">
-                        <p class="text-bold">{{ weekDays[item.id] }}</p>
-                        <p class="blue">{{ item.time.join(' ') }}</p>
-                    </div>
+                    <template v-if="groupDay.diffs">
+                        <p class="text-bold schedule__table-list-item-weekday">{{ weekDays[groupDay.id] }}</p>
 
-                    <div v-if="item.trainer" class="schedule__table-list-item-wrap">
-                        <p>Тренер:</p>
-                        <a class="js-link" href="#team">{{ item.trainer }}</a>
-                    </div>
+                        <div
+                            class="schedule__table-list-item-block"
+                            v-for="training in groupDay.diffs"
+                            :key="training.trainer"
+                        >
+                            <div class="schedule__table-list-item-wrap">
+                                <p class="schedule__table-list-item-text">Время:</p>
+                                <p class="blue text-bold schedule__table-list-item-block-time">
+                                    {{ training.time.join(' ') }}
+                                </p>
+                            </div>
+
+                            <div v-if="training.trainer" class="schedule__table-list-item-wrap">
+                                <p class="schedule__table-list-item-text">Тренер:</p>
+                                <a class="js-link" href="#team">{{ training.trainer }}</a>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template v-else>
+                        <p class="text-bold schedule__table-list-item-weekday">{{ weekDays[groupDay.id] }}</p>
+
+                        <div class="schedule__table-list-item-wrap">
+                            <p class="schedule__table-list-item-text">Время:</p>
+                            <p class="blue text-bold schedule__table-list-item-block-time">
+                                {{ groupDay.time.join(' ') }}
+                            </p>
+                        </div>
+
+                        <div v-if="groupDay.trainer" class="schedule__table-list-item-wrap">
+                            <p class="schedule__table-list-item-text">Тренер:</p>
+                            <a class="js-link" href="#team">{{ groupDay.trainer }}</a>
+                        </div>
+                    </template>
                 </div>
             </div>
+
+            <p
+                v-if="active.type === 'personal'"
+                class="text-subheader text-subheader--note schedule__table-note"
+                data-aos="fade-up"
+            >
+                * Расписание согласуется <span class="blue">индивидуально с тренером</span> и более гибко для Ученика
+            </p>
 
             <div class="schedule__table-price-wrap">
                 <div
@@ -169,18 +201,22 @@
                     v-if="active.type === 'personal' && activeGroup.price.personal"
                     data-aos="fade-up"
                 >
-                    <p class="text-subheader schedule__table-price-title">Стоимость в это время и дни за месяц</p>
+                    <p class="text-subheader schedule__table-price-title">
+                        <span class="text-bold">Персональные тренировки.</span><br />
+                        Покупаются блоком
+                    </p>
 
                     <div class="schedule__table-price-list">
                         <div
                             class="schedule__table-price-list-item"
-                            v-for="price in activeGroup.price.group"
+                            v-for="price in activeGroup.price.personal"
                             :key="price.id"
                         >
                             <p class="schedule__table-price-list-item-times">
-                                <span v-if="price.id === 1">Один раз</span>
-                                <span v-if="price.id === 2">Два раза</span>
-                                <span v-if="price.id === 3">Три раза</span> в неделю
+                                <span v-if="price.id === 1">Одна тренировка</span>
+                                <span v-if="price.id === 3">Три тренировки</span>
+                                <span v-if="price.id === 5">Пять тренировок</span>
+                                <span v-if="price.id === 10">Десять тренировок</span>
                             </p>
                             <p class="schedule__table-price-list-item-amount">
                                 <span class="blue">{{ price.amount }}</span> р/мес
@@ -236,10 +272,27 @@ const defaultActive = {
     pool: 'zelenograd',
     age: 'adults',
     type: 'group',
-    group: 'aerobics',
+    group: 'adult-trainer',
 };
 
+// const defaultActive = {
+//     pool: null,
+//     age: null,
+//     type: null,
+//     group: null,
+// };
+
 const weekDays = {
+    1: 'Понедельник',
+    2: 'Вторник',
+    3: 'Среда',
+    4: 'Четверг',
+    5: 'Пятница',
+    6: 'Суббота',
+    7: 'Воскресенье',
+};
+
+const weekDaysSm = {
     1: 'Пн',
     2: 'Вт',
     3: 'Ср',

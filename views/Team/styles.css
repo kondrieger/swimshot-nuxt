@@ -31,6 +31,7 @@
             height: 85%;
             margin: 25px 0;
             max-width: 400px;
+            background-color: #fff;
             cursor: grab;
 
             &,

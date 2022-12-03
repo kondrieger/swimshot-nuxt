@@ -2,7 +2,9 @@
     <div>
         <StartBlock @modalOpen="onModalContactOpen" />
         <Features />
-        <PoolList />
+        <div class="bg-grey">
+            <PoolList />
+        </div>
         <Team @modalOpen="onModalContactOpen" />
         <Comments />
         <FAQ />
