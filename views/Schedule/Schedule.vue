@@ -125,6 +125,7 @@
                             :key="groupDay.id"
                             :groupDay="groupDay"
                             :weekDay="weekDays[groupDay.id]"
+                            @trainerClick="onTrainerClick"
                         />
                     </div>
 
@@ -185,6 +186,7 @@
                                 :key="groupDay.id"
                                 :groupDay="groupDay"
                                 :weekDay="weekDays[groupDay.id]"
+                                @trainerClick="onTrainerClick"
                             />
                         </div>
 
@@ -383,6 +385,90 @@
             </div>
         </div>
 
+        <div v-else-if="active.group && active.type === 'sport'">
+            <h3 class="text-subheader schedule__table-title">Спортивная группа</h3>
+
+            <p class="text-subheader schedule__table-subtitle">Необходимо пройти отбор</p>
+
+            <div class="bg-grey schedule__content">
+                <p class="text-subheader text-subheader--note schedule__table-note">
+                    * Продолжительность тренировки — 1.5 часа
+                </p>
+
+                <div class="schedule__table-price-wrap">
+                    <div class="schedule__table-price">
+                        <p class="text-subheader schedule__table-price-title">
+                            <span class="text-bold">Спортивная группа</span><br />
+                            Стоимость в это время
+                        </p>
+
+                        <div class="schedule__table-price-list">
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три раза в неделю</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">10000</span> р/мес
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
+                <p class="text-subheader schedule__table-subtitle">Свободное плавание в любое время *</p>
+                <p class="text-subheader text-subheader--note schedule__table-note">
+                    <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
+                    <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>. В
+                    это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
+                </p>
+
+                <div class="schedule__table-price-wrap">
+                    <div class="schedule__table-price">
+                        <p class="text-subheader schedule__table-price-title">
+                            <span class="text-bold">Свободное посещение.</span><br />
+                        </p>
+
+                        <div class="schedule__table-price-list">
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Разовое посещение</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">500</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">3900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">4900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Месяц — безлимит</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">5900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">10500</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">13900</span> р</p>
+                            </div>
+
+                            <div class="schedule__table-price-list-item">
+                                <p class="schedule__table-price-list-item-times">Три месяца — безлимит</p>
+                                <p class="schedule__table-price-list-item-amount"><span class="blue">14900</span> р</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h3 v-else class="text-subheader schedule__title bg-grey schedule__content schedule__select">
             Выбери <b>{{ computedWord }}</b
             >, чтобы увидеть расписание
@@ -427,20 +513,21 @@ const poolsArr = [
     },
 ];
 
-// const defaultActive = {
-//     pool: 'zelenograd',
-//     age: 'children',
-//     type: 'group',
-//     group: 'child-912',
-// };
-
 const defaultActive = {
-    pool: null,
-    age: null,
-    type: null,
-    group: null,
+    pool: 'zelenograd',
+    age: 'children',
+    type: 'group',
+    group: 'child-912',
     tab: 1,
 };
+
+// const defaultActive = {
+//     pool: null,
+//     age: null,
+//     type: null,
+//     group: null,
+//     tab: 1,
+// };
 
 const weekDays = {
     1: 'Понедельник',
@@ -489,6 +576,10 @@ export default {
     methods: {
         onTabChange(tab) {
             this.active.tab = tab;
+        },
+
+        onTrainerClick(name) {
+            this.$emit('trainerClick', name);
         },
 
         onActivePoolChange(pool) {
@@ -599,6 +690,7 @@ export default {
             if (!this.activePool) return [];
 
             const { age, type } = this.active;
+
             const activeGroups =
                 age &&
                 type &&
@@ -613,6 +705,8 @@ export default {
          */
         activeGroup() {
             const activeGroup = this.activeGroupOptions?.find((g) => g.id == this.active.group);
+
+            if (this.active.type === 'sport') return null;
 
             return activeGroup;
         },

@@ -9,7 +9,7 @@
             упражнения, а потом внедрять их в тренировочный процесс <span id="team"></span>
         </h3>
 
-        <swiper data-aos="fade-up" ref="mySwiper" :options="swiperOptions">
+        <swiper data-aos="fade-up" ref="teamSwiper" :options="swiperOptions">
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">
                     <div>
@@ -168,14 +168,21 @@ export default {
         Instagram,
         VButton,
     },
+    props: {
+        currentTrainer: {
+            type: String,
+            default: null,
+        },
+    },
     directives: {
         swiper: directive,
     },
+
     data() {
         return {
             teamArr,
             swiperOptions: {
-                slidesPerView: 1,
+                slidesPerView: 3,
                 spaceBetween: 30,
                 loop: true,
                 pagination: {
@@ -200,10 +207,33 @@ export default {
             },
         };
     },
+    computed: {
+        isTablet() {
+            return this.$mq === 'tablet';
+        },
+        swiper() {
+            return this.$refs.teamSwiper.$swiper;
+        },
+    },
 
     methods: {
         onModalOpen(name) {
             this.$emit('modalOpen', name);
+        },
+    },
+
+    watch: {
+        currentTrainer(val) {
+            const trainer = this.teamArr.find((t) => {
+                const name = t.name.split(' ')[0];
+
+                return name === val;
+            });
+
+            const summ = this.swiper.loopedSlides > 1 ? 2 : 1;
+            const index = this.teamArr.indexOf(trainer) + summ;
+
+            this.swiper.slideTo(index);
         },
     },
 };

@@ -13,7 +13,7 @@
 
                 <div v-if="training.trainer" class="schedule-item__wrap">
                     <p class="schedule-item__text">Тренер:</p>
-                    <a class="js-link" href="#team">{{ training.trainer }}</a>
+                    <a class="js-link" href="#team" @click="onTrainerClick(training.trainer)">{{ training.trainer }}</a>
                 </div>
             </div>
         </template>
@@ -30,7 +30,7 @@
 
             <div v-if="groupDay.trainer" class="schedule-item__wrap">
                 <p class="schedule-item__text">Тренер:</p>
-                <a class="js-link" href="#team">{{ groupDay.trainer }}</a>
+                <a class="js-link" href="#team" @click="onTrainerClick(groupDay.trainer)">{{ groupDay.trainer }}</a>
             </div>
         </template>
     </div>
@@ -48,6 +48,12 @@ export default {
         weekDay: {
             type: String,
             default: 'Не указан',
+        },
+    },
+
+    methods: {
+        onTrainerClick(name) {
+            this.$emit('trainerClick', name);
         },
     },
 };

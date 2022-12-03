@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Schedule />
+        <Schedule @trainerClick="onTrainerClick" />
         <div class="bg-grey">
-            <Team @modalOpen="onModalContactOpen" />
+            <Team :currentTrainer="currentTrainer" @modalOpen="onModalContactOpen" />
         </div>
     </div>
 </template>
@@ -20,11 +20,15 @@ export default {
     },
 
     data() {
-        return {};
+        return {
+            currentTrainer: null,
+        };
     },
 
     methods: {
-        onCloseModal() {},
+        onTrainerClick(name) {
+            this.currentTrainer = name;
+        },
 
         onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
