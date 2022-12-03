@@ -1,0 +1,46 @@
+.schedule-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--gs) * 4);
+    background-color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--cl-blue);
+    border-radius: 20px 20px 0 0;
+
+    &:hover {
+        background-color: var(--cl-blue);
+
+        & .schedule-link__text {
+            color: white;
+        }
+
+        & .schedule-link__img {
+            fill: white;
+        }
+    }
+
+    @media (--tablet) {
+        padding: calc(var(--gs) * 2);
+        font-size: 20px;
+    }
+
+    &__img {
+        fill: var(--cl-blue);
+        margin-right: calc(var(--gs) * 4);
+        width: 60px;
+        height: 60px;
+
+        @media (--tablet) {
+            margin-right: calc(var(--gs) * 2);
+        }
+    }
+
+    &__text {
+        color: var(--cl-blue);
+        padding: 0;
+        margin: 0;
+    }
+}

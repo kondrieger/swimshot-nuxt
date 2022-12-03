@@ -6,6 +6,7 @@
             и качество воды комфортные для плавания в любом возрасте. Переходи на страницу бассейна ниже, и ознакомься с
             услугами, ценами и прочими условиями каждого из них
         </h3>
+        <ScheduleLink />
         <div class="pools__list" data-aos="fade-up">
             <nuxt-link
                 v-for="(pool, index) in poolsArr"
@@ -37,6 +38,7 @@
 
 <script>
 import VButton from '~/components/VButton/VButton.vue';
+import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
@@ -68,7 +70,7 @@ const poolsArr = [
 
 export default {
     name: 'PoolList',
-    components: { VButton, Question, NewBadge, House },
+    components: { VButton, Question, NewBadge, House, ScheduleLink },
     data() {
         return {
             poolsArr,

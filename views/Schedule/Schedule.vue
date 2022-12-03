@@ -158,10 +158,10 @@
 
                 <template v-if="activeGroup.types">
                     <div class="wrapper">
-                        <div class="tab-wrapper">
+                        <div class="schedule-tab-wrapper">
                             <ul class="tabs">
                                 <li
-                                    class="tab-link"
+                                    class="schedule-tab-link"
                                     :class="{ active: active.tab === groupType.id }"
                                     v-for="groupType in activeGroup.types"
                                     :key="groupType.id"
@@ -174,8 +174,8 @@
                     </div>
 
                     <div
-                        :id="`tab-${groupType.id}`"
-                        class="tab-content bg-grey schedule__content"
+                        :id="`schedule-tab-${groupType.id}`"
+                        class="schedule-tab-content bg-grey schedule__content"
                         v-for="groupType in activeGroup.types"
                         :key="groupType.id"
                         :class="{ active: active.tab === groupType.id }"
@@ -269,19 +269,19 @@
             </p>
 
             <div class="wrapper">
-                <div class="tab-wrapper">
+                <div class="schedule-tab-wrapper">
                     <ul class="tabs">
-                        <li class="tab-link" :class="{ active: active.tab === 1 }" @click="onTabChange(1)">
+                        <li class="schedule-tab-link" :class="{ active: active.tab === 1 }" @click="onTabChange(1)">
                             По времени
                         </li>
-                        <li class="tab-link" :class="{ active: active.tab === 2 }" @click="onTabChange(2)">
+                        <li class="schedule-tab-link" :class="{ active: active.tab === 2 }" @click="onTabChange(2)">
                             В любое время
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="tab-content bg-grey schedule__content" :class="{ active: active.tab === 1 }">
+            <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 1 }">
                 <p class="text-subheader schedule__table-subtitle">
                     Свободное плавание в будние дни <b>до 13:00</b> и <b>после 21:15</b>, а также
                     <b>в выходные после 20:30</b> *
@@ -330,7 +330,7 @@
                 </div>
             </div>
 
-            <div class="tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
+            <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
                 <p class="text-subheader schedule__table-subtitle">Свободное плавание в любое время *</p>
                 <p class="text-subheader text-subheader--note schedule__table-note">
                     <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
@@ -414,7 +414,7 @@
                 </div>
             </div>
 
-            <div class="tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
+            <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
                 <p class="text-subheader schedule__table-subtitle">Свободное плавание в любое время *</p>
                 <p class="text-subheader text-subheader--note schedule__table-note">
                     <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с

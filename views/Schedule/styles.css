@@ -306,7 +306,7 @@
     border: 2px solid var(--cl-lt-blue);
 }
 
-.tab-wrapper {
+.schedule-tab-wrapper {
     text-align: center;
     display: block;
     margin: auto;
@@ -320,7 +320,7 @@
     justify-content: center;
 }
 
-.tab-link {
+.schedule-tab-link {
     text-transform: uppercase;
     margin: 0 10px;
     list-style: none;
@@ -337,24 +337,24 @@
     }
 }
 
-.tab-link:hover {
+.schedule-tab-link:hover {
     color: var(--cl-blue);
 }
 
-.tab-link.active {
+.schedule-tab-link.active {
     background-color: var(--cl-green);
     color: white !important;
     border-bottom: none;
     border-radius: 40px 40px 0 0;
 }
 
-.tab-content {
+.schedule-tab-content {
     display: none;
     opacity: 0;
     animation: fadeIn 0.3s ease 1 forwards;
 }
 
-.tab-content.active {
+.schedule-tab-content.active {
     display: block;
 }
 
