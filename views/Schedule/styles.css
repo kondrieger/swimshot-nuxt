@@ -86,16 +86,23 @@
                 }
 
                 & .schedule__list-item-icon {
-                    fill: var(--cl-green) !important;
+                    fill: var(--cl-green);
                 }
             }
 
             &.js-active {
-                border: 2px solid var(--cl-green);
+                background-color: var(--cl-green);
 
-                & a,
+                & .schedule__list-item-icon {
+                    fill: white;
+                }
+
                 & .schedule__list-item-title {
-                    color: var(--cl-green) !important;
+                    color: white;
+                }
+
+                & a {
+                    color: var(--cl-green);
                 }
             }
 
