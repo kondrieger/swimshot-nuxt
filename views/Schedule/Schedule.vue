@@ -13,7 +13,7 @@
                 v-for="(pool, index) in poolsArr"
                 :key="index"
                 :style="{ 'background-image': 'url(' + pool.pic + ')' }"
-                class="schedule__list-item animated"
+                class="schedule__list-item"
                 :class="{
                     'js-active': active.pool === pool.id,
                     'not-active': active.pool !== pool.id && active.pool !== null,
@@ -32,11 +32,11 @@
             </div>
         </div>
 
-        <div v-if="active.pool" class="schedule__list">
+        <div v-if="active.pool && activeAgeOptions && activeAgeOptions.length" class="schedule__list">
             <div
                 v-for="(age, index) in activeAgeOptions"
                 :key="index"
-                class="schedule__list-item schedule__list-item--sm animated"
+                class="schedule__list-item schedule__list-item--sm"
                 :class="{
                     'js-active': active.age === age,
                     'not-active': active.age !== age && active.age !== null,
@@ -55,11 +55,11 @@
             </div>
         </div>
 
-        <div v-if="active.age" class="schedule__list">
+        <div v-if="active.age && activeTypeOptions && activeTypeOptions.length" class="schedule__list">
             <div
                 v-for="(type, index) in activeTypeOptions"
                 :key="index"
-                class="schedule__list-item schedule__list-item--sm animated"
+                class="schedule__list-item schedule__list-item--sm"
                 :class="{
                     'js-active': active.type === type,
                     'not-active': active.type !== type && active.type !== null,
@@ -91,7 +91,7 @@
             </div>
         </div>
 
-        <div class="schedule__select-wrap schedule__container animated" v-if="activeGroupOptions">
+        <div class="schedule__select-wrap schedule__container" v-if="activeGroupOptions && activeGroupOptions.length">
             <Treeselect
                 class="schedule__select"
                 :options="activeGroupOptions"
@@ -106,10 +106,10 @@
         </div>
 
         <div class="schedule__table" v-if="activeGroup">
-            <h3 class="text-subheader schedule__table-title animated">
+            <h3 class="text-subheader schedule__table-title">
                 {{ activeGroup.label }}
             </h3>
-            <p class="text-subheader schedule__table-subtitle animated">
+            <p class="text-subheader schedule__table-subtitle">
                 {{ activeGroup.info }}
 
                 <template v-if="activeGroup.combine && active.type === 'group'">
@@ -118,7 +118,7 @@
             </p>
 
             <template v-if="active.type === 'group'">
-                <div class="bg-grey schedule__content animated" v-if="activeGroup.groupDays">
+                <div class="bg-grey schedule__content" v-if="activeGroup.groupDays">
                     <div class="schedule__table-list">
                         <ScheduleItem
                             v-for="groupDay in activeGroup.groupDays"
@@ -218,7 +218,7 @@
                 </template>
             </template>
 
-            <div class="bg-grey schedule__content animated" v-if="active.type === 'personal'">
+            <div class="bg-grey schedule__content" v-if="active.type === 'personal'">
                 <p class="text-subheader text-subheader--note schedule__table-note">
                     * Расписание согласуется <span class="blue">индивидуально с тренером</span> и более гибко для
                     Ученика
@@ -253,7 +253,10 @@
             </div>
         </div>
 
-        <h3 v-else class="text-subheader schedule__title">Выбери группу, чтобы увидеть расписание</h3>
+        <h3 v-else class="text-subheader schedule__title bg-grey schedule__content schedule__select">
+            Выбери <b>{{ computedWord }}</b
+            >, чтобы увидеть расписание
+        </h3>
     </div>
 </template>
 
@@ -294,19 +297,19 @@ const poolsArr = [
     },
 ];
 
-const defaultActive = {
-    pool: 'zelenograd',
-    age: 'children',
-    type: 'group',
-    group: 'child-912',
-};
-
 // const defaultActive = {
-//     pool: null,
-//     age: null,
-//     type: null,
-//     group: null,
+//     pool: 'zelenograd',
+//     age: 'children',
+//     type: 'group',
+//     group: 'child-912',
 // };
+
+const defaultActive = {
+    pool: null,
+    age: null,
+    type: null,
+    group: null,
+};
 
 const weekDays = {
     1: 'Понедельник',
@@ -367,6 +370,12 @@ export default {
             } else {
                 this.active.pool = pool;
             }
+
+            this.$nextTick(() => {
+                if (this.activeAgeOptions && this.activeAgeOptions.length === 1) {
+                    this.active.age = this.activeAgeOptions[0];
+                }
+            });
         },
 
         onActiveAgeChange(age) {
@@ -377,6 +386,12 @@ export default {
             } else {
                 this.active.age = age;
             }
+
+            this.$nextTick(() => {
+                if (this.activeTypeOptions && this.activeTypeOptions.length === 1) {
+                    this.active.type = this.activeTypeOptions[0];
+                }
+            });
         },
 
         onActiveTypeChange(type) {
@@ -387,11 +402,27 @@ export default {
             } else {
                 this.active.type = type;
             }
+
+            this.$nextTick(() => {
+                if (this.activeGroupOptions && this.activeGroupOptions.length === 1) {
+                    this.active.group = this.activeGroupOptions[0].id;
+                }
+            });
         },
     },
+
     computed: {
         activePool() {
             return schedule.pools.find((p) => p.id === this.active.pool);
+        },
+
+        computedWord() {
+            const { pool, age, type } = this.active;
+            if (!pool) return 'бассейн';
+            if (!age) return 'возрастную группу';
+            if (!type) return 'вид тренировки';
+
+            return 'группу';
         },
 
         /**
@@ -415,14 +446,17 @@ export default {
          */
         activeTypeOptions() {
             const { age } = this.active;
-            const typesArr = [];
+            let typesArr = [];
 
-            if (this.activeAgeOptions.includes(age))
+            if (this.activeAgeOptions.includes(age)) {
                 this.activePool[age]?.forEach((i) => {
                     i.type.forEach((t) => {
                         if (!typesArr.includes(t)) typesArr.push(t);
                     });
                 });
+
+                if (this.active.pool === 'zelenograd') typesArr.push('free');
+            }
 
             return typesArr;
         },

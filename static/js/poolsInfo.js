@@ -51,7 +51,7 @@ export const schedule = {
                             trainer: 'Любовь',
                         },
                         {
-                            id: 3,
+                            id: 5,
                             time: ['20:30'],
                             trainer: 'Любовь',
                         },
