@@ -3,7 +3,7 @@
         <h2 class="text-header">Расписание <span class="blue">занятий</span></h2>
 
         <p class="text-subheader">
-            Выбирай свободное плавание или группу и количество занятий в неделю. Занятие длится
+            Выбирай бассейн, возраст, тип занятия и группу. Занятие длится
             <span class="blue">45 минут</span>. <br />Для уточнения расписания индивидуальных тренировок свяжись по
             телефону или оставь заявку на сайте.
         </p>
@@ -514,20 +514,12 @@ const poolsArr = [
 ];
 
 const defaultActive = {
-    pool: 'zelenograd',
-    age: 'children',
-    type: 'group',
-    group: 'child-912',
+    pool: null,
+    age: null,
+    type: null,
+    group: null,
     tab: 1,
 };
-
-// const defaultActive = {
-//     pool: null,
-//     age: null,
-//     type: null,
-//     group: null,
-//     tab: 1,
-// };
 
 const weekDays = {
     1: 'Понедельник',
@@ -710,6 +702,11 @@ export default {
 
             return activeGroup;
         },
+    },
+
+    mounted() {
+        const searchParams = new URLSearchParams(document.location.search);
+        if (searchParams) this.active.pool = searchParams.get('pool');
     },
 };
 </script>
