@@ -18,7 +18,7 @@
         background-color: white;
         border-bottom: 1px solid var(--cl-blue);
 
-        & .schedule-link__image {
+        & .schedule-link__img {
             fill: var(--cl-blue);
         }
 

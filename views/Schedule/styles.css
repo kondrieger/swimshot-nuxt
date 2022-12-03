@@ -37,7 +37,6 @@
             background-size: cover;
             display: flex !important;
             align-items: flex-end;
-            margin-bottom: 20px;
             background-position: 20%;
             border-radius: 20px !important;
             text-align: left;
@@ -86,21 +85,12 @@
                     opacity: 1;
                 }
 
-                & .schedule__list-item-text {
-                    height: 25%;
-
-                    @media (--tablet) {
-                        height: 30%;
-                    }
-                }
-
                 & .schedule__list-item-icon {
                     fill: var(--cl-green) !important;
                 }
             }
 
             &.js-active {
-                scale: 1.02;
                 border: 2px solid var(--cl-green);
 
                 & a,
@@ -110,7 +100,6 @@
             }
 
             &.not-active {
-                scale: 1;
                 opacity: 0.7;
 
                 & a {
@@ -123,7 +112,7 @@
             }
 
             &-text {
-                padding: 15px 10px;
+                padding: 15px 0;
                 width: 100%;
                 height: 20%;
                 background-color: #fff;
@@ -143,8 +132,7 @@
                     margin-bottom: 15px;
 
                     @media (--desktop) {
-                        font-size: 16px;
-                        margin-bottom: 10px;
+                        font-size: 15px;
                     }
                 }
 
