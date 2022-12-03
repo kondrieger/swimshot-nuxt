@@ -39,8 +39,6 @@
                 class="start-block__image"
             />
         </div>
-
-        <button v-if="isVisibleBtn" @click="scrollTop" class="arrow-wrap"><i class="arrow"></i></button>
     </div>
 </template>
 
@@ -60,7 +58,6 @@ export default {
             text,
             subtext,
             bgPic,
-            isVisibleBtn: false,
         };
     },
     computed: {
@@ -72,10 +69,6 @@ export default {
         this.animateBg();
     },
     methods: {
-        scrollTop() {
-            window.scrollTo(0, 0);
-        },
-
         animateBg() {
             const bg = document.getElementById('start-bg');
 
@@ -97,10 +90,6 @@ export default {
             bg.addEventListener('mouseleave', () => {
                 entered = false;
             });
-
-            window.document.body.onscroll = () => {
-                this.isVisibleBtn = +window.scrollY > 800;
-            };
         },
 
         onModalOpen() {
@@ -109,45 +98,3 @@ export default {
     },
 };
 </script>
-
-<style scoped>
-.arrow {
-    border: solid white;
-    border-width: 0 4px 4px 0;
-    display: inline-block;
-    margin-top: 5px;
-    padding: 5px;
-    transform: rotate(-135deg);
-
-    &-wrap {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        position: fixed;
-        left: 70px;
-        bottom: 70px;
-        background-color: var(--cl-blue);
-        z-index: 98;
-        border: none;
-        cursor: pointer;
-
-        &:hover,
-        &:active {
-            background-color: var(--cl-dk-blue);
-        }
-
-        @media (--tablet) {
-            left: 50px;
-            bottom: 50px;
-        }
-
-        @media (--mobile-lg) {
-            left: 25px;
-            bottom: 25px;
-        }
-    }
-}
-</style>

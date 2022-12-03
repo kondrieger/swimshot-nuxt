@@ -111,53 +111,24 @@
                 </template>
             </p>
 
-            <div class="schedule__table-list" v-if="activeGroup.groupDays && active.type === 'group'">
-                <div
-                    class="schedule__table-list-item"
-                    :class="{ 'schedule__table-list-item--multiple': groupDay.diffs }"
-                    v-for="groupDay in activeGroup.groupDays"
-                    :key="groupDay.id"
-                    data-aos="fade-up"
-                >
-                    <template v-if="groupDay.diffs">
-                        <p class="text-bold schedule__table-list-item-weekday">{{ weekDays[groupDay.id] }}</p>
-
-                        <div
-                            class="schedule__table-list-item-block"
-                            v-for="training in groupDay.diffs"
-                            :key="training.trainer"
-                        >
-                            <div class="schedule__table-list-item-wrap">
-                                <p class="schedule__table-list-item-text">Время:</p>
-                                <p class="blue text-bold schedule__table-list-item-block-time">
-                                    {{ training.time.join(' ') }}
-                                </p>
-                            </div>
-
-                            <div v-if="training.trainer" class="schedule__table-list-item-wrap">
-                                <p class="schedule__table-list-item-text">Тренер:</p>
-                                <a class="js-link" href="#team">{{ training.trainer }}</a>
-                            </div>
-                        </div>
-                    </template>
-
-                    <template v-else>
-                        <p class="text-bold schedule__table-list-item-weekday">{{ weekDays[groupDay.id] }}</p>
-
-                        <div class="schedule__table-list-item-wrap">
-                            <p class="schedule__table-list-item-text">Время:</p>
-                            <p class="blue text-bold schedule__table-list-item-block-time">
-                                {{ groupDay.time.join(' ') }}
-                            </p>
-                        </div>
-
-                        <div v-if="groupDay.trainer" class="schedule__table-list-item-wrap">
-                            <p class="schedule__table-list-item-text">Тренер:</p>
-                            <a class="js-link" href="#team">{{ groupDay.trainer }}</a>
-                        </div>
-                    </template>
+            <template v-if="active.type === 'group'">
+                <div v-if="activeGroup.groupDays" class="schedule__table-list" data-aos="fade-up">
+                    <ScheduleItem
+                        v-for="groupDay in activeGroup.groupDays"
+                        :key="groupDay.id"
+                        :groupDay="groupDay"
+                        :weekDay="weekDays[groupDay.id]"
+                    />
                 </div>
-            </div>
+
+                <template v-if="activeGroup.types">
+                    <div
+                        v-for="groupType in activeGroup.types"
+                        :key="groupType.id"
+                        class="schedule__table-list schedule__table-list--multiple"
+                    ></div>
+                </template>
+            </template>
 
             <p
                 v-if="active.type === 'personal'"
@@ -167,12 +138,12 @@
                 * Расписание согласуется <span class="blue">индивидуально с тренером</span> и более гибко для Ученика
             </p>
 
-            <div class="schedule__table-price-wrap">
-                <div
-                    class="schedule__table-price"
-                    v-if="active.type === 'group' && activeGroup.price"
-                    data-aos="fade-up"
-                >
+            <div
+                class="schedule__table-price-wrap"
+                v-if="active.type === 'group' && activeGroup.price"
+                data-aos="fade-up"
+            >
+                <div class="schedule__table-price">
                     <p class="text-subheader schedule__table-price-title">
                         <span class="text-bold">Групповые тренировки.</span><br />
                         Стоимость в это время и дни за месяц
@@ -191,8 +162,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="schedule__table-price" v-if="active.type === 'personal'" data-aos="fade-up">
+            <div class="schedule__table-price-wrap" v-if="active.type === 'personal'" data-aos="fade-up">
+                <div class="schedule__table-price">
                     <p class="text-subheader schedule__table-price-title">
                         <span class="text-bold">Персональные тренировки.</span><br />
                         Покупаются блоком
@@ -223,6 +196,9 @@
 
 <script>
 import Treeselect from '@riophae/vue-treeselect';
+import { schedule, price } from '~/static/js/poolsInfo.js';
+
+import ScheduleItem from './ScheduleItem/ScheduleItem.vue';
 
 // import the styles
 import '@riophae/vue-treeselect/dist/vue-treeselect.css';
@@ -236,8 +212,6 @@ import BoyIcon from '~/assets/svg/boy.svg';
 import CrowdIcon from '~/assets/svg/crowd.svg';
 import PersonHandsIcon from '~/assets/svg/person-hands.svg';
 import BoyTrainerIcon from '~/assets/svg/boy-trainer.svg';
-
-import { schedule, price } from '~/static/js/poolsInfo.js';
 
 const poolsArr = [
     {
@@ -299,6 +273,7 @@ export default {
         CrowdIcon,
         PersonHandsIcon,
         BoyTrainerIcon,
+        ScheduleItem,
     },
 
     data() {

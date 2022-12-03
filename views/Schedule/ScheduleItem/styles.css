@@ -1,0 +1,43 @@
+.schedule-item {
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--gs) * 1.5);
+    margin: calc(var(--gs) * 1.5);
+    border: 1px solid black;
+    border-radius: 20px;
+    min-width: 160px;
+    background-color: #fff;
+
+    &--multiple {
+        padding: calc(var(--gs) * 1);
+    }
+
+    &__weekday {
+        text-align: center;
+        font-size: 18px;
+        border-bottom: 1px solid #000;
+        padding-bottom: calc(var(--gs) * 0.5);
+        margin-bottom: calc(var(--gs) * 0.5);
+    }
+
+    &__text {
+        margin-right: calc(var(--gs) * 1.5);
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__block {
+        padding: calc(var(--gs) * 0.5);
+
+        & + & {
+            border-top: 1px solid black;
+        }
+
+        &__time {
+            text-align: right;
+        }
+    }
+}

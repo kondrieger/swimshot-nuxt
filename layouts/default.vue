@@ -1,5 +1,7 @@
 <template>
     <div>
+        <button v-if="isVisibleBtn" @click="scrollTop" class="arrow-wrap"><i class="arrow"></i></button>
+
         <Header @modalOpen="onOpenModal" />
 
         <main>
@@ -33,6 +35,7 @@ export default {
     data() {
         return {
             isContactModalOpen: false,
+            isVisibleBtn: false,
             modalComment: null,
         };
     },
@@ -42,6 +45,10 @@ export default {
         },
     },
     methods: {
+        scrollTop() {
+            window.scrollTo(0, 0);
+        },
+
         editLinks() {
             const linkArr = Array.from(document.getElementsByClassName('js-link'));
             location.hash && history.pushState({}, '', location.pathname);
@@ -74,6 +81,10 @@ export default {
         this.$nextTick(() => {
             this.$nuxt.$loading.start();
             setTimeout(() => this.$nuxt.$loading.finish(), 1000);
+
+            window.document.body.onscroll = () => {
+                this.isVisibleBtn = +window.scrollY > 800;
+            };
 
             this.editLinks();
         });
@@ -110,6 +121,46 @@ export default {
         @media (--mobile-lg) {
             right: 25px;
             bottom: 20px;
+        }
+    }
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px;
+    transform: rotate(-135deg);
+
+    &-wrap {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: fixed;
+        left: 70px;
+        bottom: 70px;
+        background-color: var(--cl-blue);
+        z-index: 98;
+        border: none;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            background-color: var(--cl-dk-blue);
+        }
+
+        @media (--tablet) {
+            left: 50px;
+            bottom: 50px;
+        }
+
+        @media (--mobile-lg) {
+            left: 25px;
+            bottom: 25px;
         }
     }
 }
