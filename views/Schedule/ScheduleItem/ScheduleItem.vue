@@ -1,5 +1,5 @@
 <template>
-    <div class="schedule-item" :class="{ 'schedule-item--multiple': diffs }">
+    <div class="schedule-item" :class="{ 'schedule-item--multiple': groupDay.diffs }">
         <template v-if="groupDay.diffs">
             <p class="text-bold schedule-item__weekday">{{ weekDay }}</p>
 
@@ -52,6 +52,3 @@ export default {
     },
 };
 </script>
-
-<style>
-</style>

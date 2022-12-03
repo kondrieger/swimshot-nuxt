@@ -1,14 +1,6 @@
 .schedule {
     padding-top: calc(var(--gs) * 3);
-    padding-bottom: calc(var(--gs) * 12);
-
-    @media (--desktop) {
-        padding-bottom: calc(var(--gs) * 9);
-    }
-
-    @media (--tablet) {
-        padding-bottom: calc(var(--gs) * 6);
-    }
+    padding-bottom: calc(var(--gs) * 3);
 
     & * {
         transition: all 0.3s ease;
@@ -25,6 +17,11 @@
         @media (--tablet) {
             width: 100%;
         }
+    }
+
+    .animated {
+        transform: translateY(20px);
+        animation: fadeIn 0.3s ease 1 forwards;
     }
 
     &__select {
@@ -118,7 +115,7 @@
                 border: 2px solid var(--cl-green);
 
                 & a,
-                & .schedule__list-item-age-text {
+                & .schedule__list-item-title {
                     color: var(--cl-green) !important;
                 }
             }
@@ -179,7 +176,23 @@
         }
     }
 
+    &__content {
+        padding: calc(var(--gs) * 2) calc(var(--gs) * 2) calc(var(--gs) * 4);
+        border-radius: 40px;
+        transform: translateY(40px);
+        animation: fadeIn 0.5s ease 1 forwards;
+        margin: 0 auto;
+
+        @media (--tablet) {
+            transform: translateY(30px);
+            border-radius: 30px;
+        }
+    }
+
     &__table {
+        max-width: 900px;
+        margin: 0 auto;
+
         &-title {
             margin-bottom: calc(var(--gs) * 2) !important;
             font-weight: bold !important;
@@ -211,12 +224,10 @@
 
         &-list {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: stretch;
             flex-wrap: wrap;
-            max-width: 80%;
-            margin: 0 auto;
-            margin-bottom: calc(var(--gs) * 4);
+            margin-bottom: calc(var(--gs) * 3);
 
             @media (--tablet) {
                 margin-bottom: calc(var(--gs) * 2);
@@ -231,7 +242,7 @@
             max-width: 400px;
             padding: calc(var(--gs) * 2);
 
-            border-radius: 20px 20px;
+            border-radius: 20px;
             border: 1px solid var(--cl-lt-blue);
             background-color: #fff;
             font-size: 19px !important;
@@ -273,24 +284,85 @@
             }
         }
     }
+}
 
-    .vue-treeselect__control {
-        height: 45px;
-        border: 2px solid var(--cl-lt-blue);
-        border-radius: 15px;
-    }
+.vue-treeselect__control {
+    height: 45px;
+    border: 2px solid var(--cl-lt-blue);
+    border-radius: 15px;
+}
 
-    .vue-treeselect__x-container,
-    .vue-treeselect__control-arrow {
-        color: var(--cl-lt-blue);
-    }
+.vue-treeselect__x-container,
+.vue-treeselect__control-arrow {
+    color: var(--cl-lt-blue);
+}
 
-    .vue-treeselect__placeholder,
-    .vue-treeselect__single-value {
-        top: 4px;
-    }
+.vue-treeselect__placeholder,
+.vue-treeselect__single-value {
+    top: 4px;
+}
 
-    .vue-treeselect__menu {
-        border: 2px solid var(--cl-lt-blue);
+.vue-treeselect__menu {
+    border: 2px solid var(--cl-lt-blue);
+}
+
+.tab-wrapper {
+    text-align: center;
+    display: block;
+    margin: auto;
+    max-width: 800px;
+}
+
+.tabs {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.tab-link {
+    text-transform: uppercase;
+    margin: 0 10px;
+    list-style: none;
+    padding: 10px 40px;
+    color: #aaa;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all ease 0.5s;
+    border-bottom: solid 2px var(--cl-blue);
+    letter-spacing: 1px;
+
+    @media (--mobile-lg) {
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
+
+.tab-link:hover {
+    color: #999;
+    border-color: #999;
+}
+
+.tab-link.active {
+    background-color: var(--cl-green);
+    color: white !important;
+    border-bottom: none;
+    border-radius: 40px 40px 0 0;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ТАБЫ КОНЕЦ */

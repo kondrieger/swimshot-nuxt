@@ -149,40 +149,7 @@ export const schedule = {
                     ],
                 },
             ],
-            children: [],
-        },
-
-        {
-            id: 'orbita',
             children: [
-                {
-                    id: 'child-u6',
-                    type: ['group', 'personal'],
-                    label: 'До 6 лет',
-                    info: 'Для деток до шести лет занятия проходят в бассейне СК Орбита. На групповых занятиях работают сразу два тренера из воды',
-
-                    groupDays: [
-                        {
-                            id: 6,
-                            time: ['11:15'],
-                        },
-                        {
-                            id: 7,
-                            time: ['13:30'],
-                        },
-                    ],
-
-                    price: [
-                        {
-                            id: 1,
-                            amount: 5500,
-                        },
-                        {
-                            id: 2,
-                            amount: 9900,
-                        },
-                    ],
-                },
                 {
                     id: 'child-68',
                     type: ['group', 'personal'],
@@ -706,6 +673,40 @@ export const schedule = {
                                     amount: 10900,
                                 },
                             ],
+                        },
+                    ],
+                },
+            ],
+        },
+
+        {
+            id: 'orbita',
+            children: [
+                {
+                    id: 'child-u6',
+                    type: ['group', 'personal'],
+                    label: 'До 6 лет',
+                    info: 'Для деток до шести лет занятия проходят в бассейне СК Орбита. На групповых занятиях работают сразу два тренера из воды',
+
+                    groupDays: [
+                        {
+                            id: 6,
+                            time: ['11:15'],
+                        },
+                        {
+                            id: 7,
+                            time: ['13:30'],
+                        },
+                    ],
+
+                    price: [
+                        {
+                            id: 1,
+                            amount: 5500,
+                        },
+                        {
+                            id: 2,
+                            amount: 9900,
                         },
                     ],
                 },

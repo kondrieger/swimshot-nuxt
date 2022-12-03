@@ -1,9 +1,9 @@
 <template>
     <div>
+        <Schedule />
         <div class="bg-grey">
-            <Schedule />
+            <Team @modalOpen="onModalContactOpen" />
         </div>
-        <Team @modalOpen="onModalContactOpen" />
     </div>
 </template>
 
