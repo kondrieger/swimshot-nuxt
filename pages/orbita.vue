@@ -3,12 +3,11 @@
         <SignNow />
         <PoolStartBlock title="СК Орбита" address="Зеленоград, ул. Озерная аллея, 6" :photosArr="poolsPicArr" />
         <PoolTabs :littlePool="littlePool" :bigPool="[]" littleActive data-aos="fade-up" />
-
+        <ScheduleLink text="Расписание бассейна СК Орбита" pool="orbita" />
         <div class="container" data-aos="fade-up">
             <div class="pools-info">
                 <p class="pools-info__text">
-                    В каждом из этих бассейнов можно проводить как персональные, так и групповые тренировки с
-                    <b>детьми</b> и <b>взрослыми</b>.
+                    Сейчас в СК Орбита проходят групповые и персональные тренировки <b>для детей до 6 лет</b>.
                 </p>
                 <p class="pools-info__text">У здания есть <b>парковка</b>.</p>
                 <p class="pools-info__text">
@@ -29,6 +28,7 @@ import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
+import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
@@ -84,7 +84,7 @@ export default {
 
     layout: 'default',
 
-    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow },
+    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink },
 
     head() {
         return {

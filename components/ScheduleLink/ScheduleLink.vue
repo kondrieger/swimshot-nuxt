@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="linkAddress" class="container schedule-link">
+    <nuxt-link :to="linkAddress" data-aos="fade-up" class="schedule-link" :class="{ border }">
         <Timetable class="schedule-link__img" />
         <h2 class="text-header schedule-link__text">{{ linkText }}</h2>
     </nuxt-link>
@@ -20,12 +20,16 @@ export default {
             type: String,
             default: null,
         },
+        border: {
+            type: Boolean,
+            default: false,
+        },
     },
 
     data() {
         return {
             linkText: this.text || 'Ознакомиться с расписанием',
-            linkAddress: `/orbita${this.pool ? '?pool=zelenograd' : ''}`,
+            linkAddress: '/schedule' + (this.pool ? `?pool=${this.pool}` : ''),
         };
     },
 };

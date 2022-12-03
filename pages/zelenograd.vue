@@ -10,6 +10,8 @@
             <PoolsFeatures data-aos="fade-up" :PoolsFeatures="poolFeatures" alone />
         </div>
 
+        <ScheduleLink text="Расписание бассейна Swim Shot" pool="zelenograd" />
+
         <div class="container" data-aos="fade-right">
             <div class="pools-info">
                 <p class="pools-info__text">
@@ -31,6 +33,7 @@
                 </p>
             </div>
         </div>
+
         <div class="bg-grey">
             <AnotherPools data-aos="fade-right" :PoolsArr="poolsArr" />
         </div>
@@ -43,6 +46,7 @@ import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
+import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
@@ -52,8 +56,6 @@ import PoolPic5 from '~/assets/jpg/pools/1801_5.jpg';
 import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
 import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
-
-import Schedule from '~/views/Schedule/Schedule.vue';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
 
@@ -104,7 +106,7 @@ const poolsArr = [
 export default {
     name: 'zelenograd-page',
     layout: 'default',
-    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, Schedule },
+    components: { PoolStartBlock, AnotherPools, SignNow, PoolsFeatures, ScheduleLink },
     head() {
         return {
             title: 'Swim Shot — Бассейн в Зеленограде',

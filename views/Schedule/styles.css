@@ -1,6 +1,10 @@
 .schedule {
     padding-top: calc(var(--gs) * 3);
-    padding-bottom: calc(var(--gs) * 3);
+    padding-bottom: calc(var(--gs) * 4);
+
+    @media (--tablet) {
+        padding-bottom: calc(var(--gs) * 2);
+    }
 
     & * {
         transition: all 0.3s ease;
@@ -97,7 +101,7 @@
                 }
 
                 & .schedule__list-item-text {
-                    height: 25% !important;
+                    height: 23% !important;
 
                     @media (--mobile-lg) {
                         height: 60% !important;
@@ -120,7 +124,7 @@
             }
 
             &.not-active {
-                scale: 0.97;
+                scale: 1;
                 opacity: 0.7;
 
                 & a {
@@ -176,7 +180,7 @@
     }
 
     &__content {
-        padding: calc(var(--gs) * 2);
+        padding: calc(var(--gs) * 2) calc(var(--gs) * 2) calc(var(--gs) * 3);
         border-radius: 40px;
         margin: 0 auto;
 

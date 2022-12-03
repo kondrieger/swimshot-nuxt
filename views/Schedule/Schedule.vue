@@ -22,7 +22,7 @@
             >
                 <div class="schedule__list-item-text">
                     <p class="schedule__list-item-text-title">
-                        <nuxt-link :to="pool.href" target="_blank" class="schedule__list-item-link">
+                        <nuxt-link :to="pool.href" class="schedule__list-item-link">
                             {{ pool.title }}
                         </nuxt-link>
 
@@ -132,7 +132,7 @@
                     <div class="schedule__table-price-wrap">
                         <div class="schedule__table-price">
                             <p class="text-subheader schedule__table-price-title">
-                                <span class="text-bold">Групповые тренировки.</span><br />
+                                <span class="text-bold">Групповые тренировки</span><br />
                                 Стоимость в это время и дни за месяц
                             </p>
 
@@ -193,7 +193,7 @@
                         <div class="schedule__table-price-wrap">
                             <div class="schedule__table-price">
                                 <p class="text-subheader schedule__table-price-title">
-                                    <span class="text-bold">Групповые тренировки.</span><br />
+                                    <span class="text-bold">Групповые тренировки</span><br />
                                     Стоимость в это время и дни за месяц
                                 </p>
 
@@ -228,7 +228,7 @@
                 <div class="schedule__table-price-wrap">
                     <div class="schedule__table-price">
                         <p class="text-subheader schedule__table-price-title">
-                            <span class="text-bold">Персональные тренировки.</span><br />
+                            <span class="text-bold">Персональные тренировки</span><br />
                             Покупаются блоком
                         </p>
 
@@ -296,7 +296,7 @@
                 <div class="schedule__table-price-wrap">
                     <div class="schedule__table-price">
                         <p class="text-subheader schedule__table-price-title">
-                            <span class="text-bold">Свободное посещение.</span><br />
+                            <span class="text-bold">Свободное посещение</span><br />
                             Стоимость в это время
                         </p>
 
@@ -341,7 +341,7 @@
                 <div class="schedule__table-price-wrap">
                     <div class="schedule__table-price">
                         <p class="text-subheader schedule__table-price-title">
-                            <span class="text-bold">Свободное посещение.</span><br />
+                            <span class="text-bold">Свободное посещение</span><br />
                         </p>
 
                         <div class="schedule__table-price-list">
@@ -425,7 +425,7 @@
                 <div class="schedule__table-price-wrap">
                     <div class="schedule__table-price">
                         <p class="text-subheader schedule__table-price-title">
-                            <span class="text-bold">Свободное посещение.</span><br />
+                            <span class="text-bold">Свободное посещение</span><br />
                         </p>
 
                         <div class="schedule__table-price-list">
@@ -514,12 +514,19 @@ const poolsArr = [
 ];
 
 const defaultActive = {
-    pool: null,
-    age: null,
-    type: null,
-    group: null,
+    pool: 'zelenograd',
+    age: 'children',
+    type: 'group',
+    group: 'child-912',
     tab: 1,
 };
+// const defaultActive = {
+//     pool: null,
+//     age: null,
+//     type: null,
+//     group: null,
+//     tab: 1,
+// };
 
 const weekDays = {
     1: 'Понедельник',
