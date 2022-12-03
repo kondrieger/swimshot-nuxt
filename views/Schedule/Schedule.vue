@@ -513,20 +513,20 @@ const poolsArr = [
     },
 ];
 
-const defaultActive = {
-    pool: 'zelenograd',
-    age: 'children',
-    type: 'group',
-    group: 'child-912',
-    tab: 1,
-};
 // const defaultActive = {
-//     pool: null,
-//     age: null,
-//     type: null,
-//     group: null,
+//     pool: 'zelenograd',
+//     age: 'children',
+//     type: 'group',
+//     group: 'child-912',
 //     tab: 1,
 // };
+const defaultActive = {
+    pool: null,
+    age: null,
+    type: null,
+    group: null,
+    tab: 1,
+};
 
 const weekDays = {
     1: 'Понедельник',
