@@ -1,6 +1,7 @@
 <template>
     <div>
         <Schedule @trainerClick="onTrainerClick" />
+        <ScheduleSales />
         <div class="bg-grey">
             <Team :currentTrainer="currentTrainer" @modalOpen="onModalContactOpen" />
         </div>
@@ -9,6 +10,7 @@
 
 <script>
 import Schedule from '~/views/Schedule/Schedule.vue';
+import ScheduleSales from '~/views/Schedule/ScheduleSales/ScheduleSales.vue';
 import Team from '~/views/Team/Team.vue';
 
 export default {
@@ -17,6 +19,7 @@ export default {
     components: {
         Team,
         Schedule,
+        ScheduleSales,
     },
 
     data() {

@@ -1,0 +1,65 @@
+.schedule-sales {
+    padding: calc(var(--gs) * 4) 0;
+    background-color: var(--cl-blue);
+
+    @media (--tablet) {
+        padding: calc(var(--gs) * 2) 0;
+    }
+
+    &__title {
+        color: white;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: calc(var(--gs) * 3);
+            border-radius: 30px;
+            border: 1px dotted white;
+            width: 100%;
+            margin-bottom: calc(var(--gs) * 2);
+
+            @media (--tablet) {
+                padding: calc(var(--gs) * 2);
+                margin-bottom: calc(var(--gs) * 1.5);
+            }
+
+            &-icon {
+                width: 60px;
+                height: 60px;
+                margin-right: calc(var(--gs) * 4);
+                fill: white;
+
+                @media (--tablet) {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: calc(var(--gs) * 3);
+                }
+            }
+
+            &-text {
+                color: white;
+                margin-bottom: 0;
+                text-align: center;
+                width: 100%;
+
+                & .text-danger {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    &__notes {
+        &-item {
+            margin: 0 auto calc(var(--gs) * 2);
+            color: white;
+        }
+    }
+}
