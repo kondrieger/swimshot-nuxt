@@ -55,8 +55,23 @@ import photo_7 from '~/assets/jpg/photos/photo_7.jpg';
 import photo_8 from '~/assets/jpg/photos/photo_8.jpg';
 import photo_9 from '~/assets/jpg/photos/photo_9.jpg';
 import photo_10 from '~/assets/jpg/photos/photo_10.jpg';
+import photo_11 from '~/assets/jpg/photos/photo_11.jpg';
+import photo_12 from '~/assets/jpg/photos/photo_12.jpg';
 
-const photosArr = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6, photo_7, photo_8, photo_9, photo_10];
+const photosArr = [
+    photo_1,
+    photo_2,
+    photo_3,
+    photo_4,
+    photo_5,
+    photo_6,
+    photo_7,
+    photo_8,
+    photo_9,
+    photo_10,
+    photo_11,
+    photo_12,
+];
 
 const viewerOptions = { movable: false, button: true, navbar: true, title: false, keyboard: true, scalable: false };
 
@@ -73,13 +88,13 @@ export default {
         return {
             swiperOptionTop: {
                 loop: true,
-                loopedSlides: 9, // looped slides should be the same
+                loopedSlides: 11, // looped slides should be the same
                 slideToClickedSlide: true,
                 spaceBetween: 30,
             },
             swiperOptionThumbs: {
                 loop: true,
-                loopedSlides: 9, // looped slides should be the same
+                loopedSlides: 11, // looped slides should be the same
                 spaceBetween: 30,
                 centeredSlides: true,
                 slidesPerView: 'auto',
@@ -90,6 +105,12 @@ export default {
             activeSlide: 0,
             viewerOptions,
         };
+    },
+
+    computed: {
+        swiper() {
+            return this.$refs.swiperTop.$swiper;
+        },
     },
     methods: {
         show() {
@@ -103,7 +124,7 @@ export default {
             const swiperTop = this.$refs.swiperTop.$swiper;
             const swiperThumbs = this.$refs.swiperThumbs.$swiper;
             swiperTop.on('slideChange', () => {
-                this.activeSlide = swiperTop.activeIndex - 7;
+                this.activeSlide = swiperTop.activeIndex - 11;
             });
             swiperTop.controller.control = swiperThumbs;
             swiperThumbs.controller.control = swiperTop;

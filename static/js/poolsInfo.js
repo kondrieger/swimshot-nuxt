@@ -5,7 +5,7 @@ export const schedule = {
             adults: [
                 {
                     id: 'adult-aerobics',
-                    type: ['group', 'personal'],
+                    type: ['group'],
                     label: 'Аквааэробика',
                     info: 'Фитнес в воде без элементов обучения плаванию',
 
@@ -362,7 +362,7 @@ export const schedule = {
                 },
                 {
                     id: 'child-912',
-                    type: ['group', 'personal', 'sport'],
+                    type: ['group', 'personal'],
                     label: 'Дети 9-12 лет',
                     combine: true,
 
@@ -579,8 +579,13 @@ export const schedule = {
                     ],
                 },
                 {
+                    id: 'child-917',
+                    type: ['sport'],
+                    label: 'Дети 9-17 лет',
+                },
+                {
                     id: 'child-1317',
-                    type: ['group', 'personal', 'sport'],
+                    type: ['group', 'personal'],
                     label: 'Дети 13-17 лет',
                     combine: true,
 

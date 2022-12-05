@@ -155,8 +155,9 @@ export default {
         left: 70px;
         bottom: 70px;
         background-color: var(--cl-blue);
+        box-shadow: 0px 0px 15px 5px rgb(123 162 184 / 30%);
+        border: 1px solid var(--cl-lt-blue);
         z-index: 98;
-        border: none;
         cursor: pointer;
 
         &:hover,

@@ -211,6 +211,7 @@ export default {
         isTablet() {
             return this.$mq === 'tablet';
         },
+
         swiper() {
             return this.$refs.teamSwiper.$swiper;
         },

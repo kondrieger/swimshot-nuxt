@@ -34,7 +34,7 @@
             }
 
             & .schedule-link__img {
-                fill: white;
+                fill: white !important;
             }
         }
     }

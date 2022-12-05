@@ -44,7 +44,7 @@
                             v-for="item in headerMenu"
                             :key="item.text"
                             class="header__links-link js-link"
-                            :to="{ path: '/', hash: `${item.hash}` }"
+                            :to="{ path: `${item.path || '/'}`, hash: `${item.hash}` }"
                         >
                             <p>{{ item.text }}</p>
                         </nuxt-link>

@@ -12,8 +12,9 @@ export const headerMenu = [
         hash: '#comments',
     },
     {
-        text: 'Медиа',
-        hash: '#media',
+        text: 'Акции',
+        path: '/schedule',
+        hash: '#sales',
     },
     {
         text: 'Контакты',

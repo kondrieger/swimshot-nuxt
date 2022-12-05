@@ -7,13 +7,10 @@
         <div class="container" data-aos="fade-up">
             <div class="pools-info">
                 <p class="pools-info__text">
-                    Сейчас в СК Орбита проходят групповые и персональные тренировки <b>для детей до 6 лет</b>.
+                    Сейчас в СК Орбита проходят групповые и персональные тренировки
+                    <b>для самых маленьких, до 6 лет</b>.
                 </p>
                 <p class="pools-info__text">У здания есть <b>парковка</b>.</p>
-                <p class="pools-info__text">
-                    Подобрать время именно под твои нужды можно в
-                    <a class="js-link" href="#contact-form">форме</a> ниже.
-                </p>
             </div>
         </div>
         <div class="bg-grey">
@@ -51,7 +48,7 @@ const poolsArr = [
 const littlePool = [
     {
         title: 'Для кого?',
-        text: 'Дети 3-8 лет',
+        text: 'Дети 2-6 лет',
     },
     {
         title: 'Стоимость групповых',

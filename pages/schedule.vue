@@ -1,7 +1,7 @@
 <template>
     <div>
         <Schedule @trainerClick="onTrainerClick" />
-        <ScheduleSales />
+        <ScheduleSales id="sales" />
         <div class="bg-grey">
             <Team :currentTrainer="currentTrainer" @modalOpen="onModalContactOpen" />
         </div>
