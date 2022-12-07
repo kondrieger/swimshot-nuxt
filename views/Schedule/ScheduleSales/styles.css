@@ -30,6 +30,10 @@
                 margin-bottom: calc(var(--gs) * 1.5);
             }
 
+            @media (--mobile-lg) {
+                flex-direction: column;
+            }
+
             &-icon {
                 width: 60px;
                 height: 60px;
@@ -41,6 +45,29 @@
                     height: 40px;
                     margin-right: calc(var(--gs) * 3);
                 }
+            }
+
+            &-percent {
+                display: flex;
+                letter-spacing: 3px;
+                line-height: 1;
+                font-size: 60px;
+                margin-right: calc(var(--gs) * 2);
+
+                @media (--tablet) {
+                    font-size: 30px;
+                    margin-right: calc(var(--gs) * 1);
+                }
+
+                @media (--mobile-lg) {
+                    margin-right: 0;
+                    margin-bottom: calc(var(--gs) * 1);
+                }
+            }
+
+            &-note {
+                color: white;
+                margin: calc(var(--gs) * 2) 0 0;
             }
 
             &-text {

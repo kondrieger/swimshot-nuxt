@@ -133,14 +133,22 @@
 
                 &-img {
                     display: block;
-                    min-width: 30px !important;
-                    min-height: 30px !important;
+                    width: 30px;
+                    height: 30px;
                     margin-right: 25px;
 
                     @media (--mobile-lg) {
-                        min-width: 20px !important;
-                        min-height: 20px !important;
+                        width: 20px;
+                        height: 20px;
                         margin-right: 10px;
+                    }
+
+                    img& {
+                        width: 40px;
+
+                        @media (--mobile-lg) {
+                            width: 30px;
+                        }
                     }
                 }
 
@@ -148,6 +156,7 @@
                     display: block;
                     font-size: 20px;
                     color: var(--cl-blue);
+                    white-space: nowrap;
 
                     @media (--mobile-lg) {
                         font-size: 14px !important;

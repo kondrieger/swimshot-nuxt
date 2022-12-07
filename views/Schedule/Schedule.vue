@@ -148,7 +148,8 @@
                                         <span v-if="price.id === 3">Три раза</span> в неделю
                                     </p>
                                     <p class="schedule__table-price-list-item-amount">
-                                        <span class="blue">{{ price.amount }}</span> р/мес
+                                        <span class="blue">{{ price.amount }}</span
+                                        >&nbsp;₽
                                     </p>
                                 </div>
                             </div>
@@ -209,7 +210,8 @@
                                             <span v-if="price.id === 3">Три раза</span> в неделю
                                         </p>
                                         <p class="schedule__table-price-list-item-amount">
-                                            <span class="blue">{{ price.amount }}</span> р/мес
+                                            <span class="blue">{{ price.amount }}</span
+                                            >&nbsp;₽
                                         </p>
                                     </div>
                                 </div>
@@ -222,7 +224,7 @@
             <div class="bg-grey schedule__content" v-if="active.type === 'personal'">
                 <p class="text-subheader text-subheader--note schedule__table-note">
                     * Расписание согласуется <span class="blue">индивидуально с тренером</span> и более гибко для
-                    Ученика
+                    ученика
                 </p>
 
                 <div class="schedule__table-price-wrap">
@@ -245,7 +247,8 @@
                                     <span v-if="price.id === 10">Десять тренировок</span>
                                 </p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">{{ price.amount }}</span> р/мес
+                                    <span class="blue">{{ price.amount }}</span
+                                    >&nbsp;₽
                                 </p>
                             </div>
                         </div>
@@ -303,27 +306,37 @@
                         <div class="schedule__table-price-list">
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Разовое посещение</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">350</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">350</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">2800</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">2800</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">3900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">3900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">7900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">7900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">10900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">10900</span>&nbsp;₽
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -347,47 +360,65 @@
                         <div class="schedule__table-price-list">
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Разовое посещение</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">500</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">500</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">3900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">3900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">4900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">4900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Месяц — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">5900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">5900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">10500</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">10500</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">13900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">13900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три месяца — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">14900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">14900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Полгода — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">24900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">24900</span>&nbsp;₽
+                                </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Год — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount"><span class="blue">39900</span> р</p>
+                                <p class="schedule__table-price-list-item-amount">
+                                    <span class="blue">39900</span>&nbsp;₽
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -416,7 +447,7 @@
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три раза в неделю</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">10000</span> р/мес
+                                    <span class="blue">10000</span>&nbsp;₽
                                 </p>
                             </div>
                         </div>

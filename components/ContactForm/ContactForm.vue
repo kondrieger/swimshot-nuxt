@@ -40,9 +40,11 @@
                                 class="social-item-img contact-form__contacts-item-social-img"
                             />
 
-                            <Instagram
+                            <img
                                 v-if="link.id === 'instagram'"
-                                class="social-item-img contact-form__contacts-item-social-img"
+                                class="social-item-img social-item-img--image contact-form__contacts-item-social-img"
+                                :src="require('~/assets/swimshot_header_logo.jpg')"
+                                alt="Swim shot логотип"
                             />
 
                             <Zen

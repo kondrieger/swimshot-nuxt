@@ -34,7 +34,7 @@
                 v-if="!isTablet"
                 width="587px"
                 height="688px"
-                alt="Записывайся на пробную тренировку всего за 500 рублей"
+                alt="Записывайся на пробную тренировку всего за 500&nbsp;₽"
                 :src="pic"
                 class="start-block__image"
             />

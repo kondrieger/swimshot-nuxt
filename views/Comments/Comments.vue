@@ -4,9 +4,9 @@
             <h2 class="text-header" data-aos="fade-right">Отзывы о <span class="blue">Swim Shot</span></h2>
 
             <h3 class="text-subheader" data-aos="fade-right">
-                Читайте отзывы реальных учеников нашей школы. Под каждым из них есть ссылка на
-                <span class="blue">Instagram</span>, чтобы ты мог спросить лично о всех тонкостях плавания со
-                <span class="blue">Swim Shot</span>, если хочешь. Они не против :)
+                Читайте отзывы реальных учеников нашей школы. Под каждым из них есть <span class="blue">ссылка</span>,
+                чтобы ты мог спросить лично о всех тонкостях плавания со <span class="blue">Swim Shot</span>, если
+                хочешь. Они не против :)
             </h3>
 
             <p class="text-subheader text-subheader--note" data-aos="fade-right">

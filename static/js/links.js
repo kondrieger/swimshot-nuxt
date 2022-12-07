@@ -60,7 +60,7 @@ export const socialLinksContactForm = [
     {
         id: 'instagram',
         href: 'https://www.instagram.com/swim_shot',
-        text: 'Instagram',
+        text: 'Swim Shot',
     },
     {
         id: 'zen',

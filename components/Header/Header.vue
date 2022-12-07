@@ -17,7 +17,7 @@
                                 v-for="item in headerMenu"
                                 :key="item.text"
                                 class="header__links-link js-link"
-                                :to="{ path: '/', hash: `${item.hash}` }"
+                                :to="{ path: `${item.path || '/'}`, hash: `${item.hash}` }"
                             >
                                 <p>{{ item.text }}</p>
                             </nuxt-link>
@@ -33,7 +33,12 @@
                                     <Vk v-if="link.id === 'vk'" class="social-item-img" />
                                     <Whatsapp v-if="link.id === 'whatsapp'" class="social-item-img" />
                                     <Telegram v-if="link.id === 'telegram'" class="social-item-img" />
-                                    <Instagram v-if="link.id === 'instagram'" class="social-item-img" />
+                                    <img
+                                        v-if="link.id === 'instagram'"
+                                        class="social-item-img social-item-img--image"
+                                        :src="require('~/assets/swimshot_header_logo.jpg')"
+                                        alt="Swim shot логотип"
+                                    />
                                 </a>
                             </div>
                         </Slide>
@@ -70,7 +75,12 @@
                                 <Vk v-if="link.id === 'vk'" class="social-item-img" />
                                 <Whatsapp v-if="link.id === 'whatsapp'" class="social-item-img" />
                                 <Telegram v-if="link.id === 'telegram'" class="social-item-img" />
-                                <Instagram v-if="link.id === 'instagram'" class="social-item-img" />
+                                <img
+                                    v-if="link.id === 'instagram'"
+                                    class="social-item-img social-item-img--image"
+                                    :src="require('~/assets/swimshot_header_logo.jpg')"
+                                    alt="Swim shot логотип"
+                                />
                             </a>
                         </div>
 

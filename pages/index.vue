@@ -1,7 +1,7 @@
 <template>
     <div>
         <StartBlock @modalOpen="onModalContactOpen" />
-        <Features />
+        <Features @modalOpen="onModalContactOpen" />
         <div class="bg-grey">
             <PoolList />
         </div>

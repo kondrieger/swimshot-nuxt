@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container photos">
+        <div class="container photos" id="photos">
             <h2 class="text-header" data-aos="fade-right">Галерея</h2>
 
             <h3 class="text-subheader" data-aos="fade-right">

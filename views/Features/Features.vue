@@ -7,21 +7,31 @@
             время плавания<br />
             с пользой для здоровья и прогрессом
         </h3>
-        <swiper ref="mySwiper" :options="swiperOptions">
+        <swiper data-aos="fade-up" ref="mySwiper" :options="swiperOptions">
             <swiper-slide v-for="(feature, index) in featuresArr" :key="index">
-                <div data-aos="zoom-in" :data-aos-offset="25 + index * 25" class="features__list-item">
-                    <Discount v-if="index === 0" class="features__list-item-img" />
-                    <House v-if="index === 1" class="features__list-item-img" />
-                    <Medal v-if="index === 2" class="features__list-item-img" />
-                    <GrandDad v-if="index === 3" class="features__list-item-img" />
-                    <Cup v-if="index === 4" class="features__list-item-img" />
-                    <span :v-html="feature.pic"></span>
-                    <p class="features__list-item-title">
-                        {{ feature.title }}
-                    </p>
-                    <p class="features__list-item-text">
-                        {{ feature.text }}
-                    </p>
+                <div class="features__list-item">
+                    <div>
+                        <Discount v-if="index === 0" class="features__list-item-img" />
+                        <House v-if="index === 1" class="features__list-item-img" />
+                        <Medal v-if="index === 2" class="features__list-item-img" />
+                        <GrandDad v-if="index === 3" class="features__list-item-img" />
+                        <Cup v-if="index === 4" class="features__list-item-img" />
+                        <span :v-html="feature.pic"></span>
+                        <p class="features__list-item-title">
+                            {{ feature.title }}
+                        </p>
+                        <p class="features__list-item-text">
+                            {{ feature.text }}
+                        </p>
+                    </div>
+
+                    <div class="features__list-item-btn" v-if="index === 0" @click="onModalOpen">
+                        <VButton wide text="Записаться" />
+                    </div>
+
+                    <nuxt-link v-if="index === 1" class="btn btn--wide" to="/zelenograd">Узнать</nuxt-link>
+                    <a v-if="index === 2" class="btn btn--wide js-link" href="#team">Познакомиться</a>
+                    <a v-if="index === 4" class="btn btn--wide js-link" href="#photos">Смотреть фото</a>
                 </div>
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
@@ -31,12 +41,15 @@
 
 <script>
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+import VButton from '~/components/VButton/VButton.vue';
+
 import Discount from '~/assets/svg/discount.svg';
 import Gift from '~/assets/svg/gift.svg';
 import Medal from '~/assets/svg/medal.svg';
 import House from '~/assets/svg/house.svg';
 import Cup from '~/assets/svg/cup.svg';
 import GrandDad from '~/assets/svg/granddad.svg';
+
 import 'swiper/css/swiper.css';
 import './styles.css';
 
@@ -51,6 +64,7 @@ export default {
         House,
         Cup,
         GrandDad,
+        VButton,
     },
     directives: {
         swiper: directive,
@@ -60,7 +74,7 @@ export default {
             Discount,
             featuresArr: [
                 {
-                    title: 'Пробное занятие всего за 500 рублей',
+                    title: 'Пробное занятие всего за 500₽',
                     text: 'За эту стоимость ты или твой ребенок прочувствуете прелесть бассейна и школы плавания Swim Shot и поймете, нужен ли вам абонемент',
                 },
                 {
@@ -98,6 +112,12 @@ export default {
                 },
             },
         };
+    },
+
+    methods: {
+        onModalOpen() {
+            this.$emit('modalOpen');
+        },
     },
 };
 </script>

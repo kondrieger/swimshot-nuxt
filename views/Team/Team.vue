@@ -12,12 +12,16 @@
         <swiper data-aos="fade-up" ref="teamSwiper" :options="swiperOptions">
             <swiper-slide v-for="(man, index) in teamArr" :key="index">
                 <div class="team__list-item">
-                    <div>
+                    <div style="width: 100%">
                         <a :href="`https://instagram.com/${man.inst}`" target="_blank" class="team__list-item-img-wrap">
                             <img :src="man.photo" class="team__list-item-img" alt="Swim shot тренеры" />
 
                             <div class="team__list-item-social">
-                                <Instagram class="social-item-img" />
+                                <img
+                                    class="social-item-img social-item-img--image"
+                                    :src="require('~/assets/swimshot_header_logo.jpg')"
+                                    alt="Swim shot логотип"
+                                />
                             </div>
 
                             <span v-if="man.founder" class="card-badge">основатель</span>
