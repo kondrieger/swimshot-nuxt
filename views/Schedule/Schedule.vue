@@ -278,7 +278,7 @@
                             По времени
                         </li>
                         <li class="schedule-tab-link" :class="{ active: active.tab === 2 }" @click="onTabChange(2)">
-                            В любое время
+                            В любое время *
                         </li>
                     </ul>
                 </div>
@@ -287,11 +287,11 @@
             <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 1 }">
                 <p class="text-subheader schedule__table-subtitle">
                     Свободное плавание в будние дни <b>до 13:00</b> и <b>после 21:15</b>, а также
-                    <b>в выходные после 20:30</b> *
+                    <b>в выходные после 20:30</b>
                 </p>
 
                 <p class="text-subheader text-subheader--note schedule__table-note">
-                    <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
+                    <span class="text-danger">ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
                     <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>. В
                     это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
                 </p>
@@ -346,9 +346,14 @@
             <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
                 <p class="text-subheader schedule__table-subtitle">Свободное плавание в любое время *</p>
                 <p class="text-subheader text-subheader--note schedule__table-note">
-                    <span class="text-danger">* ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
-                    <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>. В
-                    это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
+                    <span class="text-danger">* ВАЖНО</span>: Сеансы свободного плавания длятся 45 минут. Узнайте
+                    расписание сеансов по <a class="js-link" href="#contact-form">телефону</a> или у
+                    <nuxt-link to="/zelenograd">администрации бассейна</nuxt-link>
+
+                    <br />
+                    <b>С понедельника по субботу включительно</b>
+                    с <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>.
+                    В это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
                 </p>
 
                 <div class="schedule__table-price-wrap">
