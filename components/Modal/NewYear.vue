@@ -3,7 +3,7 @@
         :visible="open || isOpen"
         :closeScroll="false"
         @closeModal="closeModal"
-        class="modal-friday"
+        class="modal-new-year"
         defaultWidth="600px"
         :resize-width="{ 960: '100%' }"
         :animation-panel="'modal-slide-bottom'"
@@ -11,21 +11,24 @@
     >
         <template #header>
             <div class="modal__header">
-                <Gift class="modal-friday__icon modal-friday__icon--gift" />
+                <Gift class="modal-new-year__icon modal-new-year__icon--gift" />
                 <div @click="closeModal" class="modal__close-btn"></div>
-                <h4 class="modal-friday__header-title">Скидки до 80%</h4>
-                <h3 class="modal-friday__header-subtitle">
-                    ЧЕРНАЯ ПЯТНИЦА <span class="text-danger text-bold">25-28 НОЯБРЯ</span>
+                <h4 class="modal-new-year__header-title">Скидки до 25%</h4>
+                <h3 class="modal-new-year__header-subtitle">
+                    Подарки от <span class="text-danger text-bold">Swim Shot</span> на
+                    <span class="text-danger text-bold"> Новый год</span>!
                 </h3>
-                <p class="modal-friday__header-text">
-                    Самая масштабная акция Swim Shot с момента основания <br />
-                    <span class="text-danger text-bold">СКИДКИ АБСОЛЮТНО НА ВСЕ!</span>
+                <p class="modal-new-year__header-text">
+                    Скидки на свободное плавание, групповые и персональные тренировки для детей и взрослых
+                    <span class="text-danger text-bold">до 25%</span> и подарочные сертификаты до
+                    <span class="text-danger text-bold">15 000₽</span> – отличная возможность порадовать близких в
+                    праздник!
                 </p>
             </div>
         </template>
-        <template #body>
+        <template #body :style="{}">
             <div class="modal__body">
-                <p class="modal-friday__body-text">
+                <p class="modal-new-year__body-text">
                     Звони
                     <a class="contact-form__contacts-item-content" href="tel:+74994305595" @click="closeModal">
                         +7 (499) 430-55-95
@@ -35,7 +38,7 @@
                 </p>
 
                 <div @click="closeModal">
-                    <VButton class="modal-friday__body-btn" wide text="УЖЕ БЕГУ" />
+                    <VButton class="modal-new-year__body-btn" wide text="УЖЕ БЕГУ" />
                 </div>
             </div>
         </template>
@@ -45,9 +48,10 @@
 <script>
 import VButton from '~/components/VButton/VButton.vue';
 import Gift from '~/assets/svg/gift-hand.svg';
+import NewYearBg from '~/assets/jpg/new-year.jpg';
 
 export default {
-    name: 'black-friday-modal',
+    name: 'black-new-year-modal',
     components: { VButton, Gift },
     props: {
         open: Boolean,
@@ -55,6 +59,7 @@ export default {
     data() {
         return {
             isOpen: this.open,
+            NewYearBg,
         };
     },
 
@@ -68,16 +73,31 @@ export default {
 </script>
 
 <style>
-.modal-friday {
+.modal-new-year {
     .modaltor__panel {
-        background-color: #1b1b1b !important;
         color: white;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            z-index: -1;
+            background: url('~/assets/jpg/new-year.jpg');
+            background-size: cover;
+        }
     }
 
     .modal__close-btn {
+        opacity: 0.8 !important;
+
         &::before,
         &::after {
-            background-color: #fff;
+            background-color: red !important;
         }
     }
 
@@ -92,14 +112,14 @@ export default {
         &-subtitle {
             text-align: center !important;
             font-size: 20px !important;
-            color: white !important;
+            color: black !important;
             margin-bottom: calc(var(--gs) * 2) !important;
         }
 
         &-text {
             text-align: center !important;
             font-size: 18px !important;
-            color: white !important;
+            color: black;
             margin-bottom: calc(var(--gs) * 1) !important;
         }
     }
@@ -108,8 +128,8 @@ export default {
         &-text {
             margin-bottom: calc(var(--gs) * 3);
             text-align: center !important;
-            color: white !important;
             font-size: 20px !important;
+            color: black;
 
             @media (--tablet) {
                 font-size: 16px !important;
@@ -140,7 +160,7 @@ export default {
         position: absolute;
         fill: var(--cl-red);
 
-        &--friday {
+        &--new-year {
             display: none;
             bottom: 0;
             right: 0;
