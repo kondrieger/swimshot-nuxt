@@ -16,7 +16,6 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
         </div>
-        <ModalNewYear :open="isNewYearModalOpen" @closeModal="onCloseNewYearModal" />
     </div>
 </template>
 
@@ -27,7 +26,6 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
-import ModalNewYear from '~/components/Modal/NewYear.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
@@ -83,7 +81,7 @@ export default {
 
     layout: 'default',
 
-    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink, ModalNewYear },
+    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink },
 
     head() {
         return {
@@ -104,23 +102,7 @@ export default {
             poolsArr,
             poolsPicArr,
             littlePool,
-            isNewYearModalOpen: false,
         };
-    },
-    methods: {
-        onOpenModalNewYear() {
-            this.isNewYearModalOpen = true;
-        },
-
-        onCloseNewYearModal() {
-            this.isNewYearModalOpen = false;
-        },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.onOpenModalNewYear();
-        }, 7000);
     },
 };
 </script>
