@@ -307,7 +307,7 @@
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Разовое посещение</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">350</span>&nbsp;₽
+                                    <span class="blue">500</span>&nbsp;₽
                                 </p>
                             </div>
 
@@ -366,7 +366,7 @@
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Разовое посещение</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">500</span>&nbsp;₽
+                                    <span class="blue">700</span>&nbsp;₽
                                 </p>
                             </div>
 
@@ -710,5 +710,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
