@@ -52,6 +52,7 @@ import PoolPic5 from '~/assets/jpg/pools/1801_5.jpg';
 import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
 import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
+import ankor from '~/assets/jpg/pools/pool_ankor.jpg';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
 
@@ -96,6 +97,12 @@ const poolsArr = [
         subtitle: 'Зеленоград',
         pic: orbita,
         href: '/orbita',
+    },
+    {
+        title: 'Бассейн Анкор',
+        subtitle: 'Зеленоград',
+        pic: ankor,
+        href: '/ankor',
     },
 ];
 

@@ -99,7 +99,7 @@
                     lang: 'ru_RU',
                 }"
                 :coords="coordsCenter"
-                :zoom="isTablet ? 12 : 14"
+                :zoom="isTablet ? 12 : 13"
             >
                 <ymap-marker :icon="markerIcon1801" :coords="coords1801" marker-id="1" hint-content="Бассейн Swim Shot">
                     <div class="another-pools__list-item-text" slot="balloon">
@@ -110,6 +110,12 @@
                 <ymap-marker :coords="coordsOrbita" marker-id="2" hint-content="СК Орбита">
                     <div class="another-pools__list-item-text" slot="balloon">
                         <nuxt-link to="/orbita"> <b>СК Орбита</b>, Зеленоград, ул. Озерная аллея, 6 </nuxt-link>
+                    </div>
+                </ymap-marker>
+
+                <ymap-marker :coords="coordsAnkor" marker-id="3" hint-content="Бассейн Анкор">
+                    <div class="another-pools__list-item-text" slot="balloon">
+                        <nuxt-link to="/ankor"> <b>Бассейн Анкор</b>, Зеленоград, к305 </nuxt-link>
                     </div>
                 </ymap-marker>
             </yandex-map>
@@ -150,9 +156,10 @@ export default {
                 phone: null,
             },
 
-            coordsCenter: [55.98220773463946, 37.199245310702274],
+            coordsCenter: [55.99220773463946, 37.199245310702274],
             coords1801: [55.97779002199537, 37.162751976922856],
             coordsOrbita: [55.987888828917455, 37.22616932479378],
+            coordsAnkor: [55.998418, 37.211884],
 
             markerIcon1801: {
                 layout: 'default#image',

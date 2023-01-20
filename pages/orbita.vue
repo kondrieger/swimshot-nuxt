@@ -28,6 +28,7 @@ import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
+import ankor from '~/assets/jpg/pools/pool_ankor.jpg';
 import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
 import PoolPic2 from '~/assets/jpg/pools/pool_orbita_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/pool_orbita_3.jpg';
@@ -42,6 +43,12 @@ const poolsArr = [
         subtitle: 'Зеленоград',
         pic: ph1801,
         href: '/zelenograd',
+    },
+    {
+        title: 'Бассейн Анкор',
+        subtitle: 'Зеленоград',
+        pic: ankor,
+        href: '/ankor',
     },
 ];
 
