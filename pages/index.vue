@@ -10,6 +10,7 @@
         <FAQ />
         <Media />
         <Photos />
+        <ModalFebruary :open="isModalFebruaryOpen" @closeModal="onCloseModalFebruary" />
     </div>
 </template>
 
@@ -22,6 +23,7 @@ import Photos from '~/views/Photos/Photos.vue';
 import FAQ from '~/views/FAQ/FAQ.vue';
 import PoolList from '~/views/PoolList/PoolList.vue';
 import Comments from '~/views/Comments/Comments.vue';
+import ModalFebruary from '~/components/Modal/February.vue';
 
 export default {
     layout: 'default',
@@ -35,11 +37,33 @@ export default {
         FAQ,
         PoolList,
         Comments,
+        ModalFebruary,
     },
+
+    data() {
+        return {
+            isModalFebruaryOpen: false,
+        };
+    },
+
     methods: {
         onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
         },
+
+        onOpenModalFebruary() {
+            this.isModalFebruaryOpen = true;
+        },
+
+        onCloseModalFebruary() {
+            this.isModalFebruaryOpen = false;
+        },
+    },
+
+    mounted() {
+        setTimeout(() => {
+            this.onOpenModalFebruary();
+        }, 7000);
     },
 };
 </script>

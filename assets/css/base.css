@@ -209,7 +209,11 @@ fieldset {
 }
 
 .text-danger {
-    color: var(--cl-red);
+    color: var(--cl-red) !important;
+}
+
+.text-blue {
+    color: var(--cl-blue) !important;
 }
 
 .text-success {
@@ -341,6 +345,10 @@ fieldset {
     @media (--tablet) {
         top: 15px;
         left: 10px;
+    }
+
+    &--black {
+        background-color: var(--cl-black) !important;
     }
 }
 

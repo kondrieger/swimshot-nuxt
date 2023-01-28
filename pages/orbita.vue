@@ -16,6 +16,7 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
         </div>
+        <ModalFebruary :open="isModalFebruaryOpen" @closeModal="onCloseModalFebruary" />
     </div>
 </template>
 
@@ -26,6 +27,7 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
+import ModalFebruary from '~/components/Modal/February.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import ankor from '~/assets/jpg/pools/pool_ankor.jpg';
@@ -88,7 +90,7 @@ export default {
 
     layout: 'default',
 
-    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink },
+    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink, ModalFebruary },
 
     head() {
         return {
@@ -109,7 +111,28 @@ export default {
             poolsArr,
             poolsPicArr,
             littlePool,
+            isModalFebruaryOpen: false,
         };
+    },
+
+    methods: {
+        onModalContactOpen(name = null) {
+            this.$parent.$emit('modalOpen', name);
+        },
+
+        onOpenModalFebruary() {
+            this.isModalFebruaryOpen = true;
+        },
+
+        onCloseModalFebruary() {
+            this.isModalFebruaryOpen = false;
+        },
+    },
+
+    mounted() {
+        setTimeout(() => {
+            this.onOpenModalFebruary();
+        }, 7000);
     },
 };
 </script>

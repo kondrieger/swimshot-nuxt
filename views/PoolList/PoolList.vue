@@ -2,9 +2,9 @@
     <div class="container pools" id="pools-list">
         <h2 class="text-header" data-aos="fade-right">Бассейны</h2>
         <h3 class="text-subheader" data-aos="fade-right">
-            Занятия проходят от одного до четырех раз в неделю по 45-90 минут в двух бассейнах Зеленограда. Температура
-            и качество воды комфортные для плавания в любом возрасте. Переходи на страницу бассейна ниже, и ознакомься с
-            услугами, ценами и прочими условиями каждого из них
+            Занятия проходят от одного до четырех раз в неделю по 45-90 минут в трех бассейнах Зеленограда. Температура
+            и качество воды комфортные для плавания в любом возрасте. Переходи на страницу бассейна ниже, и выбери
+            наиболее подходящий для тебя по расположению, стоимости и прочим условиям
         </h3>
         <ScheduleLink border />
         <div class="pools__list" data-aos="fade-up">
@@ -16,7 +16,9 @@
                 class="pools__list-item"
                 :class="{ 'pools__list-item--new': pool.new }"
             >
-                <span v-if="pool.badge" class="card-badge">{{ pool.badge }}</span>
+                <span v-if="pool.badge" class="card-badge" :class="{ 'card-badge--black': pool.badgeBlack }">{{
+                    pool.badge
+                }}</span>
                 <NewBadge v-if="pool.new" class="pools__list-item-new-badge" />
                 <House v-if="pool.home" class="pools__list-item-home-badge" />
                 <div class="pools__list-item-text">
@@ -71,6 +73,8 @@ const poolsArr = [
         subtitle: 'Зеленоград',
         pic: ankor,
         href: '/ankor',
+        badge: 'премиум',
+        badgeBlack: true,
         new: true,
     },
 ];

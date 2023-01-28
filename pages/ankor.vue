@@ -30,6 +30,8 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
         </div>
+
+        <ModalFebruary :open="isModalFebruaryOpen" @closeModal="onCloseModalFebruary" />
     </div>
 </template>
 
@@ -40,6 +42,7 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
+import ModalFebruary from '~/components/Modal/February.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
@@ -78,15 +81,15 @@ const poolFeatures = [
     },
     {
         title: 'Глубина',
-        text: '—',
+        text: '1,25-1,85 метра',
     },
     {
         title: 'Длина',
-        text: '—',
+        text: '14 метров',
     },
     {
         title: 'Ширина',
-        text: '—',
+        text: '8 метров',
     },
     {
         title: 'Температура воды',
@@ -99,7 +102,7 @@ export default {
 
     layout: 'default',
 
-    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink },
+    components: { PoolStartBlock, PoolTabs, AnotherPools, SignNow, ScheduleLink, ModalFebruary },
 
     head() {
         return {
@@ -120,7 +123,25 @@ export default {
             poolsArr,
             poolsPicArr,
             poolFeatures,
+
+            isModalFebruaryOpen: false,
         };
+    },
+
+    methods: {
+        onOpenModalFebruary() {
+            this.isModalFebruaryOpen = true;
+        },
+
+        onCloseModalFebruary() {
+            this.isModalFebruaryOpen = false;
+        },
+    },
+
+    mounted() {
+        setTimeout(() => {
+            this.onOpenModalFebruary();
+        }, 7000);
     },
 };
 </script>
