@@ -15,9 +15,7 @@
                 <div @click="closeModal" class="modal__close-btn"></div>
                 <h4 class="modal-february__header-title">Скидки до <span class="text-danger text-bold">25%</span></h4>
                 <h3 class="modal-february__header-subtitle">
-                    <span class="text-blue text-bold"
-                        >До конца <span class="text-danger text-bold">февраля</span>
-                    </span>
+                    <span class="text-blue text-bold">До конца <span class="text-danger text-bold">января</span> </span>
                 </h3>
                 <p class="modal-february__header-text">
                     На полугодовые и годовые абонементы безлимитного свободного плавания
