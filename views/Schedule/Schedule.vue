@@ -149,7 +149,7 @@
                                     </p>
                                     <p class="schedule__table-price-list-item-amount">
                                         <span class="blue">{{ price.amount }}</span
-                                        >&nbsp;₽
+                                        >&nbsp;
                                     </p>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
                                         </p>
                                         <p class="schedule__table-price-list-item-amount">
                                             <span class="blue">{{ price.amount }}</span
-                                            >&nbsp;₽
+                                            >&nbsp;
                                         </p>
                                     </div>
                                 </div>
@@ -248,7 +248,7 @@
                                 </p>
                                 <p class="schedule__table-price-list-item-amount">
                                     <span class="blue">{{ price.amount }}</span
-                                    >&nbsp;₽
+                                    >&nbsp;
                                 </p>
                             </div>
                         </div>
@@ -271,83 +271,11 @@
                 <b>с письменным заявлением от представителя</b>
             </p>
 
-            <div class="wrapper">
-                <div class="schedule-tab-wrapper">
-                    <ul class="tabs">
-                        <li class="schedule-tab-link" :class="{ active: active.tab === 1 }" @click="onTabChange(1)">
-                            По времени
-                        </li>
-                        <li class="schedule-tab-link" :class="{ active: active.tab === 2 }" @click="onTabChange(2)">
-                            В любое время *
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 1 }">
-                <p class="text-subheader schedule__table-subtitle">
-                    Свободное плавание в будние дни <b>до 13:00</b> и <b>после 21:15</b>, а также
-                    <b>в выходные после 20:30</b>
-                </p>
-
+            <div class="schedule-tab-content bg-grey schedule__content active">
                 <p class="text-subheader text-subheader--note schedule__table-note">
-                    <span class="text-danger">ВАЖНО</span>: <b>С понедельника по субботу включительно</b> с
-                    <span class="blue">16:00</span> до <span class="blue">19:00</span> свободного плавания <b>нет</b>. В
-                    это время проводятся тренировки спортивных групп, под которые используется весь бассейн.
-                </p>
-
-                <div class="schedule__table-price-wrap">
-                    <div class="schedule__table-price">
-                        <p class="text-subheader schedule__table-price-title">
-                            <span class="text-bold">Свободное посещение</span><br />
-                            Стоимость в это время
-                        </p>
-
-                        <div class="schedule__table-price-list">
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Разовое посещение</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">500</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">2800</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">3900</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">7900</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">10900</span>&nbsp;₽
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="schedule-tab-content bg-grey schedule__content" :class="{ active: active.tab === 2 }">
-                <p class="text-subheader schedule__table-subtitle">Свободное плавание в любое время *</p>
-                <p class="text-subheader text-subheader--note schedule__table-note">
-                    <span class="text-danger">* ВАЖНО</span>: Сеансы свободного плавания длятся 45 минут. Узнайте
-                    расписание сеансов по <a class="js-link" href="#contact-form">телефону</a> или у
+                    <span class="text-danger">* ВАЖНО</span>: Посещение свободного плавания действует без ограничений по
+                    времени — <b>безлимит</b>. Узнай подробности по
+                    <a class="js-link" href="#contact-form">телефону</a> или у
                     <nuxt-link to="/zelenograd">администрации бассейна</nuxt-link>
 
                     <br />
@@ -366,63 +294,35 @@
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Разовое посещение</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">700</span>&nbsp;₽
+                                    <span class="blue">1000</span>&nbsp;
                                 </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Месяц — 8 посещений</p>
+                                <p class="schedule__table-price-list-item-times">Месяц</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">3900</span>&nbsp;₽
+                                    <span class="blue">4900</span>&nbsp;
                                 </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Месяц — 12 посещений</p>
+                                <p class="schedule__table-price-list-item-times">Три месяца</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">4900</span>&nbsp;₽
+                                    <span class="blue">12900</span>&nbsp;
                                 </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Месяц — безлимит</p>
+                                <p class="schedule__table-price-list-item-times">Полгода</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">5900</span>&nbsp;₽
+                                    <span class="blue">20900</span>&nbsp;
                                 </p>
                             </div>
 
                             <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Три месяца — 24 посещения</p>
+                                <p class="schedule__table-price-list-item-times">Год</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">10500</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Три месяца — 36 посещений</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">13900</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Три месяца — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">14900</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Полгода — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">24900</span>&nbsp;₽
-                                </p>
-                            </div>
-
-                            <div class="schedule__table-price-list-item">
-                                <p class="schedule__table-price-list-item-times">Год — безлимит</p>
-                                <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">39900</span>&nbsp;₽
+                                    <span class="blue">29900</span>&nbsp;
                                 </p>
                             </div>
                         </div>
@@ -452,7 +352,7 @@
                             <div class="schedule__table-price-list-item">
                                 <p class="schedule__table-price-list-item-times">Три раза в неделю</p>
                                 <p class="schedule__table-price-list-item-amount">
-                                    <span class="blue">10000</span>&nbsp;₽
+                                    <span class="blue">10000</span>&nbsp;
                                 </p>
                             </div>
                         </div>
