@@ -33,6 +33,8 @@
         <div class="bg-grey">
             <AnotherPools data-aos="fade-right" :PoolsArr="poolsArr" />
         </div>
+
+        <ModalSocialSale :open="isModalSocialSaleOpen" @closeModal="onCloseModalSocialSale" />
     </div>
 </template>
 
@@ -43,6 +45,7 @@ import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
+import ModalSocialSale from '~/components/Modal/SocialSale.vue';
 
 import PoolPic1 from '~/assets/jpg/pools/1801.jpg';
 import PoolPic2 from '~/assets/jpg/pools/1801_2.jpg';
@@ -115,6 +118,7 @@ export default {
         SignNow,
         PoolsFeatures,
         ScheduleLink,
+        ModalSocialSale,
     },
     head() {
         return {
@@ -141,7 +145,24 @@ export default {
             poolsPicArr,
             poolFeatures,
             poolsArr,
+            isModalSocialSaleOpen: false,
         };
+    },
+
+    methods: {
+        onOpenModalSocialSale() {
+            this.isModalSocialSaleOpen = true;
+        },
+
+        onCloseModalSocialSale() {
+            this.isModalSocialSaleOpen = false;
+        },
+    },
+
+    mounted() {
+        setTimeout(() => {
+            this.onOpenModalSocialSale();
+        }, 7000);
     },
 };
 </script>
