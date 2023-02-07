@@ -39,7 +39,11 @@
                         <Vk class="social-item-img modal-february__body-img" />
                     </a>
 
-                    <a class="contact-form__contacts-item-content" href="https://vk.com/swim_shot" target="_blank">
+                    <a
+                        class="contact-form__contacts-item-content"
+                        href="https://www.instagram.com/swim_shot"
+                        target="_blank"
+                    >
                         <img
                             class="social-item-img social-item-img--image modal-february__body-img"
                             :src="require('~/assets/swimshot_header_logo.jpg')"
