@@ -62,7 +62,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.onOpenModalSocialSale();
-        }, 7000);
+        }, 1000);
     },
 };
 </script>
