@@ -16,7 +16,6 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
         </div>
-        <ModalSocialSale :open="isModalSocialSaleOpen" @closeModal="onCloseModalSocialSale" />
     </div>
 </template>
 
@@ -27,7 +26,6 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
-import ModalSocialSale from '~/components/Modal/SocialSale.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import ankor from '~/assets/jpg/pools/pool_ankor.jpg';
@@ -96,7 +94,6 @@ export default {
         AnotherPools,
         SignNow,
         ScheduleLink,
-        ModalSocialSale,
     },
 
     head() {
@@ -118,7 +115,6 @@ export default {
             poolsArr,
             poolsPicArr,
             littlePool,
-            isModalSocialSaleOpen: false,
         };
     },
 
@@ -126,20 +122,6 @@ export default {
         onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
         },
-
-        onOpenModalSocialSale() {
-            this.isModalSocialSaleOpen = true;
-        },
-
-        onCloseModalSocialSale() {
-            this.isModalSocialSaleOpen = false;
-        },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.onOpenModalSocialSale();
-        }, 7000);
     },
 };
 </script>
