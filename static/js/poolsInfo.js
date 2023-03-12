@@ -696,11 +696,11 @@ export const schedule = {
                     groupDays: [
                         {
                             id: 6,
-                            time: ['11:15'],
+                            time: ['11:15', '12:00'],
                         },
                         {
                             id: 7,
-                            time: ['13:30'],
+                            time: ['13:30', '12:45'],
                         },
                     ],
 
