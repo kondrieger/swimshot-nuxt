@@ -30,7 +30,6 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
         </div>
-        <ModalMarchSale :open="isModalMarchSaleOpen" @closeModal="onCloseModalMarchSale" />
     </div>
 </template>
 
@@ -41,7 +40,6 @@ import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
-import MarchSale from '~/components/Modal/MarchSale.vue';
 
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
@@ -107,7 +105,6 @@ export default {
         AnotherPools,
         SignNow,
         ScheduleLink,
-        MarchSale,
     },
 
     head() {
@@ -129,24 +126,7 @@ export default {
             poolsArr,
             poolsPicArr,
             poolFeatures,
-            isModalMarchSaleOpen: false,
         };
-    },
-
-    methods: {
-        onOpenModalMarchSale() {
-            this.isModalMarchSaleOpen = true;
-        },
-
-        onCloseModalMarchSale() {
-            this.isModalMarchSaleOpen = false;
-        },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.onOpenModalMarchSale();
-        }, 7000);
     },
 };
 </script>

@@ -10,7 +10,6 @@
         <FAQ />
         <Media />
         <Photos />
-        <ModalMarchSale :open="isModalMarchSaleOpen" @closeModal="onCloseModalMarchSale" />
     </div>
 </template>
 
@@ -23,7 +22,6 @@ import Photos from '~/views/Photos/Photos.vue';
 import FAQ from '~/views/FAQ/FAQ.vue';
 import PoolList from '~/views/PoolList/PoolList.vue';
 import Comments from '~/views/Comments/Comments.vue';
-import MarchSale from '~/components/Modal/MarchSale.vue';
 
 export default {
     layout: 'default',
@@ -37,33 +35,16 @@ export default {
         FAQ,
         PoolList,
         Comments,
-        MarchSale,
     },
 
     data() {
-        return {
-            isModalMarchSaleOpen: false,
-        };
+        return {};
     },
 
     methods: {
         onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
         },
-
-        onOpenModalMarchSale() {
-            this.isModalMarchSaleOpen = true;
-        },
-
-        onCloseModalMarchSale() {
-            this.isModalMarchSaleOpen = false;
-        },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.onOpenModalMarchSale();
-        }, 1000);
     },
 };
 </script>
