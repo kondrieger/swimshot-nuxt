@@ -112,12 +112,6 @@
                         <nuxt-link to="/orbita"> <b>СК Орбита</b>, Зеленоград, ул. Озерная аллея, 6 </nuxt-link>
                     </div>
                 </ymap-marker>
-
-                <ymap-marker :coords="coordsAnkor" marker-id="3" hint-content="Бассейн Анкор">
-                    <div class="another-pools__list-item-text" slot="balloon">
-                        <nuxt-link to="/ankor"> <b>Бассейн Анкор</b>, Зеленоград, к305 </nuxt-link>
-                    </div>
-                </ymap-marker>
             </yandex-map>
         </div>
     </div>
@@ -156,10 +150,9 @@ export default {
                 phone: null,
             },
 
-            coordsCenter: [55.99220773463946, 37.199245310702274],
+            coordsCenter: [55.98180773463946, 37.199255310803],
             coords1801: [55.97779002199537, 37.162751976922856],
             coordsOrbita: [55.987888828917455, 37.22616932479378],
-            coordsAnkor: [55.998418, 37.211884],
 
             markerIcon1801: {
                 layout: 'default#image',

@@ -28,12 +28,12 @@
                     <VButton wide text="ПОДРОБНОСТИ" />
                 </div>
             </nuxt-link>
-            <!-- <a href="https://vk.com/swim_shot/" target="_blank" class="pools__list-item pools__list-item--empty">
+            <a href="https://vk.com/swim_shot/" target="_blank" class="pools__list-item pools__list-item--empty">
                 <Question class="pools__list-item-icon" />
                 <div class="pools__list-item-text">
                     <VButton wide text="СЛЕДИ ЗА НОВОСТЯМИ" />
                 </div>
-            </a> -->
+            </a>
         </div>
     </div>
 </template>
@@ -44,7 +44,6 @@ import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
-import ankor from '~/assets/jpg/pools/pool_ankor.jpg';
 
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
@@ -67,15 +66,6 @@ const poolsArr = [
         pic: orbita,
         href: '/orbita',
         badge: 'для самых маленьких',
-    },
-    {
-        title: 'Бассейн Анкор',
-        subtitle: 'Зеленоград',
-        pic: ankor,
-        href: '/ankor',
-        badge: 'премиум',
-        badgeBlack: true,
-        new: true,
     },
 ];
 
