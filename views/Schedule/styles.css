@@ -79,7 +79,7 @@
             &:hover,
             &.js-active {
                 cursor: pointer;
-                opacity: 1;
+                opacity: 1 !important;
 
                 & .btn {
                     opacity: 1;
@@ -168,6 +168,10 @@
                     height: 30px;
                     margin-right: calc(var(--gs) * 0.5);
                 }
+
+                & + & {
+                    margin-left: calc(var(--gs) * -3);
+                }
             }
         }
     }
@@ -224,11 +228,6 @@
             justify-content: center;
             align-items: stretch;
             flex-wrap: wrap;
-            margin-bottom: calc(var(--gs) * 3);
-
-            @media (--tablet) {
-                margin-bottom: calc(var(--gs) * 2);
-            }
         }
 
         &-price {
@@ -243,6 +242,12 @@
             border: 1px solid var(--cl-lt-blue);
             background-color: #fff;
             font-size: 19px !important;
+
+            margin-top: calc(var(--gs) * 3);
+
+            @media (--tablet) {
+                margin-top: calc(var(--gs) * 2);
+            }
 
             & + & {
                 margin-left: calc(var(--gs) * 2);

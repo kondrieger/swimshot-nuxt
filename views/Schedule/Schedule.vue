@@ -43,6 +43,12 @@
                 }"
                 @click="onActiveAgeChange(age)"
             >
+                <template v-if="age === 'all'">
+                    <BoyIcon class="schedule__list-item-icon" />
+                    <PersonIcon class="schedule__list-item-icon" />
+                    <p class="schedule__list-item-title">Для всех</p>
+                </template>
+
                 <template v-if="age === 'children'">
                     <BoyIcon class="schedule__list-item-icon" />
                     <p class="schedule__list-item-title">Дети</p>
@@ -129,7 +135,7 @@
                         />
                     </div>
 
-                    <div class="schedule__table-price-wrap">
+                    <div class="schedule__table-price-wrap" v-if="activeGroup.price">
                         <div class="schedule__table-price">
                             <p class="text-subheader schedule__table-price-title">
                                 <span class="text-bold">Групповые тренировки</span><br />
@@ -191,7 +197,7 @@
                             />
                         </div>
 
-                        <div class="schedule__table-price-wrap">
+                        <div class="schedule__table-price-wrap" v-if="groupType.price">
                             <div class="schedule__table-price">
                                 <p class="text-subheader schedule__table-price-title">
                                     <span class="text-bold">Групповые тренировки</span><br />
@@ -380,6 +386,7 @@ import './styles.css';
 
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
+import ekb from '~/assets/jpg/pools/verh_istesky_1.jpg';
 
 import PersonIcon from '~/assets/svg/person.svg';
 import BoyIcon from '~/assets/svg/boy.svg';
@@ -398,20 +405,20 @@ const poolsArr = [
     },
     {
         id: 'orbita',
-        title: 'СК Орбита',
+        title: 'СК "Орбита"',
         subtitle: 'Зеленоград',
         pic: orbita,
         href: '/orbita',
     },
+    {
+        id: 'verh-istesky',
+        title: 'СК “Верх-Исетский”',
+        subtitle: 'Екатеринбург',
+        pic: ekb,
+        href: '/verh-istesky',
+    },
 ];
 
-// const defaultActive = {
-//     pool: 'zelenograd',
-//     age: 'children',
-//     type: 'group',
-//     group: 'child-912',
-//     tab: 1,
-// };
 const defaultActive = {
     pool: null,
     age: null,
@@ -428,16 +435,6 @@ const weekDays = {
     5: 'Пятница',
     6: 'Суббота',
     7: 'Воскресенье',
-};
-
-const weekDaysSm = {
-    1: 'Пн',
-    2: 'Вт',
-    3: 'Ср',
-    4: 'Чт',
-    5: 'Пт',
-    6: 'Сб',
-    7: 'Вс',
 };
 
 export default {
@@ -487,6 +484,14 @@ export default {
                 if (this.activeAgeOptions && this.activeAgeOptions.length === 1) {
                     this.active.age = this.activeAgeOptions[0];
                 }
+
+                if (this.activeTypeOptions && this.activeTypeOptions.length === 1) {
+                    this.active.type = this.activeTypeOptions[0];
+                }
+
+                if (this.activeGroupOptions && this.activeGroupOptions.length === 1) {
+                    this.active.group = this.activeGroupOptions[0].id;
+                }
             });
         },
 
@@ -502,6 +507,10 @@ export default {
             this.$nextTick(() => {
                 if (this.activeTypeOptions && this.activeTypeOptions.length === 1) {
                     this.active.type = this.activeTypeOptions[0];
+                }
+
+                if (this.activeGroupOptions && this.activeGroupOptions.length === 1) {
+                    this.active.group = this.activeGroupOptions[0].id;
                 }
             });
         },
@@ -544,12 +553,13 @@ export default {
         activeAgeOptions() {
             if (!this.activePool) return [];
 
-            const { children = null, adults = null } = this.activePool;
+            const { children = null, adults = null, all = null } = this.activePool;
             const agesArr = [];
 
             // Если в js файле есть контент в этих полях, значит, возвращаем элемент
             if (children) agesArr.push('children');
             if (adults) agesArr.push('adults');
+            if (all) agesArr.push('all');
 
             return agesArr;
         },
@@ -605,7 +615,24 @@ export default {
 
     mounted() {
         const searchParams = new URLSearchParams(document.location.search);
-        if (searchParams) this.active.pool = searchParams.get('pool');
+        if (searchParams) {
+            const pool = searchParams.get('pool');
+            this.active.pool = pool;
+
+            this.$nextTick(() => {
+                if (this.activeAgeOptions && this.activeAgeOptions.length === 1) {
+                    this.active.age = this.activeAgeOptions[0];
+                }
+
+                if (this.activeTypeOptions && this.activeTypeOptions.length === 1) {
+                    this.active.type = this.activeTypeOptions[0];
+                }
+
+                if (this.activeGroupOptions && this.activeGroupOptions.length === 1) {
+                    this.active.group = this.activeGroupOptions[0].id;
+                }
+            });
+        }
     },
 };
 </script>
