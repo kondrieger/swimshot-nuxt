@@ -39,7 +39,6 @@
 <script>
 /* eslint-disable*/
 import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
-import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
@@ -82,13 +81,12 @@ const poolFeatures = [
 ];
 
 export default {
-    name: 'zelenograd-page',
+    name: 'verh-istesky-page',
 
     layout: 'default',
 
     components: {
         PoolStartBlock,
-        AnotherPools,
         SignNow,
         PoolsFeatures,
         ScheduleLink,
@@ -96,19 +94,19 @@ export default {
 
     head() {
         return {
-            title: 'Swim Shot — Бассейн в Зеленограде',
+            title: 'Swim Shot — Бассейн в Екатеринбурге',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Бассейн в Зеленограде на пересечении Панфиловского проспекта и улицы Каменка. Длина бассейна 25 метров 4 дорожи. В бассейн в Зеленограде можно приобрести абонемент для свободного плавания, групповых или индивидуальных занятий с тренером.',
+                        'Бассейн в Екатеринбурге по адресу ул. Кирова, 71, СК “Верх-Исетский”. Длина бассейна 25 метров 6 дорожек. В бассейн в Екатеринбурге можно приобрести абонемент для свободного плавания, групповых или индивидуальных занятий с тренером.',
                 },
                 {
                     hid: 'keywords',
                     name: 'keywords',
                     content:
-                        'Контакты бассейн Зеленоград, Адрес бассейн Зеленоград, Бассейн Зеленоград, Абонемент бассейн Зеленоград, Цена бассейн Зеленоград, Стоимость бассейн Зеленоград, Расписание бассейн Зеленоград, Отзывы бассейн Зеленоград',
+                        'Контакты бассейн Екатеринбург, Адрес бассейн Екатеринбург, Бассейн Екатеринбург, Абонемент бассейн Екатеринбург, Цена бассейн Екатеринбург, Стоимость бассейн Екатеринбург, Расписание бассейн Екатеринбург, Отзывы бассейн Екатеринбург',
                 },
             ],
         };
