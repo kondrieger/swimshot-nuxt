@@ -41,7 +41,9 @@
                             <div class="header__location-reference" slot="reference">
                                 <img class="header__location-img" :src="mapMark" alt="Swim shot адрес" />
 
-                                <div class="header__location-reference-text">{{ currentTitle }}</div>
+                                <div class="header__location-reference-text">
+                                    {{ currentTitle || 'Выберите город' }}
+                                </div>
                             </div>
                         </Popper>
 
@@ -128,7 +130,9 @@
                             <div class="header__location-reference" slot="reference">
                                 <img class="header__location-img" :src="mapMark" alt="Swim shot адрес" />
 
-                                <div class="header__location-reference-text">{{ currentTitle }}</div>
+                                <div class="header__location-reference-text">
+                                    {{ currentTitle || 'Выберите город' }}
+                                </div>
                             </div>
                         </Popper>
                     </div>

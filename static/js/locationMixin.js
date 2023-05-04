@@ -41,24 +41,26 @@ export default {
         },
 
         currentContacts() {
-            if (this.isEkb) return ekbContacts;
+            if (this.isEkb || this.pathName === '/ekb') return ekbContacts;
 
             return mskContacts;
         },
 
         currentLinksHeader() {
-            if (this.isEkb) return socialLinksHeaderEkb;
+            if (this.isEkb || this.pathName === '/ekb') return socialLinksHeaderEkb;
 
             return socialLinksHeader;
         },
 
         currentLinksContactForm() {
-            if (this.isEkb) return socialLinksContactFormEkb;
+            if (this.isEkb || this.pathName === '/ekb') return socialLinksContactFormEkb;
 
             return socialLinksContactForm;
         },
 
         pathName() {
+            if (!process.client) return '';
+
             return $nuxt.$route.path;
         },
 
@@ -77,7 +79,7 @@ export default {
 
     methods: {
         async getLocation() {
-            await fetch('http://ip-api.com/json', {
+            await fetch('https://ipinfo.io/json?token=0a9c848024b91e', {
                 method: 'GET',
             }).then((resp) => {
                 resp.json().then((body) => this.setLocation(body.region));
@@ -85,8 +87,13 @@ export default {
         },
 
         setLocation(currentLocation) {
-            this.currentLocation = currentLocation;
-            this.$root.$emit('currentLocationChange', currentLocation);
+            let settingLocation = 'another';
+
+            if (currentLocation.toLowerCase() == 'sverdlovsk oblast') settingLocation = 'sve';
+            if (currentLocation.toLowerCase() == 'moscow') settingLocation = 'mow';
+
+            this.currentLocation = settingLocation;
+            this.$root.$emit('currentLocationChange', settingLocation);
         },
     },
 
