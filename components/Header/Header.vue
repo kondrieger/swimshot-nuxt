@@ -6,15 +6,33 @@
                     <div class="header__location">
                         <Popper
                             trigger="hover"
-                            :options="{ placement: 'bottom', modifiers: { offset: { offset: '100%,5px' } } }"
+                            :options="{ placement: 'bottom', modifiers: { offset: { offset: '110%,5px' } } }"
                         >
                             <div class="popper header__location-content">
                                 <p class="header__location-content-title">Ваш город:</p>
 
                                 <div class="header__location-content-list">
-                                    <div class="header__location-content-text is-active">Москва</div>
-                                    <div class="header__location-content-text">Екатеринбург</div>
-                                    <div class="header__location-content-text header__location-content-text--another">
+                                    <div
+                                        class="header__location-content-text"
+                                        :class="[{ 'is-active': isMsk }]"
+                                        @click="setLocation('mow')"
+                                    >
+                                        Москва
+                                    </div>
+
+                                    <div
+                                        class="header__location-content-text"
+                                        :class="[{ 'is-active': isEkb }]"
+                                        @click="setLocation('sve')"
+                                    >
+                                        Екатеринбург
+                                    </div>
+
+                                    <div
+                                        class="header__location-content-text header__location-content-text--another"
+                                        :class="[{ 'is-active': isAnother }]"
+                                        @click="setLocation('another')"
+                                    >
                                         Другой
                                     </div>
                                 </div>
@@ -23,7 +41,7 @@
                             <div class="header__location-reference" slot="reference">
                                 <img class="header__location-img" :src="mapMark" alt="Swim shot адрес" />
 
-                                <div class="header__location-reference-text">Москва</div>
+                                <div class="header__location-reference-text">{{ currentTitle }}</div>
                             </div>
                         </Popper>
 
@@ -131,6 +149,7 @@
 <script>
 import './styles.css';
 import { headerMenu, socialLinksHeader } from '~/static/js/links.js';
+import locationMixin from '~/static/js/locationMixin.js';
 
 import FixedHeader from 'vue-fixed-header';
 import Popper from 'vue-popperjs';
@@ -147,6 +166,7 @@ import phrase from '~/assets/jpg/swimshot_subtext.jpg';
 
 export default {
     name: 'a-header',
+    mixins: [locationMixin],
     components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Whatsapp, Popper },
 
     data() {

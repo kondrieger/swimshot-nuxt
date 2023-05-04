@@ -2,8 +2,9 @@ export default {
     data() {
         return {
             location: null,
-            sve: 'Екатеринбург',
-            mow: 'Москва',
+            ekbTitle: 'Екатеринбург',
+            mskTitle: 'Москва',
+            anotherTitle: 'Другой',
         };
     },
 
@@ -17,7 +18,15 @@ export default {
         },
 
         isAnother() {
-            return this.location?.toLowerCase() === 'another';
+            return this.location && this.location?.toLowerCase() !== 'mow' && this.location?.toLowerCase() !== 'sve';
+        },
+
+        currentTitle() {
+            if (this.isEkb) return this.ekbTitle;
+            if (this.isMsk) return this.mskTitle;
+            if (this.isAnother) return this.anotherTitle;
+
+            return '';
         },
     },
 
@@ -26,7 +35,7 @@ export default {
             await fetch('http://ip-api.com/json', {
                 method: 'GET',
             }).then((resp) => {
-                resp.json().then(setLocation(body.region));
+                resp.json().then((body) => this.setLocation(body.region));
             });
         },
 
