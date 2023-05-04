@@ -22,6 +22,7 @@
 import Header from '~/components/Header/Header.vue';
 import ContactForm from '~/components/ContactForm/ContactForm.vue';
 import ModalContact from '~/components/Modal/ModalContact/ModalContact.vue';
+import locationMixin from '~/static/js/locationMixin';
 
 import Phone from '~/assets/svg/phone.svg';
 
@@ -32,6 +33,9 @@ export default {
         Phone,
         ModalContact,
     },
+
+    mixins: [locationMixin],
+
     data() {
         return {
             isContactModalOpen: false,
@@ -39,11 +43,13 @@ export default {
             modalComment: null,
         };
     },
+
     computed: {
         isTablet() {
             return this.$mq === 'tablet';
         },
     },
+
     methods: {
         scrollTop() {
             window.scrollTo(0, 0);
@@ -88,6 +94,7 @@ export default {
             this.isContactModalOpen = false;
         },
     },
+
     mounted() {
         this.$nextTick(() => {
             this.$nuxt.$loading.start();

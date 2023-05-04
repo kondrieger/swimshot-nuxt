@@ -7287,6 +7287,11 @@
   dependencies:
     "mimic-fn" "^2.1.0"
 
+"opencollective-postinstall@^2.0.2":
+  "integrity" "sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q=="
+  "resolved" "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz"
+  "version" "2.0.3"
+
 "opener@^1.5.2", "opener@1.5.2":
   "integrity" "sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A=="
   "resolved" "https://registry.npmjs.org/opener/-/opener-1.5.2.tgz"
@@ -7765,6 +7770,11 @@
   "version" "1.7.0"
   dependencies:
     "ts-pnp" "^1.1.6"
+
+"popper.js@^1.15.0":
+  "integrity" "sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ=="
+  "resolved" "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
+  "version" "1.16.1"
 
 "posix-character-classes@^0.1.0":
   "integrity" "sha1-AerA/jta9xoqbAL+q7jB/vfgDqs="
@@ -10739,6 +10749,14 @@
   "integrity" "sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g=="
   "resolved" "https://registry.npmjs.org/vue-no-ssr/-/vue-no-ssr-1.1.1.tgz"
   "version" "1.1.1"
+
+"vue-popperjs@^2.3.0":
+  "integrity" "sha512-925QEeNjlMtb3eDHl5ZlODJzqnQL0nQPEKpr9aQ3XBg21DyqAdfLgD/At4svsPwFeIkpdF1gvHarENon47L9Cg=="
+  "resolved" "https://registry.npmjs.org/vue-popperjs/-/vue-popperjs-2.3.0.tgz"
+  "version" "2.3.0"
+  dependencies:
+    "opencollective-postinstall" "^2.0.2"
+    "popper.js" "^1.15.0"
 
 "vue-router@^3.5.1":
   "integrity" "sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg=="

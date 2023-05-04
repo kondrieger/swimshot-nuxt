@@ -11,6 +11,7 @@
                 />
 
                 <img
+                    v-if="isTablet"
                     data-aos="fade-right"
                     width="466px"
                     height="23px"

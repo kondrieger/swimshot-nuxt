@@ -2,8 +2,36 @@
     <div>
         <fixed-header :threshold="100">
             <div class="header navbar">
+                <div v-if="!isTablet" class="container">
+                    <div class="header__location">
+                        <Popper
+                            trigger="hover"
+                            :options="{ placement: 'bottom', modifiers: { offset: { offset: '100%,5px' } } }"
+                        >
+                            <div class="popper header__location-content">
+                                <p class="header__location-content-title">Ваш город:</p>
+
+                                <div class="header__location-content-list">
+                                    <div class="header__location-content-text is-active">Москва</div>
+                                    <div class="header__location-content-text">Екатеринбург</div>
+                                    <div class="header__location-content-text header__location-content-text--another">
+                                        Другой
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="header__location-reference" slot="reference">
+                                <img class="header__location-img" :src="mapMark" alt="Swim shot адрес" />
+
+                                <div class="header__location-reference-text">Москва</div>
+                            </div>
+                        </Popper>
+
+                        <img :src="phrase" class="header__location-phrase" alt="Плыви быстрее пули" />
+                    </div>
+                </div>
                 <div class="container header__wrap">
-                    <nuxt-link v-if="!isTablet" to="/">
+                    <nuxt-link v-if="!isTablet" to="/" class="header__logo-wrap-main">
                         <img
                             class="header__logo"
                             :src="require('~/assets/swimshot_header_logo.jpg')"
@@ -105,6 +133,7 @@ import './styles.css';
 import { headerMenu, socialLinksHeader } from '~/static/js/links.js';
 
 import FixedHeader from 'vue-fixed-header';
+import Popper from 'vue-popperjs';
 
 import Vk from '~/assets/svg/vk.svg';
 import Instagram from '~/assets/svg/instagram.svg';
@@ -112,11 +141,13 @@ import Zen from '~/assets/svg/zen.svg';
 import Telegram from '~/assets/svg/telegram.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
 import Whatsapp from '~/assets/svg/whatsapp.svg';
+import mapMark from '~/assets/mapMark.png';
+import phrase from '~/assets/jpg/swimshot_subtext.jpg';
 // import Login from '~/assets/svg/login.svg';
 
 export default {
     name: 'a-header',
-    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Whatsapp },
+    components: { FixedHeader, Vk, Instagram, Telegram, Zen, NewBadge, Whatsapp, Popper },
 
     data() {
         return {
@@ -125,6 +156,8 @@ export default {
 
             isBurgerOpen: false,
             modalOpen: false,
+            mapMark,
+            phrase,
         };
     },
 
