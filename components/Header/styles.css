@@ -19,6 +19,10 @@
             right: 0;
             left: 0;
             bottom: 0;
+
+            @media (--tablet) {
+                display: none;
+            }
         }
 
         &-reference {
@@ -49,6 +53,11 @@
                 font-weight: 700;
                 font-size: 20px;
                 margin-right: 15px;
+                white-space: nowrap;
+
+                @media (--tablet) {
+                    font-size: 15px;
+                }
             }
 
             &-line {
@@ -61,6 +70,10 @@
                 color: rgba(65, 141, 188, 0.5);
                 font-weight: 600;
                 cursor: pointer;
+
+                @media (--tablet) {
+                    font-size: 14px;
+                }
 
                 &.is-active {
                     color: var(--cl-md-blue);

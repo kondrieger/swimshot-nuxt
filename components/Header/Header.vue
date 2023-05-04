@@ -90,6 +90,49 @@
                         </Slide>
                     </client-only>
 
+                    <div class="header__location" v-if="isTablet">
+                        <Popper
+                            trigger="click"
+                            :options="{ placement: 'bottom', modifiers: { offset: { offset: '0,5px' } } }"
+                        >
+                            <div class="popper header__location-content">
+                                <p class="header__location-content-title">Ваш город:</p>
+
+                                <div class="header__location-content-list">
+                                    <div
+                                        class="header__location-content-text"
+                                        :class="[{ 'is-active': isMsk }]"
+                                        @click="setLocation('mow')"
+                                    >
+                                        Москва, Зеленоград
+                                    </div>
+
+                                    <div
+                                        class="header__location-content-text"
+                                        :class="[{ 'is-active': isEkb }]"
+                                        @click="setLocation('sve')"
+                                    >
+                                        Екатеринбург
+                                    </div>
+
+                                    <div
+                                        class="header__location-content-text header__location-content-text--another"
+                                        :class="[{ 'is-active': isAnother }]"
+                                        @click="setLocation('another')"
+                                    >
+                                        Другой
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="header__location-reference" slot="reference">
+                                <img class="header__location-img" :src="mapMark" alt="Swim shot адрес" />
+
+                                <div class="header__location-reference-text">{{ currentTitle }}</div>
+                            </div>
+                        </Popper>
+                    </div>
+
                     <div class="header__links" v-if="!isTablet">
                         <nuxt-link
                             v-for="item in headerMenu"
