@@ -9,12 +9,12 @@
         <ScheduleLink border />
         <div class="pools__list" data-aos="fade-up">
             <nuxt-link
-                v-for="(pool, index) in poolsArr"
+                v-for="(pool, index) in computedArr"
                 :key="index"
                 :to="pool.href"
                 :style="{ 'background-image': 'url(' + pool.pic + ')' }"
                 class="pools__list-item"
-                :class="{ 'pools__list-item--new': pool.new }"
+                :class="{ 'pools__list-item--new': pool.new, 'pool-disabled': isPoolDisabled(pool) }"
             >
                 <span v-if="pool.badge" class="card-badge" :class="{ 'card-badge--black': pool.badgeBlack }">{{
                     pool.badge
@@ -29,7 +29,7 @@
                 </div>
             </nuxt-link>
             <a
-                v-if="poolsArr.length < 3"
+                v-if="computedArr.length < 3"
                 href="https://vk.com/swim_shot/"
                 target="_blank"
                 class="pools__list-item pools__list-item--empty"
@@ -44,12 +44,11 @@
 </template>
 
 <script>
+import locationMixin from '~/static/js/locationMixin.js';
+import { poolsList } from '~/static/js/poolsInfo.js';
+
 import VButton from '~/components/VButton/VButton.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
-
-import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
-import ph1801 from '~/assets/jpg/pools/1801.jpg';
-import ekb from '~/assets/jpg/pools/verh_istesky_1.jpg';
 
 import Question from '~/assets/svg/question.svg';
 import NewBadge from '~/assets/svg/new-badge.svg';
@@ -57,38 +56,38 @@ import House from '~/assets/svg/house.svg';
 
 import './styles.css';
 
-const poolsArr = [
-    {
-        title: 'Бассейн Swim Shot',
-        subtitle: 'Зеленоград',
-        pic: ph1801,
-        href: '/zelenograd',
-        badge: 'свободное плавание',
-        home: true,
-    },
-    {
-        title: 'СК "Орбита"',
-        subtitle: 'Зеленоград',
-        pic: orbita,
-        href: '/orbita',
-        badge: 'для самых маленьких',
-    },
-    {
-        title: 'СК “Верх-Исетский”',
-        subtitle: 'Екатеринбург',
-        pic: ekb,
-        href: '/verh-istesky',
-        new: true,
-    },
-];
-
 export default {
     name: 'PoolList',
     components: { VButton, Question, NewBadge, House, ScheduleLink },
+    mixins: [locationMixin],
+
     data() {
         return {
-            poolsArr,
+            poolsList,
         };
+    },
+
+    computed: {
+        computedArr() {
+            if (this.isEkb) {
+                return [...poolsList.filter((pool) => pool.isEkb), ...poolsList.filter((pool) => !pool.isEkb)];
+            }
+
+            if (this.isMsk) {
+                return [...poolsList.filter((pool) => pool.isMsk), ...poolsList.filter((pool) => !pool.isMsk)];
+            }
+
+            return poolsList;
+        },
+    },
+
+    methods: {
+        isPoolDisabled(pool) {
+            if (this.isEkb) return pool.isMsk;
+            if (this.isMsk) return pool.isEkb;
+
+            return false;
+        },
     },
 };
 </script>

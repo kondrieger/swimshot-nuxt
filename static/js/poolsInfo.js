@@ -719,7 +719,7 @@ export const schedule = {
         },
 
         {
-            id: 'verh-istesky',
+            id: 'ekb',
             all: [
                 {
                     id: 'all',
@@ -784,4 +784,54 @@ export const price = {
             amount: 10000,
         },
     ],
+};
+
+import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
+import ph1801 from '~/assets/jpg/pools/1801.jpg';
+import ekb from '~/assets/jpg/pools/verh_istesky_1.jpg';
+
+export const poolsList = [
+    {
+        title: 'Бассейн Swim Shot',
+        subtitle: 'Зеленоград',
+        pic: ph1801,
+        href: '/zelenograd',
+        badge: 'свободное плавание',
+        home: true,
+        isMsk: true,
+    },
+    {
+        title: 'СК "Орбита"',
+        subtitle: 'Зеленоград',
+        pic: orbita,
+        href: '/orbita',
+        badge: 'для самых маленьких',
+        isMsk: true,
+    },
+    {
+        title: 'СК “Верх-Исетский”',
+        subtitle: 'Екатеринбург',
+        pic: ekb,
+        href: '/ekb',
+        new: true,
+        isEkb: true,
+    },
+];
+
+export const mskContacts = {
+    tel: '+74994305595',
+    phone: '+7 (499) 430-55-95',
+    vk: 'https://vk.com/swim_shot',
+    tg: 'https://t.me/swimshot',
+    inst: 'https://instagram.com/swim_shot',
+    email: 'swim_shot@mail.ru',
+};
+
+export const ekbContacts = {
+    tel: '+73433647995',
+    phone: '+7 (343) 364-79-95',
+    vk: 'https://vk.com/swim_shot_ekb',
+    tg: 'https://t.me/swim_shot_ekb',
+    inst: 'https://instagram.com/swim_shot_ekb',
+    email: 'swim_shot@mail.ru',
 };

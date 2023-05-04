@@ -41,6 +41,25 @@ export const socialLinksHeader = [
     },
 ];
 
+export const socialLinksHeaderEkb = [
+    {
+        id: 'vk',
+        href: 'https://vk.com/swim_shot_ekb',
+    },
+    {
+        id: 'whatsapp',
+        href: 'https://wa.me/+79771885559',
+    },
+    {
+        id: 'telegram',
+        href: 'https://t.me/swim_shot_ekb',
+    },
+    {
+        id: 'instagram',
+        href: 'https://www.instagram.com/swim_shot_ekb',
+    },
+];
+
 export const socialLinksContactForm = [
     {
         id: 'vk',
@@ -60,6 +79,34 @@ export const socialLinksContactForm = [
     {
         id: 'instagram',
         href: 'https://www.instagram.com/swim_shot',
+        text: 'Swim Shot',
+    },
+    {
+        id: 'zen',
+        href: 'https://dzen.ru/swimshot',
+        text: 'Дзен',
+    },
+];
+
+export const socialLinksContactFormEkb = [
+    {
+        id: 'vk',
+        href: 'https://vk.com/swim_shot_ekb',
+        text: 'Вконтакте',
+    },
+    {
+        id: 'whatsapp',
+        href: 'https://wa.me/+79771885559',
+        text: 'WhatsApp',
+    },
+    {
+        id: 'telegram',
+        href: 'https://t.me/swim_shot_ekb',
+        text: 'Telegram',
+    },
+    {
+        id: 'instagram',
+        href: 'https://www.instagram.com/swim_shot_ekb',
         text: 'Swim Shot',
     },
     {

@@ -70,7 +70,7 @@
 
                             <div class="header__links-social">
                                 <a
-                                    v-for="link in socialLinks"
+                                    v-for="link in currentLinksHeader"
                                     :key="link.id"
                                     :href="link.href"
                                     class="social-item social-item--modal"
@@ -112,7 +112,7 @@
                     <div class="header__links header__links--media">
                         <div class="header__links-social">
                             <a
-                                v-for="link in socialLinks"
+                                v-for="link in currentLinksHeader"
                                 :key="link.id"
                                 :href="link.href"
                                 class="social-item"
@@ -131,7 +131,9 @@
                         </div>
 
                         <div v-if="!isTablet" class="header__links-phone-wrap">
-                            <a class="header__links-phone" href="tel:+74994305595">+7 (499) 430-55-95</a>
+                            <a class="header__links-phone" :href="`tel:${currentContacts.tel}`">
+                                {{ currentContacts.phone }}
+                            </a>
 
                             <a class="header__links-phone-text" href="javascript:;" @click="onModalOpen"
                                 >Заказать обратный звонок</a
@@ -148,7 +150,7 @@
 
 <script>
 import './styles.css';
-import { headerMenu, socialLinksHeader } from '~/static/js/links.js';
+import { headerMenu } from '~/static/js/links.js';
 import locationMixin from '~/static/js/locationMixin.js';
 
 import FixedHeader from 'vue-fixed-header';
@@ -172,7 +174,6 @@ export default {
     data() {
         return {
             headerMenu,
-            socialLinks: socialLinksHeader,
 
             isBurgerOpen: false,
             modalOpen: false,

@@ -1,24 +1,35 @@
+import { mskContacts, ekbContacts } from '~/static/js/poolsInfo.js';
+import { socialLinksHeader, socialLinksHeaderEkb } from '~/static/js/links.js';
+import { socialLinksContactForm, socialLinksContactFormEkb } from '~/static/js/links.js';
+
 export default {
     data() {
         return {
-            location: null,
+            currentLocation: null,
             ekbTitle: 'Екатеринбург',
             mskTitle: 'Москва',
             anotherTitle: 'Другой',
+
+            coordsCenterMsk: [55.98180773463946, 37.199255310803],
+            coordsCenterEkb: [56.839567, 60.550663],
         };
     },
 
     computed: {
         isEkb() {
-            return this.location?.toLowerCase() === 'sve';
+            return this.currentLocation?.toLowerCase() === 'sve';
         },
 
         isMsk() {
-            return this.location?.toLowerCase() === 'mow';
+            return this.currentLocation?.toLowerCase() === 'mow';
         },
 
         isAnother() {
-            return this.location && this.location?.toLowerCase() !== 'mow' && this.location?.toLowerCase() !== 'sve';
+            return (
+                this.currentLocation &&
+                this.currentLocation?.toLowerCase() !== 'mow' &&
+                this.currentLocation?.toLowerCase() !== 'sve'
+            );
         },
 
         currentTitle() {
@@ -27,6 +38,40 @@ export default {
             if (this.isAnother) return this.anotherTitle;
 
             return '';
+        },
+
+        currentContacts() {
+            if (this.isEkb) return ekbContacts;
+
+            return mskContacts;
+        },
+
+        currentLinksHeader() {
+            if (this.isEkb) return socialLinksHeaderEkb;
+
+            return socialLinksHeader;
+        },
+
+        currentLinksContactForm() {
+            if (this.isEkb) return socialLinksContactFormEkb;
+
+            return socialLinksContactForm;
+        },
+
+        pathName() {
+            return $nuxt.$route.path;
+        },
+
+        coordsCenter() {
+            if (!process.client) return this.coordsCenterMsk;
+
+            if (this.pathName === '/zelenograd') return this.coordsCenterMsk;
+            if (this.pathName === '/orbita') return this.coordsCenterMsk;
+            if (this.pathName === '/ekb') return this.coordsCenterEkb;
+
+            if (this.isEkb) return this.coordsCenterEkb;
+
+            return this.coordsCenterMsk;
         },
     },
 
@@ -39,12 +84,15 @@ export default {
             });
         },
 
-        setLocation(location) {
-            this.location = location;
+        setLocation(currentLocation) {
+            this.currentLocation = currentLocation;
+            this.$root.$emit('currentLocationChange', currentLocation);
         },
     },
 
     mounted() {
-        if (!this.location) this.getLocation();
+        if (!this.currentLocation) this.getLocation();
+
+        this.$root.$on('currentLocationChange', (currentLocation) => (this.currentLocation = currentLocation));
     },
 };

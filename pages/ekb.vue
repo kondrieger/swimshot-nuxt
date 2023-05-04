@@ -10,7 +10,7 @@
             <PoolsFeatures data-aos="fade-up" :PoolsFeatures="poolFeatures" alone />
         </div>
 
-        <ScheduleLink text="Расписание бассейна СК “Верх-Исетский”" pool="verh-istesky" />
+        <ScheduleLink text="Расписание бассейна СК “Верх-Исетский”" pool="ekb" />
 
         <div class="container" data-aos="fade-right">
             <div class="pools-info">
@@ -81,7 +81,7 @@ const poolFeatures = [
 ];
 
 export default {
-    name: 'verh-istesky-page',
+    name: 'ekb-page',
 
     layout: 'default',
 

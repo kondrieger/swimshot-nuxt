@@ -411,11 +411,11 @@ const poolsArr = [
         href: '/orbita',
     },
     {
-        id: 'verh-istesky',
+        id: 'ekb',
         title: 'СК “Верх-Исетский”',
         subtitle: 'Екатеринбург',
         pic: ekb,
-        href: '/verh-istesky',
+        href: '/ekb',
     },
 ];
 

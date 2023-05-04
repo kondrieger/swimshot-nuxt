@@ -5,13 +5,17 @@
                 <div class="contact-form__contacts-item">
                     <p class="contact-form__contacts-item-title">Звони нам</p>
 
-                    <a class="contact-form__contacts-item-content" href="tel:+74994305595">+7 (499) 430-55-95</a>
+                    <a class="contact-form__contacts-item-content" :href="`tel:${currentContacts.tel}`">
+                        {{ currentContacts.phone }}
+                    </a>
                 </div>
 
                 <div class="contact-form__contacts-item">
                     <p class="contact-form__contacts-item-title">Пиши на почту</p>
 
-                    <a class="contact-form__contacts-item-content" href="mailto:swim_shot@mail.ru">swim_shot@mail.ru</a>
+                    <a class="contact-form__contacts-item-content" :href="`mailto:${currentContacts.email}`">{{
+                        currentContacts.email
+                    }}</a>
                 </div>
 
                 <div class="contact-form__contacts-item contact-form__contacts-item--wide">
@@ -19,7 +23,7 @@
 
                     <div class="contact-form__contacts-item-content">
                         <a
-                            v-for="link in socialLinks"
+                            v-for="link in currentLinksContactForm"
                             :key="link.id"
                             :href="link.href"
                             class="social-item contact-form__contacts-item-social"
@@ -107,9 +111,15 @@
                     </div>
                 </ymap-marker>
 
-                <ymap-marker :coords="coordsOrbita" marker-id="2" hint-content="СК Орбита">
+                <ymap-marker :coords="coordsOrbita" marker-id="2" hint-content="СК “Орбита”">
                     <div class="another-pools__list-item-text" slot="balloon">
-                        <nuxt-link to="/orbita"> <b>СК Орбита</b>, Зеленоград, ул. Озерная аллея, 6 </nuxt-link>
+                        <nuxt-link to="/orbita"> <b>СК “Орбита”</b>, Зеленоград, ул. Озерная аллея, 6 </nuxt-link>
+                    </div>
+                </ymap-marker>
+
+                <ymap-marker :coords="coordsEkb" marker-id="3" hint-content="СК “Верх-Исетский”">
+                    <div class="another-pools__list-item-text" slot="balloon">
+                        <nuxt-link to="/ekb"> <b>СК “Верх-Исетский”</b>, Екатеринбург, ул. Кирова, 71</nuxt-link>
                     </div>
                 </ymap-marker>
             </yandex-map>
@@ -123,6 +133,7 @@ import './styles.css';
 import { socialLinksContactForm } from '~/static/js/links.js';
 import submitMixin from '~/static/js/submitMixin.js';
 import validationMixin, { required, tel, nameAll } from '../../plugins/validation';
+import locationMixin from '~/static/js/locationMixin.js';
 
 import TextInput from '~/components/TextInput/TextInput.vue';
 import VButton from '~/components/VButton/VButton.vue';
@@ -140,7 +151,7 @@ import bgPic from '~/assets/jpg/things_bg.jpg';
 export default {
     name: 'ContactForm',
     components: { FormLoad, Vk, Instagram, TextInput, VButton, Telegram, Whatsapp, Zen, House },
-    mixins: [validationMixin, submitMixin],
+    mixins: [validationMixin, submitMixin, locationMixin],
 
     data() {
         return {
@@ -150,9 +161,9 @@ export default {
                 phone: null,
             },
 
-            coordsCenter: [55.98180773463946, 37.199255310803],
             coords1801: [55.97779002199537, 37.162751976922856],
             coordsOrbita: [55.987888828917455, 37.22616932479378],
+            coordsEkb: [56.839567, 60.550663],
 
             markerIcon1801: {
                 layout: 'default#image',
