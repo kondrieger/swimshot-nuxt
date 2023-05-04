@@ -6,7 +6,7 @@
                     <div class="header__location">
                         <Popper
                             trigger="hover"
-                            :options="{ placement: 'bottom', modifiers: { offset: { offset: '110%,5px' } } }"
+                            :options="{ placement: 'bottom', modifiers: { offset: { offset: '50px,5px' } } }"
                         >
                             <div class="popper header__location-content">
                                 <p class="header__location-content-title">Ваш город:</p>
@@ -94,7 +94,7 @@
 
                     <div class="header__location" v-if="isTablet">
                         <Popper
-                            trigger="click"
+                            trigger="hover"
                             :options="{ placement: 'bottom', modifiers: { offset: { offset: '0,5px' } } }"
                         >
                             <div class="popper header__location-content">

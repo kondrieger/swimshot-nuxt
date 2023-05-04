@@ -89,10 +89,14 @@ export default {
         setLocation(currentLocation) {
             let settingLocation = 'another';
 
-            if (currentLocation.toLowerCase() == 'sverdlovsk oblast') settingLocation = 'sve';
-            if (currentLocation.toLowerCase() == 'moscow') settingLocation = 'mow';
+            if (currentLocation.toLowerCase() == 'sverdlovsk oblast' || currentLocation.toLowerCase() == 'sve')
+                settingLocation = 'sve';
+
+            if (currentLocation.toLowerCase() == 'moscow' || currentLocation.toLowerCase() == 'mow')
+                settingLocation = 'mow';
 
             this.currentLocation = settingLocation;
+
             this.$root.$emit('currentLocationChange', settingLocation);
         },
     },

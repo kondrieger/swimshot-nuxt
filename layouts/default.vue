@@ -8,7 +8,7 @@
             <Nuxt @modalOpen="onOpenModal" />
         </main>
 
-        <a class="phone-wrap" href="tel:+74994305595" v-if="isTablet">
+        <a class="phone-wrap" :href="`tel:${currentContacts.tel}`" v-if="isTablet">
             <Phone class="phone" />
         </a>
 

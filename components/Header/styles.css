@@ -31,11 +31,15 @@
             justify-content: center;
             cursor: pointer;
 
+            @media (--tablet) {
+                width: 170px;
+            }
+
             &-text {
                 margin-bottom: -5px;
                 color: var(--cl-md-blue);
                 font-weight: 600;
-                cursor: pointer;
+                cursor: pointer !important;
             }
         }
 
