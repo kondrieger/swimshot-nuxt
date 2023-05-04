@@ -1,4 +1,7 @@
+import locationMixin from '~/static/js/locationMixin.js';
 export default {
+    mixins: [locationMixin],
+
     data() {
         const defaultForm = {
             name: null,
@@ -31,6 +34,7 @@ export default {
             if (this.$v.$invalid) return;
 
             if (this.modalComment) this.form.comment = `Хочу к тренеру: ${this.modalComment}`;
+            if (this.isEkb || this.pathName === '/ekb') this.form.comment = 'ЕКАТЕРИНБУРГ';
 
             this.formState.isLoading = true;
 

@@ -165,7 +165,7 @@ export default {
     },
     computed: {
         isTablet() {
-            return this.$mq.tablet;
+            return this.$mq === 'tablet';
         },
     },
     methods: {

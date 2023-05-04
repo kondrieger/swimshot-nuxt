@@ -792,6 +792,7 @@ import ekb from '~/assets/jpg/pools/verh_istesky_1.jpg';
 
 export const poolsList = [
     {
+        id: 'zelenograd',
         title: 'Бассейн Swim Shot',
         subtitle: 'Зеленоград',
         pic: ph1801,
@@ -801,6 +802,7 @@ export const poolsList = [
         isMsk: true,
     },
     {
+        id: 'orbita',
         title: 'СК "Орбита"',
         subtitle: 'Зеленоград',
         pic: orbita,
@@ -809,6 +811,7 @@ export const poolsList = [
         isMsk: true,
     },
     {
+        id: 'ekb',
         title: 'СК “Верх-Исетский”',
         subtitle: 'Екатеринбург',
         pic: ekb,

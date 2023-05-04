@@ -17,7 +17,7 @@
                                         :class="[{ 'is-active': isMsk }]"
                                         @click="setLocation('mow')"
                                     >
-                                        Москва
+                                        Москва, Зеленоград
                                     </div>
 
                                     <div

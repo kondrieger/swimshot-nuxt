@@ -33,15 +33,22 @@
                 </p>
             </div>
         </div>
+
+        <div class="bg-grey">
+            <AnotherPools data-aos="fade-right" :PoolsArr="poolsList" />
+        </div>
     </div>
 </template>
 
 <script>
 /* eslint-disable*/
+import { poolsList } from '~/static/js/poolsInfo.js';
+
 import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
+import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 
 import PoolPic1 from '~/assets/jpg/pools/verh_istesky_1.jpg';
 import PoolPic2 from '~/assets/jpg/pools/verh_istesky_2.jpg';
@@ -90,6 +97,7 @@ export default {
         SignNow,
         PoolsFeatures,
         ScheduleLink,
+        AnotherPools,
     },
 
     head() {
@@ -116,6 +124,7 @@ export default {
         return {
             poolsPicArr,
             poolFeatures,
+            poolsList: poolsList.filter((pool) => pool.id !== 'ekb'),
         };
     },
 };

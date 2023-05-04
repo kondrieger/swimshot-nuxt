@@ -31,13 +31,15 @@
         </div>
 
         <div class="bg-grey">
-            <AnotherPools data-aos="fade-right" :PoolsArr="poolsArr" />
+            <AnotherPools data-aos="fade-right" :PoolsArr="poolsList" />
         </div>
     </div>
 </template>
 
 <script>
 /* eslint-disable*/
+import { poolsList } from '~/static/js/poolsInfo.js';
+
 import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
@@ -90,15 +92,6 @@ const poolFeatures = [
     },
 ];
 
-const poolsArr = [
-    {
-        title: 'СК Орбита',
-        subtitle: 'Зеленоград',
-        pic: orbita,
-        href: '/orbita',
-    },
-];
-
 export default {
     name: 'zelenograd-page',
 
@@ -136,7 +129,7 @@ export default {
         return {
             poolsPicArr,
             poolFeatures,
-            poolsArr,
+            poolsList: poolsList.filter((pool) => pool.id !== 'zelenograd'),
         };
     },
 };

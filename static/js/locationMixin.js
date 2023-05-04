@@ -7,7 +7,7 @@ export default {
         return {
             currentLocation: null,
             ekbTitle: 'Екатеринбург',
-            mskTitle: 'Москва',
+            mskTitle: 'Москва, Зеленоград',
             anotherTitle: 'Другой',
 
             coordsCenterMsk: [55.98180773463946, 37.199255310803],

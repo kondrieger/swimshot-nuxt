@@ -14,36 +14,26 @@
             </div>
         </div>
         <div class="bg-grey">
-            <AnotherPools :PoolsArr="poolsArr" data-aos="fade-up" />
+            <AnotherPools :PoolsArr="poolsList" data-aos="fade-up" />
         </div>
     </div>
 </template>
 
 <script>
 /* eslint-disable*/
+import { poolsList } from '~/static/js/poolsInfo.js';
+
 import PoolStartBlock from '~/views/PoolStartBlock/PoolStartBlock.vue';
 import PoolTabs from '~/views/PoolTabs/PoolTabs.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 import SignNow from '~/components/SignNow/SignNow.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 
-import ph1801 from '~/assets/jpg/pools/1801.jpg';
-import PoolPic1 from '~/assets/jpg/pools/pool_orbita.jpg';
-import PoolPic2 from '~/assets/jpg/pools/pool_orbita_2.jpg';
 import PoolPic3 from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import PoolPic4 from '~/assets/jpg/pools/pool_orbita_4.jpg';
 import PoolPic5 from '~/assets/jpg/pools/pool_orbita_5.jpg';
 
 const poolsPicArr = [PoolPic3, PoolPic4, PoolPic5];
-
-const poolsArr = [
-    {
-        title: 'Бассейн Swim Shot',
-        subtitle: 'Зеленоград',
-        pic: ph1801,
-        href: '/zelenograd',
-    },
-];
 
 const littlePool = [
     {
@@ -105,7 +95,7 @@ export default {
 
     data() {
         return {
-            poolsArr,
+            poolsList: poolsList.filter((pool) => pool.id !== 'orbita'),
             poolsPicArr,
             littlePool,
         };

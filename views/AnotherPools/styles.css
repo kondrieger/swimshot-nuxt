@@ -49,6 +49,10 @@
                 transition: all 0.3s ease;
             }
 
+            &.pool-disabled {
+                opacity: 0.4;
+            }
+
             &:hover,
             &:active {
                 opacity: 1;
