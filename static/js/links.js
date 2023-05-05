@@ -48,7 +48,7 @@ export const socialLinksHeaderEkb = [
     },
     {
         id: 'whatsapp',
-        href: 'https://wa.me/+79771885559',
+        href: 'https://wa.me/+79917339195',
     },
     {
         id: 'telegram',
@@ -96,7 +96,7 @@ export const socialLinksContactFormEkb = [
     },
     {
         id: 'whatsapp',
-        href: 'https://wa.me/+79771885559',
+        href: 'https://wa.me/+79917339195',
         text: 'WhatsApp',
     },
     {
