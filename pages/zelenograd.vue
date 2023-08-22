@@ -33,6 +33,7 @@
         <div class="bg-grey">
             <AnotherPools data-aos="fade-right" :PoolsArr="poolsList" />
         </div>
+        <ModalDoors :open="isModalDoorsOpen" @closeModal="onCloseModalDoors" />
     </div>
 </template>
 
@@ -54,6 +55,8 @@ import PoolPic5 from '~/assets/jpg/pools/1801_5.jpg';
 import PoolPic6 from '~/assets/jpg/pools/1801_6.jpg';
 import PoolPic7 from '~/assets/jpg/pools/1801_7.jpg';
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
+
+import DoorsModal from '~/components/Modal/Doors.vue';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
 
@@ -103,6 +106,7 @@ export default {
         SignNow,
         PoolsFeatures,
         ScheduleLink,
+        DoorsModal,
     },
 
     head() {
@@ -130,7 +134,23 @@ export default {
             poolsPicArr,
             poolFeatures,
             poolsList: poolsList.filter((pool) => pool.id !== 'zelenograd'),
+            isModalDoorsOpen: false,
         };
+    },
+
+    methods: {
+        onOpenModalDoors() {
+            this.isModalDoorsOpen = true;
+        },
+        onCloseModalDoors() {
+            this.isModalDoorsOpen = false;
+        },
+    },
+
+    mounted() {
+        setTimeout(() => {
+            this.onOpenModalDoors();
+        }, 7000);
     },
 };
 </script>
