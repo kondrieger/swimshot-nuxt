@@ -1,6 +1,6 @@
 <template>
     <vue-modaltor
-        :visible="open || isOpen"
+        :visible="false"
         :closeScroll="false"
         @closeModal="closeModal"
         class="modal-doors"
