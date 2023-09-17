@@ -838,3 +838,12 @@ export const ekbContacts = {
     inst: 'https://instagram.com/swim_shot_ekb',
     email: 'swim_shot@mail.ru',
 };
+
+export const spbContacts = {
+    tel: '+78127673638',
+    phone: '+7 (812) 767-36-38',
+    vk: 'https://vk.com/swim_shot_spb',
+    tg: 'https://t.me/swim_shot_spb',
+    inst: 'https://instagram.com/swim_shot_spb',
+    email: 'swim_shot@mail.ru',
+};

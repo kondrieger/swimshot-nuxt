@@ -1,4 +1,4 @@
-import { mskContacts, ekbContacts } from '~/static/js/poolsInfo.js';
+import { mskContacts, ekbContacts, spbContacts } from '~/static/js/poolsInfo.js';
 import { socialLinksHeader, socialLinksHeaderEkb } from '~/static/js/links.js';
 import { socialLinksContactForm, socialLinksContactFormEkb } from '~/static/js/links.js';
 
@@ -8,6 +8,7 @@ export default {
             currentLocation: null,
             ekbTitle: 'Екатеринбург',
             mskTitle: 'Москва, Зеленоград',
+            spbTitle: 'Санкт-Петербург',
             anotherTitle: 'Другой',
 
             coordsCenterMsk: [55.98180773463946, 37.199255310803],
@@ -24,9 +25,14 @@ export default {
             return this.currentLocation?.toLowerCase() === 'mow';
         },
 
+        isSpb() {
+            return this.currentLocation?.toLowerCase() === 'spb';
+        },
+
         isAnother() {
             return (
                 this.currentLocation &&
+                this.currentLocation?.toLowerCase() !== 'spb' &&
                 this.currentLocation?.toLowerCase() !== 'mow' &&
                 this.currentLocation?.toLowerCase() !== 'sve'
             );
@@ -35,6 +41,7 @@ export default {
         currentTitle() {
             if (this.isEkb) return this.ekbTitle;
             if (this.isMsk) return this.mskTitle;
+            if (this.isSpb) return this.spbTitle;
             if (this.isAnother) return this.anotherTitle;
 
             return '';
@@ -42,6 +49,8 @@ export default {
 
         currentContacts() {
             if (this.isEkb || this.pathName === '/ekb') return ekbContacts;
+
+            if (this.isSpb || this.pathName === '/spb') return spbContacts;
 
             return mskContacts;
         },
@@ -94,6 +103,9 @@ export default {
 
             if (currentLocation.toLowerCase() == 'moscow' || currentLocation.toLowerCase() == 'mow')
                 settingLocation = 'mow';
+
+            if (currentLocation.toLowerCase() == 'st.-petersburg' || currentLocation.toLowerCase() == 'spb')
+                settingLocation = 'spb';
 
             this.currentLocation = settingLocation;
 
