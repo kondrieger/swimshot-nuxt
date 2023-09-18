@@ -2,17 +2,6 @@
 # yarn lockfile v1
 
 
-"@aceforth/nuxt-optimized-images@^1.4.0":
-  "integrity" "sha512-f5Gao6t5C08cr518goxb72cWH/xg2W4kIRLzfDT7hku04nsjQk2x3KhJGJ4at6jXAlWIh9SLKBHPCLRyzZr9OA=="
-  "resolved" "https://registry.npmjs.org/@aceforth/nuxt-optimized-images/-/nuxt-optimized-images-1.4.0.tgz"
-  "version" "1.4.0"
-  dependencies:
-    "consola" "^2.15.0"
-    "imagemin" "^7.0.1"
-    "img-loader" "^3.0.2"
-    "raw-loader" "^4.0.2"
-    "url-loader" "^4.1.1"
-
 "@ampproject/remapping@^2.1.0":
   "integrity" "sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w=="
   "resolved" "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.0.tgz"
@@ -5397,7 +5386,7 @@
     "exec-buffer" "^3.0.0"
     "is-cwebp-readable" "^2.0.1"
 
-"imagemin@^5.0.0 || ^6.0.0 || ^7.0.0", "imagemin@^7.0.1", "imagemin@7.0.1":
+"imagemin@7.0.1":
   "integrity" "sha512-33AmZ+xjZhg2JMCe+vDf6a9mzWukE7l+wAtesjE7KyteqqKjzxv7aVQeWnul1Ve26mWvEQqyPwl0OctNBfSR9w=="
   "resolved" "https://registry.npmjs.org/imagemin/-/imagemin-7.0.1.tgz"
   "version" "7.0.1"
@@ -5409,13 +5398,6 @@
     "make-dir" "^3.0.0"
     "p-pipe" "^3.0.0"
     "replace-ext" "^1.0.0"
-
-"img-loader@^3.0.2":
-  "integrity" "sha512-rSriLKgvi85Km7ppSF+AEAM3nU4fxpvCkaXtC/IoCEU7jfks55bEANFs0bB9YXYkxY9JurZQIZFtXh5Gue3upw=="
-  "resolved" "https://registry.npmjs.org/img-loader/-/img-loader-3.0.2.tgz"
-  "version" "3.0.2"
-  dependencies:
-    "loader-utils" "^1.1.0"
 
 "import-cwd@^2.0.0":
   "integrity" "sha1-qmzzbnInYShcs3HsZRn1PiQ1sKk="
@@ -8808,14 +8790,6 @@
   "integrity" "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg=="
   "resolved" "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   "version" "1.2.1"
-
-"raw-loader@^4.0.2":
-  "integrity" "sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA=="
-  "resolved" "https://registry.npmjs.org/raw-loader/-/raw-loader-4.0.2.tgz"
-  "version" "4.0.2"
-  dependencies:
-    "loader-utils" "^2.0.0"
-    "schema-utils" "^3.0.0"
 
 "rc@^1.2.7":
   "integrity" "sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw=="

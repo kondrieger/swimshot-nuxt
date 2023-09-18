@@ -102,9 +102,5 @@ export default {
         },
     },
 
-    buildModules: ['@nuxt/postcss8', '@aceforth/nuxt-optimized-images'],
-
-    optimizedImages: {
-        optimizeImages: true,
-    },
+    buildModules: ['@nuxt/postcss8'],
 };
