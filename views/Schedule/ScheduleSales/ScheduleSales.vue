@@ -2,27 +2,19 @@
     <div class="schedule-sales">
         <div class="container">
             <h2 class="text-header schedule-sales__title">
-                <span class="text-danger">Постоянные акции</span> Swim Shot
+                Постоянные <span class="text-danger">акции</span> Swim Shot
             </h2>
 
             <div class="schedule-sales__list">
                 <div class="schedule-sales__list-item">
-                    <p class="text-danger schedule-sales__list-item-percent">15%</p>
-
-                    <p class="text-subheader schedule-sales__list-item-text">
-                        Приведи друга и получи скидку 15% на следующую покупку себе, а ему 5% на первую покупку.
-                        <br />
-                        <span class="text-danger"> Суммируется </span>с любыми скидками. Действует
-                        <span class="text-danger">многократно</span>*
+                    <p class="text-danger schedule-sales__list-item-percent">
+                        <GiftIcon class="schedule-sales__list-item-icon" />
                     </p>
-                </div>
-
-                <div class="schedule-sales__list-item">
-                    <p class="text-danger schedule-sales__list-item-percent">15%</p>
 
                     <p class="text-subheader schedule-sales__list-item-text">
-                        Подарок на День рождения. За неделю до и через неделю после Дня рождения** именинник получает
-                        скидку 15% на любые услуги Swim Shot***
+                        <span class="text-danger">Бесплатное пробное</span>
+                        <br />
+                        При покупке абонемента в день пробной тренировки пробное занятие бесплатное
                     </p>
                 </div>
 
@@ -30,21 +22,25 @@
                     <p class="text-danger schedule-sales__list-item-percent">10%</p>
 
                     <p class="text-subheader schedule-sales__list-item-text">
-                        Скидка 10% при одновременной покупке двух услуг (две разные услуги, на двух человек, на два
-                        месяца и тд)
+                        <span class="text-danger">Семейная скидка</span>
+                        <br />
+                        Семейная скидка <span class="text-danger">-10%</span> предоставляется при одновременной покупке
+                        двух услуг для двух членов семьи
                     </p>
                 </div>
 
                 <div class="schedule-sales__list-item">
-                    <p class="text-danger schedule-sales__list-item-percent">5%</p>
+                    <p class="text-danger schedule-sales__list-item-percent">15%</p>
 
                     <p class="text-subheader schedule-sales__list-item-text">
-                        Скидка 5% при покупке абонемента в день пробного занятия
+                        <span class="text-danger">Скидка на день рождения</span>
+                        <br />
+                        Именинник может воспользоваться скидкой -15% за неделю до и после дня рождения
                     </p>
                 </div>
             </div>
 
-            <div class="schedule-sales__notes">
+            <!-- <div class="schedule-sales__notes">
                 <p class="text-subheader text-subheader--note schedule-sales__notes-item">
                     * чем больше друзей приведешь, тем дешевле будешь плавать. Можно приводить несколько человек в
                     месяц. Ты нам новых учеников, мы тебе выгодное плавание. Все в плюсе!
@@ -55,7 +51,7 @@
                 <p class="text-subheader text-subheader--note schedule-sales__notes-item">
                     *** скидка действует только на услуги, которыми будет пользоваться именинник
                 </p>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -72,5 +68,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

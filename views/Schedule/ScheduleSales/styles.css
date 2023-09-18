@@ -21,7 +21,7 @@
             justify-content: flex-start;
             padding: calc(var(--gs) * 3);
             border-radius: 30px;
-            border: 1px dotted white;
+            border: 1px dotted var(--cl-red);
             width: 100%;
             margin-bottom: calc(var(--gs) * 2);
 
@@ -37,13 +37,18 @@
             &-icon {
                 width: 60px;
                 height: 60px;
-                margin-right: calc(var(--gs) * 4);
-                fill: white;
+                margin-right: calc(var(--gs) * 3);
+                fill: var(--cl-red);
 
                 @media (--tablet) {
                     width: 40px;
                     height: 40px;
-                    margin-right: calc(var(--gs) * 3);
+                    margin-right: calc(var(--gs) * 2);
+                }
+
+                @media (--mobile-lg) {
+                    margin-right: 0;
+                    margin-bottom: calc(var(--gs) * 1);
                 }
             }
 
@@ -52,11 +57,11 @@
                 letter-spacing: 3px;
                 line-height: 1;
                 font-size: 60px;
-                margin-right: calc(var(--gs) * 2);
+                margin-right: calc(var(--gs) * 3);
 
                 @media (--tablet) {
                     font-size: 30px;
-                    margin-right: calc(var(--gs) * 1);
+                    margin-right: calc(var(--gs) * 2);
                 }
 
                 @media (--mobile-lg) {
