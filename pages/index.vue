@@ -10,8 +10,6 @@
         <FAQ />
         <Media />
         <Photos />
-
-        <ModalDoors :open="isModalDoorsOpen" @closeModal="onCloseModalDoors" />
     </div>
 </template>
 
@@ -25,8 +23,6 @@ import FAQ from '~/views/FAQ/FAQ.vue';
 import PoolList from '~/views/PoolList/PoolList.vue';
 import Comments from '~/views/Comments/Comments.vue';
 
-import DoorsModal from '~/components/Modal/Doors.vue';
-
 export default {
     layout: 'default',
 
@@ -39,32 +35,16 @@ export default {
         FAQ,
         PoolList,
         Comments,
-        DoorsModal,
     },
 
     data() {
-        return {
-            isModalDoorsOpen: false,
-        };
+        return {};
     },
 
     methods: {
         onModalContactOpen(name = null) {
             this.$parent.$emit('modalOpen', name);
         },
-
-        onOpenModalDoors() {
-            this.isModalDoorsOpen = true;
-        },
-        onCloseModalDoors() {
-            this.isModalDoorsOpen = false;
-        },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.onOpenModalDoors();
-        }, 1000);
     },
 };
 </script>

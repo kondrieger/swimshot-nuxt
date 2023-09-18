@@ -16,7 +16,6 @@
         <div class="bg-grey">
             <AnotherPools :PoolsArr="poolsList" data-aos="fade-up" />
         </div>
-        <ModalDoors :open="isModalDoorsOpen" @closeModal="onCloseModalDoors" />
     </div>
 </template>
 
@@ -33,8 +32,6 @@ import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 import PoolPic3 from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import PoolPic4 from '~/assets/jpg/pools/pool_orbita_4.jpg';
 import PoolPic5 from '~/assets/jpg/pools/pool_orbita_5.jpg';
-
-import DoorsModal from '~/components/Modal/Doors.vue';
 
 const poolsPicArr = [PoolPic3, PoolPic4, PoolPic5];
 
@@ -80,7 +77,6 @@ export default {
         AnotherPools,
         SignNow,
         ScheduleLink,
-        DoorsModal,
     },
 
     head() {
@@ -102,23 +98,7 @@ export default {
             poolsList: poolsList.filter((pool) => pool.id !== 'orbita'),
             poolsPicArr,
             littlePool,
-            isModalDoorsOpen: false,
         };
-    },
-
-    methods: {
-        onOpenModalDoors() {
-            this.isModalDoorsOpen = true;
-        },
-        onCloseModalDoors() {
-            this.isModalDoorsOpen = false;
-        },
-    },
-
-    mounted() {
-        setTimeout(() => {
-            this.onOpenModalDoors();
-        }, 7000);
     },
 };
 </script>
