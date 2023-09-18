@@ -756,6 +756,45 @@ export const schedule = {
                 },
             ],
         },
+
+        {
+            id: 'spb',
+            all: [
+                {
+                    id: 'all',
+                    type: ['group'],
+                    label: 'Для всех',
+                    info: 'Тренер занимается с детьми и взрослыми любого возраста и уровня подготовки. При надобности занятия проходят из воды',
+
+                    groupDays: [
+                        {
+                            id: 1,
+                            time: ['20:00', '21:00'],
+                        },
+                        {
+                            id: 3,
+                            time: ['20:15'],
+                        },
+                        {
+                            id: 4,
+                            time: ['20:00', '21:00'],
+                        },
+                        {
+                            id: 5,
+                            time: ['19:15', '20:15'],
+                        },
+                        {
+                            id: 6,
+                            time: ['10:00', '11:00'],
+                        },
+                        {
+                            id: 7,
+                            time: ['15:00', '16:00', '17:00'],
+                        },
+                    ],
+                },
+            ],
+        },
     ],
 };
 
@@ -812,15 +851,6 @@ export const poolsList = [
         isMsk: true,
     },
     {
-        id: 'ekb',
-        title: 'СК “Верх-Исетский”',
-        subtitle: 'Екатеринбург',
-        pic: ekb,
-        href: '/ekb',
-        new: true,
-        isEkb: true,
-    },
-    {
         id: 'spb',
         title: 'Swim Shot',
         subtitle: 'Санкт-Петербург',
@@ -828,6 +858,15 @@ export const poolsList = [
         href: '/spb',
         new: true,
         isSpb: true,
+    },
+    {
+        id: 'ekb',
+        title: 'СК “Верх-Исетский”',
+        subtitle: 'Екатеринбург',
+        pic: ekb,
+        href: '/ekb',
+        new: true,
+        isEkb: true,
     },
 ];
 

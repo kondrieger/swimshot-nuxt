@@ -387,6 +387,7 @@ import './styles.css';
 import orbita from '~/assets/jpg/pools/pool_orbita_3.jpg';
 import ph1801 from '~/assets/jpg/pools/1801.jpg';
 import ekb from '~/assets/jpg/pools/verh_istesky_1.jpg';
+import spb from '~/assets/jpg/pools/pool_spb.jpg';
 
 import PersonIcon from '~/assets/svg/person.svg';
 import BoyIcon from '~/assets/svg/boy.svg';
@@ -409,6 +410,13 @@ const poolsArr = [
         subtitle: 'Зеленоград',
         pic: orbita,
         href: '/orbita',
+    },
+    {
+        id: 'spb',
+        title: 'Swim Shot',
+        subtitle: 'Санкт-Петербург',
+        pic: spb,
+        href: '/spb',
     },
     {
         id: 'ekb',
