@@ -81,7 +81,7 @@ export default {
 
     head() {
         return {
-            title: 'Swim shot | Бассейн СК Орбита',
+            title: 'Swim Shot СК Орбита',
             meta: [
                 {
                     hid: 'description',

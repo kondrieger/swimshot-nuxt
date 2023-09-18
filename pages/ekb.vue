@@ -102,7 +102,7 @@ export default {
 
     head() {
         return {
-            title: 'Swim Shot — Бассейн в Екатеринбурге',
+            title: 'Swim Shot в Екатеринбурге',
             meta: [
                 {
                     hid: 'description',

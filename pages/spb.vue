@@ -15,9 +15,7 @@
 
         <div class="container" data-aos="fade-right">
             <div class="pools-info">
-                <p class="pools-info__text">
-                    Бассейн находится в районе Екатеринбурга ВИЗ в <b>Спортивновм Центре “Верх-Исетский”</b>
-                </p>
+                <p class="pools-info__text">Бассейн находится в Центральном районе Санкт-Петербурга.</p>
                 <p class="pools-info__text">
                     Это уютный бассейн длиной <strong>25 метров</strong>. Есть раздевалки с запирающимися шкафчиками,
                     душевые, туалеты, умывальники, фены. Вокруг бассейна есть <strong>большое пространство</strong>, на
@@ -29,7 +27,7 @@
                     <b>парковка</b> для всех посетителей.
                 </p>
                 <p class="pools-info__text">
-                    Тренер занимается с детьми и взрослыми любого возраста и уровня подготовки. При надобности занятия
+                    Тренер занимается с детьми от 7 лет и взрослыми любого уровня подготовки. При надобности занятия
                     проходят <b>из воды</b>.
                 </p>
             </div>
@@ -51,28 +49,28 @@ import PoolsFeatures from '~/components/PoolsFeatures/PoolsFeatures.vue';
 import ScheduleLink from '~/components/ScheduleLink/ScheduleLink.vue';
 import AnotherPools from '~/views/AnotherPools/AnotherPools.vue';
 
-import PoolPic1 from '~/assets/jpg/pools/verh_istesky_1.jpg';
-import PoolPic2 from '~/assets/jpg/pools/verh_istesky_2.jpg';
-import PoolPic3 from '~/assets/jpg/pools/verh_istesky_3.jpg';
-import PoolPic4 from '~/assets/jpg/pools/verh_istesky_4.jpg';
-import PoolPic5 from '~/assets/jpg/pools/verh_istesky_5.jpg';
-import PoolPic6 from '~/assets/jpg/pools/verh_istesky_6.jpg';
-import PoolPic7 from '~/assets/jpg/pools/verh_istesky_7.jpg';
+import PoolPic1 from '~/assets/jpg/pools/pool_spb.jpg';
+import PoolPic2 from '~/assets/jpg/pools/pool_spb_2.jpg';
+import PoolPic3 from '~/assets/jpg/pools/pool_spb_3.jpg';
+import PoolPic4 from '~/assets/jpg/pools/pool_spb_4.jpg';
+import PoolPic5 from '~/assets/jpg/pools/pool_spb_5.jpg';
+import PoolPic6 from '~/assets/jpg/pools/pool_spb_6.jpg';
+import PoolPic7 from '~/assets/jpg/pools/pool_spb_7.jpg';
 
 const poolsPicArr = [PoolPic1, PoolPic2, PoolPic3, PoolPic4, PoolPic5, PoolPic6, PoolPic7];
 
 const poolFeatures = [
     {
         title: 'Стоимость групповых',
-        text: 'от 4900 в месяц',
+        text: 'от 5500 в месяц',
     },
     {
         title: 'Для кого?',
-        text: 'дети от 6 лет и взрослые',
+        text: 'дети от 7 лет и взрослые',
     },
     {
         title: 'Глубина',
-        text: '1,2 - 2 метров',
+        text: '0.8 - 3.5 метров',
     },
     {
         title: 'Длина',
@@ -84,7 +82,7 @@ const poolFeatures = [
     },
     {
         title: 'Температура воды',
-        text: '27-28 градусов',
+        text: '28 градусов',
     },
 ];
 
@@ -103,19 +101,19 @@ export default {
 
     head() {
         return {
-            title: 'Swim Shot — Бассейн в Екатеринбурге',
+            title: 'Swim Shot в Санкт-Петербурге',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Бассейн в Екатеринбурге по адресу ул. Кирова, 71, СК “Верх-Исетский”. Длина бассейна 25 метров 6 дорожек. В бассейн в Екатеринбурге можно приобрести абонемент для свободного плавания, групповых или индивидуальных занятий с тренером.',
+                        'Бассейн в Санкт-Петербурге по адресу ул. Константина Заслонова, 23, корп. 4. Длина бассейна 25 метров 6 дорожек. В бассейн в Санкт-Петербурге можно приобрести абонемент для свободного плавания, групповых или индивидуальных занятий с тренером.',
                 },
                 {
                     hid: 'keywords',
                     name: 'keywords',
                     content:
-                        'Контакты бассейн Екатеринбург, Адрес бассейн Екатеринбург, Бассейн Екатеринбург, Абонемент бассейн Екатеринбург, Цена бассейн Екатеринбург, Стоимость бассейн Екатеринбург, Расписание бассейн Екатеринбург, Отзывы бассейн Екатеринбург',
+                        'Контакты бассейн Санкт-Петербург, Адрес бассейн Санкт-Петербург, Бассейн Санкт-Петербург, Абонемент бассейн Санкт-Петербург, Цена бассейн Санкт-Петербург, Стоимость бассейн Санкт-Петербург, Расписание бассейн Санкт-Петербург, Отзывы бассейн Санкт-Петербург',
                 },
             ],
         };
