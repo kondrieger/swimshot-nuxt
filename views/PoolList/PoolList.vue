@@ -73,6 +73,10 @@ export default {
                 return [...poolsList.filter((pool) => pool.isEkb), ...poolsList.filter((pool) => !pool.isEkb)];
             }
 
+            if (this.isSpb) {
+                return [...poolsList.filter((pool) => pool.isSpb), ...poolsList.filter((pool) => !pool.isSpb)];
+            }
+
             if (this.isMsk) {
                 return [...poolsList.filter((pool) => pool.isMsk), ...poolsList.filter((pool) => !pool.isMsk)];
             }
@@ -83,8 +87,9 @@ export default {
 
     methods: {
         isPoolDisabled(pool) {
-            if (this.isEkb) return pool.isMsk;
-            if (this.isMsk) return pool.isEkb;
+            if (this.isEkb) return pool.isMsk || pool.isSpb;
+            if (this.isMsk) return pool.isEkb || pool.isSpb;
+            if (this.isSpb) return pool.isEkb || pool.isMsk;
 
             return false;
         },

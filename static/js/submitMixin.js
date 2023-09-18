@@ -35,6 +35,7 @@ export default {
 
             if (this.modalComment) this.form.comment = `Хочу к тренеру: ${this.modalComment}`;
             if (this.isEkb || this.pathName === '/ekb') this.form.comment = 'ЕКАТЕРИНБУРГ';
+            if (this.isSpb || this.pathName === '/spb') this.form.comment = 'САНКТ-ПЕТЕРБУРГ';
 
             this.formState.isLoading = true;
 

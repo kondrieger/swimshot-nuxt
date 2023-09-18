@@ -22,6 +22,14 @@
 
                                     <div
                                         class="header__location-content-text"
+                                        :class="[{ 'is-active': isSpb }]"
+                                        @click="setLocation('spb')"
+                                    >
+                                        Санкт-Петербург
+                                    </div>
+
+                                    <div
+                                        class="header__location-content-text"
                                         :class="[{ 'is-active': isEkb }]"
                                         @click="setLocation('sve')"
                                     >

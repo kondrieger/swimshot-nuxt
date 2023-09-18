@@ -1,6 +1,6 @@
 import { mskContacts, ekbContacts, spbContacts } from '~/static/js/poolsInfo.js';
-import { socialLinksHeader, socialLinksHeaderEkb } from '~/static/js/links.js';
-import { socialLinksContactForm, socialLinksContactFormEkb } from '~/static/js/links.js';
+import { socialLinksHeader, socialLinksHeaderEkb, socialLinksHeaderSpb } from '~/static/js/links.js';
+import { socialLinksContactForm, socialLinksContactFormEkb, socialLinksContactFormSpb } from '~/static/js/links.js';
 
 export default {
     data() {
@@ -13,6 +13,7 @@ export default {
 
             coordsCenterMsk: [55.98180773463946, 37.199255310803],
             coordsCenterEkb: [56.839567, 60.550663],
+            coordsCenterSpb: [59.918747, 30.344246],
         };
     },
 
@@ -58,11 +59,15 @@ export default {
         currentLinksHeader() {
             if (this.isEkb || this.pathName === '/ekb') return socialLinksHeaderEkb;
 
+            if (this.isSpb || this.pathName === '/spb') return socialLinksHeaderSpb;
+
             return socialLinksHeader;
         },
 
         currentLinksContactForm() {
             if (this.isEkb || this.pathName === '/ekb') return socialLinksContactFormEkb;
+
+            if (this.isSpb || this.pathName === '/spb') return socialLinksContactFormSpb;
 
             return socialLinksContactForm;
         },
@@ -79,8 +84,10 @@ export default {
             if (this.pathName === '/zelenograd') return this.coordsCenterMsk;
             if (this.pathName === '/orbita') return this.coordsCenterMsk;
             if (this.pathName === '/ekb') return this.coordsCenterEkb;
+            if (this.pathName === '/spb') return this.coordsCenterSpb;
 
             if (this.isEkb) return this.coordsCenterEkb;
+            if (this.isSpb) return this.coordsCenterSpb;
 
             return this.coordsCenterMsk;
         },
