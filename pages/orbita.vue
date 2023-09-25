@@ -38,7 +38,7 @@ const poolsPicArr = [PoolPic3, PoolPic4, PoolPic5];
 const littlePool = [
     {
         title: 'Для кого?',
-        text: 'Дети 3-6 лет',
+        text: 'для детей 3-6 лет',
     },
     {
         title: 'Стоимость групповых',
